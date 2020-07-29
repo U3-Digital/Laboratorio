@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 29, 2020 at 10:34 PM
+-- Generation Time: Jul 29, 2020 at 11:50 PM
 -- Server version: 8.0.15
 -- PHP Version: 7.4.4
 
@@ -60,7 +60,8 @@ CREATE TABLE `estudios` (
   `nombreEstudio` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `fecha` date DEFAULT NULL,
   `costo` double NOT NULL,
-  `responsable` varchar(50) COLLATE utf8_spanish_ci NOT NULL
+  `responsable` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `resultados` text COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
