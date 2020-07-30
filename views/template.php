@@ -6,10 +6,13 @@
 	<meta name="author" content="E-studio" />
 
 	<!-- Bootstrap core CSS-->
-	  <link href="views/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	  <link href="views/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	  <link href="views/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-	  <link href="views/css/sb-admin.css" rel="stylesheet">
+	<link href="views/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="views/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="views/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="views/css/sb-admin.css" rel="stylesheet">
+    <script src="views/vendor/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="views/vendor/sweetalert2/sweetalert2.all.js"></script>
+    <script src="views/vendor/sweetalert2/sweetalert2.js"></script>
 
 	<title>Panel de Control</title>
 
@@ -46,7 +49,6 @@
         </div>
       </div>
     </div>
-
 
     <script src="views/vendor/jquery/jquery.min.js"></script>
     <script src="views/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
