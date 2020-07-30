@@ -14,10 +14,11 @@ class Ingreso {
             
             $usuarioActual = $_POST["usuarioIngreso"];
             $maximoIntentos = 2;
-
+            
             if($this->intentos < $maximoIntentos){
 
-                if($respuesta["email"] == $_POST["usuarioIngreso"] && $respuesta["password"] == $_POST["passwordIngreso"]){
+                if($respuesta["email"] == $_POST["usuarioIngreso"] && password_verify($_POST["passwordIngreso"], $respuesta["password"])){
+
 
                     $this ->intentos = 0;
 
