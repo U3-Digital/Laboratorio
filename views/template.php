@@ -10,7 +10,7 @@
 	<link href="views/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="views/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <link href="views/css/sb-admin.css" rel="stylesheet">
-    <link href="views/css/syle.css" rel="stylesheet">
+    <link href="views/css/style.css" rel="stylesheet">
     <script src="views/vendor/sweetalert2/sweetalert2.all.min.js"></script>
     <script src="views/vendor/sweetalert2/sweetalert2.all.js"></script>
     <script src="views/vendor/sweetalert2/sweetalert2.js"></script>
