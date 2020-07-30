@@ -1,77 +1,67 @@
 <?php
 
-class Ingreso{
+class Ingreso {
+    public $intentos = 0;
 
 	public function ingresoController(){
-
 		if(isset($_POST["usuarioIngreso"])){
+            #$encriptar = crypt($_POST["passwordIngreso"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+            $datosController = array("usuario"=>$_POST["usuarioIngreso"],
+                                    "password"=>$_POST["passwordIngreso"]);
 
-			if(preg_match('/^[a-zA-Z0-9]+$/', $_POST["usuarioIngreso"])&&
-			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["passwordIngreso"])){
+            $respuesta = IngresoModels::ingresoModel($datosController, "usuarios");
 
-			   	#$encriptar = crypt($_POST["passwordIngreso"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+            
+            $usuarioActual = $_POST["usuarioIngreso"];
+            $maximoIntentos = 2;
 
-				$datosController = array("usuario"=>$_POST["usuarioIngreso"],
-				                     "password"=>$_POST["passwordIngreso"]);
+            if($this->intentos < $maximoIntentos){
 
-				$respuesta = IngresoModels::ingresoModel($datosController, "usuarios");
+                if($respuesta["email"] == $_POST["usuarioIngreso"] && $respuesta["password"] == $_POST["passwordIngreso"]){
 
-				$intentos = $respuesta["intentos"];
-				$usuarioActual = $_POST["usuarioIngreso"];
-				$maximoIntentos = 2;
+                    $this ->intentos = 0;
 
-				if($intentos < $maximoIntentos){
+                    $datosController = array("usuarioActual"=>$usuarioActual, "actualizarIntentos"=>$intentos);
 
-					if($respuesta["usuario"] == $_POST["usuarioIngreso"] && $respuesta["password"] == $_POST["passwordIngreso"]){
+                    $respuestaActualizarIntentos = IngresoModels::intentosModel($datosController, "usuarios");
 
-						$intentos = 0;
+                    session_start();
 
-						$datosController = array("usuarioActual"=>$usuarioActual, "actualizarIntentos"=>$intentos);
-
-						$respuestaActualizarIntentos = IngresoModels::intentosModel($datosController, "usuarios");
-
-						session_start();
-
-						$_SESSION["validar"] = true;
-						$_SESSION["usuario"] = $respuesta["usuario"];
-						$_SESSION["nombre"] = $respuesta["nombre"];
-						$_SESSION["rol"] = $respuesta["rol"];
-						$_SESSION["sistema"] = $respuesta["sistema"];
+                    $_SESSION["validar"] = true;
+                    $_SESSION["usuario"] = $respuesta["usuario"];
+                    $_SESSION["nombre"] = $respuesta["nombre"];
+                    $_SESSION["rol"] = $respuesta["rol"];
+                    $_SESSION["sistema"] = $respuesta["sistema"];
 
 
 
-						header("location:index.php?action=inicio");
+                    header("location:index.php?action=inicio");
 
-					}
+                }
 
-					else{
+                else{
 
-						++$intentos;
+                    // ++$this->intentos;
+                    // No tenemos nada relacionado con los intentos en la tabla. Todavia
+                    // $datosController = array("usuarioActual"=>$usuarioActual, "actualizarIntentos"=>$intentos);
 
-						$datosController = array("usuarioActual"=>$usuarioActual, "actualizarIntentos"=>$intentos);
+                    // $respuestaActualizarIntentos = IngresoModels::intentosModel($datosController, "usuarios");
 
-						$respuestaActualizarIntentos = IngresoModels::intentosModel($datosController, "usuarios");
+                    echo '<div class="alert alert-danger">Verifique Usuario/Password</div>';
 
-						echo '<div class="alert alert-danger">Verifique Usuario/Password</div>';
+                }
 
-					}
+            } else {
+                    // Nada de intentos en la base de datos 
+                    $this->intentos = 0;
 
-				}
+                    $datosController = array("usuarioActual"=>$usuarioActual, "actualizarIntentos"=>$intentos);
 
-				else{
+                    $respuestaActualizarIntentos = IngresoModels::intentosModel($datosController, "usuarios");
 
-						$intentos = 0;
+                    echo '<div class="alert alert-danger">Ha fallado 3 veces, demuestre que no es un robot</div>';
 
-						$datosController = array("usuarioActual"=>$usuarioActual, "actualizarIntentos"=>$intentos);
-
-						$respuestaActualizarIntentos = IngresoModels::intentosModel($datosController, "usuarios");
-
-						echo '<div class="alert alert-danger">Ha fallado 3 veces, demuestre que no es un robot</div>';
-
-				}
-
-			}
-
+            }
 		}
 	}
 

@@ -289,6 +289,6 @@ else {
       </div>
     </div><!-- /.container-fluid-->
 
-<?php include "views/modules/footer.php";} ?>
+<?php /*include "views/modules/footer.php"; */}?>
 
   <!-- end navigation -->

@@ -10,6 +10,7 @@
 	<link href="views/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="views/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <link href="views/css/sb-admin.css" rel="stylesheet">
+    <link href="views/css/syle.css" rel="stylesheet">
     <script src="views/vendor/sweetalert2/sweetalert2.all.min.js"></script>
     <script src="views/vendor/sweetalert2/sweetalert2.all.js"></script>
     <script src="views/vendor/sweetalert2/sweetalert2.js"></script>
@@ -17,15 +18,14 @@
 	<title>Panel de Control</title>
 
 </head>
-
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+<!--  class="fixed-nav sticky-footer bg-dark" -->
+<body class="fixed-nav bg-dark" id="page-top">
 		
 
  	<?php
-
 		$modulos = new Enlaces();
 		$modulos -> enlacesController();
-		//include "views/modules/footer.php"
+		// include "views/modules/footer.php"
 	?>
 
     <a class="scroll-to-top rounded" href="#page-top">
