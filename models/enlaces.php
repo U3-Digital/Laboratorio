@@ -7,7 +7,9 @@ class EnlacesModels{
 		if ($enlaces == "home" ||
 			$enlaces == "registrocliente" ||
 			$enlaces == "verclientes" ||
-			$enlaces == "registroUsuario"){
+			$enlaces == "registroUsuario" ||
+			$enlaces == "verUsuarios"){
+			
 			$module = $enlaces . ".php";
 		}
 

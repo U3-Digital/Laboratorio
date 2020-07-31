@@ -46,7 +46,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseMulti">
             <li>
-              <a href="#">Ver usuarios</a>
+              <a href="inicio.php?action=verUsuarios">Ver usuarios</a>
             </li>
             <li>
               <a href="inicio.php?action=registroUsuario">Registrar usuario</a>
