@@ -52,8 +52,16 @@ require_once "../../models/crud.php";
               </table>
             </div>
 
+
           </div>
         </div>
       </div>
     </div>
 </div>
+
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    
+  })
+</script>

@@ -2,6 +2,9 @@
 
 class Controller{
 
+    public function borrarCliente(){
+        
+    }
   public function listaClientes(){
     $respuesta = Datos::mdlListaClientes("clientes");
         $cont =0;
