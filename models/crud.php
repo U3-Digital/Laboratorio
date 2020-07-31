@@ -57,6 +57,25 @@ class Datos extends Conexion{
 
 	}
 
+	public function registrarUsuarioModel($datosmodel,$tabla){
+		$stmt = Conexion::conectar()->prepare("INSERT INTO clientes (`nombre`, `apellidos`, `email`) VALUES (:nombre, :apellidos, :email)");
+		
+
+		$stmt -> bindParam(":nombre", $datosmodel["nombre"], PDO::PARAM_STR);
+		$stmt -> bindParam(":apellidos", $datosmodel["apellidos"], PDO::PARAM_STR);
+		$stmt -> bindParam(":email", $datosmodel["email"], PDO::PARAM_STR);
+
+
+		if($stmt->execute()){
+			return "success";
+		}
+		else{
+			return "error";
+		}
+
+		$stmt->close();
+	}
+
 
 	
 }

@@ -9,6 +9,8 @@ class EnlacesModels{
 		   //$enlaces == "pagina1" ||
 		   //$enlaces == "alta1" ||
 		   $enlaces == "registroUsuario" ||
+		   $enlaces == "registrocliente" ||
+		   $enlaces == "verclientes" ||
 		   $enlaces == "lostPassword"){
 		   //$enlaces == "usuarios" ||
 		   //$enlaces == "galeria" ||

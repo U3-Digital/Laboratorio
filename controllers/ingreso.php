@@ -11,7 +11,7 @@ class Ingreso {
 
             $respuesta = IngresoModels::ingresoModel($datosController, "usuarios");
 
-            echo "<scrip>console.log('".password_hash($_POST["passwordIngreso"], PASSWORD_DEFAULT)."')</script>";
+            
             $usuarioActual = $_POST["usuarioIngreso"];
             $maximoIntentos = 2;
             
