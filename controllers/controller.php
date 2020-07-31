@@ -2,6 +2,22 @@
 
 class Controller{
 
+  public function listaClientes(){
+    $respuesta = Datos::mdlListaClientes("clientes");
+        $cont =0;
+
+        foreach ($respuesta as $row => $item){
+          $cont ++;
+          echo '<tr>
+                  <td>'.$cont.'</td>
+                  <td>'.$item["nombre"].'</td>
+                  <td>'.$item["apellidos"].'</td>
+                  <td>'.$item["email"].'</td>
+                  <td><a href="updtCliente.php?idEditar='.$item["idCliente"].'"><button class="btn btn-warning">Editar</button></a></td>
+                  <td><a href="verclientes.php?idBorrar='.$item["idCliente"].'" ><button class="btn btn-danger">Borrar</button></a></td>
+                </tr>';
+        }
+  }
 
   public function registrarClienteController(){
     if(isset($_POST["cajaNombres"])){
@@ -336,7 +352,7 @@ class Controller{
                 "nombres" => $_POST["cajaNombres"],
                 "apellidos" => $_POST["cajaApellidos"],
                 "correo" => $_POST["cajaEmail"],
-                "password" => $_POST["cajaPassword"],
+                "password" => password_hash( $_POST["cajaPassword"], PASSWORD_DEFAULT),
                 "foto" => $_POST["inputFile"],
                 "rol" => $_POST["selectRol"],
                 "activo" => $_POST["selectActivo"]
@@ -368,6 +384,43 @@ class Controller{
             }
 
         }
+
+    }
+
+    public function ctlRegistraCliente() {
+      if(isset($_POST["cajaNombres"])){
+
+      $datosController= array(
+        "nombre" =>$_POST["cajaNombres"],
+        "apellidos" =>$_POST["cajaApellidos"],
+        "email" => $_POST["cajaEmail"]
+      );
+
+      $respuesta = Datos::registrarClienteModel($datosController,"clientes");
+      if ($respuesta == "success") {
+        echo '<script type="text/javascript">Swal.fire({
+                      title: "Datos Guardados!",
+                      type: "success",
+                      showCancelButton: false
+                    })
+                    .then((value) => {
+                      if (value) {
+                        window.location.href = "inicio.php?action=home";
+                      }
+                    });</script> ';
+      }else{
+        echo '<script type="text/javascript">Swal.fire({
+                      title: "Error al guardar!",
+                      type: "error",
+                      showCancelButton: false
+                    })
+                    .then((value) => {
+                      if (value) {
+                        window.location.href = "inicio.php?action=home";
+                      }
+                    });</script> ';
+      }
+    }
 
     }
 

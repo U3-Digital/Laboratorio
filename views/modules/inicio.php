@@ -26,6 +26,10 @@ require "../../models/crud.php";
 	<script src="../../lib/vendor/sweetalert2/sweetalert2.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+
+	<!-- data tables-->
+	 <script src="../../lib/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script src="../../lib/vendor/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 	<!-- Document Title
 	============================================= -->
 	<title>Panel  | GA Recursos Humanos</title>

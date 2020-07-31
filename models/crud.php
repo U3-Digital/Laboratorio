@@ -42,4 +42,30 @@ class Datos extends Conexion{
 		$statement -> close();
 	}
 
+
+	public function registrarClienteModel($datosmodel,$tabla){
+		$stmt = Conexion::conectar()->prepare("INSERT INTO clientes (`nombre`, `apellidos`, `email`) VALUES (:nombre, :apellidos, :email)");
+		
+
+		$stmt -> bindParam(":nombre", $datosmodel["nombre"], PDO::PARAM_STR);
+		$stmt -> bindParam(":apellidos", $datosmodel["apellidos"], PDO::PARAM_STR);
+		$stmt -> bindParam(":email", $datosmodel["email"], PDO::PARAM_STR);
+
+
+		if($stmt->execute()){
+			return "success";
+		}
+		else{
+			return "error";
+		}
+
+		$stmt->close();
+	}
+	public function mdlListaClientes($tabla){
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+		$stmt->execute();
+		return $stmt->fetchAll();
+		$stmt->close();
+	}
+
 } // conexion

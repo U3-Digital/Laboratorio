@@ -1,4 +1,4 @@
--<?php
+<?php
 
 session_start();
 
@@ -20,7 +20,7 @@ require_once "../../models/crud.php";
             <li class="breadcrumb-item">
                 <a href="#">Administrador</a>
             </li>
-            <li class="breadcrumb-item">Registro de usuario</li>
+            <li class="breadcrumb-item">Registro de cliente</li>
         </ol>
 
 
@@ -76,7 +76,7 @@ require_once "../../models/crud.php";
 
                          $controller = new Controller();
                         
-                         $controller -> registrarClienteController();
+                         $controller -> ctlRegistraCliente();
 
                         ?>
 
