@@ -1,29 +1,41 @@
-<?php
-class Ingreso{
+-<?php
 
-	public function ingresoController(){
+require_once "conexion.php";
 
-		if(isset($_POST["usuarioIngreso"])){
+class IngresoModels{
 
-			$datosController = array("usuario"=>$_POST["usuario"],
-				                     "password"=>$_POST["password"]);
+	public function ingresoModel($datosModel, $tabla){
+        
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE email = :usuario");
 
-			$respuesta = Datos::ingresoModel($datosController, "usuarios");
+		$stmt -> bindParam(":usuario", $datosModel["usuario"], PDO::PARAM_STR);
+		
+		$stmt -> execute();
 
-			if($respuesta["email"] == $_POST["usuario"] && $respuesta["password"] == $_POST["password"] && $respuesta["activo"]=='S')
-			{
-				$_SESSION["id"] = $respuesta["id"];
-				$_SESSION["valido"] = true;
-				$_SESSION["nombre"] = $respuesta["nombre"];
-				$_SESSION["rol"] = $respuesta["rol"];
-				$_SESSION["email"] = $respuesta["email"];
-				echo '<script language="Javascript"> location.href="start.php";</script>';
-			}
-			else
-			{
-				echo '<br> <br> <div class="alert alert-danger" align="center">Datos de Acceso Incorrectos <br> o <br>Usuario Inactivo</div>';
-			}
-		}
+		return $stmt -> fetch();
+
+		$stmt -> close();
+
 	}
+
+	public function intentosModel($datosModel, $tabla){
+
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET intentos = :intentos WHERE usuario = :usuario");
+
+		$stmt -> bindParam(":intentos", $datosModel["actualizarIntentos"], PDO::PARAM_INT);
+		$stmt -> bindParam(":usuario", $datosModel["usuarioActual"], PDO::PARAM_STR);
+
+		if($stmt -> execute()){
+
+			return "ok";
+
+		}
+
+		else{
+
+			return "error";
+		}
+
+	}
+
 }
-?>

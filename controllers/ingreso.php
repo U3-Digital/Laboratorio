@@ -9,9 +9,12 @@ class Ingreso {
             $datosController = array("usuario"=>$_POST["usuarioIngreso"],
                                     "password"=>$_POST["passwordIngreso"]);
 
-            $respuesta = IngresoModels::ingresoModel($datosController, "usuarios");
+            $respuesta = Datos::ingresoModel($datosController, "usuarios");
 
-            
+            print_r($respuesta["email"]);
+
+
+
             $usuarioActual = $_POST["usuarioIngreso"];
             $maximoIntentos = 2;
             
@@ -24,7 +27,7 @@ class Ingreso {
 
                     $datosController = array("usuarioActual"=>$usuarioActual, "actualizarIntentos"=>$intentos);
 
-                    $respuestaActualizarIntentos = IngresoModels::intentosModel($datosController, "usuarios");
+                    //$respuestaActualizarIntentos = IngresoModels::intentosModel($datosController, "usuarios");
 
                     session_start();
 
@@ -36,7 +39,7 @@ class Ingreso {
 
 
 
-                    header("location:index.php?action=inicio");
+                    header("location:views/modules/inicio.php");
 
                 }
 

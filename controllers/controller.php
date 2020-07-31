@@ -2,6 +2,44 @@
 
 class Controller{
 
+
+  public function registrarClienteController(){
+    if(isset($_POST["cajaNombres"])){
+
+      $datosController= array(
+        "nombre" =>$_POST["cajaNombres"],
+        "apellidos" =>$_POST["cajaApellidos"],
+        "email" => $_POST["cajaEmail"]
+      );
+
+      $respuesta = Datos::registrarUsuarioModel($datosController,"clientes");
+      if ($respuesta == "success") {
+        echo '<script type="text/javascript">Swal.fire({
+                      title: "Datos Guardados!",
+                      type: "success",
+                      showCancelButton: false
+                    })
+                    .then((value) => {
+                      if (value) {
+                        window.location.href = "index.php?action=inicio";
+                      }
+                    });</script> ';
+      }else{
+        echo '<script type="text/javascript">Swal.fire({
+                      title: "Error al guardar!",
+                      type: "error",
+                      showCancelButton: false
+                    })
+                    .then((value) => {
+                      if (value) {
+                        window.location.href = "index.php?action=inicio";
+                      }
+                    });</script> ';
+      }
+    }
+    
+  }
+
 // 	#REGISTRO DE SOCIOS
 // 	#------------------------------------
 	public function registroSocio($capturador) {

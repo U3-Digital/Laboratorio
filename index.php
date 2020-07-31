@@ -53,16 +53,16 @@
 
 									<div class="col_full">
 										<label for="login-form-username">Usuario:</label>
-										<input type="text" id="login-form-username" name="usuario" value="" class="form-control not-dark" />
+										<input type="text" id="usuarioIngreso" name="usuarioIngreso" value="" class="form-control not-dark" />
 									</div>
 
 									<div class="col_full">
 										<label for="login-form-password">Password:</label>
-										<input type="password" id="login-form-password" name="password" value="" class="form-control not-dark" />
+										<input type="password" id="login-form-password" name="passwordIngreso" value="" class="form-control not-dark" />
 									</div>
 
 									<div class="col_full nobottommargin">
-										<button class="button button-3d button-black nomargin" id="usuarioIngreso" name="usuarioIngreso" value="login">login</button>
+										<button class="button button-3d button-black nomargin" id="btnUsuarioIngreso" name="btnusuarioingreso" value="login">login</button>
 									</div>
 
 									<?php

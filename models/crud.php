@@ -8,10 +8,9 @@ class Datos extends Conexion{
 	#--------------------------------------------------------
 	public function ingresoModel($datosModel, $tabla){
 
-		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE email = :usuario AND password = :password");
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE email = :usuario");
 
 		$stmt -> bindParam(":usuario", $datosModel["usuario"], PDO::PARAM_STR);
-		$stmt -> bindParam(":password", $datosModel["password"], PDO::PARAM_STR);
 
 		$stmt -> execute();
 
