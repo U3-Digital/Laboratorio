@@ -9,7 +9,6 @@ body {
 }
 
 input {
-	transition-duration: 0.2s !important;
 	border-radius: 0px !important;
 	border-color: rgba(2, 2, 2, 0.0) !important;
 	background-color: #EEEEEE !important;
@@ -17,6 +16,12 @@ input {
 
 button {
 	border-radius: 0px !important;
+}
+
+select {
+	border-width: 0px !important;
+	border-radius: 0px !important;
+	background-color: #EEEEEE !important;
 }
 
 .img-profile {

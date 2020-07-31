@@ -38,7 +38,7 @@
 						<div class="col-md-12">
 							<div class="form-group">
 								<label for="cajaUsuario">Correo electrónico:</label>
-								<input required class="form-control" type="email" id="cajaUsuario" name="usuarioIngreso">
+								<input placeholder="Correo electrónico" required class="form-control" type="email" id="cajaUsuario" name="usuarioIngreso">
 							</div>
 						</div>
 					</div>
@@ -47,7 +47,7 @@
 						<div class="col-md-12">
 							<div class="form-group">
 								<label for="cajaPassword">Contraseña:</label>
-								<input required class="form-control" type="password" id="cajaPassword" name="passwordIngreso">
+								<input placeholder="Contraseña" required class="form-control" type="password" id="cajaPassword" name="passwordIngreso">
 							</div>
 						</div>
 					</div>

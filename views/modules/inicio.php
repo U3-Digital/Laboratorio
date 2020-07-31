@@ -1,6 +1,8 @@
 <?php 
+require "../../controllers/controller.php";
 require "../../controllers/enlaces.php";
 require "../../models/enlaces.php";
+require "../../models/crud.php";
 
 ?>
 
@@ -20,6 +22,8 @@ require "../../models/enlaces.php";
 	<link rel="stylesheet" type="text/css" href="../../lib\vendor\adminlte\dist\css\adminlte.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/sb-admin.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+	<link rel="stylesheet" href="../../lib/vendor/sweetalert2/sweetalert2.min.css">
+	<script src="../../lib/vendor/sweetalert2/sweetalert2.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<!-- Document Title
@@ -42,6 +46,7 @@ include "menu.php";
 	<script src="../../lib/vendor/bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript" src="../../lib/vendor/adminlte/dist/js/adminlte.js"></script>
 	<script type="text/javascript" src="../js/sb-admin.min.js"></script>
+	
 
 </body>
 </html>
