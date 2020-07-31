@@ -27,26 +27,61 @@
 
 <body class="stretched">
 
+<div class="section nopadding nomargin" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: #305c7b center center no-repeat; background-size: cover;"></div>
+
+	<div class="row h-100 borde" style="margin: auto;">
+		<div class="card mx-auto my-auto" style="width: 25em;">
+			<div class="card-body">
+				<h3>Ingreso al sistema</h3>
+				<form method="POST">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="cajaUsuario">Correo electrónico:</label>
+								<input required class="form-control" type="email" id="cajaUsuario" name="usuarioIngreso">
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="cajaPassword">Contraseña:</label>
+								<input required class="form-control" type="password" id="cajaPassword" name="passwordIngreso">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<button type="submit" class="btn btn-primary">Aceptar</button>
+						</div>
+					</div>
+
+					<?php
+				        $ingreso = new Ingreso();
+				        $ingreso -> ingresoController();
+			        ?>
+	
+
+				</form>
+			</div>
+		</div>
+	</div>
+
 	<!-- Document Wrapper
 	============================================= -->
-	<div id="wrapper" class="clearfix">
+	<!-- <div id="wrapper" class="clearfix"> -->
 
 		<!-- Content
 		============================================= -->
-		<section id="content">
+		<!-- <section id="content"> -->
 
-			<div class="content-wrap nopadding">
+			<!-- <div class="content-wrap nopadding"> -->
 
-				<div class="section nopadding nomargin" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: #305c7b center center no-repeat; background-size: cover;"></div>
+				
 
-				<div class="section nobg full-screen nopadding nomargin">
-					<div class="container-fluid vertical-middle divcenter clearfix">
-
-						<div class="center">
-							
-						</div>
-
-						<div class="card divcenter noradius noborder">
+				<!-- <div class="row"> -->
+					<!-- <div class="card">
 							<div class="card-body" style="padding: 40px;">
 								<form id="login-form" name="login-form" class="nobottommargin" action="#" method="post">
 									<h3>Panel de Administraci&oacute;n</h3>
@@ -74,22 +109,15 @@
 								<div class="line line-sm"></div>
 
 							</div>
-						</div>
+						</div> -->
 
-<!-- 						<div class="center dark" style="color: #DFDD43;"><small>Copyrights &copy; 2019 BYSO.</small></div> -->
+				<!-- </div> -->
 
-					</div>
-				</div>
+			<!-- </div> -->
 
-			</div>
+		<!-- </section> -->
 
-		</section><!-- #content end -->
-
-	</div><!-- #wrapper end -->
-
-	<!-- Go To Top
-	============================================= -->
-	<div id="gotoTop" class="icon-angle-up"></div>
+	<!-- </div> -->
 
 	<!-- External JavaScripts
 	============================================= -->

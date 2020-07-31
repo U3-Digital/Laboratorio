@@ -9,9 +9,8 @@ if(!$_SESSION["validar"]){
   exit();
 
 }
-require_once "../controllers/controller.php";
-require_once "../models/crud.php";
-include "./modules/menu.php";
+require_once "../../controllers/controller.php";
+require_once "../../models/crud.php";
 ?>
 
 
@@ -58,7 +57,7 @@ include "./modules/menu.php";
                                     </div>
                                 </div>
                                 <div class="col-md-2">
-                                    <img class="img-profile" src="https://w7.pngwing.com/pngs/659/667/png-transparent-computer-icons-user-profile-blog-others-miscellaneous-rectangle-logo.png" alt="Seleccionar foto de perfil">
+                                    <img src="../img/profile_picture_placeholder.png" class="img-profile"  alt="Seleccionar foto de perfil">
                                 </div>
                             </div>
                             

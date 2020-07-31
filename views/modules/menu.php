@@ -31,10 +31,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="index.php?action=verclientes">Ver clientes</a>
+              <a href="inicio.php?action=verclientes">Ver clientes</a>
             </li>
             <li>
-              <a href="index.php?action=registrocliente">Registrar clientes</a>
+              <a href="inicio.php?action=registrocliente">Registrar clientes</a>
             </li>
           </ul>
         </li>
@@ -49,7 +49,7 @@
               <a href="#">Ver usuarios</a>
             </li>
             <li>
-              <a href="#">Registrar usuario</a>
+              <a href="inicio.php?action=registroUsuario">Registrar usuario</a>
             </li>
             
               </ul>

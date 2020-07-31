@@ -39,7 +39,7 @@ class Ingreso {
 
 
 
-                    header("location:views/modules/inicio.php");
+                    header("location:views/modules/inicio.php?action=home");
 
                 }
 

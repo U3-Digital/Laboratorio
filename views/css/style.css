@@ -1,0 +1,24 @@
+html,
+body {
+	height: 100%;
+    margin: 0;
+}
+
+.borde {
+	border: 1px solid red;
+}
+
+input {
+	transition-duration: 0.2s !important;
+	border-radius: 0px !important;
+	border-color: rgba(2, 2, 2, 0.0) !important;
+	background-color: #EEEEEE !important;
+}
+
+button {
+	border-radius: 0px !important;
+}
+
+.img-profile {
+	width: 100%;
+}
