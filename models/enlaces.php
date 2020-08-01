@@ -8,7 +8,8 @@ class EnlacesModels{
 			$enlaces == "registrocliente" ||
 			$enlaces == "verclientes" ||
 			$enlaces == "registroUsuario" ||
-			$enlaces == "verUsuarios"){
+			$enlaces == "verUsuarios" ||
+			$enlaces == "salir"){
 			
 			$module = $enlaces . ".php";
 		}
