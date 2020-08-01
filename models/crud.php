@@ -153,9 +153,8 @@ class Datos extends Conexion{
 
 	}
 
-
 	public function registrarClienteModel($datosmodel,$tabla){
-		$stmt = Conexion::conectar()->prepare("INSERT INTO clientes (`nombre`, `apellidos`, `email`) VALUES (:nombre, :apellidos, :email)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`nombre`, `apellidos`, `email`) VALUES (:nombre, :apellidos, :email)");
 		
 
 		$stmt -> bindParam(":nombre", $datosmodel["nombre"], PDO::PARAM_STR);
@@ -172,11 +171,72 @@ class Datos extends Conexion{
 
 		$stmt->close();
 	}
+
 	public function mdlListaClientes($tabla){
 		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
 		$stmt->execute();
 		return $stmt->fetchAll();
 		$stmt->close();
+	}
+
+	public function mdlRegistrarAnalisis($datosModel, $tabla) {
+
+		$statement = Conexion::conectar() -> prepare("INSERT INTO $tabla VALUES (null, :nombre, :costo)");
+
+		$statement -> bindParam(":nombre", $datosModel["nombre"], PDO::PARAM_STR);
+		$statement -> bindParam(":costo", $datosModel["costo"], PDO::PARAM_STR);
+
+		if ($statement -> execute()) {
+			return "success";
+		} else {
+			return "error";
+		}
+	}
+
+	public function mdlListaAnalisis($tabla) {
+		$statement = Conexion::conectar() -> prepare("SELECT * FROM $tabla");
+
+		$statement -> execute();
+
+		return $statement -> fetchAll();
+	}
+
+	public function mdlBuscaAnalisis($idAnalisis, $tabla) {
+		$statement = Conexion::conectar() -> prepare("SELECT * FROM $tabla WHERE idAnalisis = :idAnalisis");
+
+		$statement -> bindParam(":idAnalisis", $idAnalisis, PDO::PARAM_INT);
+
+		$statement -> execute();
+
+		return $statement -> fetch();
+
+		$statement -> close();
+	}
+
+	public function mdlActualizarAnalisis($datosModel, $tabla) {
+		$statement = Conexion::conectar() -> prepare("UPDATE $tabla SET nombre = :nombre, costo = :costo WHERE idAnalisis = :idAnalisis");
+
+		$statement -> bindParam(":idAnalisis", $datosModel["idAnalisis"], PDO::PARAM_INT);
+		$statement -> bindParam(":nombre", $datosModel["nombre"], PDO::PARAM_STR);
+		$statement -> bindParam(":costo", $datosModel["costo"], PDO::PARAM_STR);
+
+		if ($statement -> execute()) {
+			return "success";
+		} else {
+			return "error";
+		}
+	}
+
+	public function mdlBorrarAnalisis($idAnalisis, $tabla) {
+		$statement = Conexion::conectar() -> prepare("DELETE FROM $tabla WHERE idAnalisis = :idAnalisis");
+
+		$statement -> bindParam(":idAnalisis", $idAnalisis, PDO::PARAM_INT);
+
+		if ($statement -> execute()) {
+			return "success";
+		} else {
+			return "error";
+		}
 	}
 
 } // conexion

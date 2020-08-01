@@ -41,7 +41,7 @@ require "../../models/crud.php";
 	<script src="../../lib/vendor/datatables/dataTables.bootstrap4.js"></script>
 
 
-	<title>Panel  | GA Recursos Humanos</title>
+	<title>Panel  | Laboratorio</title>
 </head>
 <body class="fixed-nav">
 

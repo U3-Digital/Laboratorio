@@ -10,44 +10,46 @@
         </ol>
 
 
-        	<div class="row">
-        <div class="col-md-12 mr-xl-2 ml-xl-2">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table id="tablaClientes" class="table table-bordered table-striped">
+                                    <thead>
+                                    <tr>
+                                      <th style="width: 10px">#</th>
+                                      <th>Nombre</th>
+                                      <th>apellidos</th>
+                                      <th>Email</th>
+                                      <th style="width: 40px"></th>
+                                      <th style="width: 40px"></th>
+                                    </tr>
+                                    </thead>
+                                     <tbody>
+                                        <?php
+                                            $registro = new Controller();
+                                            $registro -> listaClientes();
+                                            $registro -> borrarCliente();
 
-          <div class="box">
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>Nombre</th>
-                  <th>apellidos</th>
-                  <th>Email</th>
-                  <th style="width: 40px"></th>
-                  <th style="width: 40px"></th>
-                </tr>
-                </thead>
-                 <tbody>
-                    <?php
-                        $registro = new Controller();
-                        $registro -> listaClientes();
-                        $registro -> borrarCliente();
+                                        ?>
+                                    </tbody>
 
-                    ?>
-                </tbody>
-
-              </table>
+                                  </table>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
             </div>
-
-
-          </div>
         </div>
-      </div>
+        
     </div>
 </div>
 
 <script>
   $(function () {
-    $('#example1').DataTable()
+    $('#tablaClientes').DataTable()
     
   })
 </script>

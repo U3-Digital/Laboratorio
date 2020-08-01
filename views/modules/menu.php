@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="">U3 Digital</a>
+    <a class="navbar-brand" href="inicio.php?action=home">U3 Digital</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,10 +16,13 @@
               <a href="cards.html">Capturar estudios</a>
             </li>
             <li>
-              <a href="navbar.html">Ver Estudios</a>
+              <a href="navbar.html">Ver estudios</a>
             </li>
             <li>
-              <a href="navbar.html">Ver catalogo de estudios</a>
+              <a href="inicio.php?action=verAnalisis">Ver catálogo de estudios</a>
+            </li>
+            <li>
+              <a href="inicio.php?action=registroAnalisis">Registrar análisis</a>
             </li>
           </ul>
         </li>
@@ -34,7 +37,7 @@
               <a href="inicio.php?action=verclientes">Ver clientes</a>
             </li>
             <li>
-              <a href="inicio.php?action=registrocliente">Registrar clientes</a>
+              <a href="inicio.php?action=registrocliente">Registrar cliente</a>
             </li>
           </ul>
         </li>

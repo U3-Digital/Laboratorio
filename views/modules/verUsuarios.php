@@ -13,33 +13,37 @@
 
         <div class="row">
         	<div class="col-md-12">
-        		<table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  	<th style="width: 0.8em">#</th>
-                  	<th>Nombres</th>
-                  	<th>Apellidos</th>
-                  	<th>Email</th>
-                  	<th>Rol</th>
-                 	<th>Activo</th>
-                  	<th style="width: 2.5em;">Editar</th>
-	                <th style="width: 2.5em;">Borrar</th>
-                </tr>
-                </thead>
-                 <tbody>
-                    <?php
-                        
-                        $controller = new Controller();
-                        $controller -> ctlListaUsuarios();
-                        $controller -> ctlBorrarUsuario();
-                        // $registro = new Controller();
-                        // $registro -> listaClientes();
-                        //$registro -> borrarCliente();
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table id="tablaUsuarios" class="table table-bordered table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th style="width: 0.8em">#</th>
+                                        <th>Nombres</th>
+                                        <th>Apellidos</th>
+                                        <th>Email</th>
+                                        <th>Rol</th>
+                                        <th>Activo</th>
+                                        <th style="width: 2.5em;">Editar</th>
+                                        <th style="width: 2.5em;">Borrar</th>
+                                    </tr>
+                                    </thead>
+                                     <tbody>
+                                        <?php
+                                            
+                                            $controller = new Controller();
+                                            $controller -> ctlListaUsuarios();
+                                            $controller -> ctlBorrarUsuario();
+                                        ?>
+                                    </tbody>
 
-                    ?>
-                </tbody>
-
-              </table>
+                                  </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         	</div>
         </div>
 
@@ -51,7 +55,9 @@
 	
 
 	$(document).ready( function () {
-	    $('#cosa').DataTable();
+	    $('#tablaUsuarios').DataTable({
+            
+        });
 	});
 
 </script>

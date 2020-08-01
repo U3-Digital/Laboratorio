@@ -11,7 +11,7 @@
 <head>
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="CMStudio" />
+	<meta name="author" content="U3Digital" />
 	<!-- <link rel="shortcut icon" href="favicon.ico" /> -->
 
 	<!-- Stylesheets
@@ -24,7 +24,7 @@
 
 	<!-- Document Title
 	============================================= -->
-	<title>Panel  | GA Recursos Humanos</title>
+	<title>Panel  | Laboratorio</title>
 
 </head>
 
