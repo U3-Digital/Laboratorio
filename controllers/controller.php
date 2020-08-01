@@ -73,7 +73,7 @@ class Controller{
                   <td>'.$item["nombre"].'</td>
                   <td>'.$item["apellidos"].'</td>
                   <td>'.$item["email"].'</td>
-                  <td><a href="updtCliente.php?idEditar='.$item["idCliente"].'"><button class="btn btn-warning">Editar</button></a></td>
+                  <td><a href="inicio.php?action=updtCliente?idEditar='.$item["idCliente"].'"><button class="btn btn-warning">Editar</button></a></td>
                   <td><a href="inicio.php?action=verclientes&idBorrar='.$item["idCliente"].'" ><button class="btn btn-danger">Borrar</button></a></td>
                 </tr>';
         }
