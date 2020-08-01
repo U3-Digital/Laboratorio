@@ -1,7 +1,10 @@
-<?php include_once "controllers/ingreso.php";
-      include_once "models/crud.php";
-      session_start();
- ?>
+<?php 
+// session_start();
+
+	include_once "controllers/ingreso.php";
+    include_once "models/crud.php";
+    
+?>
 
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">

@@ -1,5 +1,5 @@
 <?php 
-
+// phpinfo();
 ?>
 
 <div class="content-wrapper">
@@ -13,24 +13,29 @@
 
         <div class="row">
         	<div class="col-md-12">
-        		<table id="cosa" class="display">
-				    <thead>
-				        <tr>
-				            <th>Column 1</th>
-				            <th>Column 2</th>
-				        </tr>
-				    </thead>
-				    <tbody>
-				        <tr>
-				            <td>Row 1 Data 1</td>
-				            <td>Row 1 Data 2</td>
-				        </tr>
-				        <tr>
-				            <td>Row 2 Data 1</td>
-				            <td>Row 2 Data 2</td>
-				        </tr>
-				    </tbody>
-				</table>
+        		<table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  	<th style="width: 0.8em">#</th>
+                  	<th>Nombres</th>
+                  	<th>Apellidos</th>
+                  	<th>Email</th>
+                  	<th>Rol</th>
+                 	<th>Activo</th>
+                  	<th style="width: 2.5em;">Editar</th>
+	                <th style="width: 2.5em;">Borrar</th>
+                </tr>
+                </thead>
+                 <tbody>
+                    <?php
+                        // $registro = new Controller();
+                        // $registro -> listaClientes();
+                        //$registro -> borrarCliente();
+
+                    ?>
+                </tbody>
+
+              </table>
         	</div>
         </div>
 

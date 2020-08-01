@@ -1,4 +1,12 @@
 <?php 
+session_start();
+if(!$_SESSION["validar"]){
+
+	// print_r($_SESSION);
+	header("location:../../index.php");
+	exit();
+}
+
 require "../../controllers/controller.php";
 require "../../controllers/enlaces.php";
 require "../../models/enlaces.php";

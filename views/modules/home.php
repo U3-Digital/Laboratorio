@@ -2,4 +2,10 @@
 
 ?>
 
-Aquí es el home pero ni perra idea de que poner
+<div class="content-wrapper">
+	<div class="container-fluid">
+		
+		Este es el inicio, pero ni perra idea de que poner
+
+	</div>
+</div>
