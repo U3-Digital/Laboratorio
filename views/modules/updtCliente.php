@@ -70,7 +70,7 @@
 
                          $controller = new Controller();
                         
-                         $controller -> actualizaCliente();
+                         $controller -> actualizaCliente($usuario);
 
                         ?>
 

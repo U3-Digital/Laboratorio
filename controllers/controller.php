@@ -2,13 +2,13 @@
 
 class Controller{
 
-    public function actualizaCliente(){
+    public function actualizaCliente($id){
 
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $datosController = array( 
-                "id"=>$_POST["id"],
+                "id"=>$id,
                 "nombre" =>$_POST["cajaNombres"],
                 "apellidos" =>$_POST["cajaApellidos"],
                 "email" => $_POST["cajaEmail"]
@@ -19,10 +19,16 @@ class Controller{
 
 
             if($respuesta == "success"){
-                echo'<script type="text/javascript">
-                    alert("Registro Actualizado");
-                    window.location.href="listaClientes.php";
-                    </script>';
+                 echo '<script type="text/javascript">Swal.fire({
+                      title: "Registro Actualizado!",
+                      type: "success",
+                      showCancelButton: false
+                    })
+                    .then((value) => {
+                      if (value) {
+                        window.location.href = "inicio.php?action=verclientes";
+                      }
+                    });</script> ';
 
             }
 
