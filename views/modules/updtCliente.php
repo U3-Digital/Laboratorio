@@ -1,6 +1,7 @@
 <?php 
 	$usuario = $_REQUEST['idEditar'];
  	$respuesta = Datos::mdlBuscaCliente("clientes",$usuario);
+
 ?>
 
 
@@ -29,13 +30,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="cajaNombres">Nombre:</label>
-                                                <input class="form-control" type="text" required placeholder="Nombre(s)" id="cajaNombres" name="cajaNombres">
+                                                <input class="form-control" type="text" required placeholder="Nombre(s)" id="cajaNombres" value="<?php echo $respuesta['nombre']; ?>" name="cajaNombres">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="cajaApellidos">Apellidos:</label>
-                                                <input class="form-control" type="text"  placeholder="Apellidos" id="cajaApellidos" name="cajaApellidos">
+                                                <input class="form-control" type="text"  placeholder="Apellidos" id="cajaApellidos" value="<?php echo $respuesta['apellidos']; ?>" name="cajaApellidos">
                                             </div>
                                         </div>
                                     </div>
@@ -44,7 +45,7 @@
                                             <div class="form-group">
                                                 <label for="cajaEmail">Correo electrónico:</label>
                                                 <input class="form-control" type="email" required
-                                                placeholder="Correo electrónico" id="cajaEmail" name="cajaEmail">
+                                                placeholder="Correo electrónico" value="<?php echo $respuesta['email']; ?>" id="cajaEmail" name="cajaEmail">
                                             </div>
                                         </div>
                                     </div>
@@ -69,7 +70,7 @@
 
                          $controller = new Controller();
                         
-                         $controller -> ctlRegistraCliente();
+                         $controller -> actualizaCliente();
 
                         ?>
 
