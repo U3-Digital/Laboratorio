@@ -2,8 +2,65 @@
 
 class Controller{
 
+    public function actualizaCliente(){
+
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+            $datosController = array( 
+                "id"=>$_POST["id"],
+                "nombre" =>$_POST["cajaNombres"],
+                "apellidos" =>$_POST["cajaApellidos"],
+                "email" => $_POST["cajaEmail"]
+            );
+
+            $respuesta = Datos::mdlActualizaCliente($datosController, "clientes");
+
+
+
+            if($respuesta == "success"){
+                echo'<script type="text/javascript">
+                    alert("Registro Actualizado");
+                    window.location.href="listaClientes.php";
+                    </script>';
+
+            }
+
+            else{
+                echo'<script type="text/javascript">
+                    alert("Error!");
+                    window.location.href="listaChoferes.php";
+                    </script>';
+
+
+            }
+
+        }
+
+    }
+
+
     public function borrarCliente(){
-        
+        if (isset($_GET['idBorrar'])){
+            //echo'<script type="text/javascript">alert("'.$_GET['idBorrar'].'");</script>';
+            $datosController = $_GET['idBorrar'];
+            $respuesta = Datos::mdlborrarCliente($datosController,"clientes");
+            if ($respuesta == "success"){
+                echo '<script type="text/javascript">Swal.fire({
+                      title: "Registro Eliminado!",
+                      type: "success",
+                      showCancelButton: false
+                    })
+                    .then((value) => {
+                      if (value) {
+                        window.location.href = "inicio.php?action=inicio";
+                      }
+                    });</script> ';
+            }
+            else{
+                echo'<script type="text/javascript">alert("Error!");</script>';
+            }
+        }
     }
   public function listaClientes(){
     $respuesta = Datos::mdlListaClientes("clientes");
@@ -17,7 +74,7 @@ class Controller{
                   <td>'.$item["apellidos"].'</td>
                   <td>'.$item["email"].'</td>
                   <td><a href="updtCliente.php?idEditar='.$item["idCliente"].'"><button class="btn btn-warning">Editar</button></a></td>
-                  <td><a href="verclientes.php?idBorrar='.$item["idCliente"].'" ><button class="btn btn-danger">Borrar</button></a></td>
+                  <td><a href="inicio.php?action=verclientes&idBorrar='.$item["idCliente"].'" ><button class="btn btn-danger">Borrar</button></a></td>
                 </tr>';
         }
   }

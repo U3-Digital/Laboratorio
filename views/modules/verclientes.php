@@ -44,7 +44,7 @@ require_once "../../models/crud.php";
                     <?php
                         $registro = new Controller();
                         $registro -> listaClientes();
-                        //$registro -> borrarCliente();
+                        $registro -> borrarCliente();
 
                     ?>
                 </tbody>

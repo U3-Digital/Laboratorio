@@ -4,6 +4,35 @@ require_once "conexion.php";
 
 class Datos extends Conexion{
 
+	public static function mdlborrarCliente($datosModel,$tabla){
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE idCliente = :id");
+		$stmt -> bindPARAM(":id",$datosModel, PDO::PARAM_INT);
+		if ($stmt->execute()){
+			return "success";
+		} else {
+			return "error";
+		}
+		$stmt -> close();
+	}
+		public static function mdlActualizaCliente($datosModel, $tabla){
+
+
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, apellidos= :apellidos, email= :email WHERE idCliente = :id");
+
+		$stmt->bindParam(":id", $datosModel["id"], PDO::PARAM_INT);
+		$stmt->bindParam(":nombre", $datosModel["nombre"], PDO::PARAM_STR);
+		$stmt->bindParam(":apellidos", $datosModel["apellidos"], PDO::PARAM_STR);
+		$stmt->bindParam(":email", $datosModel["email"], PDO::PARAM_STR);
+		if($stmt->execute()){
+			return "success";
+		}
+
+		else{
+			return "error";
+		}
+		$stmt->close();
+	}
+
 	#VERIFICA SI EL USUARIO EXISTE PARA INGRESAR AL SISTEMA
 	#--------------------------------------------------------
 	public function ingresoModel($datosModel, $tabla){
