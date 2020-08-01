@@ -79,7 +79,7 @@
 
 
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+          <a href="inicio.php?action=salir" class="nav-link">
             <i class="fas fa-fw fa-sign-out-alt"></i>Logout</a>
         </li>
       </ul>
