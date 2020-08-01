@@ -9,6 +9,7 @@ class EnlacesModels{
 			$enlaces == "verclientes" ||
 			$enlaces == "registroUsuario" ||
 			$enlaces == "verUsuarios" ||
+			$enlaces == "updtCliente" ||
 			$enlaces == "salir"){
 			
 			$module = $enlaces . ".php";
