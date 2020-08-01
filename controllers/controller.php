@@ -1,6 +1,20 @@
 <?php
 
 class Controller{
+    public function ctlBuscaEstudios(){
+        $respuesta = Datos::mdlEstudios("catanalisis");
+
+      foreach ($respuesta as $row => $item){
+          echo  '<option value="'.$item["nombre"].'">'.$item["nombre"].'</option>';
+      }    
+    }
+    public function ctlBuscaClientes(){
+      $respuesta = Datos::mdlClientes("clientes");
+
+      foreach ($respuesta as $row => $item){
+          echo  '<option value="'.$item["nombre"].' '.$item["apellidos"].'">'.$item["nombre"].' '.$item["apellidos"].'</option>';
+      }
+    }
 
     public function actualizaCliente($id){
 

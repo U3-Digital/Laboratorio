@@ -4,6 +4,25 @@ require_once "conexion.php";
 
 class Datos extends Conexion{
 
+		public function mdlEstudios($tabla){
+
+			$stmt = Conexion::conectar()->prepare("SELECT nombre FROM $tabla ");
+			$stmt->execute();
+			return $stmt->fetchAll();
+			$stmt->close();
+
+		}
+
+		public function mdlClientes($tabla){
+
+			$stmt = Conexion::conectar()->prepare("SELECT nombre, apellidos FROM $tabla ");
+			$stmt->execute();
+			return $stmt->fetchAll();
+			$stmt->close();
+
+		}
+
+
 		public static function mdlBuscaCliente($tabla, $usuario){
 
 		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE idCliente = :id");

@@ -14,6 +14,7 @@ class EnlacesModels{
 			$enlaces == "salir" ||
 			$enlaces == "registroAnalisis" ||
 			$enlaces == "verAnalisis" ||
+			$enlaces == "capturarEstudios" ||
 			$enlaces == "updtAnalisis"){
 			
 			$module = $enlaces . ".php";
