@@ -83,6 +83,76 @@ class Datos extends Conexion{
 		$statement -> close();
 	}
 
+	public function mdlListaUsuarios($tabla) {
+		$statement = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+
+		$statement -> execute();
+
+		return $statement -> fetchAll();
+
+		$statement -> close();
+	}
+
+	public function mdlBuscaUsuario($tabla, $idUsuario) {
+		$statement = Conexion::conectar() -> prepare("SELECT * FROM $tabla WHERE idUsuario = :idUsuario");
+		
+		$statement -> bindParam(":idUsuario", $idUsuario, PDO::PARAM_STR);
+
+		$statement -> execute();
+
+		return $statement -> fetch();
+
+		$statement -> close();
+	}
+
+	public function mdlActualizarUsuario($datosModel, $tabla) {
+
+		if ($datosModel["password"]) {
+			$statement = Conexion::conectar() -> prepare("UPDATE $tabla SET nombres = :nombres, apellidos = :apellidos, email = :email, password = :password, foto = :foto, rol = :rol, activo = :activo WHERE idUsuario = :idUsuario");
+
+			$statement -> bindParam(":idUsuario", $datosModel["idUsuario"], PDO::PARAM_STR);
+			$statement -> bindParam(":nombres", $datosModel["nombres"], PDO::PARAM_STR);
+			$statement -> bindParam(":apellidos", $datosModel["apellidos"], PDO::PARAM_STR);
+			$statement -> bindParam(":email", $datosModel["correo"], PDO::PARAM_STR);
+			$statement -> bindParam(":password", $datosModel["password"], PDO::PARAM_STR);
+			$statement -> bindParam(":foto", $datosModel["foto"], PDO::PARAM_STR);
+			$statement -> bindParam(":rol", $datosModel["rol"], PDO::PARAM_INT);
+			$statement -> bindParam(":activo", $datosModel["activo"], PDO::PARAM_STR);
+		} else {
+			$statement = Conexion::conectar() -> prepare("UPDATE $tabla SET nombres = :nombres, apellidos = :apellidos, email = :email, foto = :foto, rol = :rol, activo = :activo WHERE idUsuario = :idUsuario");
+
+			$statement -> bindParam(":idUsuario", $datosModel["idUsuario"], PDO::PARAM_STR);
+			$statement -> bindParam(":nombres", $datosModel["nombres"], PDO::PARAM_STR);
+			$statement -> bindParam(":apellidos", $datosModel["apellidos"], PDO::PARAM_STR);
+			$statement -> bindParam(":email", $datosModel["correo"], PDO::PARAM_STR);
+			$statement -> bindParam(":foto", $datosModel["foto"], PDO::PARAM_STR);
+			$statement -> bindParam(":rol", $datosModel["rol"], PDO::PARAM_INT);
+			$statement -> bindParam(":activo", $datosModel["activo"], PDO::PARAM_STR);
+		}
+
+		if ($statement -> execute()) {
+			return "success";
+		} else {
+			return "error";
+		}
+		
+		$statement -> close();
+	}
+
+	public function mdlBorrarUsuario($idUsuario, $tabla) {
+
+		$statement = Conexion::conectar() -> prepare("DELETE FROM $tabla WHERE idUsuario = :idUsuario");
+
+		$statement -> bindParam(":idUsuario", $idUsuario, PDO::PARAM_INT);
+
+		if ($statement -> execute()) {
+			return "success";
+		} else {
+			return "error";
+		}
+
+	}
+
 
 	public function registrarClienteModel($datosmodel,$tabla){
 		$stmt = Conexion::conectar()->prepare("INSERT INTO clientes (`nombre`, `apellidos`, `email`) VALUES (:nombre, :apellidos, :email)");

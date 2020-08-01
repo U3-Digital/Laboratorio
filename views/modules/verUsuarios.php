@@ -28,6 +28,10 @@
                 </thead>
                  <tbody>
                     <?php
+                        
+                        $controller = new Controller();
+                        $controller -> ctlListaUsuarios();
+                        $controller -> ctlBorrarUsuario();
                         // $registro = new Controller();
                         // $registro -> listaClientes();
                         //$registro -> borrarCliente();
