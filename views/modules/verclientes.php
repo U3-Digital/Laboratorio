@@ -1,17 +1,3 @@
-<?php
-
-session_start();
-
-if(!$_SESSION["validar"]){
-
-  header("location:index.php");
-
-  exit();
-
-}
-require_once "../../controllers/controller.php";
-require_once "../../models/crud.php";
-?>
 
 
 <div class="content-wrapper">

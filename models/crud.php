@@ -4,6 +4,18 @@ require_once "conexion.php";
 
 class Datos extends Conexion{
 
+		public static function mdlBuscaCliente($tabla, $usuario){
+
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE idCliente = :id");
+
+		$stmt->bindParam(":id", $usuario, PDO::PARAM_INT);
+
+		$stmt -> execute();
+		return $stmt -> fetch();
+
+		$stmt->close();
+	}
+
 	public static function mdlborrarCliente($datosModel,$tabla){
 		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE idCliente = :id");
 		$stmt -> bindPARAM(":id",$datosModel, PDO::PARAM_INT);

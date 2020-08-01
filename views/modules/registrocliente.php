@@ -1,17 +1,4 @@
-<?php
 
-session_start();
-
-if(!$_SESSION["validar"]){
-
-  header("location:index.php");
-
-  exit();
-
-}
-require_once "../../controllers/controller.php";
-require_once "../../models/crud.php";
-?>
 
 
 <div class="content-wrapper">
@@ -42,7 +29,7 @@ require_once "../../models/crud.php";
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="cajaApellidos">Apellidos:</label>
-                                                <input class="form-control" type="text" required placeholder="Apellidos" id="cajaApellidos" name="cajaApellidos">
+                                                <input class="form-control" type="text"  placeholder="Apellidos" id="cajaApellidos" name="cajaApellidos">
                                             </div>
                                         </div>
                                     </div>
