@@ -47,6 +47,12 @@ require "../../models/crud.php";
 
 <?php 
 	
+	include "estudios/amibaEnFresco.php";
+	include "estudios/amilasa.php";
+	include "estudios/amonioPlasmatico.php";
+	include "estudios/antidoping.php";
+	include "estudios/antiestreptolisina.php";
+
 	$modulos = new Enlaces();
 	$modulos -> enlacesController();
 include "menu.php";

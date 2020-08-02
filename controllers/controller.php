@@ -1,13 +1,7 @@
 <?php
 
-class Controller{
-    public function ctlBuscaEstudios(){
-        $respuesta = Datos::mdlEstudios("catanalisis");
+class Controller {
 
-      foreach ($respuesta as $row => $item){
-          echo  '<option value="'.$item["nombre"].'">'.$item["nombre"].'</option>';
-      }    
-    }
     public function ctlBuscaClientes(){
       $respuesta = Datos::mdlClientes("clientes");
 
@@ -17,7 +11,6 @@ class Controller{
     }
 
     public function actualizaCliente($id){
-
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -493,6 +486,22 @@ class Controller{
             }
         }
     }
+
+    public function ctlBuscaEstudios(){
+        $respuesta = Datos::mdlEstudios("catanalisis");
+
+        foreach ($respuesta as $row => $item){
+            echo  '<option value="'.$item["nombre"].'">'.$item["nombre"].'</option>';
+        }    
+    }
+
+    public function ctlBuscarEstudio($nombreAnalisis) {
+        $respuesta = Datos::mdlBuscarEstudio($nombreAnalisis, "catanalisis");
+
+        return $respuesta;
+    }
+
+    // public function 
 
 }//Clase principal
 

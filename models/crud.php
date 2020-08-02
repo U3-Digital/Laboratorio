@@ -4,14 +4,7 @@ require_once "conexion.php";
 
 class Datos extends Conexion{
 
-		public function mdlEstudios($tabla){
 
-			$stmt = Conexion::conectar()->prepare("SELECT nombre FROM $tabla ");
-			$stmt->execute();
-			return $stmt->fetchAll();
-			$stmt->close();
-
-		}
 
 		public function mdlClientes($tabla){
 
@@ -256,6 +249,28 @@ class Datos extends Conexion{
 		} else {
 			return "error";
 		}
+	}
+
+	public function mdlEstudios($tabla){
+
+		$stmt = Conexion::conectar()->prepare("SELECT nombre FROM $tabla");
+		$stmt->execute();
+		return $stmt->fetchAll();
+		$stmt->close();
+
+	}
+
+	public function mdlBuscarEstudio($nombreAnalisis, $tabla) {
+
+		$statement = Conexion::conectar() -> prepare("SELECT * FROM $tabla WHERE nombre = :nombreAnalisis");
+
+		$statement -> bindParam(":nombreAnalisis", $nombreAnalisis, PDO::PARAM_STR);
+
+		$statement -> execute();
+
+		return $statement -> fetch();
+
+		$statement -> close();
 	}
 
 } // conexion
