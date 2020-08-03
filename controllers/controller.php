@@ -3,13 +3,13 @@
 class Controller {
 
 
-    public function ctlBuscaCliente($id){
+    public static function ctlBuscaCliente($id){
       $respuesta = Datos::mdlCliente($id,"clientes");
 
       return $respuesta;
     }
 
-    public function ctlBuscaClientes(){
+    public static function ctlBuscaClientes(){
       $respuesta = Datos::mdlClientes("clientes");
 
       foreach ($respuesta as $row => $item){
@@ -17,11 +17,11 @@ class Controller {
       }
     }
 
-    public function actualizaCliente($id){
+    public static function actualizaCliente($id){
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-            $datosController = array( 
+            $datosController = array(
                 "id"=>$id,
                 "nombre" =>$_POST["cajaNombres"],
                 "apellidos" =>$_POST["cajaApellidos"],
@@ -60,7 +60,7 @@ class Controller {
     }
 
 
-    public function borrarCliente(){
+    public static function borrarCliente(){
         if (isset($_GET['idBorrar'])){
             //echo'<script type="text/javascript">alert("'.$_GET['idBorrar'].'");</script>';
             $datosController = $_GET['idBorrar'];
@@ -82,7 +82,7 @@ class Controller {
             }
         }
     }
-    public function listaClientes(){
+    public static function listaClientes(){
       $respuesta = Datos::mdlListaClientes("clientes");
           $cont =0;
 
@@ -99,7 +99,7 @@ class Controller {
           }
     }
 
-    public function registrarClienteController(){
+    public static function registrarClienteController(){
       if(isset($_POST["cajaNombres"])){
 
         $datosController= array(
@@ -133,10 +133,10 @@ class Controller {
                       });</script> ';
         }
       }
-      
+
     }
 
-    public function ctlRegistrarUsuario() {
+    public static function ctlRegistrarUsuario() {
         if (isset($_POST["submit"])) {
             $datosController = array(
                 "nombres" => $_POST["cajaNombres"],
@@ -177,7 +177,7 @@ class Controller {
 
     }
 
-    public function ctlListaUsuarios() {
+    public static function ctlListaUsuarios() {
         $respuesta = Datos::mdlListaUsuarios("usuarios");
         $contador = 0;
 
@@ -207,13 +207,13 @@ class Controller {
                     <td>' . $rol . '</td>
                     <td>' . $activo . '</td>
                     <td>
-                      
+
                           <a href="inicio.php?action=updtUsuario&idUsuario=' . $item["idUsuario"] . '">
                               <button class="btn btn-warning">
                               <i class="fas fa-pencil-alt" style="color: black;"></i>
                               </button>
                           </a>
-                      
+
                     </td>
                     <td>
                         <a href="inicio.php?action=verUsuarios&idBorrar=' . $item["idUsuario"] . '">
@@ -228,9 +228,9 @@ class Controller {
 
     }
 
-    public function ctlActualizarUsuario($idUsuario) {
+    public static function ctlActualizarUsuario($idUsuario) {
         if (isset($_POST["submit"])) {
-           
+
             if ($_POST["cajaPassword"] != "") {
                 $datosController = array(
                   "idUsuario" => $idUsuario,
@@ -283,7 +283,7 @@ class Controller {
         }
     }
 
-    public function ctlBorrarUsuario () {
+    public static function ctlBorrarUsuario () {
         if (isset($_GET["idBorrar"])) {
             $idUsuario = $_GET["idBorrar"];
 
@@ -317,7 +317,7 @@ class Controller {
     }
 
 
-    public function ctlRegistraCliente() {
+    public static function ctlRegistraCliente() {
         if(isset($_POST["cajaNombres"])){
 
             $datosController= array(
@@ -354,7 +354,7 @@ class Controller {
 
     }
 
-    public function ctlRegistrarAnalisis() {
+    public static function ctlRegistrarAnalisis() {
         if (isset($_POST["submit"])) {
 
             $datosController = array(
@@ -391,7 +391,7 @@ class Controller {
         }
     }
 
-    public function ctlListaAnalisis() {
+    public static function ctlListaAnalisis() {
         $respuesta = Datos::mdlListaAnalisis("catanalisis");
 
         $contador = 0;
@@ -423,7 +423,7 @@ class Controller {
 
     }
 
-    public function ctlActualizarAnalisis($idAnalisis) {
+    public static function ctlActualizarAnalisis($idAnalisis) {
         if (isset($_POST["submit"])) {
 
             $datosController = array(
@@ -462,7 +462,7 @@ class Controller {
         }
     }
 
-    public function ctlBorrarAnalisis() {
+    public static function ctlBorrarAnalisis() {
         if (isset($_GET["idBorrar"])) {
             $idAnalisis = $_GET["idBorrar"];
 
@@ -494,21 +494,21 @@ class Controller {
         }
     }
 
-    public function ctlBuscaEstudios(){
+    public static function ctlBuscaEstudios(){
         $respuesta = Datos::mdlEstudios("catanalisis");
 
         foreach ($respuesta as $row => $item){
             echo  '<option value="'.$item["nombre"].'">'.$item["nombre"].'</option>';
-        }    
+        }
     }
 
-    public function ctlBuscarEstudio($nombreAnalisis) {
+    public static function ctlBuscarEstudio($nombreAnalisis) {
         $respuesta = Datos::mdlBuscarEstudio($nombreAnalisis, "catanalisis");
 
         return $respuesta;
     }
 
-    public function ctlBuscarEstudios() {
+    public static function ctlBuscarEstudios() {
         $respuesta = Datos::mdlBuscarEstudos("estudios");
 
         foreach ($respuesta as $row => $item) {
@@ -534,11 +534,11 @@ class Controller {
                             </button>
                         </a>
                     </td>
-                  </tr>'
+                  </tr>';
         }
     }
 
-    // public function 
+    // public static function
 
 }//Clase principal
 

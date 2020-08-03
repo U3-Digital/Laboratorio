@@ -3,7 +3,7 @@
 require_once "conexion.php";
 
 class Datos extends Conexion{
-		public function mdlCliente($id,$tabla){
+		public static function mdlCliente($id,$tabla){
 			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE idCliente = :id ");
 			$statement -> bindParam(":id", $id, PDO::PARAM_INT);
 			$stmt->execute();
@@ -12,7 +12,7 @@ class Datos extends Conexion{
 		}
 
 
-		public function mdlClientes($tabla){
+		public static function mdlClientes($tabla){
 
 			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ");
 			$stmt->execute();
@@ -65,7 +65,7 @@ class Datos extends Conexion{
 
 	#VERIFICA SI EL USUARIO EXISTE PARA INGRESAR AL SISTEMA
 	#--------------------------------------------------------
-	public function ingresoModel($datosModel, $tabla){
+	public static function ingresoModel($datosModel, $tabla){
 
 		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE email = :usuario");
 
@@ -79,7 +79,7 @@ class Datos extends Conexion{
 
 	}
 
-	public function mdlRegistrarUsuario($datosModel, $tabla) {
+	public static function mdlRegistrarUsuario($datosModel, $tabla) {
 		$statement = Conexion::conectar()->prepare("INSERT INTO $tabla VALUES (null, :nombres, :apellidos, :email, :password, :foto, :rol, :activo);");
 
 		$statement -> bindParam(":nombres", $datosModel["nombres"], PDO::PARAM_STR);
@@ -101,7 +101,7 @@ class Datos extends Conexion{
 		$statement -> close();
 	}
 
-	public function mdlListaUsuarios($tabla) {
+	public static function mdlListaUsuarios($tabla) {
 		$statement = Conexion::conectar()->prepare("SELECT * FROM $tabla");
 
 		$statement -> execute();
@@ -111,9 +111,9 @@ class Datos extends Conexion{
 		$statement -> close();
 	}
 
-	public function mdlBuscaUsuario($tabla, $idUsuario) {
+	public static function mdlBuscaUsuario($tabla, $idUsuario) {
 		$statement = Conexion::conectar() -> prepare("SELECT * FROM $tabla WHERE idUsuario = :idUsuario");
-		
+
 		$statement -> bindParam(":idUsuario", $idUsuario, PDO::PARAM_STR);
 
 		$statement -> execute();
@@ -123,7 +123,7 @@ class Datos extends Conexion{
 		$statement -> close();
 	}
 
-	public function mdlActualizarUsuario($datosModel, $tabla) {
+	public static function mdlActualizarUsuario($datosModel, $tabla) {
 
 		if ($datosModel["password"]) {
 			$statement = Conexion::conectar() -> prepare("UPDATE $tabla SET nombres = :nombres, apellidos = :apellidos, email = :email, password = :password, foto = :foto, rol = :rol, activo = :activo WHERE idUsuario = :idUsuario");
@@ -153,11 +153,11 @@ class Datos extends Conexion{
 		} else {
 			return "error";
 		}
-		
+
 		$statement -> close();
 	}
 
-	public function mdlBorrarUsuario($idUsuario, $tabla) {
+	public static function mdlBorrarUsuario($idUsuario, $tabla) {
 
 		$statement = Conexion::conectar() -> prepare("DELETE FROM $tabla WHERE idUsuario = :idUsuario");
 
@@ -171,9 +171,9 @@ class Datos extends Conexion{
 
 	}
 
-	public function registrarClienteModel($datosmodel,$tabla){
+	public static function registrarClienteModel($datosmodel,$tabla){
 		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`nombre`, `apellidos`, `email`) VALUES (:nombre, :apellidos, :email)");
-		
+
 
 		$stmt -> bindParam(":nombre", $datosmodel["nombre"], PDO::PARAM_STR);
 		$stmt -> bindParam(":apellidos", $datosmodel["apellidos"], PDO::PARAM_STR);
@@ -190,14 +190,14 @@ class Datos extends Conexion{
 		$stmt->close();
 	}
 
-	public function mdlListaClientes($tabla){
+	public static function mdlListaClientes($tabla){
 		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
 		$stmt->execute();
 		return $stmt->fetchAll();
 		$stmt->close();
 	}
 
-	public function mdlRegistrarAnalisis($datosModel, $tabla) {
+	public static function mdlRegistrarAnalisis($datosModel, $tabla) {
 
 		$statement = Conexion::conectar() -> prepare("INSERT INTO $tabla VALUES (null, :nombre, :costo)");
 
@@ -211,7 +211,7 @@ class Datos extends Conexion{
 		}
 	}
 
-	public function mdlListaAnalisis($tabla) {
+	public static function mdlListaAnalisis($tabla) {
 		$statement = Conexion::conectar() -> prepare("SELECT * FROM $tabla");
 
 		$statement -> execute();
@@ -219,7 +219,7 @@ class Datos extends Conexion{
 		return $statement -> fetchAll();
 	}
 
-	public function mdlBuscaAnalisis($idAnalisis, $tabla) {
+	public static function mdlBuscaAnalisis($idAnalisis, $tabla) {
 		$statement = Conexion::conectar() -> prepare("SELECT * FROM $tabla WHERE idAnalisis = :idAnalisis");
 
 		$statement -> bindParam(":idAnalisis", $idAnalisis, PDO::PARAM_INT);
@@ -231,7 +231,7 @@ class Datos extends Conexion{
 		$statement -> close();
 	}
 
-	public function mdlActualizarAnalisis($datosModel, $tabla) {
+	public static function mdlActualizarAnalisis($datosModel, $tabla) {
 		$statement = Conexion::conectar() -> prepare("UPDATE $tabla SET nombre = :nombre, costo = :costo WHERE idAnalisis = :idAnalisis");
 
 		$statement -> bindParam(":idAnalisis", $datosModel["idAnalisis"], PDO::PARAM_INT);
@@ -245,7 +245,7 @@ class Datos extends Conexion{
 		}
 	}
 
-	public function mdlBorrarAnalisis($idAnalisis, $tabla) {
+	public static function mdlBorrarAnalisis($idAnalisis, $tabla) {
 		$statement = Conexion::conectar() -> prepare("DELETE FROM $tabla WHERE idAnalisis = :idAnalisis");
 
 		$statement -> bindParam(":idAnalisis", $idAnalisis, PDO::PARAM_INT);
@@ -257,7 +257,7 @@ class Datos extends Conexion{
 		}
 	}
 
-	public function mdlEstudios($tabla){
+	public static function mdlEstudios($tabla){
 
 		$stmt = Conexion::conectar()->prepare("SELECT nombre FROM $tabla");
 		$stmt->execute();
@@ -266,7 +266,7 @@ class Datos extends Conexion{
 
 	}
 
-	public function mdlBuscarEstudio($nombreAnalisis, $tabla) {
+	public static function mdlBuscarEstudio($nombreAnalisis, $tabla) {
 
 		$statement = Conexion::conectar() -> prepare("SELECT * FROM $tabla WHERE nombre = :nombreAnalisis");
 
@@ -279,13 +279,13 @@ class Datos extends Conexion{
 		$statement -> close();
 	}
 
-	public function mldBuscarEstudios($tabla) {
+	public static function mldBuscarEstudios($tabla) {
 		$statement = Conexion::conectar() -> prepare("SELECT * FROM $tabla");
 
 		$statement -> execute();
 
 		return $statement -> fetchAll();
-		
+
 		$statement -> close();
 	}
 
