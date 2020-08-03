@@ -50,9 +50,8 @@
 					resultado: cajaResultadoAmibaEnFresco.value,
 					observaciones: cajaObservacionesAmibaEnFresco.value
 				}],
-				costo: <?php echo $respuesta["costo"]; ?>
+				costo: 
 			}
-
 			agregarEstudio(estudio);
 			cerrarModalAmibaEnFresco();
 

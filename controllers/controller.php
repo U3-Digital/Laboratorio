@@ -2,11 +2,18 @@
 
 class Controller {
 
+
+    public function ctlBuscaCliente($id){
+      $respuesta = Datos::mdlCliente($id,"clientes");
+
+      return $respuesta;
+    }
+
     public function ctlBuscaClientes(){
       $respuesta = Datos::mdlClientes("clientes");
 
       foreach ($respuesta as $row => $item){
-          echo  '<option value="'.$item["nombre"].' '.$item["apellidos"].'">'.$item["nombre"].' '.$item["apellidos"].'</option>';
+          echo  '<option value="'.$item["idCliente"].'">'.$item["nombre"].' '.$item["apellidos"].'</option>';
       }
     }
 

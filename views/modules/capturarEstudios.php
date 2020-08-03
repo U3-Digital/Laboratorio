@@ -21,8 +21,8 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="selectCliente">Cliente:</label>
-                                            <select class="form-control"  name="selectCliente" id="selectCliente">
-                                                <option>Seleccione</option>
+                                            <select class="form-control"  name="selectCliente" onchange="cambioCliente()" id="selectCliente">
+                                                <option value="">Seleccione</option>
                                                 <?php
                                                     $clientes = new Controller();
                                                     $clientes -> ctlBuscaClientes();
@@ -49,7 +49,15 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="cajaEmail">Correo electrónico</label>
-                                            <input class="form-control" type="text" name="cajaEmail">
+                                            <input class="form-control" type="text" id="cajaEmail" name="cajaEmail">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="cajaEmail">Doctor</label>
+                                            <input class="form-control" type="text" id="cajaDorctor" name="cajaDoctor">
                                         </div>
                                     </div>
                                 </div>
@@ -117,10 +125,41 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    
+                                        <button type="button" class="btn btn-secondary btn-lg  btn-block mb-2"> 
+                                        <i class="fa fa-print" aria-hidden="true"></i>
+                                        Imprimir Estudio
+                                        </button>    
+                                    
+
+                                    <button type="button" class="btn btn-secondary btn-lg  btn-block ">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    Enviar y terminar
+                                </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 		</div>
 	</div>
 </div>
+
+<?php
+    function buscarcliente($variable){
+        $clienteconsulta = new Controller();
+        $clienteconsulta -> ctlBuscaCliente(1);
+        print_r($clienteconsulta);
+        echo $clienteconsulta;
+        return $clienteconsulta;
+    }
+  ?>
 
 <script type="text/javascript">
 
@@ -129,6 +168,27 @@
     let lista = document.getElementById('lista');
 
     let estudios = [];
+
+    const cajaNombreCliente = document.getElementById('cajaNombres');
+    const cajaApellidosCliente = document.getElementById('cajaApellidos');
+    const cajaEmailCliente = document.getElementById('cajaEmail');
+    const selectCliente = document.getElementById('selectCliente');
+
+
+    function cambioCliente(){
+        if(selectCliente.value == ""){
+            cajaNombreCliente.value = "";
+            cajaApellidosCliente.value = "";
+            cajaEmailCliente.value = ""; 
+        }else{
+        
+            cajaNombreCliente.value = "<?php echo"hey"?>";
+            cajaApellidosCliente.value = "apellido x";
+            cajaEmailCliente.value = selectCliente.value; 
+        }
+
+        
+    }
 
     function abrirEstudio(estudio) {
         $(`#${estudio}`).modal('toggle');

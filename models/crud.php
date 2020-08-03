@@ -3,12 +3,18 @@
 require_once "conexion.php";
 
 class Datos extends Conexion{
-
+		public function mdlCliente($id,$tabla){
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE idCliente = :id ");
+			$statement -> bindParam(":id", $id, PDO::PARAM_INT);
+			$stmt->execute();
+			return $stmt->fetchAll();
+			$stmt->close();
+		}
 
 
 		public function mdlClientes($tabla){
 
-			$stmt = Conexion::conectar()->prepare("SELECT nombre, apellidos FROM $tabla ");
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ");
 			$stmt->execute();
 			return $stmt->fetchAll();
 			$stmt->close();
