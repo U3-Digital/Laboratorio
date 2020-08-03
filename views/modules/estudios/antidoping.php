@@ -96,31 +96,31 @@ $controller = new Controller();
 				nombre: 'Antidoping',
 				resultados: 
 					[{
-						resultadoAnfetaminas: cajaResultadoAnfetaminas.value,
-						limites: 'Negativo'
+						resultado: cajaResultadoAnfetaminas.value,
+						limites: ['Negativo']
 					},
 					{
-						resultadoBenzodiacepinas: cajaResultadoBenzodiacepinas.value,
-						limites: 'Negativo'
+						resultado: cajaResultadoBenzodiacepinas.value,
+						limites: ['Negativo']
 					},
 					{
-						resultadoCocaina: cajaResultadoCocaina.value,
-						limites: 'Negativo'
+						resultado: cajaResultadoCocaina.value,
+						limites: ['Negativo']
 					},
 					{
-						resultadoMorfina: cajaResultadoMorfina.value,
-						limites: 'Negativo'
+						resultado: cajaResultadoMorfina.value,
+						limites: ['Negativo']
 					},
 					{
-						resultadoMarihuana: cajaResultadoMarihuana.value,
-						limites: 'Negativo'
+						resultado: cajaResultadoMarihuana.value,
+						limites: ['Negativo']
 					}],
 				costo: <?php echo $respuesta["costo"]; ?>
 			}
 
 			agregarEstudio(estudio);
 			cerrarModalAntidoping();
-			
+			limpiarAntidoping();
 		} else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
@@ -132,6 +132,14 @@ $controller = new Controller();
 
 	function cerrarModalAntidoping() {
 		$(`#antidoping`).modal('toggle');
+	}
+
+	function limpiarAntidoping() {
+		cajaResultadoAnfetaminas.value = "Negativo";
+		cajaResultadoBenzodiacepinas.value = "Negativo";
+		cajaResultadoCocaina.value = "Negativo";
+		cajaResultadoMorfina.value = "Negativo";
+		cajaResultadoMarihuana.value = "Negativo";
 	}
 
 </script>

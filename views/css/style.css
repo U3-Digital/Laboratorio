@@ -53,5 +53,11 @@ select {
 
 .lista {
 	overflow: auto;
-	max-height: 21.2em !important;
+	max-height: 16em !important;
+}
+
+.bre {
+	display: block;
+	margin: 2.5em;
+	content: " ";
 }

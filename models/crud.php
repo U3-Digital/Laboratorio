@@ -279,4 +279,14 @@ class Datos extends Conexion{
 		$statement -> close();
 	}
 
+	public function mldBuscarEstudios($tabla) {
+		$statement = Conexion::conectar() -> prepare("SELECT * FROM $tabla");
+
+		$statement -> execute();
+
+		return $statement -> fetchAll();
+		
+		$statement -> close();
+	}
+
 } // conexion

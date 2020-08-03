@@ -47,13 +47,14 @@
 				resultados: 
 					[{
 						resultado: cajaResultadoAntiestreptolisina.value,
-						limites: 'Negativo'
+						limites: ['Negativo']
 					}],
 				costo: <?php echo $respuesta["costo"]; ?>
 			}
 
 			agregarEstudio(estudio);
 			cerrarModalAntiestreptolisina();
+			limpiarAntiestreptolisina();
 			
 		} else {
 			Swal.fire({
@@ -66,6 +67,10 @@
 
 	function cerrarModalAntiestreptolisina() {
 		$(`#antiestreptolisina`).modal('toggle');
+	}
+
+	function limpiarAntiestreptolisina() {
+		cajaResultadoAntiestreptolisina.value = "Negativo";
 	}
 
 </script>

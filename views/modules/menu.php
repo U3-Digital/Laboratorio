@@ -16,7 +16,7 @@
               <a href="inicio.php?action=capturarEstudios">Capturar estudios</a>
             </li>
             <li>
-              <a href="navbar.html">Ver estudios</a>
+              <a href="inicio.php?action=verEstudios">Ver estudios</a>
             </li>
             <li>
               <a href="inicio.php?action=verAnalisis">Ver catálogo de estudios</a>

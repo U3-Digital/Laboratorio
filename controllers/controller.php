@@ -508,6 +508,36 @@ class Controller {
         return $respuesta;
     }
 
+    public function ctlBuscarEstudios() {
+        $respuesta = Datos::mdlBuscarEstudos("estudios");
+
+        foreach ($respuesta as $row => $item) {
+            echo '<tr>
+                    <td>' . $item["idEstudio"] . '</td>
+                    <td>' . $item["cliente"] . '</td>
+                    <td>' . $item["medico"] . '</td>
+                    <td>' . $item["fecha"] . '</td>
+                    <td>' . $item["responsable"] . '</td>
+                    <td>' . $item["estudios"] . '</td>
+                    <td>' . $item["costo"] . '</td>
+                    <td>
+                        <a href="inicio.php?action=updtAnalisis&idAnalisis='. $item["idAnalisis"] . '">
+                            <button class="btn btn-warning">
+                                <i class="fas fa-pencil-alt" style="color: black;"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="inicio.php?action=verAnalisis&idBorrar='. $item["idAnalisis"] . '">
+                            <button class="btn btn-danger">
+                                <i class="fas fa-trash" style="color: white;"></i>
+                            </button>
+                        </a>
+                    </td>
+                  </tr>'
+        }
+    }
+
     // public function 
 
 }//Clase principal

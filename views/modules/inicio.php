@@ -52,6 +52,9 @@ require "../../models/crud.php";
 	include "estudios/amonioPlasmatico.php";
 	include "estudios/antidoping.php";
 	include "estudios/antiestreptolisina.php";
+	include "estudios/antigenoCarcinoembrionario.php";
+	include "estudios/antigenoProstatico.php";
+	include "estudios/biometriaHematica.php";
 
 	$modulos = new Enlaces();
 	$modulos -> enlacesController();

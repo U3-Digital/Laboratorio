@@ -48,12 +48,14 @@
 				resultados:
 				[{
 					resultado: cajaResultadoAmibaEnFresco.value,
-					observaciones: cajaObservacionesAmibaEnFresco.value
+					observaciones: cajaObservacionesAmibaEnFresco.value,
+					limites: []
 				}],
-				costo: 
+				costo: <?php echo $respuesta["costo"]; ?>
 			}
 			agregarEstudio(estudio);
 			cerrarModalAmibaEnFresco();
+			limpiarAmibaEnFresco();
 
 		} else {
 			Swal.fire({
@@ -66,6 +68,11 @@
 
 	function cerrarModalAmibaEnFresco() {
 		$(`#amibaenfresco`).modal('toggle');
+	}
+
+	function limpiarAmibaEnFresco() {
+		cajaResultadoAmibaEnFresco.value = "Negativo";
+		cajaObservacionesAmibaEnFresco.value = "";
 	}
 
 </script>

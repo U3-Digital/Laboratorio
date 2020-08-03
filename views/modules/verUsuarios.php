@@ -1,5 +1,4 @@
 <?php 
-// phpinfo();
 ?>
 
 <div class="content-wrapper">

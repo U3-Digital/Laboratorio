@@ -45,14 +45,14 @@ $controller = new Controller();
 				resultados: 
 					[{
 					resultado: cajaResultadoAmonioPlasmatico.value,
-					limites: '9-33 UMOL/L'
+					limites: ['9-33 UMOL/L']
 					}],
 					costo: <?php echo $respuesta["costo"]; ?>
 			}
 
 			agregarEstudio(estudio);
 			cerrarModalAmonioPlasmatico();
-			
+			limpiarAmonioPlasmatico();			
 		} else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
@@ -64,6 +64,10 @@ $controller = new Controller();
 
 	function cerrarModalAmonioPlasmatico() {
 		$(`#amonioplasmatico`).modal('toggle');
+	}
+
+	function limpiarAmonioPlasmatico() {
+		cajaResultadoAmonioPlasmatico.value = "";
 	}
 
 </script>

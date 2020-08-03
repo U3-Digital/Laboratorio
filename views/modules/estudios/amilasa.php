@@ -46,13 +46,14 @@
 				[{
 					resultado: cajaResultadoAmilasa.value,
 					observaciones: '',
-					limites: '87-123'
+					limites: ['87-123']
 				}],
 				costo: <?php echo $respuesta["costo"]; ?>
 			}
 
 			agregarEstudio(estudio);
 			cerrarModalAmilasa();
+			limpiarAmilasa();
 			
 		} else {
 			Swal.fire({
@@ -65,6 +66,10 @@
 
 	function cerrarModalAmilasa() {
 		$(`#amilasa`).modal('toggle');
+	}
+
+	function limpiarAmilasa() {
+		cajaResultadoAmilasa.value = "";
 	}
 
 </script>
