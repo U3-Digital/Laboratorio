@@ -48,10 +48,10 @@
 				resultados:
 				[{
 					resultado: cajaResultadoAmibaEnFresco.value,
-					observaciones: cajaObservacionesAmibaEnFresco.value,
 					limites: []
 				}],
-				costo: <?php echo $respuesta["costo"]; ?>
+				observaciones: cajaObservacionesAmibaEnFresco.value,
+				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?> 
 			}
 			agregarEstudio(estudio);
 			cerrarModalAmibaEnFresco();

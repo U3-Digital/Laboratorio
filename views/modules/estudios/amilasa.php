@@ -48,7 +48,7 @@
 					observaciones: '',
 					limites: ['87-123']
 				}],
-				costo: <?php echo $respuesta["costo"]; ?>
+				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?>
 			}
 
 			agregarEstudio(estudio);

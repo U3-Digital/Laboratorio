@@ -236,7 +236,8 @@ $controller = new Controller();
 						resultado: cajaResultadoPlaquetas.value,
 						limites: ['130 - 400']
 					}],
-				costo: <?php echo $respuesta["costo"]; ?>
+				observaciones: '', //TODO Estandarizar las observaciones
+				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?>
 			}
 
 			agregarEstudio(estudio);

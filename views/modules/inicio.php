@@ -55,6 +55,9 @@ require "../../models/crud.php";
 	include "estudios/antigenoCarcinoembrionario.php";
 	include "estudios/antigenoProstatico.php";
 	include "estudios/biometriaHematica.php";
+	include "estudios/coprologicoCoproparasitologico.php";
+	include "estudios/coproparasitoscopico3.php";
+	include "estudios/coproparasitoscopico.php";
 
 	$modulos = new Enlaces();
 	$modulos -> enlacesController();

@@ -47,7 +47,7 @@ $controller = new Controller();
 					resultado: cajaResultadoAmonioPlasmatico.value,
 					limites: ['9-33 UMOL/L']
 					}],
-					costo: <?php echo $respuesta["costo"]; ?>
+					costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?>
 			}
 
 			agregarEstudio(estudio);
