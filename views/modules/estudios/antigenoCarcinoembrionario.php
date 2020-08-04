@@ -89,7 +89,7 @@
 					observaciones: '',
 					limites: ['0.0 - 5.0 ng/ml']
 				}],
-				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?>
+				costo: <?php echo $respuesta["costo"]; ?>
 			}
 
 			agregarEstudio(estudio);

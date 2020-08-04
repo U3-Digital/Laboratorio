@@ -49,7 +49,7 @@
 						resultado: cajaResultadoAntiestreptolisina.value,
 						limites: ['Negativo']
 					}],
-				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?>
+				costo: <?php echo $respuesta["costo"]; ?>
 			}
 
 			agregarEstudio(estudio);
