@@ -38,6 +38,7 @@
 				nombre: 'Cristalografía',
 				resultados:
 				[{
+					nombre: 'Cristalografía', 
 					resultado: cajaResultadoCristalografia.value,
 					limites: []
 				}],

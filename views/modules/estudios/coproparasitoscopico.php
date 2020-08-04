@@ -51,6 +51,7 @@
 				nombre: 'Coproparasitoscópico',
 				resultados:
 				[{
+					nombre: 'Coproparasitoscópico',
 					resultado: cajaResultadoCoproparasitoscopicoCopro.value,
 					limites: []
 				}],

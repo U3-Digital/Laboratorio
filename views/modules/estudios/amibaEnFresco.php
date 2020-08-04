@@ -47,6 +47,7 @@
 				nombre: 'Amiba en fresco',
 				resultados:
 				[{
+					nombre: 'Amiba en fresco',
 					resultado: cajaResultadoAmibaEnFresco.value,
 					limites: []
 				}],

@@ -261,86 +261,107 @@
 				nombre: 'Coprologico coproparasitológico',
 				resultados: 
 					[{
+						nombre: 'Color',
 						resultado: cajaResultadoColor.value,
 						limites: []
 					},
 					{
+						nombre: 'Consistencia',
 						resultado: cajaResultadoConsistencia.value,
 						limites: []
 					},
 					{
+						nombre: 'Restos alimenticios',
 						resultado: cajaResultadoRestosAlimenticios.value,
 						limites: []
 					},
 					{
+						nombre: 'Moco',
 						resultado: cajaResultadoMoco.value,
 						limites: []
 					},
 					{
+						nombre: 'Sangre aparente',
 						resultado: cajaResultadoSangreAparente.value,
 						limites: []
 					},
 					{
+						nombre: 'Almidón',
 						resultado: cajaResultadoAlmidon.value,
 						limites: []
 					},
 					{
+						nombre: 'PH',
 						resultado: cajaResultadoPH.value,
 						limites: []
 					},
 					{
+						nombre: 'Hemoglobina',
 						resultado: cajaResultadoHemoglobinaCopro.value,
 						limites: []
 					},
 					{
+						nombre: 'Sangre oculta',
 						resultado: cajaResultadoSangreOculta.value,
 						limites: []
 					},
 					{
+						nombre: 'Azúcares reductores',
 						resultado: cajaResultadoAzucaresReductores.value,
 						limites: []
 					},
 					{
+						nombre: 'Fibras musculares',
 						resultado: cajaResultadoFibrasMusculares.value,
 						limites: []
 					},
 					{
+						nombre: 'Fibras vegetales',
 						resultado: cajaResultadoFibrasVegetales.value,
 						limites: []
 					},
 					{
+						nombre: 'Células epiteliales',
 						resultado: cajaResultadoCelulasEpiteliales.value,
 						limites: []
 					},
 					{
+						nombre: 'Leucocitos',
 						resultado: cajaResultadoLeucocitosCopro.value,
 						limites: []
 					},
 					{
+						nombre: 'Eritrocitos',
 						resultado: cajaResultadoEritrocitos.value,
 						limites: []
 					},
 					{
+						nombre: 'Cristales',
 						resultado: cajaResultadoCristales.value,
 						limites: []
 					},
 					{
+						nombre: 'Levaduras',
 						resultado: cajaResultadoLevaduras.value,
 						limites: []
 					},
 					{
+						nombre: 'Parásitos',
 						resultado: cajaResultadoParasitos.value,
 						limites: []
 					},
 					{
+						nombre: 'Cuerpos grasos',
 						resultado: cajaResultadoCuerposGrasos.value,
 						limites: []
 					},
 					{
+						nombre: 'Bacterias',
 						resultado: cajaResultadoBacterias.value,
 						limites: []
 					},
 					{
+						nombre: 'Coproparasitoscópico',
 						resultado: cajaResultadoCoproparasitoscopico.value,
 						limites: []
 					}],

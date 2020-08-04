@@ -57,8 +57,7 @@
 
 <script>
 
-	// const cajaResultadoAmibaEnFresco = document.getElementById('cajaResultadoAmibaEnFresco');
-	// const cajaObservacionesAmibaEnFresco = document.getElementById('cajaObservacionesAmibaEnFresco');
+
 	
 	function validarCoproparasitoscopico3() {
 		if (cajaResultadoCoproparasitoscopico1.value && cajaResultadoCoproparasitoscopico2.value && cajaResultadoCoproparasitoscopico3.value) {
@@ -67,14 +66,17 @@
 				nombre: 'Coproparasitoscópico 3',
 				resultados:
 				[{
+					nombre: 'Resultado 1',
 					resultado: cajaResultadoCoproparasitoscopico1.value,
 					limites: []
 				},
 				{
+					nombre: 'Resultado 2',
 					resultado: cajaResultadoCoproparasitoscopico2.value,
 					limites: []
 				},
 				{
+					nombre: 'Resultado 3',
 					resultado: cajaResultadoCoproparasitoscopico3.value,
 					limites: []
 				}],

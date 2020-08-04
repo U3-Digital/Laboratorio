@@ -61,7 +61,7 @@
 		        		<div class="row">
 		        			<div class="col-md-8">
 		        				<div class="form-group">
-				        			<label for="cajaResultadoUrobinilogenoOrina">Urobinilogeno:</label>
+				        			<label for="cajaResultadoUrobinilogenoOrina">Urobinilógeno:</label>
 				        			<input class="form-control" type="text" name="cajaResultadoUrobinilogenoOrina" id="cajaResultadoUrobinilogenoOrina" required>
 		        				</div>
 		        			</div>
@@ -250,74 +250,92 @@
 				nombre: 'Examen general de orina',
 				resultados:
 				[{
+					nombre: 'Color',
 					resultado: cajaResultadoColorOrina.value,
 					limites: []
 				},
 				{
+					nombre: 'Aspecto',
 					resultado: cajaResultadoAspectoOrina.value,
 					limites: []
 				},
 				{
+					nombre: 'Densidad',
 					resultado: cajaResultadoDensidadOrina.value,
 					limites: []
 				},
 				{
+					nombre: 'Urobinilógeno',
 					resultado: cajaResultadoUrobinilogenoOrina.value,
 					limites: []
 				},
 				{
+					nombre: 'Bilirrubina',
 					resultado: cajaResultadoBilirrubinaOrina.value,
 					limites: []
 				},
 				{
+					nombre: 'Hemoglobina',
 					resultado: cajaResultadoHemoglobinaOrina.value,
 					limites: []
 				},
 				{
+					nombre: 'Cuerpos cetónicos',
 					resultado: cajaResultadoCuerposCetonicosOrina.value,
 					limites: []
 				},
 				{
+					nombre: 'Glucosa',
 					resultado: cajaResultadoGlucosaOrina.value,
 					limites: []
 				},
 				{
+					nombre: 'Proteínas',
 					resultado: cajaResultadoProteinasOrina.value,
 					limites: []
 				},
 				{
+					nombre: 'Nitrito',
 					resultado: cajaResultadoNitritoOrina.value,
 					limites: []
 				},
 				{
+					nombre: 'Bacterias',
 					resultado: cajaResultadoBacteriasOrina.value,
 					limites: []
 				},
 				{
+					nombre: 'Células',
 					resultado: cajaResultadoCelulasOrina.value,
 					limites: []
 				},
 				{
+					nombre: 'Leucocitos',
 					resultado: cajaResultadoLeucocitosOrina.value,
 					limites: []
 				},
 				{
+					nombre: 'Eritrocitos',
 					resultado: cajaResultadoEritrocitosOrina.value,
 					limites: []
 				},
 				{
+					nombre: 'Cilindros',
 					resultado: cajaResultadoCilindrosOrina.value,
 					limites: []
 				},
 				{
+					nombre: 'Cristales',
 					resultado: cajaResultadoCristalesOrina.value,
 					limites: []
 				},
 				{
+					nombre: 'Mucina',
 					resultado: cajaResultadoMucinaOrina.value,
 					limites: []
 				},
 				{
+					nombre: 'Levaduras',
 					resultado: cajaResultadoLevadurasOrina.value,
 					limites: []
 				}],

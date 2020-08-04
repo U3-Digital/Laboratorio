@@ -44,8 +44,9 @@ $controller = new Controller();
 				nombre: 'Amonio plasmático',
 				resultados: 
 					[{
-					resultado: cajaResultadoAmonioPlasmatico.value,
-					limites: ['9-33 UMOL/L']
+						nombre: 'Amonio plasmático',
+						resultado: cajaResultadoAmonioPlasmatico.value,
+						limites: ['9-33 UMOL/L']
 					}],
 					costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?>
 			}

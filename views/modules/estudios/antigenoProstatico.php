@@ -96,13 +96,14 @@
 		if (cajaResultadoAntigenoProstatico.value) {
 
 			let estudio = {
-				nombre: 'Antigeno prostatico',
+				nombre: 'Antígeno prostático',
 				resultados: 
 				[{
+					nombre: 'Antígeno prostático',
 					resultado: cajaResultadoAntigenoProstatico.value,
-					observaciones: '',
 					limites: ['Hasta 2.1', 'Hasta 3.0', 'Hasta 4.9', 'Hasta 7.3', 'Hasta 8.6']
 				}],
+				observaciones: '',
 				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?>
 			}
 

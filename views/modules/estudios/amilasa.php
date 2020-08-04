@@ -44,10 +44,11 @@
 				nombre: 'Amilasa',
 				resultados: 
 				[{
+					nombre: 'Amilasa',
 					resultado: cajaResultadoAmilasa.value,
-					observaciones: '',
 					limites: ['87-123']
 				}],
+				observaciones: '',
 				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?>
 			}
 

@@ -78,14 +78,17 @@
 				nombre: 'Electrolitos séricos',
 				resultados:
 				[{
+					nombre: 'Sodio',
 					resultado: cajaResultadoSodioElectrolitos.value,
 					limites: ['137 - 145 mmol/L']
 				},
 				{
+					nombre: 'Potasio',
 					resultado: cajaResultadoPotasioElectrolitos.value,
 					limites: ['3.5 - 5.1 mmol/L']
 				},
 				{
+					nombre: 'Cloruros',
 					resultado: cajaResultadoClorurosElectrolitos.value,
 					limites: ['98 - 107 mmol/L']
 				}],

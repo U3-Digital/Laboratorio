@@ -186,53 +186,65 @@ $controller = new Controller();
 		if (cajaResultadoLeucocitos.value && cajaResultadoHemoglobina.value && cajaResultadoHematocrito.value && cajaResultadoConcentracionMediaHemoglobina.value && cajaResultadoVolumenGlobularMedio.value && cajaResultadoLinfocitos.value && cajaResultadoMonocitos.value && cajaResultadoEosinofilos.value && cajaResultadoBasofilos.value && cajaResultadoSegmentados.value && cajaResultadoBandas.value && cajaResultadoPlaquetas.value) {
 
 			let estudio = {
-				nombre: 'Biometria hematica',
+				nombre: 'Biometría hemática',
 				resultados: 
 					[{
+						nombre: 'Leucocitos',
 						resultado: cajaResultadoLeucocitos.value,
 						limites: ['5,000 - 11,000']
 					}
 					,{
+						nombre: 'Hemoglobina',
 						resultado: cajaResultadoHemoglobina.value,
 						limites: ['12 - 16']
 					},
 					{
+						nombre: 'Hematocrito',
 						resultado: cajaResultadoHematocrito.value,
 						limites: ['37 - 47']
 					},
 					{
+						nombre: 'Concenctración media de hemoglobina',
 						resultado: cajaResultadoConcentracionMediaHemoglobina.value,
 						limites: ['33 - 37']
 					},
 					{
+						nombre: 'Volumen globular medio',
 						resultado: cajaResultadoVolumenGlobularMedio.value,
 						limites: ['81 - 99']
 					},
 					{
+						nombre: 'Linfocitos',
 						resultado: cajaResultadoLinfocitos.value,
 						limites: ['20 - 52']
 					},
 					{
+						nombre: 'Monocitos',
 						resultado: cajaResultadoMonocitos.value,
 						limites: ['2 - 9']
 					},
 					{
+						nombre: 'Eosinófilos',
 						resultado: cajaResultadoEosinofilos.value,
 						limites: ['0 - 3']
 					},
 					{
+						nombre: 'Basófilos',
 						resultado: cajaResultadoBasofilos.value,
 						limites: ['0 - 3']
 					},
 					{
+						nombre: 'Segmentados',
 						resultado: cajaResultadoSegmentados.value,
 						limites: ['42 - 75']
 					},
 					{
+						nombre: 'Bandas',
 						resultado: cajaResultadoBandas.value,
 						limites: ['0 - 2']
 					},
 					{
+						nombre: 'Plaquetas',
 						resultado: cajaResultadoPlaquetas.value,
 						limites: ['130 - 400']
 					}],

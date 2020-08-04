@@ -96,22 +96,27 @@ $controller = new Controller();
 				nombre: 'Antidoping',
 				resultados: 
 					[{
+						nombre: 'Anfetamínas',
 						resultado: cajaResultadoAnfetaminas.value,
 						limites: ['Negativo']
 					},
 					{
+						nombre: 'Benzodiacepinas',
 						resultado: cajaResultadoBenzodiacepinas.value,
 						limites: ['Negativo']
 					},
 					{
+						nombre: 'Cocaína',
 						resultado: cajaResultadoCocaina.value,
 						limites: ['Negativo']
 					},
 					{
+						nombre: 'Morfina',
 						resultado: cajaResultadoMorfina.value,
 						limites: ['Negativo']
 					},
 					{
+						nombre: 'Marihuana',
 						resultado: cajaResultadoMarihuana.value,
 						limites: ['Negativo']
 					}],

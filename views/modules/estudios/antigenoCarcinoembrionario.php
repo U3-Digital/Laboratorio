@@ -82,13 +82,14 @@
 		if (cajaResultadoAntigenoCarcinoEmbrionario.value) {
 
 			let estudio = {
-				nombre: 'Antigeno carcinoembrionario',
+				nombre: 'Antígeno carcinoembrionario',
 				resultados: 
 				[{
+					nombre: 'Antígeno carcinoembrionario',
 					resultado: cajaResultadoAntigenoCarcinoEmbrionario.value,
-					observaciones: '',
 					limites: ['0.0 - 5.0 ng/ml']
 				}],
+				observaciones: '',
 				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?>
 			}
 

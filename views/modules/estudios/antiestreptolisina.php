@@ -46,6 +46,7 @@
 				nombre: 'Antiestreptolisina',
 				resultados: 
 					[{
+						nombre: 'Antiestreptolisina',
 						resultado: cajaResultadoAntiestreptolisina.value,
 						limites: ['Negativo']
 					}],
