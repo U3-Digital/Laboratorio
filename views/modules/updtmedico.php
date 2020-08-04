@@ -69,7 +69,7 @@
 
                          $controller = new Controller();
                         
-                         $controller -> actualizaCliente($usuario);
+                         $controller -> actualizaMedico($usuario);
 
                         ?>
 

@@ -113,6 +113,49 @@ class Controller {
             }
         }
     }
+
+    public static function actualizaMedico($id){
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+            $datosController = array(
+                "id"=>$id,
+                "nombre" =>$_POST["cajaNombres"],
+                "apellidos" =>$_POST["cajaApellidos"],
+                "email" => $_POST["cajaEmail"]
+            );
+
+            $respuesta = Datos::mdlActualizaMedico($datosController, "medicos");
+
+
+
+            if($respuesta == "success"){
+                 echo '<script type="text/javascript">Swal.fire({
+                      title: "Registro Actualizado!",
+                      type: "success",
+                      showCancelButton: false
+                    })
+                    .then((value) => {
+                      if (value) {
+                        window.location.href = "inicio.php?action=vermedicos";
+                      }
+                    });</script> ';
+
+            }
+
+            else{
+                echo'<script type="text/javascript">
+                    alert("Error!");
+                    window.location.href = "inicio.php?action=vermedicos";
+                    </script>';
+
+
+            }
+
+        }
+
+    }
+
     public static function borrarCliente(){
         if (isset($_GET['idBorrar'])){
             //echo'<script type="text/javascript">alert("'.$_GET['idBorrar'].'");</script>';

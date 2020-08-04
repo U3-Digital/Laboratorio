@@ -257,25 +257,69 @@
 
     function ImprimirEstudios(){
 
-        var myWindow = window.open("", "MsgWindow", "width=500,height=1000");
-        myWindow.document.write( `<style>@media screen {
-  div.divFooter {
-    display: none;
-  }
-}
-@media print {
-  div.divFooter {
-    position: fixed;
-    bottom: 0;
-    background-color: red;
-    width: 325px;
-  }
-}
-</style>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br><div class="divFooter">Este es el footer<div>`);
+        var myWindow = window.open("", "MsgWindow", "width=2500,height=1000");
+        myWindow.document.write( `
+        <style>@media screen {
+          div.divFooter {
+            display: none;
+          }
+        }
+        @media print {
+            div.divFooter {
+                position: fixed;
+                bottom: 0;
+                background = blue;
+                padding: 30px; 
+
+            }
+
+            @page { margin: 0; }
+
+            ¿body { margin: 1.6cm; }
+
+            div.divHeader {
+                position: fixed;
+                top: 0;
+                height = '50px';
+                padding: 30px; 
+
+              }
+            div.divCompletar{
+                height = 250px;
+            }
+            div.divInfo{
+                margin-top: 75px;
+                background-color: coral;
+            }
+        }
+        @media screen {
+          div.divHeader {
+            display: none;
+          }
+        }
+        </style>
+        <div class="divHeader" > Laboratorios x</div>
+            <body style="height:100%">    
+                    ${escribirCuerpo()}
+            </body>
+        <div class="divFooter">Este es el footer<div> `);
         //console.log(estudios);
         myWindow.print();
+        myWindow.close();
     }
+    function escribirCuerpo(){
+        var texto = "";
 
+        estudios.forEach(estudio =>{
+            texto +=`<div style="height:100%;"><div class="divInfo">
+                        <h3>Nombre: ${cajaNombreCliente.value} ${cajaApellidosCliente.value}</h3>
+                        <h5>Medico: ${cajaNombresDoctor.value} ${cajaApellidosDoctor.value}</h5>
+                    </div>`
+            texto += `<h2>Estudio: ${estudio.nombre}</h2><br><h3>Resultados:</h3> <p>${estudio.resultados[0]}</p><div style ="background-color: #fefbd8;"class="divCompletar"></div>`
+        })
+        texto+="</div>"
+        return(texto);
+    }
     function cambioDoctor () {
         if(selectDoctor.value == ""){
             cajanombreDoctor.value = "";
