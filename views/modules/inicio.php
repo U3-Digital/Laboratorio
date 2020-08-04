@@ -58,6 +58,10 @@ require "../../models/crud.php";
 	include "estudios/coprologicoCoproparasitologico.php";
 	include "estudios/coproparasitoscopico3.php";
 	include "estudios/coproparasitoscopico.php";
+	include "estudios/cristalografia.php";
+	include "estudios/examenGeneralDeOrina.php";
+	include "estudios/electrolitosSericos.php";
+	include "estudios/enzimasCardiacas.php";
 
 	$modulos = new Enlaces();
 	$modulos -> enlacesController();

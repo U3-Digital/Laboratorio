@@ -1,6 +1,6 @@
 <?php
 	$controller = new Controller();
-	$respuesta = $controller -> ctlBuscarEstudio("Coproparasitoscopico3");
+	$respuesta = $controller -> ctlBuscarEstudio("Coproparasitoscopico 3");
 ?>
 <div class="modal fade" id="coproparasitoscopico3" tabindex="-1" role="dialog" aria-labelledby="coproparasitoscopico3" aria-hidden="true">
 	<div class="modal-dialog modal-xl custom-modal  modal-dialog-scrollable">
