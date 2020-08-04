@@ -60,6 +60,59 @@ class Controller {
     }
 
 
+    public static function ctlBuscaMedicos(){
+      $respuesta = Datos::mdlListaMedicos("medicos");
+
+      foreach ($respuesta as $row => $item){
+          echo  '<option value="'.$item["idMedico"].'">'.$item["nombre"].' '.$item["apellidos"].'</option>';
+      }
+    }
+
+    public static function ctlBuscaMedico($id){
+      $respuesta = Datos::mdlMedico($id,"medicos");
+
+      return $respuesta;
+    }
+
+    public static function listaMedicos(){
+      $respuesta = Datos::mdlListaMedicos("medicos");
+          $cont =0;
+
+          foreach ($respuesta as $row => $item){
+            $cont ++;
+            echo '<tr>
+                    <td>'.$cont.'</td>
+                    <td>'.$item["nombre"].'</td>
+                    <td>'.$item["apellidos"].'</td>
+                    <td>'.$item["email"].'</td>
+                    <td><a href="inicio.php?action=updtmedico&idEditar='.$item["idMedico"].'"><button class="btn btn-warning">Editar</button></a></td>
+                    <td><a href="inicio.php?action=vermedicos&idBorrar='.$item["idMedico"].'" ><button class="btn btn-danger">Borrar</button></a></td>
+                  </tr>';
+          }
+    }
+
+    public static function borrarMedico(){
+        if (isset($_GET['idBorrar'])){
+            //echo'<script type="text/javascript">alert("'.$_GET['idBorrar'].'");</script>';
+            $datosController = $_GET['idBorrar'];
+            $respuesta = Datos::mdlborrarMedico($datosController,"medicos");
+            if ($respuesta == "success"){
+                echo '<script type="text/javascript">Swal.fire({
+                      title: "Registro Eliminado!",
+                      type: "success",
+                      showCancelButton: false
+                    })
+                    .then((value) => {
+                      if (value) {
+                        window.location.href = "inicio.php?action=inicio";
+                      }
+                    });</script> ';
+            }
+            else{
+                echo'<script type="text/javascript">alert("Error!");</script>';
+            }
+        }
+    }
     public static function borrarCliente(){
         if (isset($_GET['idBorrar'])){
             //echo'<script type="text/javascript">alert("'.$_GET['idBorrar'].'");</script>';
@@ -316,7 +369,40 @@ class Controller {
         }
     }
 
+    public static function cltRegistraMedico () {
+      if(isset($_POST["cajaNombres"])){
+        $datosController= array(
+          "nombre" =>$_POST["cajaNombres"],
+          "apellidos" =>$_POST["cajaApellidos"],
+          "email" => $_POST["cajaEmail"]
+        );  
 
+        $respuesta = Datos::registrarMedicoModel($datosController,"medicos");
+            if ($respuesta == "success") {
+              echo '<script type="text/javascript">Swal.fire({
+                            title: "Datos Guardados!",
+                            type: "success",
+                            showCancelButton: false
+                          })
+                          .then((value) => {
+                            if (value) {
+                              window.location.href = "inicio.php?action=home";
+                            }
+                          });</script> ';
+            }else{
+              echo '<script type="text/javascript">Swal.fire({
+                            title: "Error al guardar!",
+                            type: "error",
+                            showCancelButton: false
+                          })
+                          .then((value) => {
+                            if (value) {
+                              window.location.href = "inicio.php?action=home";
+                            }
+                          });</script> ';
+            }
+      }
+    }
     public static function ctlRegistraCliente() {
         if(isset($_POST["cajaNombres"])){
 

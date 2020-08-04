@@ -42,6 +42,21 @@
           </ul>
         </li>
 
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Medicos">
+          <a class="nav-link collapsed" data-toggle="collapse" href="#collapseMedico" data-parent="#exampleAccordion">
+            <i class="fas fa-hospital-user"></i>
+            <span class="nav-link-text">Medicos</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMedico">
+            <li>
+              <a href="inicio.php?action=vermedicos">Ver Medicos</a>
+            </li>
+            <li>
+              <a href="inicio.php?action=registromedico">Registrar medico</a>
+            </li>
+          </ul>
+        </li>
+
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Usuarios">
           <a class="nav-link collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
             <i class="fa fa-user" aria-hidden="true"></i>

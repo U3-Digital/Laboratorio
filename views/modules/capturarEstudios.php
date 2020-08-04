@@ -64,8 +64,8 @@
                                                     <select class="form-control"  name="selectDoctor" onchange="cambioDoctor()" id="selectDoctor">
                                                         <option value="">Seleccione</option>
                                                         <?php
-                                                            // $clientes = new Controller();
-                                                            // $clientes -> ctlBuscaClientes();
+                                                            $clientes = new Controller();
+                                                            $clientes -> ctlBuscaMedicos();
                                                         ?>
                                                     </select>
                                                 </div>
@@ -111,6 +111,9 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 text-center">
+                                        <button class="btn btn-secondary" onclick="limpiarFormulario()" id="botonLimiparFormulario" >
+                                            <i class="fas fa-redo-alt"></i>
+                                            Limpiar Formulario</button>
                                         <button class="btn btn-primary" onclick="botonPresionado()" id="botonAgregarEstudio" data-toggle="modal" data-target="#exampleModal">Agregar estudio</button>
                                     </div>
                                 </div>
@@ -156,7 +159,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn btn-secondary btn-block btn-lg">
+                                        <button type="button" onclick="ImprimirEstudios()" class="btn btn-secondary btn-block btn-lg">
                                             <i class="fas fa-print" style="margin-right: 0.5em;"></i>
                                             Imprimir estudio
                                         </button>
@@ -202,6 +205,9 @@
     const cajaEmailCliente = document.getElementById('cajaEmail');
     const selectCliente = document.getElementById('selectCliente');
 
+    const selectDoctor = document.getElementById('selectDoctor');
+    const cajanombreDoctor = document.getElementById('cajaNombresDoctor');
+    const cajaApellidosDoctor = document.getElementById('cajaApellidosDoctor');
 
     function cambioCliente(){
         if(selectCliente.value == ""){
@@ -209,14 +215,95 @@
             cajaApellidosCliente.value = "";
             cajaEmailCliente.value = ""; 
         } else{
-            cajaNombreCliente.value = "<?php echo"hey"?>";
-            cajaApellidosCliente.value = "apellido x";
-            cajaEmailCliente.value = selectCliente.value; 
+           $.ajax({
+            url: './ajax/getCliente.php',
+            type: "GET",
+            data: `idCliente= ${selectCliente.value}`,
+            success: function(data) {
+                const datos = JSON.parse(data);
+                cajaNombreCliente.value = datos[0].nombre;
+                cajaApellidosCliente.value = datos[0].apellidos;
+                cajaEmailCliente.value = datos[0].email;
+                //console.log(datos[0]);
+
+            },
+            error: function(data) {
+                console.log(data);
+            },
+            complete: function() {
+
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+ 
         }
     }
 
+    function limpiarFormulario(){
+        cajaNombreCliente.value = "";
+        cajaApellidosCliente.value = "";
+        cajaEmailCliente.value =  "";
+        cajaNombresDoctor.value = "";
+        cajaApellidosDoctor.value = "";
+        selectDoctor.value = "";
+        selectCliente.value = "";
+
+        lista.innerHTML= "";
+        estudios = [];
+        calcularCostos();
+    }
+
+    function ImprimirEstudios(){
+
+        var myWindow = window.open("", "MsgWindow", "width=500,height=1000");
+        myWindow.document.write( `<style>@media screen {
+  div.divFooter {
+    display: none;
+  }
+}
+@media print {
+  div.divFooter {
+    position: fixed;
+    bottom: 0;
+    background-color: red;
+    width: 325px;
+  }
+}
+</style>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br>Hola<br><br><div class="divFooter">Este es el footer<div>`);
+        //console.log(estudios);
+        myWindow.print();
+    }
+
     function cambioDoctor () {
-        alert('doctor');
+        if(selectDoctor.value == ""){
+            cajanombreDoctor.value = "";
+            cajaApellidosDoctor.value = "";
+        } else{
+           $.ajax({
+            url: './ajax/getDoctor.php',
+            type: "GET",
+            data: `idMedico= ${selectDoctor.value}`,
+            success: function(data) {
+                const datos = JSON.parse(data);
+                cajaNombresDoctor.value = datos.nombre;
+                cajaApellidosDoctor.value = datos.apellidos;
+                //console.log(datos[0]);
+
+            },
+            error: function(data) {
+                console.log(data);
+            },
+            complete: function() {
+
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+ 
+        }    
     }
 
     function abrirEstudio(estudio) {

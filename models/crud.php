@@ -5,12 +5,19 @@ require_once "conexion.php";
 class Datos extends Conexion{
 		public static function mdlCliente($id,$tabla){
 			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE idCliente = :id ");
-			$statement -> bindParam(":id", $id, PDO::PARAM_INT);
+			$stmt -> bindParam(":id", $id, PDO::PARAM_INT);
 			$stmt->execute();
 			return $stmt->fetchAll();
 			$stmt->close();
 		}
 
+		public static function mdlMedico($id,$tabla){
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE idMedico = :id ");
+			$stmt -> bindParam(":id", $id, PDO::PARAM_INT);
+			$stmt->execute();
+			return $stmt->fetch();
+			$stmt->close();
+		}
 
 		public static function mdlClientes($tabla){
 
@@ -170,6 +177,45 @@ class Datos extends Conexion{
 		}
 
 	}
+
+
+	public static function registrarMedicoModel($datosmodel,$tabla){
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`nombre`, `apellidos`, `email`) VALUES (:nombre, :apellidos, :email)");
+
+
+		$stmt -> bindParam(":nombre", $datosmodel["nombre"], PDO::PARAM_STR);
+		$stmt -> bindParam(":apellidos", $datosmodel["apellidos"], PDO::PARAM_STR);
+		$stmt -> bindParam(":email", $datosmodel["email"], PDO::PARAM_STR);
+
+
+		if($stmt->execute()){
+			return "success";
+		}
+		else{
+			return "error";
+		}
+
+		$stmt->close();
+	}
+
+	public static function mdlListaMedicos($tabla){
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+		$stmt->execute();
+		return $stmt->fetchAll();
+		$stmt->close();
+	}
+
+	public static function mdlborrarMedico($datosModel,$tabla){
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE idMedico = :id");
+		$stmt -> bindPARAM(":id",$datosModel, PDO::PARAM_INT);
+		if ($stmt->execute()){
+			return "success";
+		} else {
+			return "error";
+		}
+		$stmt -> close();
+	}
+
 
 	public static function registrarClienteModel($datosmodel,$tabla){
 		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`nombre`, `apellidos`, `email`) VALUES (:nombre, :apellidos, :email)");
