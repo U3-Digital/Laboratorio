@@ -115,7 +115,7 @@ $controller = new Controller();
 						resultado: cajaResultadoMarihuana.value,
 						limites: ['Negativo']
 					}],
-				costo: <?php echo $respuesta["costo"]; ?>
+				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?>
 			}
 
 			agregarEstudio(estudio);

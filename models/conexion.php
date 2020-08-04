@@ -7,7 +7,7 @@ class Conexion{
 		$servername = "127.0.0.1";
 		$username = "root";
 		$password = "";
-		$dbname = "lab";
+		$dbname = "sistema";
 
 		//conexion Server
 		// $servername = "mysql1007.mochahost.com";

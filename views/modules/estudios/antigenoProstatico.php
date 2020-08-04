@@ -103,7 +103,7 @@
 					observaciones: '',
 					limites: ['Hasta 2.1', 'Hasta 3.0', 'Hasta 4.9', 'Hasta 7.3', 'Hasta 8.6']
 				}],
-				costo: <?php echo $respuesta["costo"]; ?>
+				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?>
 			}
 
 			agregarEstudio(estudio);
