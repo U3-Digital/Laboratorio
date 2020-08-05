@@ -128,4 +128,8 @@
 		cajaResultadoAntigenoProstatico.value = "0.0 ng/ml";
 	}
 
+	$('#antigenoprostatico').on('hidden.bs.modal', function (e) {
+  		limpiarAntigenoProstatico();
+	});
+
 </script>

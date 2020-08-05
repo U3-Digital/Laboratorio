@@ -66,4 +66,9 @@
 		cajaResultadoCristalografia.value = "";
 	}
 
+	$('#cristalografia').on('hidden.bs.modal', function (e) {
+  		limpiarCristalografia();
+	});
+
+
 </script>

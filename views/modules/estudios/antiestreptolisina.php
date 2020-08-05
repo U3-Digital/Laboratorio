@@ -74,4 +74,8 @@
 		cajaResultadoAntiestreptolisina.value = "Negativo";
 	}
 
+	$('#antiestreptolisina').on('hidden.bs.modal', function (e) {
+  		antiestreptolisina();
+	});
+
 </script>

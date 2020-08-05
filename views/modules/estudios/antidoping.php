@@ -147,4 +147,8 @@ $controller = new Controller();
 		cajaResultadoMarihuana.value = "Negativo";
 	}
 
+	$('#antidoping').on('hidden.bs.modal', function (e) {
+  		limpiarAntidoping();
+	});
+
 </script>

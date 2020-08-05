@@ -77,7 +77,10 @@
 
 	function limpiarCoproparasitoscopico() {
 		cajaResultadoCoproparasitoscopico.value = "";
-
 	}
+
+	$('#coproparasitoscopico').on('hidden.bs.modal', function (e) {
+  		limpiarCoproparasitoscopico();
+	});
 
 </script>

@@ -410,5 +410,9 @@
 		cajaResultadoCoproparasitoscopico.value = "";
 		cajaObservacionesCoprologico.value = "";
 	}
+
+	$('#coprologicocoproparasitologico').on('hidden.bs.modal', function (e) {
+  		limpiarCoprologicoCoproparasitologico();
+	});
 	
 </script>
