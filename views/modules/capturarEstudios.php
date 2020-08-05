@@ -257,9 +257,15 @@
 
     function ImprimirEstudios(){
 
-        var myWindow = window.open("", "MsgWindow", "width=2500,height=1000");
+        var myWindow =window.open("", "MsgWindow", "width=2500,height=1000");
         myWindow.document.write( `
-        <style>@media screen {
+        <style>
+        * {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+        }
+
+        @media screen {
           div.divFooter {
             display: none;
           }
@@ -268,27 +274,29 @@
             div.divFooter {
                 position: fixed;
                 bottom: 0;
-                background = blue;
-                padding: 30px; 
-
+                height: 5%; 
+                display: block;
+                border: 1px solid red;
             }
 
             @page { margin: 0; }
 
-            ¿body { margin: 1.6cm; }
+            body { margin: 1.6cm; }
 
             div.divHeader {
+                display: block;
                 position: fixed;
                 top: 0;
-                height = '50px';
-                padding: 30px; 
-
+                height: 5%;
+                border: 1px solid red;
               }
-            div.divCompletar{
-                height = 250px;
+            .divCompletar {
+                height: 90%;
+                display: block;
+                border: 1px solid red;
             }
             div.divInfo{
-                margin-top: 75px;
+                display:block;
                 background-color: coral;
             }
         }
@@ -298,26 +306,50 @@
           }
         }
         </style>
-        <div class="divHeader" > Laboratorios x</div>
-            <body style="height:100%">    
+        <body>
+        <div class="divHeader">Laboratorio x</div>
+               
                     ${escribirCuerpo()}
-            </body>
-        <div class="divFooter">Este es el footer<div> `);
+            
+        <div class="divFooter">Este es el footer</div>
+        </body>
+         `);
         //console.log(estudios);
         myWindow.print();
-        myWindow.close();
+         myWindow.close();
     }
     function escribirCuerpo(){
         var texto = "";
 
         estudios.forEach(estudio =>{
-            texto +=`<div style="height:100%;"><div class="divInfo">
-                        <h3>Nombre: ${cajaNombreCliente.value} ${cajaApellidosCliente.value}</h3>
-                        <h5>Medico: ${cajaNombresDoctor.value} ${cajaApellidosDoctor.value}</h5>
-                    </div>`
-            texto += `<h2>Estudio: ${estudio.nombre}</h2><br><h3>Resultados:</h3> <p>${estudio.resultados[0]}</p><div style ="background-color: #fefbd8;"class="divCompletar"></div>`
-        })
-        texto+="</div>"
+            var textoResultados = ` <div class="divCompletar">`;
+            estudio.resultados[0].limites.  length >0 ? (
+                    textoResultados +="<h3>Resultados:</h3> <h3 style ='text-align: right;'>Limites</h3>"
+                    ) :(
+                    textoResultados +="<h3>Resultados:</h3>"
+                    );
+            estudio.resultados.forEach(resultado =>{
+                
+                textoResultados += `<strong>${resultado.nombre}: ${resultado.resultado}</strong><p>    ${resultado.limites.length >0 ? (
+                        resultado.limites[0]
+                    ) :(
+                        ""
+                    )
+                }<p><br>`;
+                
+            });
+            texto +=`
+                        <div class="divInfo">
+                            <p><strong>Nombre:</strong> ${cajaNombreCliente.value} ${cajaApellidosCliente.value}</p>
+                            <p><strong>Medico:</strong> ${cajaNombresDoctor.value} ${cajaApellidosDoctor.value}</h5>
+                        </div>
+                        <hr>`
+            texto += `<h2>Estudio: ${estudio.nombre}</h2> <br>
+             <p>${textoResultados}</p>
+
+             </div>`
+        });
+        texto+="</div>";
         return(texto);
     }
     function cambioDoctor () {
