@@ -4,6 +4,15 @@ body {
     margin: 0;
 }
 
+.card {
+	border-radius: 0px !important;
+}
+
+.list-group-item {
+	border-radius: 0px !important;
+	cursor: pointer;
+}
+
 .borde {
 	border: 1px solid red;
 }

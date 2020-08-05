@@ -80,6 +80,157 @@
 		        				<p>2 - 4 ml</p>
 		        			</div>
 		        		</div>
+		        		<div class="row">
+		        			<div class="col-md-8">
+		        				Análisis químico
+		        			</div>
+		        		</div>
+		        		<div class="row">
+		        			<div class="col-md-6">
+		        				<div class="form-group">
+		        					<label for="cajaResultadoPHEsperma">Volumen:</label>
+		        					<input class="form-control" type="text" name="cajaResultadoPHEsperma" id="cajaResultadoPHEsperma">
+		        				</div>
+		        			</div>
+		        			<div class="col-md-3 align-self-center">
+		        			</div>
+		        			<div class="col-md-3 align-self-center">
+		        				<br>
+		        				<p>5 - 7</p>
+		        			</div>
+		        		</div>
+		        	</div>
+		        	<div class="col-md-6">
+		        		<div class="row">
+		        			<div class="col-md-8">
+		        				Análisis microscópico
+		        			</div>
+		        		</div>
+		        		<br>
+		        		<div class="row">
+		        			<div class="col-md-6">
+		        				<div class="form-group">
+		        					<label for="cajaResultadoZoospermia">Zoospermia:</label>
+		        					<input class="form-control" type="text" name="cajaResultadoZoospermia" id="cajaResultadoZoospermia">
+		        				</div>
+		        			</div>
+		        			<div class="col-md-2 align-self-center">
+		        				<br>
+		        				<p>/mm<sup>3</sup></p>
+		        			</div>
+		        			<div class="col-md-4">
+		        				<p>Valores normales</p>
+		        				<p>20 - 60,000,000 /mm<sup>3</sup> </p>
+		        			</div>
+		        		</div>
+		        		<div class="row">
+		        			<div class="col-md-6">
+		        				<div class="form-group">
+		        					<label for="cajaResultadoVivosEsperma">Vivos:</label>
+		        					<input class="form-control" type="text" name="cajaResultadoVivosEsperma" id="cajaResultadoVivosEsperma">
+		        				</div>
+		        			</div>
+		        			<div class="col-md-3 align-self-center">
+		        				<br>
+		        				<p>%</p>
+		        			</div>
+		        			<div class="col-md-3 align-self-center">
+		        				
+		        			</div>
+		        		</div>
+		        		<div class="row">
+		        			<div class="col-md-6">
+		        				<div class="form-group">
+		        					<label for="cajaResultadoMuertosEsperma">Muertos:</label>
+		        					<input class="form-control" type="text" name="cajaResultadoMuertosEsperma" id="cajaResultadoMuertosEsperma">
+		        				</div>
+		        			</div>
+		        			<div class="col-md-3 align-self-center">
+		        				<br>
+		        				<p>%</p>
+		        			</div>
+		        			<div class="col-md-3 align-self-center">
+		        				
+		        			</div>
+		        		</div>
+		        		<div class="row">
+		        			<div class="col-md-4">
+		        				De los vivos son:
+		        			</div>
+		        		</div>
+		        		<div class="row">
+		        			<div class="col-md-6">
+		        				<div class="form-group">
+		        					<label for="cajaResultadoMovilesProgresivos">Móviles progresivos:</label>
+		        					<input class="form-control" type="text" name="cajaResultadoMovilesProgresivos" id="cajaResultadoMovilesProgresivos">
+		        				</div>
+		        			</div>
+		        			<div class="col-md-3 align-self-center">
+		        				<br>
+		        				<p>%</p>
+		        			</div>
+		        			<div class="col-md-3 align-self-center">
+		        				
+		        			</div>
+		        		</div>
+		        		<div class="row">
+		        			<div class="col-md-6">
+		        				<div class="form-group">
+		        					<label for="cajaResultadoMovilesNoProgresivos">Móviles sin progresión:</label>
+		        					<input class="form-control" type="text" name="cajaResultadoMovilesNoProgresivos" id="cajaResultadoMovilesNoProgresivos">
+		        				</div>
+		        			</div>
+		        			<div class="col-md-3 align-self-center">
+		        				<br>
+		        				<p>%</p>
+		        			</div>
+		        			<div class="col-md-3 align-self-center">
+		        				
+		        			</div>
+		        		</div>
+		        		<div class="row">
+		        			<div class="col-md-4">
+		        				Morfología:
+		        			</div>
+		        		</div>
+		        		<div class="row">
+		        			<div class="col-md-6">
+		        				<div class="form-group">
+		        					<label for="cajaResultadoNormalEsperma">Normal:</label>
+		        					<input class="form-control" type="text" name="cajaResultadoNormalEsperma" id="cajaResultadoNormalEsperma">
+		        				</div>
+		        			</div>
+		        			<div class="col-md-3 align-self-center">
+		        				<br>
+		        				<p>%</p>
+		        			</div>
+		        			<div class="col-md-3 align-self-center">
+		        				
+		        			</div>
+		        		</div>
+		        		<div class="row">
+		        			<div class="col-md-6">
+		        				<div class="form-group">
+		        					<label for="cajaResultadoAnormalEsperma">Anormal:</label>
+		        					<input class="form-control" type="text" name="cajaResultadoAnormalEsperma" id="cajaResultadoAnormalEsperma">
+		        				</div>
+		        			</div>
+		        			<div class="col-md-3 align-self-center">
+		        				<br>
+		        				<p>%</p>
+		        			</div>
+		        			<div class="col-md-3 align-self-center">
+		        				
+		        			</div>
+		        		</div>
+		        		<div class="row">
+		        			<div class="col-md-8">
+		        				<div class="form-group">
+		        					<label for="cajaObservacionesEsperma">Observaciones: </label>
+		        					<textarea class="form-control" id="cajaObservacionesEsperma" rows="3" name="cajaObservacionesEsperma"></textarea>
+		        				</div>
+		        			</div>
+		        		</div>
 		        	</div>
 		        </div>
 		    </div>
@@ -94,31 +245,77 @@
 <script>
 	
 	function validarEspermabioscopia() {
-		if (cajaResultadoSodioElectrolitos.value && cajaResultadoPotasioElectrolitos.value && cajaResultadoClorurosElectrolitos.value) {
+		if (cajaResultadoTomaDeMuestra.value && cajaResultadoRecepcionDeMuestra.value && cajaResultadoLicuefaccion.value && cajaResultadoVolumen.value && cajaResultadoPHEsperma.value && cajaResultadoZoospermia.value && cajaResultadoVivosEsperma.value && cajaResultadoMuertosEsperma.value && cajaResultadoMovilesProgresivos.value && cajaResultadoMovilesNoProgresivos.value && cajaResultadoNormalEsperma.value && cajaResultadoAnormalEsperma.value) {
 
 			let estudio = {
-				nombre: 'Electrolitos séricos',
+				nombre: 'Espermabioscopía',
 				resultados:
 				[{
-					nombre: 'Sodio',
-					resultado: cajaResultadoSodioElectrolitos.value,
-					limites: ['137 - 145 mmol/L']
+					nombre: 'Toma de muestra',
+					resultado: cajaResultadoTomaDeMuestra.value,
+					limites: []
 				},
 				{
-					nombre: 'Potasio',
-					resultado: cajaResultadoPotasioElectrolitos.value,
-					limites: ['3.5 - 5.1 mmol/L']
+					nombre: 'Recepción de muestra',
+					resultado: cajaResultadoRecepcionDeMuestra.value,
+					limites: []
 				},
 				{
-					nombre: 'Cloruros',
-					resultado: cajaResultadoClorurosElectrolitos.value,
-					limites: ['98 - 107 mmol/L']
-				}],
-				observaciones: '',
+					nombre: 'Licuefacción',
+					resultado: cajaResultadoLicuefaccion.value,
+					limites: ['Hasta 45 min.']
+				},
+				{
+					nombre: 'Volumen',
+					resultado: cajaResultadoVolumen.value,
+					limites: ['2 - 4 ml']
+				},
+				{
+					nombre: 'PH',
+					resultado: cajaResultadoPHEsperma.value,
+					limites: ['5 - 7']
+				},
+				{
+					nombre: 'Zoospermia',
+					resultado: cajaResultadoZoospermia.value,
+					limites: ['20 - 60,000,000 /mm <sup>3</sup>']
+				},
+				{
+					nombre: 'Vivos',
+					resultado: cajaResultadoVivosEsperma.value,
+					limites: []
+				},
+				{
+					nombre: 'Muertos',
+					resultado: cajaResultadoMuertosEsperma.value,
+					limites: []
+				},
+				{
+					nombre: 'Móviles progresivos',
+					resultado: cajaResultadoMovilesProgresivos.value,
+					limites: []
+				},
+				{
+					nombre: 'Móviles sin progresión',
+					resultado: cajaResultadoMovilesNoProgresivos.value,
+					limites: []
+				},
+				{
+					nombre: 'Morfología normal',
+					resultado: cajaResultadoNormalEsperma.value,
+					limites: []
+				},
+				{
+					nombre: 'Morfología anormal',
+					resultado: cajaResultadoAnormalEsperma.value,
+					limites: []
+				},
+				],
+				observaciones: cajaObservacionesEsperma.value,
 				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?> 
 			}
 			agregarEstudio(estudio);
-			cerrarModalElectrolitosSericos();
+			cerrarModalvalidarEspermabioscopia();
 			limpiarElectrolitosSericos();
 
 		} else {
@@ -135,10 +332,20 @@
 	}
 
 	function limpiarvalidarEspermabioscopia() {
-		cajaResultadoSodioElectrolitos.value = "";
-		cajaResultadoPotasioElectrolitos.value = "";
-		cajaResultadoClorurosElectrolitos.value = "";
-	}
+		cajaResultadoTomaDeMuestra.value = "";
+		cajaResultadoRecepcionDeMuestra.value = "";
+		cajaResultadoLicuefaccion.value = "";
+		cajaResultadoVolumen.value = "";
+		cajaResultadoPHEsperma.value = "";
+		cajaResultadoZoospermia.value = "";
+		cajaResultadoVivosEsperma.value = "";
+		cajaResultadoMuertosEsperma.value = "";
+		cajaResultadoMovilesProgresivos.value = "";
+		cajaResultadoMovilesNoProgresivos.value = "";
+		cajaResultadoNormalEsperma.value = "";
+		cajaResultadoAnormalEsperma.value = "";
+		cajaObservacionesEsperma.value = "";
+		}
 
 	$('#espermabioscopia').on('hidden.bs.modal', function (e) {
   		limpiarvalidarEspermabioscopia();
