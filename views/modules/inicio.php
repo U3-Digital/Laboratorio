@@ -62,6 +62,7 @@ require "../../models/crud.php";
 	include "estudios/examenGeneralDeOrina.php";
 	include "estudios/electrolitosSericos.php";
 	include "estudios/enzimasCardiacas.php";
+	include "estudios/espermabioscopia.php";
 
 	$modulos = new Enlaces();
 	$modulos -> enlacesController();

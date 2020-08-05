@@ -107,4 +107,8 @@
 
 	}
 
+	$('#coproparasitoscopico3').on('hidden.bs.modal', function (e) {
+  		limpiarCoproparasitoscopico3();
+	});
+
 </script>

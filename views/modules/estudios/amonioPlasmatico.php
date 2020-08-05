@@ -71,4 +71,8 @@ $controller = new Controller();
 		cajaResultadoAmonioPlasmatico.value = "";
 	}
 
+	$('#amonioplasmatico').on('hidden.bs.modal', function (e) {
+  		limpiarAmonioPlasmatico();
+	});
+
 </script>

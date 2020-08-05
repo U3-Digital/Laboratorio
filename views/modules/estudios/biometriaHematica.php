@@ -281,6 +281,10 @@ $controller = new Controller();
 		cajaResultadoSegmentados.value = "";
 		cajaResultadoBandas.value = "";
 		cajaResultadoPlaquetas.value = "";
-
 	}
+
+	$('#biometriahematica').on('hidden.bs.modal', function (e) {
+  		limpiarBiometriaHematica();
+	});
+
 </script>

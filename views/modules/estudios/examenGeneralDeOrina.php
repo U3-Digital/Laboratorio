@@ -382,4 +382,9 @@
 		cajaObservacionesOrina.value = "";
 	}
 
+	$('#examengeneraldeorina').on('hidden.bs.modal', function (e) {
+  		limpiarExamenGeneralDeOrina();
+	});
+
+
 </script>

@@ -114,4 +114,8 @@
 		cajaResultadoAntigenoCarcinoEmbrionario.value = "0.0 ng/ml";
 	}
 
+	$('#antigenocarcinoembrionario').on('hidden.bs.modal', function (e) {
+  		limpiarAntigenoCarcinoembrionario();
+	});
+
 </script>

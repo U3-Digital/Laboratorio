@@ -76,4 +76,8 @@
 		cajaObservacionesAmibaEnFresco.value = "";
 	}
 
+	$('#amibaenfresco').on('hidden.bs.modal', function (e) {
+  		limpiarAmibaEnFresco();
+	});
+
 </script>

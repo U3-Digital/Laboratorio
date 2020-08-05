@@ -118,4 +118,8 @@
 		cajaResultadoClorurosElectrolitos.value = "";
 	}
 
+	$('#electrolitossericos').on('hidden.bs.modal', function (e) {
+  		limpiarElectrolitosSericos();
+	});
+
 </script>

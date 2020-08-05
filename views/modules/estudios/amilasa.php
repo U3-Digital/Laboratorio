@@ -73,4 +73,8 @@
 		cajaResultadoAmilasa.value = "";
 	}
 
+	$('#amilasa').on('hidden.bs.modal', function (e) {
+  		limpiarAmilasa();
+	});
+
 </script>
