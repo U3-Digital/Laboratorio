@@ -35,6 +35,7 @@
 		if (cajaResultadoCristalografia.value) {
 
 			let estudio = {
+				idmodal: 'cristalografia',
 				nombre: 'Cristalografía',
 				resultados:
 				[{

@@ -41,6 +41,7 @@
 		if (cajaResultadoAmilasa.value) {
 
 			let estudio = {
+				idmodal: 'amilasa',
 				nombre: 'Amilasa',
 				resultados: 
 				[{

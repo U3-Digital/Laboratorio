@@ -91,6 +91,7 @@
 		if (cajaResultadoTGO.value && cajaResultadoCK.value && cajaResultadoCKMB.value && cajaResultadoDHL.value) {
 
 			let estudio = {
+				idmodal: 'enzimascardiacas',
 				nombre: 'Enzimas cardíacas',
 				resultados:
 				[{

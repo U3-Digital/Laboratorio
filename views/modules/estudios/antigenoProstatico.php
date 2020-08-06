@@ -96,6 +96,7 @@
 		if (cajaResultadoAntigenoProstatico.value) {
 
 			let estudio = {
+				idmodal: 'antigenoprostatico',
 				nombre: 'Antígeno prostático',
 				resultados: 
 				[{

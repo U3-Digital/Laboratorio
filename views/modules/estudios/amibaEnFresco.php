@@ -36,14 +36,12 @@
 </div>
 
 <script>
-
-	const cajaResultadoAmibaEnFresco = document.getElementById('cajaResultadoAmibaEnFresco');
-	const cajaObservacionesAmibaEnFresco = document.getElementById('cajaObservacionesAmibaEnFresco');
 	
 	function validarAmibaEnFresco() {
 		if (cajaResultadoAmibaEnFresco.value) {
 
 			let estudio = {
+				idmodal: 'amibaenfresco',
 				nombre: 'Amiba en fresco',
 				resultados:
 				[{
@@ -79,5 +77,17 @@
 	$('#amibaenfresco').on('hidden.bs.modal', function (e) {
   		limpiarAmibaEnFresco();
 	});
+
+	$('#amibaenfresco').on('show.bs.modal', function (e) {
+		if (editando === true) {
+			edicionAmibaEnFresco(estudioEditar);
+			console.log('hey crack', estudioEditar);
+		}
+	});
+
+	function edicionAmibaEnFresco(estudio) {
+		cajaResultadoAmibaEnFresco.value = estudio.resultados[0].resultado;
+		cajaObservacionesAmibaEnFresco = estudio.observaciones;
+	}
 
 </script>

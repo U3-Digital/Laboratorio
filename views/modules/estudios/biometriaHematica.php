@@ -186,6 +186,7 @@ $controller = new Controller();
 		if (cajaResultadoLeucocitos.value && cajaResultadoHemoglobina.value && cajaResultadoHematocrito.value && cajaResultadoConcentracionMediaHemoglobina.value && cajaResultadoVolumenGlobularMedio.value && cajaResultadoLinfocitos.value && cajaResultadoMonocitos.value && cajaResultadoEosinofilos.value && cajaResultadoBasofilos.value && cajaResultadoSegmentados.value && cajaResultadoBandas.value && cajaResultadoPlaquetas.value) {
 
 			let estudio = {
+				idmodal: 'biometriahematica',
 				nombre: 'Biometría hemática',
 				resultados: 
 					[{

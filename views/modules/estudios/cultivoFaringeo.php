@@ -133,6 +133,7 @@
 		if (cajaResultadoAmilasa.value) {
 
 			let estudio = {
+				idmodal: 'cultivofaringeo',
 				nombre: 'Amilasa',
 				resultados: 
 				[{

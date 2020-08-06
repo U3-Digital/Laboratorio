@@ -63,6 +63,7 @@
 		if (cajaResultadoCoproparasitoscopico1.value && cajaResultadoCoproparasitoscopico2.value && cajaResultadoCoproparasitoscopico3.value) {
 
 			let estudio = {
+				idmodal: 'coproparasitoscopico3',
 				nombre: 'Coproparasitoscópico 3',
 				resultados:
 				[{

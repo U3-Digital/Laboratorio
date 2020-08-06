@@ -82,6 +82,7 @@
 		if (cajaResultadoAntigenoCarcinoEmbrionario.value) {
 
 			let estudio = {
+				idmodal: 'antigenocarcinoembrionario',
 				nombre: 'Antígeno carcinoembrionario',
 				resultados: 
 				[{

@@ -41,6 +41,7 @@ $controller = new Controller();
 		if (cajaResultadoAmonioPlasmatico.value) {
 
 			let estudio = {
+				idmodal: 'amonioplasmatico',
 				nombre: 'Amonio plasmático',
 				resultados: 
 					[{

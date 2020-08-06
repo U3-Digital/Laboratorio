@@ -194,11 +194,12 @@
 
 <script type="text/javascript">
 
-
     const selectEstudios = document.getElementById('selectEstudios');
     let lista = document.getElementById('lista');
 
     let estudios = [];
+    let editando = false;
+    let estudioEditar = {};
 
     const cajaNombreCliente = document.getElementById('cajaNombres');
     const cajaApellidosCliente = document.getElementById('cajaApellidos');
@@ -415,7 +416,7 @@
                                 ${estudio.nombre}
                             </div>
                             <div class="col-2">
-                                <button class="btn hover">
+                                <button class="btn hover" onclick="editarEstudios(${i})">
                                     <i class="fas fa-pencil-alt" style="color: #007BFF;"></i>
                                 </button>
                             </div>
@@ -449,8 +450,11 @@
     function agregarEstudio(estudio) {
         console.log(estudio);
         estudios.push(estudio);
-        console.log(estudios);
-        
+        // console.log(estudios);
+
+        if (editando === true) {
+            editando = false;
+        } 
 
         visualizarEstudios();
     }
@@ -462,7 +466,12 @@
         visualizarEstudios();
     }
 
+    function editarEstudios(index) { 
+        editando = true;
+        estudioEditar = estudios[index];
+        abrirEstudio(estudioEditar.idmodal);
+        borrarEstudio(index);
+    }
     
-
 </script>
 

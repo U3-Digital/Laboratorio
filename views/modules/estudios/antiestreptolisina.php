@@ -43,6 +43,7 @@
 		if (cajaResultadoAntiestreptolisina.value) {
 
 			let estudio = {
+				idmodal: 'antiestreptolisina',
 				nombre: 'Antiestreptolisina',
 				resultados: 
 					[{

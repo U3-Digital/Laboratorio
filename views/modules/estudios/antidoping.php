@@ -93,6 +93,7 @@ $controller = new Controller();
 		if ((cajaResultadoAnfetaminas.value) && (cajaResultadoBenzodiacepinas.value) && cajaResultadoCocaina.value && cajaResultadoMorfina.value && cajaResultadoMarihuana.value) {
 
 			let estudio = {
+				idmodal: 'antidoping',
 				nombre: 'Antidoping',
 				resultados: 
 					[{

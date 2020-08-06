@@ -48,6 +48,7 @@
 		if (cajaResultadoCoproparasitoscopicoCopro.value) {
 
 			let estudio = {
+				idmodal: 'coproparasitoscopico',
 				nombre: 'Coproparasitoscópico',
 				resultados:
 				[{

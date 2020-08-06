@@ -247,6 +247,7 @@
 		if (cajaResultadoColorOrina.value && cajaResultadoAspectoOrina.value && cajaResultadoDensidadOrina.value && cajaResultadoPHOrina.value && cajaResultadoUrobinilogenoOrina.value && cajaResultadoBilirrubinaOrina.value && cajaResultadoHemoglobinaOrina.value && cajaResultadoCuerposCetonicosOrina.value && cajaResultadoGlucosaOrina.value && cajaResultadoProteinasOrina.value && cajaResultadoNitritoOrina.value && cajaResultadoBacteriasOrina.value && cajaResultadoCelulasOrina.value && cajaResultadoLeucocitosOrina.value && cajaResultadoEritrocitosOrina.value && cajaResultadoCilindrosOrina.value && cajaResultadoCristalesOrina.value && cajaResultadoMucinaOrina.value && cajaResultadoLevadurasOrina.value && cajaResultadoLevadurasOrina.value) {
 
 			let estudio = {
+				idmodal: 'examengeneraldeorina',
 				nombre: 'Examen general de orina',
 				resultados:
 				[{

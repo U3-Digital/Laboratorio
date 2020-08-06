@@ -258,6 +258,7 @@
 		if (cajaResultadoColor.value && cajaResultadoConsistencia.value && cajaResultadoRestosAlimenticios.value && cajaResultadoMoco.value && cajaResultadoSangreAparente.value && cajaResultadoAlmidon.value && cajaResultadoPH.value && cajaResultadoHemoglobinaCopro.value && cajaResultadoSangreOculta.value && cajaResultadoAzucaresReductores.value && cajaResultadoFibrasMusculares.value && cajaResultadoFibrasVegetales.value && cajaResultadoCelulasEpiteliales.value && cajaResultadoLeucocitosCopro.value && cajaResultadoEritrocitos.value && cajaResultadoCristales.value && cajaResultadoLevaduras.value && cajaResultadoParasitos.value && cajaResultadoCuerposGrasos.value && cajaResultadoBacterias.value && cajaResultadoCoproparasitoscopico.value) {
 
 			let estudio = {
+				idmodal: 'coprologicocoproparasitologico',
 				nombre: 'Coprologico coproparasitológico',
 				resultados: 
 					[{

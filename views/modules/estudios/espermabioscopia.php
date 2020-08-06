@@ -248,6 +248,7 @@
 		if (cajaResultadoTomaDeMuestra.value && cajaResultadoRecepcionDeMuestra.value && cajaResultadoLicuefaccion.value && cajaResultadoVolumen.value && cajaResultadoPHEsperma.value && cajaResultadoZoospermia.value && cajaResultadoVivosEsperma.value && cajaResultadoMuertosEsperma.value && cajaResultadoMovilesProgresivos.value && cajaResultadoMovilesNoProgresivos.value && cajaResultadoNormalEsperma.value && cajaResultadoAnormalEsperma.value) {
 
 			let estudio = {
+				idmodal: 'espermabioscopiao',
 				nombre: 'Espermabioscopía',
 				resultados:
 				[{

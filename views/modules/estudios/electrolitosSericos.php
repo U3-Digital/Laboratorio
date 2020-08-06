@@ -75,6 +75,7 @@
 		if (cajaResultadoSodioElectrolitos.value && cajaResultadoPotasioElectrolitos.value && cajaResultadoClorurosElectrolitos.value) {
 
 			let estudio = {
+				idmodal: 'electrolitossericos',
 				nombre: 'Electrolitos séricos',
 				resultados:
 				[{
