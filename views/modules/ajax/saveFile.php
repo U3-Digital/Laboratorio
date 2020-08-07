@@ -1,5 +1,4 @@
 <?php
-$usuario = $_SESSION["nombre"]
 require('../../../controllers/controller.php');
 require('../../../models/crud.php');
 

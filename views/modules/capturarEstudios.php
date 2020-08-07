@@ -1,5 +1,4 @@
 <?php  
-    print_r($_SESSION["nombre"]);
 ?>
 <div class="content-wrapper">
 	<div class="container-fluid">
@@ -283,12 +282,31 @@
                     valores.append("medico",cajaNombresDoctor.value+" "+cajaApellidosDoctor.value);
                     valores.append("fecha", new Date(Date.now));
                     valores.append("costo", total);
+                    valores.append("responsable",<?php echo("'".$_SESSION["nombre"]."'") ?>);
                     valores.append("resultado", parsedEstudios);
                     return valores;
                 }(),
                 success: function(data) {
-                    console.log(data);
+                    if(data === "success"){
+                        Swal.fire({
+                            title: "Datos Guardados!",
+                            type: "success",
+                            showCancelButton: false
+                        }).then((value) => {
+                            if (value) {
+                                window.location.href = "inicio.php?action=verEstudios";
+                            } 
+                        }); 
 
+                    }else{
+                        Swal.fire({
+                            title: "¡Hubo un error!",
+                            type: "warning",
+                            showCancelButton: false
+                        }).then((value) => {
+                              
+                        });
+                    }
                 },
                 error: function(data) {
                     console.log(data);

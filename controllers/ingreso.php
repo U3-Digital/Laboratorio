@@ -32,12 +32,12 @@ class Ingreso {
                     session_start();
 
                     $_SESSION["validar"] = true;
-                    $_SESSION["usuario"] = $respuesta["usuario"];
-                    $_SESSION["nombre"] = $respuesta["nombre"];
+                    $_SESSION["email"] = $respuesta["email"];
+                    $_SESSION["nombre"] ="".$respuesta["nombres"]." ".$respuesta["apellidos"]."";
                     $_SESSION["rol"] = $respuesta["rol"];
                     $_SESSION["sistema"] = $respuesta["sistema"];
 
-
+                    print_r($_SESSION);
 
                     header("location:views/modules/inicio.php?action=home");
 

@@ -3,10 +3,20 @@
 class Controller {
 
     public static function ctlsaveEstudio($valores){
+      if(isset($valores["cliente"])){
 
-      print_r();
-      //print_r($valores["cliente"]);
-      return "success";
+        $datosController= array(
+          "cliente" =>$valores["cliente"],
+          "medico" =>$valores["medico"],
+          "fecha" =>$valores["fecha"],
+          "costo" =>$valores["costo"],
+          "responsable" => $valores["responsable"],
+          "resultados" => $valores["resultado"]
+        );
+        //print_r($datosController);
+        $respuesta = Datos::mdlRegistraEstudio($datosController,"estudios");
+        return $respuesta;
+      }
     }
 
     public static function ctlBuscaCliente($id){

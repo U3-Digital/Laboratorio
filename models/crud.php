@@ -3,6 +3,24 @@
 require_once "conexion.php";
 
 class Datos extends Conexion{
+
+
+		public static function mdlRegistraEstudio($estudios,$tabla){
+			$stmt = Conexion::conectar ()->prepare("INSERT INTO $tabla( `cliente`, `medico`, `fecha`, `costo`, `responsable`, `resultados`) VALUES (:cliente, :medico, :fecha, :costo, :responsable, :resultados)");
+			$stmt -> bindParam(":cliente", $estudios["cliente"], PDO::PARAM_STR);
+			$stmt -> bindParam(":medico", $estudios["medico"],PDO::PARAM_STR);
+			$stmt -> bindParam(":fecha", $estudios["fecha"], PDO::PARAM_STR);
+			$stmt -> bindParam(":costo", $estudios["costo"], PDO::PARAM_INT);
+			$stmt -> bindParam(":responsable", $estudios["responsable"], PDO::PARAM_STR);
+			$stmt -> bindParam(":resultados", $estudios["resultados"],PDO::PARAM_STR);
+
+			if($stmt->execute()){
+				return "success";
+			}else{
+				return "error";
+			}	
+		}
+
 		public static function mdlCliente($id,$tabla){
 			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE idCliente = :id ");
 			$stmt -> bindParam(":id", $id, PDO::PARAM_INT);
