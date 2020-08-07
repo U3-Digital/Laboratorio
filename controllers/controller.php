@@ -2,6 +2,12 @@
 
 class Controller {
 
+    public static function ctlsaveEstudio($valores){
+
+      print_r();
+      //print_r($valores["cliente"]);
+      return "success";
+    }
 
     public static function ctlBuscaCliente($id){
       $respuesta = Datos::mdlCliente($id,"clientes");
