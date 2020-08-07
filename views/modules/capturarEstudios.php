@@ -1,5 +1,5 @@
 <?php  
-
+    print_r($_SESSION["nombre"]);
 ?>
 <div class="content-wrapper">
 	<div class="container-fluid">
@@ -167,7 +167,7 @@
                                 </div>
                                 <div class="row mt-1">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn btn-secondary btn-block btn-lg">
+                                        <button type="button" onclick="CapturarEstudios()" class="btn btn-secondary btn-block btn-lg">
                                             <i class="fas fa-envelope" style="margin-right: 0.5em;"></i>
                                             Enviar y terminar
                                         </button>
@@ -193,6 +193,8 @@
   ?>
 
 <script type="text/javascript">
+
+    let total= 0;
 
     const selectEstudios = document.getElementById('selectEstudios');
     let lista = document.getElementById('lista');
@@ -256,6 +258,52 @@
         calcularCostos();
     }
 
+    function CapturarEstudios(){
+
+
+        console.log(estudios);
+        const parsedEstudios = JSON.stringify(estudios);
+
+
+        if(cajaNombreCliente.value == ""  || cajaEmailCliente.value =="" || cajaNombresDoctor.value ==="" || cajaApellidosDoctor.value === "" || estudios.length == 0){
+            Swal.fire({
+                title: "¡Rellene por completo el formulario!",
+                type: "warning",
+                showCancelButton: false
+            }).then((value) => {
+                
+            });    
+        }else{
+            $.ajax({
+                url: './ajax/saveFile.php',
+                type: "POST",
+                data: function(){
+                    let valores = new FormData();
+                    valores.append("cliente",cajaNombreCliente.value+" "+cajaApellidosCliente.value);
+                    valores.append("medico",cajaNombresDoctor.value+" "+cajaApellidosDoctor.value);
+                    valores.append("fecha", new Date(Date.now));
+                    valores.append("costo", total);
+                    valores.append("resultado", parsedEstudios);
+                    return valores;
+                }(),
+                success: function(data) {
+                    console.log(data);
+
+                },
+                error: function(data) {
+                    console.log(data);
+                },
+                complete: function() {
+
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+        }
+
+    }
+
     function ImprimirEstudios(){
 
         var myWindow =window.open("", "MsgWindow", "width=2500,height=1000");
@@ -276,7 +324,6 @@
                 position: fixed;
                 bottom: 0;
                 height: 5%; 
-                display: block;
                 border: 1px solid red;
             }
 
@@ -285,7 +332,6 @@
             body { margin: 1.6cm; }
 
             div.divHeader {
-                display: block;
                 position: fixed;
                 top: 0;
                 height: 5%;
@@ -294,11 +340,11 @@
             .divCompletar {
                 height: 90%;
                 display: block;
+                margin-top: 25px;
                 border: 1px solid red;
             }
             div.divInfo{
-                display:block;
-                background-color: coral;
+                
             }
         }
         @media screen {
@@ -435,7 +481,7 @@
     }
 
     function calcularCostos() {
-        let total = 0;
+        total = 0;
     
         estudios.forEach(estudio => {
             total += estudio.costo;
