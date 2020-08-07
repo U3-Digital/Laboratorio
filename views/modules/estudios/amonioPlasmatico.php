@@ -35,7 +35,6 @@ $controller = new Controller();
 
 <script>
 
-	const cajaResultadoAmonioPlasmatico = document.getElementById('cajaResultadoAmonioPlasmatico');
 	
 	function validarAmonioPlasmatico() {
 		if (cajaResultadoAmonioPlasmatico.value) {
@@ -75,5 +74,16 @@ $controller = new Controller();
 	$('#amonioplasmatico').on('hidden.bs.modal', function (e) {
   		limpiarAmonioPlasmatico();
 	});
+
+	$('#amonioplasmatico').on('show.bs.modal', function (e) {
+		if (editando === true) {
+			edicionAmonioPlasmatico(estudioEditar);
+			console.log('hey crack', estudioEditar);
+		}
+	});
+
+	function edicionAmonioPlasmatico(estudio) {
+		cajaResultadoAmonioPlasmatico.value = estudio.resultados[0].resultado;
+	}
 
 </script>

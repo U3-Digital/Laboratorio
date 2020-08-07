@@ -78,4 +78,15 @@
   		limpiarAmilasa();
 	});
 
+	$('#amilasa').on('show.bs.modal', function (e) {
+		if (editando === true) {
+			edicionAmilasa(estudioEditar);
+			console.log('hey crack', estudioEditar);
+		}
+	});
+
+	function edicionAmilasa(estudio) {
+		cajaResultadoAmilasa.value = estudio.resultados[0].resultado;
+	}
+
 </script>

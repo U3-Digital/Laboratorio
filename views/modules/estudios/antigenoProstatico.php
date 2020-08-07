@@ -133,4 +133,15 @@
   		limpiarAntigenoProstatico();
 	});
 
+	$('#antigenoprostatico').on('show.bs.modal', function (e) {
+		if (editando === true) {
+			edicionAntigenoProstatico(estudioEditar);
+			console.log('hey crack', estudioEditar);
+		}
+	});
+
+	function edicionAntigenoProstatico(estudio) {
+		cajaResultadoAntigenoProstatico.value = estudio.resultados[0].resultado;
+	}
+
 </script>

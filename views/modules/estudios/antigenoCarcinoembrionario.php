@@ -119,4 +119,16 @@
   		limpiarAntigenoCarcinoembrionario();
 	});
 
+
+	$('#antigenocarcinoembrionario').on('show.bs.modal', function (e) {
+		if (editando === true) {
+			edicionAntigenoCarcinoembrionario(estudioEditar);
+			console.log('hey crack', estudioEditar);
+		}
+	});
+
+	function edicionAntigenoCarcinoembrionario(estudio) {
+		cajaResultadoAntigenoCarcinoEmbrionario.value = estudio.resultados[0].resultado;
+	}
+
 </script>

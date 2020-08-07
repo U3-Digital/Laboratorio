@@ -87,7 +87,7 @@
 
 	function edicionAmibaEnFresco(estudio) {
 		cajaResultadoAmibaEnFresco.value = estudio.resultados[0].resultado;
-		cajaObservacionesAmibaEnFresco = estudio.observaciones;
+		cajaObservacionesAmibaEnFresco.value = estudio.observaciones;
 	}
 
 </script>

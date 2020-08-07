@@ -288,4 +288,26 @@ $controller = new Controller();
   		limpiarBiometriaHematica();
 	});
 
+	$('#biometriahematica').on('show.bs.modal', function (e) {
+		if (editando === true) {
+			edicionBiometricaHematica(estudioEditar);
+			console.log('hey crack', estudioEditar);
+		}
+	});
+
+	function edicionBiometricaHematica(estudio) {
+		cajaResultadoLeucocitos.value = estudio.resultados[0].resultado;
+		cajaResultadoHemoglobina.value = estudio.resultados[1].resultado;
+		cajaResultadoHematocrito.value = estudio.resultados[2].resultado;
+		cajaResultadoConcentracionMediaHemoglobina.value = estudio.resultados[3].resultado;
+		cajaResultadoVolumenGlobularMedio.value = estudio.resultados[4].resultado;
+		cajaResultadoLinfocitos.value = estudio.resultados[5].resultado;
+		cajaResultadoMonocitos.value = estudio.resultados[6].resultado;
+		cajaResultadoEosinofilos.value = estudio.resultados[7].resultado;
+		cajaResultadoBasofilos.value = estudio.resultados[8].resultado;
+		cajaResultadoSegmentados.value = estudio.resultados[9].resultado;
+		cajaResultadoBandas.value = estudio.resultados[10].resultado;
+		cajaResultadoPlaquetas.value = estudio.resultados[11].resultado;
+	}
+
 </script>

@@ -152,4 +152,19 @@ $controller = new Controller();
   		limpiarAntidoping();
 	});
 
+	$('#antidoping').on('show.bs.modal', function (e) {
+		if (editando === true) {
+			edicionAntidoping(estudioEditar);
+			console.log('hey crack', estudioEditar);
+		}
+	});
+
+	function edicionAntidoping(estudio) {
+		cajaResultadoAnfetaminas.value = estudio.resultados[0].resultado;
+		cajaResultadoBenzodiacepinas.value = estudio.resultados[1].resultado;
+		cajaResultadoCocaina.value = estudio.resultados[2].resultado;
+		cajaResultadoMorfina.value = estudio.resultados[3].resultado;
+		cajaResultadoMarihuana.value = estudio.resultados[4].resultado;
+	}
+
 </script>

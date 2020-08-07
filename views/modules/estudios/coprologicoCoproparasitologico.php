@@ -415,5 +415,37 @@
 	$('#coprologicocoproparasitologico').on('hidden.bs.modal', function (e) {
   		limpiarCoprologicoCoproparasitologico();
 	});
+
+	$('#coprologicocoproparasitologico').on('show.bs.modal', function (e) {
+		if (editando === true) {
+			edicionCoprologicoCoproparasitologico(estudioEditar);
+			console.log('hey crack', estudioEditar);
+		}
+	});
+
+	function edicionCoprologicoCoproparasitologico(estudio) {
+		cajaResultadoColor.value = estudio.resultados[0].resultado;
+		cajaResultadoConsistencia.value = estudio.resultados[1].resultado;
+		cajaResultadoRestosAlimenticios.value = estudio.resultados[2].resultado;
+		cajaResultadoMoco.value = estudio.resultados[3].resultado;
+		cajaResultadoSangreAparente.value = estudio.resultados[4].resultado;
+		cajaResultadoAlmidon.value = estudio.resultados[5].resultado;
+		cajaResultadoPH.value = estudio.resultados[6].resultado;
+		cajaResultadoHemoglobinaCopro.value = estudio.resultados[7].resultado;
+		cajaResultadoSangreOculta.value = estudio.resultados[8].resultado;
+		cajaResultadoAzucaresReductores.value = estudio.resultados[9].resultado;
+		cajaResultadoFibrasMusculares.value = estudio.resultados[10].resultado;
+		cajaResultadoFibrasVegetales.value = estudio.resultados[11].resultado;
+		cajaResultadoCelulasEpiteliales.value = estudio.resultados[12].resultado;
+		cajaResultadoLeucocitosCopro.value = estudio.resultados[13].resultado;
+		cajaResultadoEritrocitos.value = estudio.resultados[14].resultado;
+		cajaResultadoCristales.value = estudio.resultados[15].resultado;
+		cajaResultadoLevaduras.value = estudio.resultados[16].resultado;
+		cajaResultadoParasitos.value = estudio.resultados[17].resultado;
+		cajaResultadoCuerposGrasos.value = estudio.resultados[18].resultado;
+		cajaResultadoBacterias.value = estudio.resultados[19].resultado;
+		cajaResultadoCoproparasitoscopico.value = estudio.resultados[20].resultado;
+		cajaObservacionesCoprologico.value = estudio.observaciones;
+	}
 	
 </script>
