@@ -145,4 +145,18 @@
   		limpiarEnzimasCardiacas();
 	});
 
+	$('#enzimascardiacas').on('show.bs.modal', function (e) {
+		if (editando === true) {
+			edicionEnzimasCardiacas(estudioEditar);
+			console.log('hey crack', estudioEditar);
+		}
+	});
+
+	function edicionEnzimasCardiacas(estudio) {
+		cajaResultadoTGO.value = estudio.resultados[0].resultado;
+		cajaResultadoCK.value = estudio.resultados[1].resultado;
+		cajaResultadoCKMB.value = estudio.resultados[2].resultado;
+		cajaResultadoDHL.value = estudio.resultados[3].resultado;
+	}
+
 </script>

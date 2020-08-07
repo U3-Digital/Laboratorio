@@ -248,7 +248,7 @@
 		if (cajaResultadoTomaDeMuestra.value && cajaResultadoRecepcionDeMuestra.value && cajaResultadoLicuefaccion.value && cajaResultadoVolumen.value && cajaResultadoPHEsperma.value && cajaResultadoZoospermia.value && cajaResultadoVivosEsperma.value && cajaResultadoMuertosEsperma.value && cajaResultadoMovilesProgresivos.value && cajaResultadoMovilesNoProgresivos.value && cajaResultadoNormalEsperma.value && cajaResultadoAnormalEsperma.value) {
 
 			let estudio = {
-				idmodal: 'espermabioscopiao',
+				idmodal: 'espermabioscopia',
 				nombre: 'Espermabioscopía',
 				resultados:
 				[{
@@ -332,7 +332,7 @@
 		$(`#espermabioscopia`).modal('toggle');
 	}
 
-	function limpiarvalidarEspermabioscopia() {
+	function limpiarEspermabioscopia() {
 		cajaResultadoTomaDeMuestra.value = "";
 		cajaResultadoRecepcionDeMuestra.value = "";
 		cajaResultadoLicuefaccion.value = "";
@@ -346,10 +346,34 @@
 		cajaResultadoNormalEsperma.value = "";
 		cajaResultadoAnormalEsperma.value = "";
 		cajaObservacionesEsperma.value = "";
-		}
+	}
 
 	$('#espermabioscopia').on('hidden.bs.modal', function (e) {
-  		limpiarvalidarEspermabioscopia();
+  		limpiarEspermabioscopia();
 	});
+
+
+	$('#espermabioscopia').on('show.bs.modal', function (e) {
+		if (editando === true) {
+			edicionEspermabioscopia(estudioEditar);
+			console.log('hey crack', estudioEditar);
+		}
+	});
+
+	function edicionEspermabioscopia(estudio) {
+		cajaResultadoTomaDeMuestra.value = estudio.resultados[0].resultado;
+		cajaResultadoRecepcionDeMuestra.value = estudio.resultados[1].resultado;
+		cajaResultadoLicuefaccion.value = estudio.resultados[2].resultado;
+		cajaResultadoVolumen.value = estudio.resultados[3].resultado;
+		cajaResultadoPHEsperma.value = estudio.resultados[4].resultado;
+		cajaResultadoZoospermia.value = estudio.resultados[5].resultado;
+		cajaResultadoVivosEsperma.value = estudio.resultados[6].resultado;
+		cajaResultadoMuertosEsperma.value = estudio.resultados[7].resultado;
+		cajaResultadoMovilesProgresivos.value = estudio.resultados[8].resultado;
+		cajaResultadoMovilesNoProgresivos.value = estudio.resultados[9].resultado;
+		cajaResultadoNormalEsperma.value = estudio.resultados[10].resultado;
+		cajaResultadoAnormalEsperma.value = estudio.resultados[11].resultado;
+		cajaObservacionesEsperma.value = estudio.observaciones;
+	}
 
 </script>

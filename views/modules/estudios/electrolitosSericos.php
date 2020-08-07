@@ -123,4 +123,18 @@
   		limpiarElectrolitosSericos();
 	});
 
+	$('#electrolitossericos').on('show.bs.modal', function (e) {
+		if (editando === true) {
+			edicionElectrolitosSericos(estudioEditar);
+			console.log('hey crack', estudioEditar);
+		}
+	});
+
+	function edicionElectrolitosSericos(estudio) {
+		cajaResultadoSodioElectrolitos.value = estudio.resultados[0].resultado;
+		cajaResultadoPotasioElectrolitos.value = estudio.resultados[1].resultado;
+		cajaResultadoClorurosElectrolitos.value = estudio.resultados[2].resultado;
+
+	}
+
 </script>

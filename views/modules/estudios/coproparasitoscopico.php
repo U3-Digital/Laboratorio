@@ -84,4 +84,16 @@
   		limpiarCoproparasitoscopico();
 	});
 
+	$('#coproparasitoscopico').on('show.bs.modal', function (e) {
+		if (editando === true) {
+			edicionCoproparasitoscopico(estudioEditar);
+			console.log('hey crack', estudioEditar);
+		}
+	});
+
+	function edicionCoproparasitoscopico(estudio) {
+		cajaResultadoCoproparasitoscopicoCopro.value = estudio.resultados[0].resultado;
+		cajaObservacionesCoproparasitoscopico.value = estudio.observaciones;
+	}
+
 </script>

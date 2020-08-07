@@ -270,6 +270,11 @@
 					resultado: cajaResultadoUrobinilogenoOrina.value,
 					limites: []
 				},
+                {
+                    nombre: 'PH',
+                    resultado: cajaResultadoPHOrina.value,
+                    limites: []
+                },
 				{
 					nombre: 'Bilirrubina',
 					resultado: cajaResultadoBilirrubinaOrina.value,
@@ -340,7 +345,7 @@
 					resultado: cajaResultadoLevadurasOrina.value,
 					limites: []
 				}],
-				observaciones: cajaObservacionesCoproparasitoscopico.value,
+				observaciones: cajaObservacionesOrina.value,
 				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?> 
 			}
 			agregarEstudio(estudio);
@@ -366,7 +371,6 @@
 		cajaResultadoDensidadOrina.value = "";
 		cajaResultadoPHOrina.value = "";
 		cajaResultadoBilirrubinaOrina.value = "";
-		cajaResultadoBilirrubinaOrina.value = "";
 		cajaResultadoHemoglobinaOrina.value = "";
 		cajaResultadoCuerposCetonicosOrina.value = "";
 		cajaResultadoGlucosaOrina.value = "";
@@ -386,6 +390,36 @@
 	$('#examengeneraldeorina').on('hidden.bs.modal', function (e) {
   		limpiarExamenGeneralDeOrina();
 	});
+
+	$('#examengeneraldeorina').on('show.bs.modal', function (e) {
+		if (editando === true) {
+			edicionExamenGeneralDeOrina(estudioEditar);
+			console.log('hey crack', estudioEditar);
+		}
+	});
+
+	function edicionExamenGeneralDeOrina(estudio) {
+        cajaResultadoColorOrina.value = estudio.resultados[0].resultado;
+        cajaResultadoAspectoOrina.value = estudio.resultados[1].resultado;
+        cajaResultadoDensidadOrina.value = estudio.resultados[2].resultado;
+        cajaResultadoUrobinilogenoOrina.value = estudio.resultados[3].resultado;
+        cajaResultadoPHOrina.value = estudio.resultados[4].resultado;
+        cajaResultadoBilirrubinaOrina.value = estudio.resultados[5].resultado;
+        cajaResultadoHemoglobinaOrina.value = estudio.resultados[6].resultado;
+        cajaResultadoCuerposCetonicosOrina.value = estudio.resultados[7].resultado;
+        cajaResultadoGlucosaOrina.value = estudio.resultados[8].resultado;
+        cajaResultadoProteinasOrina.value = estudio.resultados[9].resultado;
+        cajaResultadoNitritoOrina.value = estudio.resultados[10].resultado;
+        cajaResultadoBacteriasOrina.value = estudio.resultados[11].resultado;
+        cajaResultadoCelulasOrina.value = estudio.resultados[12].resultado;
+        cajaResultadoLeucocitosOrina.value = estudio.resultados[13].resultado;
+        cajaResultadoEritrocitosOrina.value = estudio.resultados[14].resultado;
+        cajaResultadoCilindrosOrina.value = estudio.resultados[15].resultado;
+        cajaResultadoCristalesOrina.value = estudio.resultados[16].resultado;
+        cajaResultadoMucinaOrina.value = estudio.resultados[17].resultado;
+        cajaResultadoLevadurasOrina.value = estudio.resultados[18].resultado;
+        cajaObservacionesOrina.value = estudio.observaciones; 
+	}
 
 
 </script>

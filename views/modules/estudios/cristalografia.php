@@ -72,4 +72,15 @@
 	});
 
 
+	$('#cristalografia').on('show.bs.modal', function (e) {
+		if (editando === true) {
+			edicionCristalografia(estudioEditar);
+			console.log('hey crack', estudioEditar);
+		}
+	});
+
+	function edicionCristalografia(estudio) {
+		cajaResultadoCristalografia.value = estudio.resultados[0].resultado;
+	}
+
 </script>
