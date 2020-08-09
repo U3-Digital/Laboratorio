@@ -65,6 +65,10 @@ require "../../models/crud.php";
 	include "estudios/espermabioscopia.php";
     include "estudios/cultivoFaringeo.php";
     include "estudios/gasometria.php";
+    include "estudios/grupoRH.php";
+    include "estudios/hcg.php";
+    include "estudios/hcgcuantitativa.php";
+    include "estudios/inmunoglobulinas.php";
 
 	$modulos = new Enlaces();
 	$modulos -> enlacesController();
