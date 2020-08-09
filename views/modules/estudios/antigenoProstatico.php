@@ -26,9 +26,6 @@
 								<th>
 									Según la edad:
 								</th>
-<!-- 								<th>
-									
-								</th> -->
 		        			</tr>
 		        			<tr>
 		        				<td>
