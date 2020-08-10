@@ -260,9 +260,10 @@
     function CapturarEstudios(){
 
 
-        console.log(estudios);
+        //console.log(estudios);
         const parsedEstudios = JSON.stringify(estudios);
-
+        const fechaHoy = new Date(Date.now());
+        const formated_Date = fechaHoy.getFullYear()+"-"+fechaHoy.getMonth()+"-"+fechaHoy.getDate();
 
         if(cajaNombreCliente.value == ""  || cajaEmailCliente.value =="" || cajaNombresDoctor.value ==="" || cajaApellidosDoctor.value === "" || estudios.length == 0){
             Swal.fire({
@@ -280,7 +281,7 @@
                     let valores = new FormData();
                     valores.append("cliente",cajaNombreCliente.value+" "+cajaApellidosCliente.value);
                     valores.append("medico",cajaNombresDoctor.value+" "+cajaApellidosDoctor.value);
-                    valores.append("fecha", new Date(Date.now));
+                    valores.append("fecha", formated_Date);
                     valores.append("costo", total);
                     valores.append("responsable",<?php echo("'".$_SESSION["nombre"]."'") ?>);
                     valores.append("resultado", parsedEstudios);
@@ -336,48 +337,57 @@
           div.divFooter {
             display: none;
           }
-        }
-        @media print {
-            div.divFooter {
-                position: fixed;
-                bottom: 0;
-                height: 5%; 
-                border: 1px solid red;
-            }
 
-            @page { margin: 0; }
-
-            body { margin: 1.6cm; }
-
-            div.divHeader {
-                position: fixed;
-                top: 0;
-                height: 5%;
-                border: 1px solid red;
-              }
-            .divCompletar {
-                height: 90%;
-                display: block;
-                margin-top: 25px;
-                border: 1px solid red;
-            }
-            div.divInfo{
-                
-            }
-        }
-        @media screen {
           div.divHeader {
             display: none;
           }
         }
+        @media print {
+        @page { margin: 2mm; }
+
+        body { margin: 1.6cm; }
+
+
+        .header, .footer {
+          height: 5%;
+        }
+
+
+        .header-space, .footer-space{
+            height: 0%
+        }
+        .divCompletar{
+            height : 90%;
+        }
+
+        .header {
+          position: fixed;
+          top: 0;
+        }
+
+        .footer {
+          position: fixed;
+          bottom: 0;
+        }
+
+
+        }
+
         </style>
-        <body>
-        <div class="divHeader">Laboratorio x</div>
-               
-                    ${escribirCuerpo()}
-            
-        <div class="divFooter">Este es el footer</div>
-        </body>
+        <table">
+          <thead><tr><td>
+            <div class="header-space">&nbsp;</div>
+          </td></tr></thead>
+          <tbody><tr><td>
+            <div class="content">${escribirCuerpo()}</div>
+          </td></tr></tbody>
+          <tfoot><tr><td>
+            <div class="footer-space">&nbsp;</div>
+          </td></tr></tfoot>
+        </table>
+        <div class="header">Header</div>
+        <div class="footer">Foter</div>
+
          `);
         //console.log(estudios);
         myWindow.print();
@@ -403,12 +413,13 @@
                 }<p><br>`;
                 
             });
-            texto +=`
+            //https://medium.com/@Idan_Co/the-ultimate-print-html-template-with-header-footer-568f415f6d2a
+            /*texto +=`
                         <div class="divInfo">
                             <p><strong>Nombre:</strong> ${cajaNombreCliente.value} ${cajaApellidosCliente.value}</p>
                             <p><strong>Medico:</strong> ${cajaNombresDoctor.value} ${cajaApellidosDoctor.value}</h5>
                         </div>
-                        <hr>`
+                        <hr>`*/
             texto += `<h2>Estudio: ${estudio.nombre}</h2> <br>
              <p>${textoResultados}</p>
 

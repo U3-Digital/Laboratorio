@@ -4,6 +4,15 @@ require_once "conexion.php";
 
 class Datos extends Conexion{
 
+		public static function mdlListaEstudios($tabla){
+			$statement = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+
+			$statement -> execute();
+
+			return $statement -> fetchAll();
+
+			$statement -> close();
+		}
 
 		public static function mdlRegistraEstudio($estudios,$tabla){
 			$stmt = Conexion::conectar ()->prepare("INSERT INTO $tabla( `cliente`, `medico`, `fecha`, `costo`, `responsable`, `resultados`) VALUES (:cliente, :medico, :fecha, :costo, :responsable, :resultados)");
@@ -19,6 +28,17 @@ class Datos extends Conexion{
 			}else{
 				return "error";
 			}	
+		}
+
+		public static function mdlborrarEstudios($id,$tabla){
+			$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE idEstudio = :id");
+			$stmt -> bindPARAM(":id",$id, PDO::PARAM_INT);
+			if ($stmt->execute()){
+				return "success";
+			} else {
+				return "error";
+			}
+			$stmt -> close();	
 		}
 
 		public static function mdlCliente($id,$tabla){

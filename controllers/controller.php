@@ -2,6 +2,50 @@
 
 class Controller {
 
+
+    public static function listaEstudios(){
+      $respuesta = Datos::mdlListaEstudios("estudios");
+          $cont =0;
+
+          foreach ($respuesta as $row => $item){
+            $resultados = json_decode($item["resultados"]);
+            
+            $cont ++;
+            echo '<tr>
+                    <td>'.$cont.'</td>
+                    <td>'.$item["cliente"].'</td>
+                    <td>'.$item["medico"].'</td>
+                    <td>'.$item["fecha"].'</td>
+                    <td>'.$item["responsable"].'</td>
+                    <td>'."hola".'</td>
+                    <td>'.$item["costo"].'</td>
+                    <td><a href="inicio.php?action=updtmedico&idEditar='.$item["idEstudio"].'"><button class="btn btn-warning">Editar</button></a></td>
+                    <td><a href="inicio.php?action=verEstudios&idBorrar='.$item["idEstudio"].'" ><button class="btn btn-danger">Borrar</button></a></td>
+                  </tr>';
+          }  
+    }
+    public static function borrarEstudio(){
+      if (isset($_GET['idBorrar'])){
+            //echo'<script type="text/javascript">alert("'.$_GET['idBorrar'].'");</script>';
+            $datosController = $_GET['idBorrar'];
+            $respuesta = Datos::mdlborrarEstudios($datosController,"estudios");
+            if ($respuesta == "success"){
+                echo '<script type="text/javascript">Swal.fire({
+                      title: "Registro Eliminado!",
+                      type: "success",
+                      showCancelButton: false
+                    })
+                    .then((value) => {
+                      if (value) {
+                        window.location.href = "inicio.php?action=verEstudios";
+                      }
+                    });</script> ';
+            }
+            else{
+                echo'<script type="text/javascript">alert("Error!");</script>';
+            }
+        }
+    }
     public static function ctlsaveEstudio($valores){
       if(isset($valores["cliente"])){
 

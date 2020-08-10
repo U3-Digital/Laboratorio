@@ -33,6 +33,9 @@
 									</thead>
 									<tbody>
 										<?php
+											$registro = new Controller();
+                                            $registro -> listaEstudios();
+                                            $registro -> borrarEstudio();
 										?>
 									</tbody>
 								</table>
