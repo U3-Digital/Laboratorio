@@ -336,6 +336,7 @@
         @media screen {
           div.divFooter {
             display: none;
+
           }
 
           div.divHeader {
@@ -350,14 +351,17 @@
 
         .header, .footer {
           height: 5%;
+          border: 1px solid red;
         }
 
 
         .header-space, .footer-space{
             height: 0%
+            border: 1px solid red;
         }
         .divCompletar{
             height : 90%;
+            border: 1px solid green;
         }
 
         .header {
@@ -376,7 +380,8 @@
         </style>
         <table">
           <thead><tr><td>
-            <div class="header-space">&nbsp;</div>
+            <div class="header-space"><p><strong>Nombre:</strong> ${cajaNombreCliente.value} ${cajaApellidosCliente.value}</p>
+                            <p><strong>Medico:</strong> ${cajaNombresDoctor.value} ${cajaApellidosDoctor.value}</h5><hr></div>
           </td></tr></thead>
           <tbody><tr><td>
             <div class="content">${escribirCuerpo()}</div>
@@ -414,12 +419,11 @@
                 
             });
             //https://medium.com/@Idan_Co/the-ultimate-print-html-template-with-header-footer-568f415f6d2a
-            /*texto +=`
+            texto +=`
                         <div class="divInfo">
-                            <p><strong>Nombre:</strong> ${cajaNombreCliente.value} ${cajaApellidosCliente.value}</p>
-                            <p><strong>Medico:</strong> ${cajaNombresDoctor.value} ${cajaApellidosDoctor.value}</h5>
+                            
                         </div>
-                        <hr>`*/
+                        <hr>`;
             texto += `<h2>Estudio: ${estudio.nombre}</h2> <br>
              <p>${textoResultados}</p>
 

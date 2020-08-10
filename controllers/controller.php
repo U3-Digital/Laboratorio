@@ -9,7 +9,10 @@ class Controller {
 
           foreach ($respuesta as $row => $item){
             $resultados = json_decode($item["resultados"]);
-            
+            $Estudios = "";
+            foreach ($resultados as $row2 => $item2) {
+              $Estudios = $Estudios.",".$item2->nombre."";
+            }
             $cont ++;
             echo '<tr>
                     <td>'.$cont.'</td>
@@ -17,7 +20,7 @@ class Controller {
                     <td>'.$item["medico"].'</td>
                     <td>'.$item["fecha"].'</td>
                     <td>'.$item["responsable"].'</td>
-                    <td>'."hola".'</td>
+                    <td>'.$Estudios.'</td>
                     <td>'.$item["costo"].'</td>
                     <td><a href="inicio.php?action=updtmedico&idEditar='.$item["idEstudio"].'"><button class="btn btn-warning">Editar</button></a></td>
                     <td><a href="inicio.php?action=verEstudios&idBorrar='.$item["idEstudio"].'" ><button class="btn btn-danger">Borrar</button></a></td>
