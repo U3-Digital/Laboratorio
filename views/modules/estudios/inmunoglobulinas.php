@@ -16,16 +16,16 @@
                     <div class="col-md-12">
                     <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#lgE" role="tab" aria-controls="lgE" aria-selected="true">lgE</a>
+                            <a class="nav-link active" id="lge-tab" data-toggle="tab" href="#lgE" role="tab" aria-controls="lgE" aria-selected="true">lgE</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#lgA" role="tab" aria-controls="lgA" aria-selected="false">lgA</a>
+                            <a class="nav-link" id="lga-tab" data-toggle="tab" href="#lgA" role="tab" aria-controls="lgA" aria-selected="false">lgA</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#lgG" role="tab" aria-controls="lgG" aria-selected="false">lgG</a>
+                            <a class="nav-link" id="lgg-tab" data-toggle="tab" href="#lgG" role="tab" aria-controls="lgG" aria-selected="false">lgG</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#lgM" role="tab" aria-controls="lgM" aria-selected="false">lgM</a>
+                            <a class="nav-link" id="lgm-tab" data-toggle="tab" href="#lgM" role="tab" aria-controls="lgM" aria-selected="false">lgM</a>
                         </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
@@ -93,7 +93,7 @@
 							</div>
 						</div>
                         <div class="tab-pane fade" id="lgA" role="tabpanel" aria-labelledby="lgA-tab">
-						<div class="row">
+						    <div class="row">
 								<div class="col-md-12 text-center">
 									<div class="row">
 										<div class="col-md-2"></div>
@@ -160,139 +160,139 @@
 							</div>
 						</div>
                         <div class="tab-pane fade" id="lgG" role="tabpanel" aria-labelledby="lgG-tab">
-						<div class="row">
-								<div class="col-md-12 text-center">
-									<div class="row">
-										<div class="col-md-2"></div>
-										<div class="col-md-6 mt-3">
-											<div class="form-group">
-												<label for="cajaResultadoLGG">Inmunoglobulina G (lgG):</label>
-												<input class="form-control" type="text" id="cajaResultadoLGG" name="cajaResultadoLGG">
-											</div>
-										</div>
-										<div class="col-md-2 align-self-center">
-											<br>
-											Ul/ml
-										</div>
-										<div class="col-md-2"></div>
-									</div>
-									<div class="row justify-content-center">
-										<div class="col-md-4 text-center">
-											<table>
-												<tr>
-													<th colspan=2 style="text-align:center;padding:5px 10px;">
-														Valores normales
-													</th>
-												</tr>
-												<tr>
-													<td style="text-align:center;padding:5px 10px;">0 - 10 meses</td>
-													<td style="text-align:center;padding:5px 10px;">273 - 1660 mg/dl</td>
-												</tr>
-												<tr>
-													<td style="text-align:center;padding:5px 10px;">1 - 3 años</td>
-													<td style="text-align:center;padding:5px 10px;">400 - 1250 mg/dl</td>
-												</tr>
-												<tr>
-													<td style="text-align:center;padding:5px 10px;">4 - 6 años</td>
-													<td style="text-align:center;padding:5px 10px;">560 - 1307 mg/dl</td>
-												</tr>
-												<tr>
-													<td style="text-align:center;padding:5px 10px;">7 - 9 años</td>
-													<td style="text-align:center;padding:5px 10px;">598 - 1399 mg/dl</td>
-												</tr>
-												<tr>
-													<td style="text-align:center;padding:5px 10px;">10 - 11 años</td>
-													<td style="text-align:center;padding:5px 10px;">638 - 1453</td>
-												</tr>
-												<tr>
-													<td style="text-align:center;padding:5px 10px;">12 - 13 años</td>
-													<td style="text-align:center;padding:5px 10px;">680 - 1531 mg/dl</td>
-												</tr>
-												<tr>
-													<td style="text-align:center;padding:5px 10px;">14 - 15 años</td>
-													<td style="text-align:center;padding:5px 10px;">724 - 1611 mg/dl</td>
-												</tr>
-												<tr>
-													<td style="text-align:center;padding:5px 10px;">16 - 19 años</td>
-													<td style="text-align:center;padding:5px 10px;">700 - 1500 mg/dl</td>
-												</tr>
-												<tr>
-													<td style="text-align:center;padding:5px 10px;">Adultos</td>
-													<td style="text-align:center;padding:5px 10px;">700 - 1500 mg/dl</td>
-												</tr>
-											</table>
-										</div>
-									</div>
-								</div>
-							</div>
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <div class="row">
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-6 mt-3">
+                                            <div class="form-group">
+                                                <label for="cajaResultadoLGG">Inmunoglobulina G (lgG):</label>
+                                                <input class="form-control" type="text" id="cajaResultadoLGG" name="cajaResultadoLGG">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 align-self-center">
+                                            <br>
+                                            Ul/ml
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <table>
+                                                <tr>
+                                                    <th colspan=2 style="text-align:center;padding:5px 10px;">
+                                                        Valores normales
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:center;padding:5px 10px;">0 - 10 meses</td>
+                                                    <td style="text-align:center;padding:5px 10px;">273 - 1660 mg/dl</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:center;padding:5px 10px;">1 - 3 años</td>
+                                                    <td style="text-align:center;padding:5px 10px;">400 - 1250 mg/dl</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:center;padding:5px 10px;">4 - 6 años</td>
+                                                    <td style="text-align:center;padding:5px 10px;">560 - 1307 mg/dl</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:center;padding:5px 10px;">7 - 9 años</td>
+                                                    <td style="text-align:center;padding:5px 10px;">598 - 1399 mg/dl</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:center;padding:5px 10px;">10 - 11 años</td>
+                                                    <td style="text-align:center;padding:5px 10px;">638 - 1453</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:center;padding:5px 10px;">12 - 13 años</td>
+                                                    <td style="text-align:center;padding:5px 10px;">680 - 1531 mg/dl</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:center;padding:5px 10px;">14 - 15 años</td>
+                                                    <td style="text-align:center;padding:5px 10px;">724 - 1611 mg/dl</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:center;padding:5px 10px;">16 - 19 años</td>
+                                                    <td style="text-align:center;padding:5px 10px;">700 - 1500 mg/dl</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:center;padding:5px 10px;">Adultos</td>
+                                                    <td style="text-align:center;padding:5px 10px;">700 - 1500 mg/dl</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 						</div>
                         <div class="tab-pane fade" id="lgM" role="tabpanel" aria-labelledby="lgM-tab">
-						<div class="row">
-								<div class="col-md-12 text-center">
-									<div class="row">
-										<div class="col-md-2"></div>
-										<div class="col-md-6 mt-3">
-											<div class="form-group">
-												<label for="cajaResultadoLGM">Inmunoglobulina M (lgM):</label>
-												<input class="form-control" type="text" id="cajaResultadoLGM" name="cajaResultadoLGM">
-											</div>
-										</div>
-										<div class="col-md-2 align-self-center">
-											<br>
-											Ul/ml
-										</div>
-										<div class="col-md-2"></div>
-									</div>
-									<div class="row justify-content-center">
-										<div class="col-md-4 text-center">
-											<table>
-												<tr>
-													<th colspan=2 style="text-align:center;padding:5px 10px;">
-														Valores normales
-													</th>
-												</tr>
-												<tr>
-													<td style="text-align:center;padding:5px 10px;">0 - 12 meses</td>
-													<td style="text-align:center;padding:5px 10px;">0 - 216 md/dl</td>
-												</tr>
-												<tr>
-													<td style="text-align:center;padding:5px 10px;">1 - 3 años</td>
-													<td style="text-align:center;padding:5px 10px;">28 - 218 mg/dl</td>
-												</tr>
-												<tr>
-													<td style="text-align:center;padding:5px 10px;">4 - 6 años</td>
-													<td style="text-align:center;padding:5px 10px;">36 - 314 mg/dl</td>
-												</tr>
-												<tr>
-													<td style="text-align:center;padding:5px 10px;">7 - 9 años</td>
-													<td style="text-align:center;padding:5px 10px;">47 - 311 mg/dl</td>
-												</tr>
-												<tr>
-													<td style="text-align:center;padding:5px 10px;">10 - 11 años</td>
-													<td style="text-align:center;padding:5px 10px;">46 - 268 mg/dl</td>
-												</tr>
-												<tr>
-													<td style="text-align:center;padding:5px 10px;">12 - 13 años</td>
-													<td style="text-align:center;padding:5px 10px;">52 - 357 mg/dl</td>
-												</tr>
-												<tr>
-													<td style="text-align:center;padding:5px 10px;">14 - 15 años</td>
-													<td style="text-align:center;padding:5px 10px;">23 - 281 mg/dl</td>
-												</tr>
-												<tr>
-													<td style="text-align:center;padding:5px 10px;">16 - 19 años</td>
-													<td style="text-align:center;padding:5px 10px;">35 - 387 mg/dl</td>
-												</tr>
-												<tr>
-													<td style="text-align:center;padding:5px 10px;">Adultos</td>
-													<td style="text-align:center;padding:5px 10px;">60 - 300 mg/dl</td>
-												</tr>
-											</table>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+                            <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <div class="row">
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-6 mt-3">
+                                                <div class="form-group">
+                                                    <label for="cajaResultadoLGM">Inmunoglobulina M (lgM):</label>
+                                                    <input class="form-control" type="text" id="cajaResultadoLGM" name="cajaResultadoLGM">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 align-self-center">
+                                                <br>
+                                                Ul/ml
+                                            </div>
+                                            <div class="col-md-2"></div>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-4 text-center">
+                                                <table>
+                                                    <tr>
+                                                        <th colspan=2 style="text-align:center;padding:5px 10px;">
+                                                            Valores normales
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:center;padding:5px 10px;">0 - 12 meses</td>
+                                                        <td style="text-align:center;padding:5px 10px;">0 - 216 md/dl</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:center;padding:5px 10px;">1 - 3 años</td>
+                                                        <td style="text-align:center;padding:5px 10px;">28 - 218 mg/dl</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:center;padding:5px 10px;">4 - 6 años</td>
+                                                        <td style="text-align:center;padding:5px 10px;">36 - 314 mg/dl</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:center;padding:5px 10px;">7 - 9 años</td>
+                                                        <td style="text-align:center;padding:5px 10px;">47 - 311 mg/dl</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:center;padding:5px 10px;">10 - 11 años</td>
+                                                        <td style="text-align:center;padding:5px 10px;">46 - 268 mg/dl</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:center;padding:5px 10px;">12 - 13 años</td>
+                                                        <td style="text-align:center;padding:5px 10px;">52 - 357 mg/dl</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:center;padding:5px 10px;">14 - 15 años</td>
+                                                        <td style="text-align:center;padding:5px 10px;">23 - 281 mg/dl</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:center;padding:5px 10px;">16 - 19 años</td>
+                                                        <td style="text-align:center;padding:5px 10px;">35 - 387 mg/dl</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:center;padding:5px 10px;">Adultos</td>
+                                                        <td style="text-align:center;padding:5px 10px;">60 - 300 mg/dl</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 		        </div>
@@ -368,8 +368,11 @@
 	}
 
 	function limpiarInmunoglobulinas() {
-
-	}
+        cajaResultadoLGE.value = "";
+        cajaResultadoLGA.value = "";
+        cajaResultadoLGG.value = "";
+        cajaResultadoLGM.value = "";
+    }
 
 	$('#inmunoglobulinas').on('hidden.bs.modal', function (e) {
         limpiarInmunoglobulinas();
@@ -383,7 +386,25 @@
 	});
 
 	function edicionInmunoglobulinas(estudio) {
-
+        estudio.resultados.forEach(resultado => {
+            switch (resultado.nombre) {
+                case "Inmunoglobulina E":
+                    cajaResultadoLGE.value = resultado.resultado;
+                break;
+                case "Inmunoglobulina A": 
+                    cajaResultadoLGA.value = resultado.resultado;
+                break;
+                case "Inmunoglobulina G":
+                    cajaResultadoLGG.value = resultado.resultado;
+                break;
+                case "Inmunoglobulina M":
+                    cajaResultadoLGM.value = resultado.resultado;
+                break;
+                default:
+                    return;
+                break;
+            }
+        });
 	}
 
 </script>

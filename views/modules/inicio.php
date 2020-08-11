@@ -69,6 +69,7 @@ require "../../models/crud.php";
     include "estudios/hcg.php";
     include "estudios/hcgcuantitativa.php";
     include "estudios/inmunoglobulinas.php";
+    include "estudios/citomegalovirus.php";
 
 	$modulos = new Enlaces();
 	$modulos -> enlacesController();
