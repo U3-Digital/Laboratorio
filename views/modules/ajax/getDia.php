@@ -3,10 +3,10 @@ require('../../../controllers/controller.php');
 require('../../../models/crud.php');
 
 
-$fecha = $_GET["fecha"];
+$hoy = $_GET["fecha"];
 
 $Controller = new Controller();
 
-$cosa = $Controller -> ctlBuscaMedico($idMedico);
+$cosa = $Controller -> ctlResumenDiario($hoy);
 
 print_r(json_encode($cosa));

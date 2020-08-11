@@ -263,7 +263,7 @@
         //console.log(estudios);
         const parsedEstudios = JSON.stringify(estudios);
         const fechaHoy = new Date(Date.now());
-        const formated_Date = fechaHoy.getFullYear()+"-"+fechaHoy.getMonth()+"-"+fechaHoy.getDate();
+        const formated_Date = fechaHoy.getFullYear()+"-"+(fechaHoy.getMonth()+1)+"-"+fechaHoy.getDate();
 
         if(cajaNombreCliente.value == ""  || cajaEmailCliente.value =="" || cajaNombresDoctor.value ==="" || cajaApellidosDoctor.value === "" || estudios.length == 0){
             Swal.fire({
@@ -378,59 +378,55 @@
         }
 
         </style>
-        <table">
+
+
+
+        <table style="height:100%;">
           <thead><tr><td>
-            <div class="header-space"><p><strong>Nombre:</strong> ${cajaNombreCliente.value} ${cajaApellidosCliente.value}</p>
-                            <p><strong>Medico:</strong> ${cajaNombresDoctor.value} ${cajaApellidosDoctor.value}</h5><hr></div>
+            <div class="header-space">&nbsp;</div>
           </td></tr></thead>
           <tbody><tr><td>
-            <div class="content">${escribirCuerpo()}</div>
+            <div class="divCompletar"> contenido 1</div>
           </td></tr></tbody>
           <tfoot><tr><td>
             <div class="footer-space">&nbsp;</div>
           </td></tr></tfoot>
         </table>
-        <div class="header">Header</div>
-        <div class="footer">Foter</div>
+        <div class="header">
+            <img src="../../Assets/header.jpg" alt="Lamp" width="32" height="32">
+        </div>
+        <div class="footer">Footer</div>
 
+
+
+        ${escribirCuerpo()}
          `);
         //console.log(estudios);
         myWindow.print();
          myWindow.close();
     }
     function escribirCuerpo(){
-        var texto = "";
-
+        let texto = "";
         estudios.forEach(estudio =>{
-            var textoResultados = ` <div class="divCompletar">`;
-            estudio.resultados[0].limites.  length >0 ? (
-                    textoResultados +="<h3>Resultados:</h3> <h3 style ='text-align: right;'>Limites</h3>"
-                    ) :(
-                    textoResultados +="<h3>Resultados:</h3>"
-                    );
-            estudio.resultados.forEach(resultado =>{
-                
-                textoResultados += `<strong>${resultado.nombre}: ${resultado.resultado}</strong><p>    ${resultado.limites.length >0 ? (
-                        resultado.limites[0]
-                    ) :(
-                        ""
-                    )
-                }<p><br>`;
-                
-            });
-            //https://medium.com/@Idan_Co/the-ultimate-print-html-template-with-header-footer-568f415f6d2a
-            texto +=`
-                        <div class="divInfo">
-                            
-                        </div>
-                        <hr>`;
-            texto += `<h2>Estudio: ${estudio.nombre}</h2> <br>
-             <p>${textoResultados}</p>
+            texto +=`<p>
+                        <strong>
+                            Nombre:
+                        </strong>
+                            ${cajaNombreCliente.value} ${cajaApellidosCliente.value}
+                    </p>
+                    <p>
+                        <strong>
+                            Medico:
+                        </strong>
+                            ${cajaNombresDoctor.value} ${cajaApellidosDoctor.value}
+                    </p>
+                    <hr>`;
 
-             </div>`
+            console.log(estudio.nombre);
         });
-        texto+="</div>";
-        return(texto);
+
+
+        return texto;
     }
     function cambioDoctor () {
         if(selectDoctor.value == ""){

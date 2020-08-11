@@ -137,6 +137,12 @@ class Controller {
       return $respuesta;
     }
 
+    public static function ctlResumenDiario($hoy){
+      $respuesta = Datos::mdlResumenDiario($hoy,"estudios");
+
+      return $respuesta;
+    }
+
     public static function listaMedicos(){
       $respuesta = Datos::mdlListaMedicos("medicos");
           $cont =0;

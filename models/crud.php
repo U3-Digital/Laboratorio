@@ -57,6 +57,14 @@ class Datos extends Conexion{
 			$stmt->close();
 		}
 
+		public static function mdlResumenDiario($dia,$tabla){
+			$stmt = Conexion::conectar()->prepare("SELECT SUM(costo) AS 'Total' FROM $tabla WHERE `fecha` = :dia");
+			$stmt -> bindParam(":dia", $dia, PDO::PARAM_INT);
+			$stmt->execute();
+			return $stmt->fetch();
+			$stmt->close();
+		}
+
 		public static function mdlClientes($tabla){
 
 			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ");
