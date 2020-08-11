@@ -2,8 +2,7 @@
 require('../../../controllers/controller.php');
 require('../../../models/crud.php');
 
-
-$hoy = $_GET["fecha"];
+$hoy = $_GET["fecha_"];
 
 $Controller = new Controller();
 

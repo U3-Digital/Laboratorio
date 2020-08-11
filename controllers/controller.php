@@ -143,6 +143,19 @@ class Controller {
       return $respuesta;
     }
 
+    public static function ctlResumenMensual($fechas){
+    
+      if(isset($fechas["fecha"])){
+        $datosController = array(
+                  "hoy" =>$fechas["fecha"],
+                  "mes" =>$fechas["inicioMes"]
+              );
+        $respuesta = Datos::mdlResumenMensual($datosController, "estudios");
+        return $respuesta;
+      }
+    }
+
+
     public static function listaMedicos(){
       $respuesta = Datos::mdlListaMedicos("medicos");
           $cont =0;
