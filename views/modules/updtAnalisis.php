@@ -21,7 +21,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="cajaNombre">Nombre:</label>
-										<input class="form-control" type="text" name="cajaNombre" id="cajaNombre" required placeholder="Nombre: " value="<?php echo $respuesta['nombre']; ?>">
+										<input disabled class="form-control" type="text" name="cajaNombre" id="cajaNombre" required placeholder="Nombre: " value="<?php echo $respuesta['nombre']; ?>">
 									</div>
 								</div>
 								<div class="col-md-6">

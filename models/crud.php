@@ -334,10 +334,9 @@ class Datos extends Conexion{
 	}
 
 	public static function mdlActualizarAnalisis($datosModel, $tabla) {
-		$statement = Conexion::conectar() -> prepare("UPDATE $tabla SET nombre = :nombre, costo = :costo WHERE idAnalisis = :idAnalisis");
+		$statement = Conexion::conectar() -> prepare("UPDATE $tabla SET costo = :costo WHERE idAnalisis = :idAnalisis");
 
 		$statement -> bindParam(":idAnalisis", $datosModel["idAnalisis"], PDO::PARAM_INT);
-		$statement -> bindParam(":nombre", $datosModel["nombre"], PDO::PARAM_STR);
 		$statement -> bindParam(":costo", $datosModel["costo"], PDO::PARAM_STR);
 
 		if ($statement -> execute()) {
@@ -361,7 +360,7 @@ class Datos extends Conexion{
 
 	public static function mdlEstudios($tabla){
 
-		$stmt = Conexion::conectar()->prepare("SELECT nombre FROM $tabla");
+		$stmt = Conexion::conectar()->prepare("SELECT nombre FROM $tabla ORDER BY nombre ASC");
 		$stmt->execute();
 		return $stmt->fetchAll();
 		$stmt->close();

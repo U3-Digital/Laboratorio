@@ -21,9 +21,6 @@
             <li>
               <a href="inicio.php?action=verAnalisis">Ver catálogo de estudios</a>
             </li>
-            <li>
-              <a href="inicio.php?action=registroAnalisis">Registrar análisis</a>
-            </li>
           </ul>
         </li>
 
