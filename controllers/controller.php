@@ -626,7 +626,6 @@ class Controller {
 
             $datosController = array(
                 "idAnalisis" => $idAnalisis,
-                "nombre" => $_POST["cajaNombre"],
                 "costo" => $_POST["cajaCosto"]
             );
 
