@@ -14,47 +14,101 @@
 		    <div class="modal-body">
 		        <div class="row">
                     <div class="col-md-12">
-                    <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="lge-tab" data-toggle="tab" href="#lgE" role="tab" aria-controls="lgE" aria-selected="true">lgE</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="lga-tab" data-toggle="tab" href="#lgA" role="tab" aria-controls="lgA" aria-selected="false">lgA</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="lgg-tab" data-toggle="tab" href="#lgG" role="tab" aria-controls="lgG" aria-selected="false">lgG</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="lgm-tab" data-toggle="tab" href="#lgM" role="tab" aria-controls="lgM" aria-selected="false">lgM</a>
-                        </li>
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="lgE" role="tabpanel" aria-labelledby="lgE-tab">
-							<div class="row">
-                                
+						<ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+							<li class="nav-item" role="presentation">
+								<a class="nav-link active" id="estradiol-tab" data-toggle="tab" href="#estradiol" role="tab" aria-controls="estradiol" aria-selected="true">Estradiol</a>
+							</li>
+							<li class="nav-item" role="presentation">
+								<a class="nav-link" id="feyhl-tab" data-toggle="tab" href="#feyhl" role="tab" aria-controls="feyhl" aria-selected="false">Folículo estimulante y hormona luteinizante (LH)</a>
+							</li>
+							<li class="nav-item" role="presentation">
+								<a class="nav-link" id="progesteronaProlactina-tab" data-toggle="tab" href="#progesteronaProlactina" role="tab" aria-controls="progesteronaProlactina" aria-selected="false">Progesterona y prolactina</a>
+							</li>
+							<li class="nav-item" role="presentation">
+								<a class="nav-link" id="testosterona-tab" data-toggle="tab" href="#testosterona" role="tab" aria-controls="testosterona" aria-selected="false">Testosterona</a>
+							</li>
+						</ul>
+						<div class="tab-content" id="myTabContent">
+							<div class="tab-pane fade show active" id="estradiol" role="tabpanel" aria-labelledby="estradiol-tab">
+								<div class="row justify-content-center">
+									<div class="col-md-6">
+										<div class="row mt-3">
+											<div class="col-md-10 text-center">
+												<div class="form-group">
+													<label for="cajaResultadoEstradiol">Estradiol:</label>
+													<input class="form-control" type="text" id="cajaResultadoEstradiol" name="cajaResultadoEstradiol">
+												</div>
+											</div>
+											<div class="col-md-2 align-self-center">
+												<br>
+												<p>pg/ml</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="feyhl" role="tabpanel" aria-labelledby="feyhl-tab">
+								<div class="row justify-content-center">
+									<div class="col-md-6">
+										<div class="row mt-3">
+											<div class="col-md-10 text-center">
+												<div class="form-group">
+													<label for="cajaResultadoHormonaFoliculoEstimulante">Hormona folículo estimulante:</label>
+													<input class="form-control" type="text" id="cajaResultadoHormonaFoliculoEstimulante" name="cajaResultadoHormonaFoliculoEstimulante">
+												</div>
+											</div>
+											<div class="col-md-2 align-self-center">
+												<br>
+												<p>m Ul/ml</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="progesteronaProlactina" role="tabpanel" aria-labelledby="progesteronaProlactina-tab">
+								<div class="row justify-content-center">
+									<div class="col-md-6">
+										<div class="row mt-3">
+											<div class="col-md-10 text-center">
+												<div class="form-group">
+													<label for="cajaResultadoProgesterona">Progesterona:</label>
+													<input class="form-control" type="text" id="cajaResultadoProgesterona" name="cajaResultadoProgesterona">
+												</div>
+											</div>
+											<div class="col-md-2 align-self-center">
+												<br>
+												<p>pg/ml</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="testosterona" role="tabpanel" aria-labelledby="testosterona-tab">
+								<div class="row justify-content-center">
+									<div class="col-md-6">
+										<div class="row mt-3">
+											<div class="col-md-10 text-center">
+												<div class="form-group">
+													<label for="cajaResultadoEstradiol">Estradiol:</label>
+													<input class="form-control" type="text" id="cajaResultadoEstradiol" name="cajaResultadoEstradiol">
+												</div>
+											</div>
+											<div class="col-md-2 align-self-center">
+												<br>
+												<p>pg/ml</p>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
-                        <div class="tab-pane fade" id="lgA" role="tabpanel" aria-labelledby="lgA-tab">
-                            <div class="row">
-                                    
-                            </div>
-						</div>
-                        <div class="tab-pane fade" id="lgG" role="tabpanel" aria-labelledby="lgG-tab">
-                            <div class="row">
-                                    
-                            </div>
-						</div>
-                        <div class="tab-pane fade" id="lgM" role="tabpanel" aria-labelledby="lgM-tab">
-                            <div class="row">
-
-                            </div>
-						</div>
-                    </div>
+					</div>
+					
 		        </div>
 		    </div>
 	      	<div class="modal-footer custom-modal">
 	        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-	        	<button type="button" class="btn btn-primary" onclick="validarInmunoglobulinas()">Agregar</button>
+	        	<button type="button" class="btn btn-primary" onclick="validarPerfilHormonalGinecologico()">Agregar</button>
 	      	</div>
 	    </div>
 	</div>
@@ -62,52 +116,25 @@
 
 <script>
 	
-	function validarInmunoglobulinas() {
+	function validarPerfilHormonalGinecologico() {
 		if (cajaResultadoLGE.value || cajaResultadoLGA.value || cajaResultadoLGG.value || cajaResultadoLGM.value) {
 
 			let estudio = {
-				idmodal: 'inmunoglobulinas',
-				nombre: 'Inmunoglobulinas',
-				resultados: [],
+				idmodal: 'perfilhormonalginecologico',
+				nombre: 'Perfil hormonal ginecológico',
+				resultados: 
+				[{
+					nombre: 'estradiol',
+					resultado: '',
+					limites: []
+				}],
 				observaciones: '',
 				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?> 
 			}
 
-			if (cajaResultadoLGA.value) {
-				estudio.resultados.push({
-					nombre: 'Inmunoglobulina A',
-					resultado: cajaResultadoLGA.value,
-					limites: []
-				});
-			}
-
-			if (cajaResultadoLGE.value) {
-				estudio.resultados.push({
-					nombre: 'Inmunoglobulina E',
-					resultado: cajaResultadoLGE.value,
-					limites: []
-				});
-			}
-
-			if (cajaResultadoLGG.value) {
-				estudio.resultados.push({
-					nombre: 'Inmunoglobulina G',
-					resultado: cajaResultadoLGG.value,
-					limites: []
-				});
-			}
-
-			if (cajaResultadoLGM.value) {
-				estudio.resultados.push({
-					nombre: 'Inmunoglobulina M',
-					resultado: cajaResultadoLGM.value,
-					limites: []
-				});
-			}
-
 			agregarEstudio(estudio);
-			cerrarModalInmunoglobulinas();
-			limpiarInmunoglobulinas();
+			cerrarModalPerfilHormonalGinecologico();
+			limpiarPerfilHormonalGinecologico();
 
 		} else {
 			Swal.fire({
@@ -118,48 +145,27 @@
 		}
 	}
 
-	function cerrarModalInmunoglobulinas() {
-		$(`#inmunoglobulinas`).modal('toggle');
+	function cerrarModalPerfilHormonalGinecologico() {
+		$(`#perfilhormonalginecologico`).modal('toggle');
 	}
 
-	function limpiarInmunoglobulinas() {
-        cajaResultadoLGE.value = "";
-        cajaResultadoLGA.value = "";
-        cajaResultadoLGG.value = "";
-        cajaResultadoLGM.value = "";
+	function limpiarPerfilHormonalGinecologico() {
+        
     }
 
-	$('#inmunoglobulinas').on('hidden.bs.modal', function (e) {
-        limpiarInmunoglobulinas();
+	$('#perfilhormonalginecologico').on('hidden.bs.modal', function (e) {
+        limpiarPerfilHormonalGinecologico();
 	});
 
-	$('#inmunoglobulinas').on('show.bs.modal', function (e) {
+	$('#perfilhormonalginecologico').on('show.bs.modal', function (e) {
 		if (editando === true) {
-			edicionInmunoglobulinas(estudioEditar);
+			edicionPerfilHormonalGinecologico(estudioEditar);
 			console.log('hey crack', estudioEditar);
 		}
 	});
 
-	function edicionInmunoglobulinas(estudio) {
-        estudio.resultados.forEach(resultado => {
-            switch (resultado.nombre) {
-                case "Inmunoglobulina E":
-                    cajaResultadoLGE.value = resultado.resultado;
-                break;
-                case "Inmunoglobulina A": 
-                    cajaResultadoLGA.value = resultado.resultado;
-                break;
-                case "Inmunoglobulina G":
-                    cajaResultadoLGG.value = resultado.resultado;
-                break;
-                case "Inmunoglobulina M":
-                    cajaResultadoLGM.value = resultado.resultado;
-                break;
-                default:
-                    return;
-                break;
-            }
-        });
+	function edicionPerfilHormonalGinecologico(estudio) {
+        
 	}
 
 </script>
