@@ -15,7 +15,7 @@
 		        <div class="row">
 		        	<div class="col-md-12">
 		        		<div class="form-group">
-		        			<label for="cajaResultadoCitomegalovirus">Detección CMV POR PCR</label>
+		        			<label for="cajaResultadoCitomegalovirus">Detección CMV POR PCR:</label>
 		        			<input class="form-control" type="text" name="cajaResultadoCitomegalovirus" id="cajaResultadoCitomegalovirus" required value="No detectado">
 		        		</div>
 		        	</div>

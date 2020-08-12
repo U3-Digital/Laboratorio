@@ -14,21 +14,21 @@
 		    <div class="modal-body">
 		        <div class="row">
                     <div class="col-md-12">
-                    <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="lge-tab" data-toggle="tab" href="#lgE" role="tab" aria-controls="lgE" aria-selected="true">lgE</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="lga-tab" data-toggle="tab" href="#lgA" role="tab" aria-controls="lgA" aria-selected="false">lgA</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="lgg-tab" data-toggle="tab" href="#lgG" role="tab" aria-controls="lgG" aria-selected="false">lgG</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="lgm-tab" data-toggle="tab" href="#lgM" role="tab" aria-controls="lgM" aria-selected="false">lgM</a>
-                        </li>
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
+						<ul class="nav nav-tabs nav-fill" id="imunoglobulinas" role="tablist">
+							<li class="nav-item" role="presentation">
+								<a class="nav-link active" id="lge-tab" data-toggle="tab" href="#lgE" role="tab" aria-controls="lgE" aria-selected="true">lgE</a>
+							</li>
+							<li class="nav-item" role="presentation">
+								<a class="nav-link" id="lga-tab" data-toggle="tab" href="#lgA" role="tab" aria-controls="lgA" aria-selected="false">lgA</a>
+							</li>
+							<li class="nav-item" role="presentation">
+								<a class="nav-link" id="lgg-tab" data-toggle="tab" href="#lgG" role="tab" aria-controls="lgG" aria-selected="false">lgG</a>
+							</li>
+							<li class="nav-item" role="presentation">
+								<a class="nav-link" id="lgm-tab" data-toggle="tab" href="#lgM" role="tab" aria-controls="lgM" aria-selected="false">lgM</a>
+							</li>
+						</ul>
+                    <div class="tab-content" id="imunoglobulinasContent">
                         <div class="tab-pane fade show active" id="lgE" role="tabpanel" aria-labelledby="lgE-tab">
 							<div class="row">
 								<div class="col-md-12 text-center">
@@ -202,7 +202,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:center;padding:5px 10px;">10 - 11 años</td>
-                                                    <td style="text-align:center;padding:5px 10px;">638 - 1453</td>
+                                                    <td style="text-align:center;padding:5px 10px;">638 - 1453 mg/dl</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:center;padding:5px 10px;">12 - 13 años</td>
@@ -322,7 +322,7 @@
 				estudio.resultados.push({
 					nombre: 'Inmunoglobulina A',
 					resultado: cajaResultadoLGA.value,
-					limites: []
+					limites: ['0 - 10 meses    0 - 100 mg/dl', '1 - 3 años    24 - 192 mg/dl', '4 - 6 años    26 - 232 mg/dl', '7 - 9 años    33 - 258 mg/dl', '10 - 11 años    45 - 285 mg/dl', '12 - 13 años    45 - 285 mg/dl', '14 - 15 años    47 - 314 mg/dl', '16 - 19 años    55 - 357 mg/dl', 'Adultos    60 - 400 mg/dl']
 				});
 			}
 
@@ -330,7 +330,7 @@
 				estudio.resultados.push({
 					nombre: 'Inmunoglobulina E',
 					resultado: cajaResultadoLGE.value,
-					limites: []
+					limites: ['0 - 10 meses    0 - 6.6 Ul/ml', '1 - 3 años    0.1 - 15.8 Ul/ml', '4 - 6 años    0.3 - 17.6 Ul/ml', '7 - 9 años    0.3 - 60.1 Ul/ml', '10 - 11 años    8.0 - 95.0 Ul/ml', '12 - 13 años    3.9 - 83.5 Ul/ml', '14 - 15 años    3.3 - 188.0 Ul/ml', '16 - 19 años    1.7 - 305.9 Ul/ml', 'Adultos    60 - 400 mg/dl']
 				});
 			}
 
@@ -338,7 +338,7 @@
 				estudio.resultados.push({
 					nombre: 'Inmunoglobulina G',
 					resultado: cajaResultadoLGG.value,
-					limites: []
+					limites: ['0 - 10 meses    273 - 1660 mg/dl', '1 - 3 años    400 - 1250 mg/dl', '4 - 6 años    560 - 1307 mg/dl', '7 - 9 años    598 - 1399 mg/dl', '10 - 11 años    638 - 1453 mg/dl', '12 - 13 años    680 - 1531 mg/dl', '14 - 15 años    724 - 1611 mg/dl', '16 - 19 años    700 - 1500 mg/dl', 'Adultos    700 - 1500 mg/dl']
 				});
 			}
 
@@ -346,7 +346,7 @@
 				estudio.resultados.push({
 					nombre: 'Inmunoglobulina M',
 					resultado: cajaResultadoLGM.value,
-					limites: []
+					limites: ['0 - 12 meses    0 - 216 md/dl', '1 - 3 años    28 - 218 mg/dl', '4 - 6 años    36 - 314 mg/dl', '7 - 9 años    47 - 311 mg/dl', '10 - 11 años    46 - 268 mg/dl', '12 - 13 años    52 - 357 mg/dl', '14 - 15 años	23 - 281 mg/dl', '16 - 19 años    35 - 387 mg/dl', 'Adultos    60 - 300 mg/dl']
 				});
 			}
 
