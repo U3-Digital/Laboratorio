@@ -3,6 +3,55 @@
 class Controller {
 
 
+  public static function resumenGrafica(){
+    date_default_timezone_set("America/chihuahua");
+    
+     $respuesta = Datos::mdlgrafica("estudios");
+        $meses = array();
+        $cant = array();
+        foreach ($respuesta as $row => $item){
+            array_push($meses, $item["Mes"]);
+            $num = number_format($item["Total"], 2, '.', '');
+            array_push($cant, $num);
+
+        }
+
+        echo '<script type="text/javascript">'
+            .'var ctx = document.getElementById("myBarChart");'
+            .'var myLineChart = new Chart(ctx, {'
+            ." type: 'line',"
+            .'data: {'
+            .' labels:'.json_encode($meses).','
+            .'datasets: [{'
+            .'label: "$",'
+            .'lineTension: 0.3,'
+            .'backgroundColor: "rgba(2,117,216,1)",'
+            .'borderColor: "rgba(2,117,216,1)",'
+            .'pointRadius: 5,'
+            .'pointBackgroundColor: "rgba(2,117,216,1)",'
+            .'pointBorderColor: "rgba(255,255,255,0.8)",'
+            .'pointHoverRadius: 5,'
+            .'pointHoverBackgroundColor: "rgba(2,117,216,1)",'
+            .'pointHitRadius: 20,'
+            .'pointBorderWidth: 2,'
+            .'data:'. json_encode($cant,JSON_NUMERIC_CHECK).','
+            .'}],'
+            .'},'
+            .'options: {'
+            .'legend: {'
+            .'display: false'
+            .'}'
+            .'}'
+            .'});'
+            .'myLineChart.aspectRatio = 0;'
+            .'</script>';
+
+
+  }
+
+
+  
+
     public static function listaEstudios(){
       $respuesta = Datos::mdlListaEstudios("estudios");
           $cont =0;

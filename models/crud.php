@@ -4,6 +4,14 @@ require_once "conexion.php";
 
 class Datos extends Conexion{
 
+
+		public static function mdlgrafica($tabla){
+			$stmt = Conexion::conectar() -> prepare("SELECT SUM(costo) AS Total, MONTHNAME(fecha) as Mes FROM $tabla WHERE `fecha` > DATE_SUB(now(), INTERVAL 6 MONTH) GROUP BY MONTH(fecha) ORDER BY `fecha`;");
+			$stmt -> execute();
+			return $stmt -> fetchAll();
+			$stmt -> close();
+		} 
+
 		public static function mdlListaEstudios($tabla){
 			$statement = Conexion::conectar()->prepare("SELECT * FROM $tabla");
 

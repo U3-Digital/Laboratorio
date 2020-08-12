@@ -41,7 +41,7 @@
 		</div>
 		<div class="row justify-content-center">
 			<div class="col-md-6">
-				<canvas id="myChart"></canvas>
+				<canvas id="myBarChart"></canvas>
 			</div>
 		</div>
 	</div>
@@ -132,24 +132,9 @@
     });
 
 
-    var ctx = document.getElementById('myChart').getContext('2d');
-	var chart = new Chart(ctx, {
-	    // The type of chart we want to create
-	    type: 'line',
-
-	    // The data for our dataset
-	    data: {
-	        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-	        datasets: [{
-	            label: 'My First dataset',
-	            backgroundColor: '#4099ff',
-	            borderColor: '#4099ff',
-	            data: [0, 10, 5, 2, 20, 30, 45]
-	        }]
-	    },
-
-	    // Configuration options go here
-	    options: {}
-	});
-	chart.aspectRatio = 0;
+	
 </script>
+<?php 
+	$grafica = new Controller();
+  	$grafica -> resumenGrafica();
+?>
