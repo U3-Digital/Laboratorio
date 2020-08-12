@@ -39,7 +39,7 @@ require "../../models/crud.php";
 
 	<script src="../../lib/vendor/datatables/jquery.dataTables.js"></script>
 	<script src="../../lib/vendor/datatables/dataTables.bootstrap4.js"></script>
-
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 
 	<title>Panel  | Laboratorio</title>
 </head>
