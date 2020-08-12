@@ -43,7 +43,87 @@
 												<br>
 												<p>pg/ml</p>
 											</div>
-										</div>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-8">
+                                                <table>
+                                                    <tr>
+                                                        <th colspan="2" style="text-align: center; padding: 5px 10px;">
+                                                            Valores normales
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Ciclo menstrual:</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Fase Folicular</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">18 - 147 pg/ml</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Fase Preovulatoria</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">93 - 575 pg/ml</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Fase Lútea</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">43 - 214 pg/ml</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Durante la gestación:</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">&emsp;Semanas:</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">9 sem a 12 sem</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">1,122 - 2,200 pg/ml</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">13 sem a 14 sem</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">1,800 - 4,500 pg/ml</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">17 sem a 20 sem</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">5,300 - 11,500 pg/ml</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">21 sem a 24 sem</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">7,000 - 14,200 pg/ml</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">25 sem a 28 sem</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">8,200 - 19,900 pg/ml</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">29 sem a 32 sem</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">9,000 - 23,000 pg/ml</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">33 sem a 36 sem</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">11,000 - 23,500 pg/ml</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">37 sem a 38 sem</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">16,000 - 26,700 pg/ml</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">39 sem a 40 sem</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">16,000 - 26,700 pg/ml</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Post menopausia sin tratamiento</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">0 - 30 pg/ml</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Post menopausia con tratamiento</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">0 - 58 pg/ml</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Con anticonceptivos orales</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">0 - 102 pg/ml</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
 									</div>
 								</div>
 							</div>
@@ -89,18 +169,38 @@
 										<div class="row mt-3">
 											<div class="col-md-10 text-center">
 												<div class="form-group">
-													<label for="cajaResultadoEstradiol">Estradiol:</label>
-													<input class="form-control" type="text" id="cajaResultadoEstradiol" name="cajaResultadoEstradiol">
+													<label for="cajaResultadoTestosteronaTotal">Testosterona total:</label>
+													<input class="form-control" type="text" id="cajaResultadoTestosteronaTotal" name="cajaResultadoTestosteronaTotal">
 												</div>
 											</div>
 											<div class="col-md-2 align-self-center">
 												<br>
-												<p>pg/ml</p>
+												<p>ng/ml</p>
 											</div>
-										</div>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-6">
+                                                <table class="borde">
+                                                    <tr>
+                                                        <th colspan="2" style="text-align: center; padding: 5px 10px;">
+                                                            Valores normales
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Mujeres</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">0.1 - 0.9 ng/ml</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Hombres</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">3.0 - 10.0 ng/ml</td>
+                                                    </tr>
+                                                    
+                                                </table>
+                                            </div>
+                                        </div>
 									</div>
-								</div>
-							</div>
+								</div>                          
+                            </div>
 						</div>
 					</div>
 					
