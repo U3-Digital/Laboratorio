@@ -4,7 +4,11 @@ class EnlacesModels{
 
 	public static function enlacesModel($enlaces){
 
-		if ($enlaces == "home" ||
+		if ($enlaces == "home" && $_SESSION["rol"] == 0) {
+			$module = $enlaces . ".php";
+		} else if ($enlaces == "home" && $_SESSION["rol"] == 1) {
+			$module = "verEstudios.php";
+		} else if (
 			$enlaces == "registrocliente" ||
 			$enlaces == "verclientes" ||
 			$enlaces == "registroUsuario" ||

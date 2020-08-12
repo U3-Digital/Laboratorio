@@ -21,8 +21,12 @@
 					                  <th style="width: 10px">#</th>
 					                  <th>Nombre</th>
 					                  <th>Costo</th>
-					                  <th style="width: 40px">Editar</th>
-					                  <th style="width: 40px">Borrar</th>
+					                  <th style="width: 2.5em">Editar</th>
+					                  <?php 
+                                        if ($_SESSION["rol"] == 0) {
+                                            echo '<th style="width: 2.5em;">Borrar</th>';
+                                        }
+										?>
 					                </tr>
 					                </thead>
 					                 <tbody>

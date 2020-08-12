@@ -72,8 +72,13 @@ class Controller {
                     <td>'.$Estudios.'</td>
                     <td>'.$item["costo"].'</td>
                     <td><a href="inicio.php?action=updtmedico&idEditar='.$item["idEstudio"].'"><button class="btn btn-warning">Editar</button></a></td>
-                    <td><a href="inicio.php?action=verEstudios&idBorrar='.$item["idEstudio"].'" ><button class="btn btn-danger">Borrar</button></a></td>
-                  </tr>';
+                    ';
+            if ($_SESSION["rol"] == 0) {
+              echo '<td><a href="inicio.php?action=verEstudios&idBorrar='.$item["idEstudio"].'" ><button class="btn btn-danger">Borrar</button></a></td>
+              </tr>';
+            } else {
+              echo '</tr>';
+            }
           }  
     }
     public static function borrarEstudio(){
@@ -216,9 +221,14 @@ class Controller {
                     <td>'.$item["nombre"].'</td>
                     <td>'.$item["apellidos"].'</td>
                     <td>'.$item["email"].'</td>
-                    <td><a href="inicio.php?action=updtmedico&idEditar='.$item["idMedico"].'"><button class="btn btn-warning">Editar</button></a></td>
-                    <td><a href="inicio.php?action=vermedicos&idBorrar='.$item["idMedico"].'" ><button class="btn btn-danger">Borrar</button></a></td>
-                  </tr>';
+                    <td><a href="inicio.php?action=updtmedico&idEditar='.$item["idMedico"].'"><button class="btn btn-warning">Editar</button></a></td>';
+                  
+              if ($_SESSION["rol"] == 0) {
+                echo '<td><a href="inicio.php?action=vermedicos&idBorrar='.$item["idMedico"].'" ><button class="btn btn-danger">Borrar</button></a></td>
+                </tr>';
+              } else {
+                echo '</tr>';
+              }
           }
     }
 
@@ -320,9 +330,14 @@ class Controller {
                     <td>'.$item["nombre"].'</td>
                     <td>'.$item["apellidos"].'</td>
                     <td>'.$item["email"].'</td>
-                    <td><a href="inicio.php?action=updtCliente&idEditar='.$item["idCliente"].'"><button class="btn btn-warning">Editar</button></a></td>
-                    <td><a href="inicio.php?action=verclientes&idBorrar='.$item["idCliente"].'" ><button class="btn btn-danger">Borrar</button></a></td>
-                  </tr>';
+                    <td><a href="inicio.php?action=updtCliente&idEditar='.$item["idCliente"].'"><button class="btn btn-warning">Editar</button></a></td>';
+            
+            if ($_SESSION["rol"] == 0) {
+              echo '<td><a href="inicio.php?action=verclientes&idBorrar='.$item["idCliente"].'" ><button class="btn btn-danger">Borrar</button></a></td>
+              </tr>';
+            } else {
+              echo '</tr>';
+            }
           }
     }
 
@@ -670,14 +685,19 @@ class Controller {
                             </button>
                         </a>
                     </td>
-                    <td>
-                        <a href="inicio.php?action=verAnalisis&idBorrar='. $item["idAnalisis"] . '">
-                            <button class="btn btn-danger">
-                                <i class="fas fa-trash" style="color: white;"></i>
-                            </button>
-                        </a>
+                    ';
+            if ($_SESSION["rol"] == 0) {
+              echo '<td>
+                      <a href="inicio.php?action=verAnalisis&idBorrar='. $item["idAnalisis"] . '">
+                          <button class="btn btn-danger">
+                              <i class="fas fa-trash" style="color: white;"></i>
+                          </button>
+                      </a>
                     </td>
-                </tr>';
+                  </tr>';
+            } else {
+              echo '</tr>';
+            }
 
         }
 
@@ -767,35 +787,6 @@ class Controller {
         return $respuesta;
     }
 
-    public static function ctlBuscarEstudios() {
-        $respuesta = Datos::mdlBuscarEstudos("estudios");
-
-        foreach ($respuesta as $row => $item) {
-            echo '<tr>
-                    <td>' . $item["idEstudio"] . '</td>
-                    <td>' . $item["cliente"] . '</td>
-                    <td>' . $item["medico"] . '</td>
-                    <td>' . $item["fecha"] . '</td>
-                    <td>' . $item["responsable"] . '</td>
-                    <td>' . $item["estudios"] . '</td>
-                    <td>' . $item["costo"] . '</td>
-                    <td>
-                        <a href="inicio.php?action=updtAnalisis&idAnalisis='. $item["idAnalisis"] . '">
-                            <button class="btn btn-warning">
-                                <i class="fas fa-pencil-alt" style="color: black;"></i>
-                            </button>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="inicio.php?action=verAnalisis&idBorrar='. $item["idAnalisis"] . '">
-                            <button class="btn btn-danger">
-                                <i class="fas fa-trash" style="color: white;"></i>
-                            </button>
-                        </a>
-                    </td>
-                  </tr>';
-        }
-    }
 
     // public static function
 

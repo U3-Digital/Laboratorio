@@ -62,8 +62,8 @@
                                         <label for="selectRol">Rol:</label>
                                         <select required class="form-control" id="selectRol" name="selectRol">
                                             <option>Rol</option>
-                                            <option value="admin" <?php if ($respuesta["rol"] == 0) echo 'selected';  ?> >Administrador</option>
-                                            <option value="usuario" <?php if ($respuesta["rol"] == 1) echo 'selected'; ?> >Usuario</option>
+                                            <option value="0" <?php if ($respuesta["rol"] == 0) echo 'selected';  ?> >Administrador</option>
+                                            <option value="1" <?php if ($respuesta["rol"] == 1) echo 'selected'; ?> >Usuario</option>
                                         </select>
                                     </div>
                                 </div>

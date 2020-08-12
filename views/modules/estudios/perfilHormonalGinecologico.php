@@ -19,7 +19,7 @@
 								<a class="nav-link active" id="estradiol-tab" data-toggle="tab" href="#estradiol" role="tab" aria-controls="estradiol" aria-selected="true">Estradiol</a>
 							</li>
 							<li class="nav-item" role="presentation">
-								<a class="nav-link" id="feyhl-tab" data-toggle="tab" href="#feyhl" role="tab" aria-controls="feyhl" aria-selected="false">Folículo estimulante y hormona luteinizante (LH)</a>
+								<a class="nav-link" id="feyhl-tab" data-toggle="tab" href="#feyhl" role="tab" aria-controls="feyhl" aria-selected="false">Folículoestimulante y hormona luteinizante (LH)</a>
 							</li>
 							<li class="nav-item" role="presentation">
 								<a class="nav-link" id="progesteronaProlactina-tab" data-toggle="tab" href="#progesteronaProlactina" role="tab" aria-controls="progesteronaProlactina" aria-selected="false">Progesterona y prolactina</a>
@@ -133,8 +133,54 @@
 										<div class="row mt-3">
 											<div class="col-md-10 text-center">
 												<div class="form-group">
-													<label for="cajaResultadoHormonaFoliculoEstimulante">Hormona folículo estimulante:</label>
-													<input class="form-control" type="text" id="cajaResultadoHormonaFoliculoEstimulante" name="cajaResultadoHormonaFoliculoEstimulante">
+													<label for="cajaResultadoHormonaFoliculoestimulante">Hormona folículoestimulante:</label>
+													<input class="form-control" type="text" id="cajaResultadoHormonaFoliculoestimulante" name="cajaResultadoHormonaFoliculoestimulante">
+												</div>
+											</div>
+											<div class="col-md-2 align-self-center">
+												<br>
+												<p>m Ul/ml</p>
+											</div>
+										</div>
+										<div class="row justify-content-center">
+											<div class="col-md-8">
+												<table class="borde">
+													<tr>
+                                                        <th colspan="2" style="text-align: center; padding: 5px 10px;">
+                                                            Valores normales
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Mujeres con menstruación normal:</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Fase Folicular</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">3.9 - 12.0 m Ul/ml</td>
+													</tr>
+													<tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Mitad del ciclo</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">2.9 - 9.0 m Ul/ml</td>
+													</tr>
+													<tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Fase lútea</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">1.5 - 7.0 m Ul/ml</td>
+													</tr>
+													<tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Embarazo</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">&lt;0.9 m Ul/ml</td>
+													</tr>
+													<tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Post embarazo</td>
+                                                        <td style="text-align: center; padding: 5px 10px;"> &gt; 34 m Ul/ml</td>
+                                                    </tr>
+												</table>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-10 text-center">
+												<div class="form-group">
+													<label for="cajaResultadoHormonaLuteinizante">Hormona luteinizante (LH):</label>
+													<input class="form-control" type="text" id="cajaResultadoHormonaLuteinizante" name="cajaResultadoHormonaLuteinizante">
 												</div>
 											</div>
 											<div class="col-md-2 align-self-center">

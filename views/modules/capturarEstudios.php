@@ -194,6 +194,7 @@
 <script type="text/javascript">
 
     let total= 0;
+    let indexEditar = -1;
 
     const selectEstudios = document.getElementById('selectEstudios');
     let lista = document.getElementById('lista');
@@ -496,7 +497,7 @@
                                 </button>
                             </div>
                             <div class="col-2">
-                                <button class="btn hover" onclick="borrarEstudio(${i})">
+                                <button class="btn hover" onclick="borrarEstudio(${i}); visualizarEstudios();">
                                     <i class="fas fa-trash" style="color: #DC3545;"></i>
                                 </button>
                             </div>
@@ -524,28 +525,36 @@
 
     function agregarEstudio(estudio) {
         console.log(estudio);
-        estudios.push(estudio);
         // console.log(estudios);
 
         if (editando === true) {
+            borrarEstudio(indexEditar);
+
+            insertEstudioAt(estudios, indexEditar, estudio)
             editando = false;
-        } 
+        } else {
+            estudios.push(estudio);
+        }
 
         visualizarEstudios();
     }
 
+    function insertEstudioAt(array, index, element) {
+        array.splice(index, 0, element);
+    }
 
     function borrarEstudio(index) {
         estudios.splice(index, 1);
 
-        visualizarEstudios();
+        // visualizarEstudios();
     }
 
     function editarEstudios(index) { 
         editando = true;
+        indexEditar = index;
+
         estudioEditar = estudios[index];
         abrirEstudio(estudioEditar.idmodal);
-        borrarEstudio(index);
     }
     
 </script>

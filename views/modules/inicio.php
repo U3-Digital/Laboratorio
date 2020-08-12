@@ -74,8 +74,15 @@ require "../../models/crud.php";
 
 	$modulos = new Enlaces();
 	$modulos -> enlacesController();
-include "menu.php";
+// include "menu.php";
 
+	if ($_SESSION["rol"] == 0) {
+		include "menu.php";
+	} else {
+		include "menu-noadmin.php";
+	}
+
+	// print_r("<script>console.log('" . $_SESSION["rol"] . "');</script>");
 ?>
 
 	

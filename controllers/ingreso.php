@@ -25,7 +25,7 @@ class Ingreso {
 
                     $this ->intentos = 0;
 
-                    $datosController = array("usuarioActual"=>$usuarioActual, "actualizarIntentos"=>$intentos);
+                    $datosController = array("usuarioActual"=>$usuarioActual, "actualizarIntentos"=>$this->intentos);
 
                     //$respuestaActualizarIntentos = IngresoModels::intentosModel($datosController, "usuarios");
 
@@ -59,7 +59,7 @@ class Ingreso {
                     // Nada de intentos en la base de datos 
                     $this->intentos = 0;
 
-                    $datosController = array("usuarioActual"=>$usuarioActual, "actualizarIntentos"=>$intentos);
+                    $datosController = array("usuarioActual"=>$usuarioActual, "actualizarIntentos"=>$this->intentos);
 
                     $respuestaActualizarIntentos = IngresoModels::intentosModel($datosController, "usuarios");
 

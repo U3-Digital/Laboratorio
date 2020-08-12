@@ -23,8 +23,12 @@
                                       <th>Nombre</th>
                                       <th>apellidos</th>
                                       <th>Email</th>
-                                      <th style="width: 40px"></th>
-                                      <th style="width: 40px"></th>
+                                      <th style="width: 2.5em">Editar</th>
+                                      <?php 
+                                        if ($_SESSION["rol"] == 0) {
+                                            echo '<th style="width: 2.5em;">Borrar</th>';
+                                        }
+										?>
                                     </tr>
                                     </thead>
                                      <tbody>

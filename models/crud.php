@@ -215,7 +215,7 @@ class Datos extends Conexion{
 
 	public static function mdlActualizarUsuario($datosModel, $tabla) {
 
-		if ($datosModel["password"]) {
+		if (array_key_exists("password", $datosModel)) {
 			$statement = Conexion::conectar() -> prepare("UPDATE $tabla SET nombres = :nombres, apellidos = :apellidos, email = :email, password = :password, foto = :foto, rol = :rol, activo = :activo WHERE idUsuario = :idUsuario");
 
 			$statement -> bindParam(":idUsuario", $datosModel["idUsuario"], PDO::PARAM_STR);
