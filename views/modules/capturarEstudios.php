@@ -324,106 +324,135 @@
 
     }
 
-    function ImprimirEstudios(){
+    async function ImprimirEstudios(){
+        var myWindow = window.open('','','width=1500,height=1000');
 
-        var myWindow =window.open("", "MsgWindow", "width=2500,height=1000");
-        myWindow.document.write( `
-        <style>
-        * {
-            font-family: 'Arial', sans-serif;
-            font-size: 16px;
-        }
-
-        @media screen {
-          div.divFooter {
-            display: none;
-
-          }
-
-          div.divHeader {
-            display: none;
-          }
-        }
-        @media print {
-        @page { margin: 2mm; }
-
-        body { margin: 1.6cm; }
+        myWindow.document.write(`
+            <style>
+                * {
+                    font-family: 'Arial', sans-serif;
+                    font-size: 16px;
+                }
 
 
-        .header, .footer {
-          height: 5%;
-          border: 1px solid red;
-        }
+                @media screen{
+                    .header, .footer{
+                        display: none;
+                    }
+                }
+                @media print {
+                    @page { margin: 2mm; }
+
+                    body { margin: 1.6cm; }
 
 
-        .header-space, .footer-space{
-            height: 0%
-            border: 1px solid red;
-        }
-        .divCompletar{
-            height : 90%;
-            border: 1px solid green;
-        }
-
-        .header {
-          position: fixed;
-          top: 0;
-        }
-
-        .footer {
-          position: fixed;
-          bottom: 0;
-        }
+                    .header, .footer {
+                      height: 5%;
+                    }
 
 
-        }
+                    .header-space, .footer-space{
+                        height: 50px;
+                        width = 100%;
+                    }
+                    .divCompletar{
+                        height : 90%;
+                    }
 
-        </style>
+                    .header {
+                      position: fixed;
+                      width = 100%;
+                      top: 0;
+                    }
 
+                    .footer {
+                      position: fixed;
+                      width = 100%;
+                      bottom: 0;
+                    }
+                }
+            </style>
+            ${escribirCuerpo()}
+           
 
+            
 
-        <table style="height:100%;">
-          <thead><tr><td>
-            <div class="header-space">&nbsp;</div>
-          </td></tr></thead>
-          <tbody><tr><td>
-            <div class="divCompletar"> contenido 1</div>
-          </td></tr></tbody>
-          <tfoot><tr><td>
-            <div class="footer-space">&nbsp;</div>
-          </td></tr></tfoot>
-        </table>
-        <div class="header">
-            <img src="../../Assets/header.jpg" alt="Lamp" width="32" height="32">
-        </div>
-        <div class="footer">Footer</div>
+            <div class="header">
+                <img src="../../Assets/header.jpeg" alt="Girl in a jacket" width=100% height="100%">
+            </div>
+            <div class="footer">
+                <img src="../../Assets/footer.jpeg" alt="Girl in a jacket" width=100% height="100%">    
+            </div>
 
-
-
-        ${escribirCuerpo()}
-         `);
-        //console.log(estudios);
+            `);
         myWindow.print();
-         myWindow.close();
+
+       
+        // myWindow.close();
+    }
+    function escribirResultados(estudio){
+        let resultados = "";
+
+        estudio.resultados.forEach(resultado =>{
+
+            resultados +=`
+                <div style="display: flex;  width = 100% justify-content: space-around;">
+                    <p>${resultado.nombre}: <span>${resultado.resultado}</span></p>
+                    ${ resultado.limites[0] ? (
+                            `<p>limites: ${resultado.limites[0]}</p>`
+                        ) : (
+                            ""
+                        )}
+                    
+                </div>
+            `
+        })
+        return resultados;
+        
     }
     function escribirCuerpo(){
         let texto = "";
         estudios.forEach(estudio =>{
-            texto +=`<p>
-                        <strong>
-                            Nombre:
-                        </strong>
-                            ${cajaNombreCliente.value} ${cajaApellidosCliente.value}
-                    </p>
-                    <p>
-                        <strong>
-                            Medico:
-                        </strong>
-                            ${cajaNombresDoctor.value} ${cajaApellidosDoctor.value}
-                    </p>
-                    <hr>`;
+            texto +=`
 
-            console.log(estudio.nombre);
+                     <table>
+                        <thead><tr><td>
+                            <div class="header-space">&nbsp;</div>
+                        </td></tr></thead>
+                        <tbody><tr><td>
+                            <div class="content" width=100%>
+                                <p width = 100%>
+                                    <strong>
+                                        Nombre:
+                                    </strong>
+                                        ${cajaNombreCliente.value} ${cajaApellidosCliente.value}
+                                </p>
+                                <p>
+                                    <strong>
+                                        Medico:
+                                    </strong>
+                                        ${cajaNombresDoctor.value} ${cajaApellidosDoctor.value}
+                                </p><hr></br>
+                                <h2>${estudio.nombre}</h2>
+                                ${estudio.resultados[0].limites.  length >0 ? (
+                                        "<div style='display: flex;justify-content: space-around;'><h3>Resultados:</h3> <h3>Limites</h3></div>"
+                                    ):(
+                                        "<h3>Resultados:</h3>"
+                                    )}
+                                ${escribirResultados(estudio)}
+                                ${estudio.observaciones && estudio.observaciones !== "" ?(
+                                        `<h3>observaciones</h3><p>${estudio.observaciones}</p>`
+                                    ):(
+                                        ""
+                                    )}
+                            </div>
+                        </td></tr></tbody>
+                        <tfoot><tr><td>
+                            <div class="footer-space">&nbsp;</div>
+                        </td></tr></tfoot>
+                    </table>
+                    `;
+
         });
 
 

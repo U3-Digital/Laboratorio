@@ -65,7 +65,13 @@
 		data: `fecha = ${formated_Date}`,
 		success: function(data) {
 		    const datos = JSON.parse(data);
-		    ingresosDiarios.innerHTML = `$${datos.Total}`;
+		    console.log(datos.Total);
+		    if(datos.Total){
+		    	ingresosDiarios.innerHTML = `$${datos.Total}`;	
+		    }else{
+		    	ingresosDiarios.innerHTML = "$0"
+		    }
+		    
 		    EstudiosDiarios.innerHTML=  datos.citas;
 		},
 		error: function(data) {
@@ -91,7 +97,11 @@
         success: function(data) {
            const datos = JSON.parse(data);
            
-           ingresosMensuales.innerHTML = `$${datos.Total}`;
+           if(datos.Total){
+		    	ingresosMensuales.innerHTML = `$${datos.Total}`;	
+		    }else{
+		    	ingresosMensuales.innerHTML = "$0"
+		    }
            EstudiosMensuales.innerHTML=  datos.citas;
         },
         error: function(data) {
@@ -117,7 +127,11 @@
         success: function(data) {
            const datos = JSON.parse(data);
            
-           ingresosSemanales.innerHTML = `$${datos.Total}`;
+           if(datos.Total){
+		    	ingresosSemanales.innerHTML = `$${datos.Total}`;	
+		    }else{
+		    	ingresosSemanales.innerHTML = "$0"
+		    }
            EstudiosSemanales.innerHTML=  datos.citas;
         },
         error: function(data) {
