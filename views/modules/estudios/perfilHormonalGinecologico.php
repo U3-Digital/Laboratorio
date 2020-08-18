@@ -144,7 +144,7 @@
 										</div>
 										<div class="row justify-content-center">
 											<div class="col-md-8">
-												<table class="borde">
+												<table>
 													<tr>
                                                         <th colspan="2" style="text-align: center; padding: 5px 10px;">
                                                             Valores normales
@@ -155,23 +155,23 @@
                                                     </tr>
                                                     <tr>
                                                         <td style="text-align: center; padding: 5px 10px;">Fase Folicular</td>
-                                                        <td style="text-align: center; padding: 5px 10px;">3.9 - 12.0 m Ul/ml</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">3.9 - 12.0 Ul/ml</td>
 													</tr>
 													<tr>
                                                         <td style="text-align: center; padding: 5px 10px;">Mitad del ciclo</td>
-                                                        <td style="text-align: center; padding: 5px 10px;">2.9 - 9.0 m Ul/ml</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">2.9 - 9.0 Ul/ml</td>
 													</tr>
 													<tr>
                                                         <td style="text-align: center; padding: 5px 10px;">Fase lútea</td>
-                                                        <td style="text-align: center; padding: 5px 10px;">1.5 - 7.0 m Ul/ml</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">1.5 - 7.0 Ul/ml</td>
 													</tr>
 													<tr>
                                                         <td style="text-align: center; padding: 5px 10px;">Embarazo</td>
-                                                        <td style="text-align: center; padding: 5px 10px;">&lt;0.9 m Ul/ml</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">&lt;0.9 Ul/ml</td>
 													</tr>
 													<tr>
                                                         <td style="text-align: center; padding: 5px 10px;">Post embarazo</td>
-                                                        <td style="text-align: center; padding: 5px 10px;"> &gt; 34 m Ul/ml</td>
+                                                        <td style="text-align: center; padding: 5px 10px;"> &gt; 34 Ul/ml</td>
                                                     </tr>
 												</table>
 											</div>
@@ -186,6 +186,36 @@
 											<div class="col-md-2 align-self-center">
 												<br>
 												<p>m Ul/ml</p>
+											</div>
+                                        </div>
+                                        <div class="row justify-content-center">
+											<div class="col-md-8">
+												<table>
+													<tr>
+                                                        <th colspan="2" style="text-align: center; padding: 5px 10px;">
+                                                            Valores normales
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Mujeres:</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Fase Folicular</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">1.5 - 8.0 Ul/ml</td>
+													</tr>
+													<tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Mitad del ciclo</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">2.0 - 8.0 Ul/ml</td>
+													</tr>
+													<tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Fase lútea</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">0.2 - 6.5 Ul/ml</td>
+													</tr>
+													<tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Post-menopausia</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">16.0 - 33.0 Ul/ml</td>
+													</tr>
+												</table>
 											</div>
 										</div>
 									</div>
@@ -205,7 +235,75 @@
 												<br>
 												<p>pg/ml</p>
 											</div>
-										</div>
+                                        </div>
+                                        <div class="row justify-content-center">
+											<div class="col-md-8">
+												<table>
+													<tr>
+                                                        <th colspan="2" style="text-align: center; padding: 5px 10px;">
+                                                            Valores normales
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Mujeres con menstruación normal:</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Fase Folicular</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">0.25 - 0.54 ng/ml</td>
+													</tr>
+													<tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Fase lútea</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">1.5 - 20.0 ng/ml</td>
+													</tr>
+													<tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Menopausia</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">&lt; 0.41 ng/ml</td>
+													</tr>
+												</table>
+											</div>
+                                        </div>
+                                        <div class="row">
+											<div class="col-md-10 text-center">
+												<div class="form-group">
+													<label for="cajaResultadoProlactina">Prolactina:</label>
+													<input class="form-control" type="text" id="cajaResultadoProlactina" name="cajaResultadoProlactina">
+												</div>
+											</div>
+											<div class="col-md-2 align-self-center">
+												<br>
+												<p>pg/ml</p>
+											</div>
+                                        </div>
+                                        <div class="row justify-content-center">
+											<div class="col-md-8">
+												<table>
+													<tr>
+                                                        <th colspan="2" style="text-align: center; padding: 5px 10px;">
+                                                            Valores normales
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Mujeres con menstruación normal:</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Fase Folicular</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">0.25 - 0.54 ng/ml</td>
+													</tr>
+													<tr>
+                                                    <td style="text-align: center; padding: 5px 10px;">Fase lútea</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">1.5 - 20.0 ng/ml</td>
+													</tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Ovulación</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">0.25 - 6.22 ng/ml</td>
+													</tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding: 5px 10px;">Menopausia</td>
+                                                        <td style="text-align: center; padding: 5px 10px;">&lt; 0.41 ng/ml</td>
+													</tr>
+												</table>
+											</div>
+                                        </div>
 									</div>
 								</div>
 							</div>
@@ -226,7 +324,7 @@
                                         </div>
                                         <div class="row justify-content-center">
                                             <div class="col-md-6">
-                                                <table class="borde">
+                                                <table>
                                                     <tr>
                                                         <th colspan="2" style="text-align: center; padding: 5px 10px;">
                                                             Valores normales
@@ -263,15 +361,42 @@
 <script>
 	
 	function validarPerfilHormonalGinecologico() {
-		if (cajaResultadoLGE.value || cajaResultadoLGA.value || cajaResultadoLGG.value || cajaResultadoLGM.value) {
+		if (cajaResultadoEstradiol.value && cajaResultadoHormonaFoliculoestimulante.value && 
+            cajaResultadoHormonaLuteinizante.value && cajaResultadoProgesterona.value && 
+            cajaResultadoProlactina.value && cajaResultadoTestosteronaTotal.value) {
 
 			let estudio = {
 				idmodal: 'perfilhormonalginecologico',
 				nombre: 'Perfil hormonal ginecológico',
 				resultados: 
 				[{
-					nombre: 'estradiol',
-					resultado: '',
+					nombre: 'Estradiol',
+					resultado: cajaResultadoEstradiol.value,
+					limites: []
+				},
+                {
+					nombre: 'Hormona Foliculo-estimulante',
+					resultado: cajaResultadoHormonaFoliculoestimulante.value,
+					limites: []
+				},
+                {
+					nombre: 'Hormona luteinizante',
+					resultado: cajaResultadoHormonaLuteinizante.value,
+					limites: []
+				},
+                {
+					nombre: 'Progresterona',
+					resultado: cajaResultadoProgesterona.value,
+					limites: []
+				},
+                {
+					nombre: 'Prolactina',
+					resultado: cajaResultadoProlactina.value,
+					limites: []
+				},
+                {
+					nombre: 'Testosterona total',
+					resultado: cajaResultadoTestosteronaTotal.value,
 					limites: []
 				}],
 				observaciones: '',
@@ -296,7 +421,12 @@
 	}
 
 	function limpiarPerfilHormonalGinecologico() {
-        
+        cajaResultadoEstradiol.valule = '';
+        cajaResultadoHormonaFoliculoestimulante.value = '';
+        cajaResultadoHormonaLuteinizante.value = '';
+        cajaResultadoProgesterona.value = '';
+        cajaResultadoProlactina.value = '';
+        cajaResultadoTestosteronaTotal.value = '';
     }
 
 	$('#perfilhormonalginecologico').on('hidden.bs.modal', function (e) {
@@ -311,7 +441,12 @@
 	});
 
 	function edicionPerfilHormonalGinecologico(estudio) {
-        
+        cajaResultadoEstradiol.value = estudio.resultados[0].resultado;
+        cajaResultadoHormonaFoliculoestimulante.value = estudio.resultados[1].resultado;
+        cajaResultadoHormonaLuteinizante.value = estudio.resultados[2].resultado;
+        cajaResultadoProgesterona.value = estudio.resultados[3].resultado;
+        cajaResultadoProlactina.value = estudio.resultados[4].resultado;
+        cajaResultadoTestosteronaTotal.value = estudio.resultados[5].resultado;
 	}
 
 </script>

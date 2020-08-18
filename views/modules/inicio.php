@@ -70,7 +70,11 @@ require "../../models/crud.php";
     include "estudios/hcgcuantitativa.php";
     include "estudios/inmunoglobulinas.php";
 	include "estudios/citomegalovirus.php";
-	include "estudios/perfilHormonalGinecologico.php";
+    include "estudios/perfilHormonalGinecologico.php";
+    include "estudios/perfilHepatitisA.php";
+    include "estudios/perfilHepatitisB.php";
+    include "estudios/perfilHepatitisC.php";
+    include "estudios/perfilDeLipidos.php";
 
 	$modulos = new Enlaces();
 	$modulos -> enlacesController();
