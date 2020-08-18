@@ -282,6 +282,7 @@
                     let valores = new FormData();
                     valores.append("cliente",cajaNombreCliente.value+" "+cajaApellidosCliente.value);
                     valores.append("medico",cajaNombresDoctor.value+" "+cajaApellidosDoctor.value);
+                    valores.append("emailCliente",cajaEmailCliente);
                     valores.append("fecha", formated_Date);
                     valores.append("costo", total);
                     valores.append("responsable",<?php echo("'".$_SESSION["nombre"]."'") ?>);
@@ -289,26 +290,56 @@
                     return valores;
                 }(),
                 success: function(data) {
-                    if(data === "success"){
-                        Swal.fire({
-                            title: "Datos Guardados!",
-                            type: "success",
-                            showCancelButton: false
-                        }).then((value) => {
-                            if (value) {
-                                window.location.href = "inicio.php?action=verEstudios";
-                            } 
-                        }); 
+                    
+                    $.ajax({
+                        url: './ajax/mail.php',
+                        type: "POST",
+                        data: function(){
+                            let valores = new FormData();
+                            valores.append("cliente",cajaNombreCliente.value+" "+cajaApellidosCliente.value);
+                            valores.append("medico",cajaNombresDoctor.value+" "+cajaApellidosDoctor.value);
+                            valores.append("fecha", formated_Date);
+                            valores.append("costo", total);
+                            valores.append("responsable",<?php echo("'".$_SESSION["nombre"]."'") ?>);
+                            valores.append("resultado", parsedEstudios);
+                            return valores;
+                        }(),
+                        success: function(data) {
+                            console.log(data);
+                            /*if(data === "success"){
+                                Swal.fire({
+                                    title: "Datos Guardados!",
+                                    type: "success",
+                                    showCancelButton: false
+                                }).then((value) => {
+                                    if (value) {
+                                        window.location.href = "inicio.php?action=verEstudios";
+                                    } 
+                                }); 
 
-                    }else{
-                        Swal.fire({
-                            title: "¡Hubo un error!",
-                            type: "warning",
-                            showCancelButton: false
-                        }).then((value) => {
-                              
-                        });
-                    }
+                            }else{
+                                Swal.fire({
+                                    title: "¡Hubo un error!",
+                                    type: "warning",
+                                    showCancelButton: false
+                                }).then((value) => {
+                                      
+                                });
+                            }*/
+
+                        },
+                        error: function(data) {
+                            console.log(data);
+                        },
+                        complete: function() {
+
+                        },
+                        cache: false,
+                        contentType: false,
+                        processData: false
+                    });
+ 
+                    
                 },
                 error: function(data) {
                     console.log(data);
@@ -325,6 +356,16 @@
     }
 
     async function ImprimirEstudios(){
+        if (estudios.length === 0){
+            Swal.fire({
+                title: "¡Rellene por completo el formulario!",
+                type: "warning",
+                showCancelButton: false
+            }).then((value) => {
+                
+            });
+        }else{
+
         var myWindow = window.open('','','width=1500,height=1000');
 
         myWindow.document.write(`
@@ -378,7 +419,7 @@
             
 
             <div class="header">
-                <img src="../../Assets/header.jpeg" alt="Girl in a jacket" width=100% height="100%">
+                <img src="../../Assets/header.jpeg" alt="Girl in a jacket" width=100% height="50px">
             </div>
             <div class="footer">
                 <img src="../../Assets/footer.jpeg" alt="Girl in a jacket" width=100% height="100%">    
@@ -388,7 +429,7 @@
         myWindow.print();
 
        
-        // myWindow.close();
+        }// myWindow.close();
     }
     function escribirResultados(estudio){
         let resultados = "";
