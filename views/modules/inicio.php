@@ -75,6 +75,7 @@ require "../../models/crud.php";
     include "estudios/perfilHepatitisB.php";
     include "estudios/perfilHepatitisC.php";
     include "estudios/perfilDeLipidos.php";
+	include "estudios/perfilTiroideo.php";
 
 	$modulos = new Enlaces();
 	$modulos -> enlacesController();
