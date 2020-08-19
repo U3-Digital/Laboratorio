@@ -306,8 +306,7 @@
                             return valores;
                         }(),
                         success: function(data) {
-                            console.log(data);
-                            /*if(data === "success"){
+                            if(data === "success"){
                                 Swal.fire({
                                     title: "Datos Guardados!",
                                     type: "success",
@@ -326,7 +325,7 @@
                                 }).then((value) => {
                                       
                                 });
-                            }*/
+                            }
 
                         },
                         error: function(data) {
@@ -427,7 +426,10 @@
             </div>
 
             `);
-        myWindow.print();
+        setTimeout(function() {
+            myWindow.print();
+            myWindow.close();
+        }, 450);
 
        
         }// myWindow.close();
