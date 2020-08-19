@@ -3,7 +3,7 @@
 	$respuesta = $controller -> ctlBuscarEstudio("Perfil tiroideo 2");
 ?>
 <div class="modal fade" id="perfiltiroideo2" tabindex="-1" role="dialog" aria-labelledby="perfiltiroideo" aria-hidden="true">
-	<div class="modal-dialog modal-xl custom-modal  modal-dialog-scrollable">perfiltiroideo2
+	<div class="modal-dialog modal-xl custom-modal  modal-dialog-scrollable">
 	    <div class="modal-content custom-modal">
 		    <div class="modal-header custom-modal">
 		        <h5 class="modal-title" id="modal">Perfil tiroideo 2</h5>
@@ -17,73 +17,66 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <label for="cajaResultadoT4Total">T4 Total:</label>
-                                    <input class="form-control" type="text" name="cajaResultadoT4Total" id="cajaResultadoT4Total">
+                                    <label for="cajaResultadoTSH2">TSH:</label>
+                                    <input class="form-control" type="text" name="cajaResultadoTSH2" id="cajaResultadoTSH2">
                                 </div>
                             </div>
                             <div class="col-md-4 align-self-center">
                                 Límites de referencia
-                                <p>N(6.0 - 12.0 µg/dl)</p>
+                                <p>0.42 - 5.45 µUi/ml</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <label for="cajaResultadoT3Captacion">T3 Captación:</label>
-                                    <input class="form-control" type="text" name="cajaResultadoT3Captacion" id="cajaResultadoT3Captacion">
+                                    <label for="cajaResultadoTiroxinaTotal">T4 Total (Tiroxina total):</label>
+                                    <input class="form-control" type="text" name="cajaResultadoTiroxinaTotal" id="cajaResultadoTiroxinaTotal">
                                 </div>
                             </div>
                             <div class="col-md-4 align-self-center">
-                                <br>
-                                <p>N(6.0 - 12.0 µg/dl)</p>
+                                Límites de referencia
+                                <p>5.13 - 14.05 µg/ml</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <label for="cajaResultadoFTI">FTI:</label>
-                                    <input class="form-control" type="text" name="cajaResultadoFTI" id="cajaResultadoFTI">
+                                    <label for="cajaResultadoTiroxinaLibre">T4 Libre (Tiroxina libre):</label>
+                                    <input class="form-control" type="text" name="cajaResultadoTiroxinaLibre" id="cajaResultadoTiroxinaLibre">
                                 </div>
                             </div>
                             <div class="col-md-4 align-self-center">
                                 <br>
-                                <p>N(5.93 - 13.3)</p>
+                                <p>0.76 - 2.24 ng/dl</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <label for="cajaResultadoT4Libre">T4 Libre:</label>
-                                    <input class="form-control" type="text" name="cajaResultadoT4Libre" id="cajaResultadoT4Libre">
+                                    <label for="cajaResultadoTriyodotironinaTotal">T3 Total (Triyodotironina total):</label>
+                                    <input class="form-control" type="text" name="cajaResultadoTriyodotironinaTotal" id="cajaResultadoTriyodotironinaTotal">
                                 </div>
                             </div>
                             <div class="col-md-4 align-self-center">
                                 <br>
-                                <p>N(0.7 - 1.8 ng/ml)</p>
+                                <p>0.84 - 2.02 ng/dl</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <label for="cajaResultadoT3Total">T3 Total:</label>
-                                    <input class="form-control" type="text" name="cajaResultadoT3Total" id="cajaResultadoT3Total">
+                                    <label for="cajaResultadoTriyodotironinaLibre">T3 Libre (Triyodotironina libre):</label>
+                                    <input class="form-control" type="text" name="cajaResultadoTriyodotironinaLibre" id="cajaResultadoTriyodotironinaLibre">
                                 </div>
                             </div>
                             <div class="col-md-4 align-self-center">
                                 <br>
-                                <p>N(0.92 - 2.33 nmol/l)</p>
+                                <p>2.02 - 4.43 pg/ml</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8">
-                                <div class="form-group">
-                                    <label for="cajaResultadoTSH">TSH:</label>
-                                    <input class="form-control" type="text" name="cajaResultadoTSH" id="cajaResultadoTSH">
-                                </div>
-                            </div>
-                            <div class="col-md-4 align-self-center">
-                                <br>
-                                <p>N(0.3 - 5.0 mUi/ml)</p>
+                                <small><p>Método: Eci vitros quimioluminiscencia</p></small>
                             </div>
                         </div>
                     </div>
@@ -91,7 +84,7 @@
 		    </div>
 	      	<div class="modal-footer custom-modal">
 	        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-	        	<button type="button" class="btn btn-primary" onclick="validarPerfilTiroideo()">Agregar</button>
+	        	<button type="button" class="btn btn-primary" onclick="validarPerfilTiroideo2()">Agregar</button>
 	      	</div>
 	    </div>
 	</div>
@@ -100,42 +93,35 @@
 <script>
 	
 	function validarPerfilTiroideo2() {
-        if (cajaResultadoT4Total.value && cajaResultadoT3Captacion.value && 
-            cajaResultadoFTI.value && cajaResultadoT4Libre.value && 
-            cajaResultadoT3Total.value && cajaResultadoTSH.value) {
+        if (cajaResultadoTSH2.value && cajaResultadoTiroxinaTotal.value && cajaResultadoTiroxinaLibre.value && cajaResultadoTriyodotironinaTotal.value && cajaResultadoTriyodotironinaLibre.value) {
 
 			let estudio = {
 				idmodal: 'perfiltiroideo2',
 				nombre: 'Perfil tiroideo 2',
 				resultados:
 				[{
-					nombre: 'T4 Total',
-					resultado: cajaResultadoT4Total.value,
-					limites: []
-                },
-                {
-					nombre: 'T3 Captación',
-					resultado: cajaResultadoT3Captacion.value,
-					limites: []
-                },
-                {
-					nombre: 'FTI',
-					resultado: cajaResultadoFTI.value,
-					limites: []
-                },
-                {
-					nombre: 'T4 Libre',
-					resultado: cajaResultadoT4Libre.value,
-					limites: []
-                },
-                {
-					nombre: 'T3 Total',
-					resultado: cajaResultadoT3Total.value,
-					limites: []
-                },
-                {
 					nombre: 'TSH',
-					resultado: cajaResultadoTSH.value,
+					resultado: cajaResultadoTSH2.value,
+					limites: ['0.42 - 5.45 µUi/ml']
+                },
+                {
+					nombre: 'T4 Total (Tiroxina total)',
+					resultado: cajaResultadoTiroxinaTotal.value,
+					limites: ['5.13 - 14.05 µg/ml']
+                },
+                {
+					nombre: 'T4 Libre (Tiroxina libre)',
+					resultado: cajaResultadoTiroxinaLibre.value,
+					limites: []
+                },
+                {
+					nombre: 'T3 Total (Triyodotironina total)',
+					resultado: cajaResultadoTriyodotironinaTotal.value,
+					limites: []
+                },
+                {
+					nombre: 'T3 Total (Triyodotironina libre)',
+					resultado: cajaResultadoTriyodotironinaLibre.value,
 					limites: []
                 }],
 				observaciones: '',
@@ -159,11 +145,15 @@
 	}
 
 	function limpiarPerfilTiroideo2() {
-        
+        cajaResultadoTSH2.value = '';
+        cajaResultadoTiroxinaTotal.value = '';
+        cajaResultadoTiroxinaLibre.value = '';
+        cajaResultadoTriyodotironinaTotal.value = '';
+        cajaResultadoTriyodotironinaLibre.value = '';
 	}
 
 	$('#perfiltiroideo2').on('hidden.bs.modal', function (e) {
-        limpiarPerfilDeHepatitisA();
+        limpiarPerfilTiroideo2();
 	});
 
 	$('#perfiltiroideo2').on('show.bs.modal', function (e) {
@@ -174,7 +164,11 @@
 	});
 
 	function edicionPerfilTiroideo2(estudio) {
-        
+        cajaResultadoTSH2.value = estudio.resultados[0].resultado;
+        cajaResultadoTiroxinaTotal.value = estudio.resultados[1].resultado;
+        cajaResultadoTiroxinaLibre.value = estudio.resultados[2].resultado;
+        cajaResultadoTriyodotironinaTotal.value = estudio.resultados[3].resultado;
+        cajaResultadoTriyodotironinaLibre.value = estudio.resultados[4].resultado;
 	}
 
 </script>

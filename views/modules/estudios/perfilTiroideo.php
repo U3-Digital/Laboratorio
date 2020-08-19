@@ -168,7 +168,7 @@
 	}
 
 	$('#perfiltiroideo').on('hidden.bs.modal', function (e) {
-        limpiarPerfilDeHepatitisA();
+        limpiarPerfilTiroideo();
 	});
 
 	$('#perfiltiroideo').on('show.bs.modal', function (e) {
