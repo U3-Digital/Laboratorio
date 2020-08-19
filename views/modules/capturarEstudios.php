@@ -302,6 +302,7 @@
                             valores.append("costo", total);
                             valores.append("responsable",<?php echo("'".$_SESSION["nombre"]."'") ?>);
                             valores.append("resultado", parsedEstudios);
+                            valores.append("emailCliente", cajaEmailCliente.value);
                             return valores;
                         }(),
                         success: function(data) {

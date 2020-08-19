@@ -2,24 +2,26 @@
 require('../../../controllers/controller.php');
 require('../../../models/crud.php');
 
-
 // Only process POST reqeusts.
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST["cliente"])) {
 // Get the form fields and remove whitespace.
 $name = strip_tags(trim($_POST["cliente"]));
 $doctor = trim($_POST["medico"]);
 $date = trim($_POST["fecha"]);
-$resultado = $_POST["resultado"];
+$resultado = json_decode($_POST["resultado"]);
 $email = trim($_POST["emailCliente"]);
+
+
 
 // Check that data was sent to the mailer.
 if ( empty($name) OR empty($doctor) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     // Set a 400 (bad request) response code and exit.
-    http_response_code(400);
+    http_response_code(200);
     echo "Por favor terminar de llenar el formulario";
 
     exit;
 }
+
 
 // Set the recipient email address.
 // FIXME: Update this to your desired email address.
@@ -33,7 +35,7 @@ $email_content ="<style>* {
                     font-family: 'Arial', sans-serif;
                     font-size: 16px;
                 }</style>
-                <html><body>"
+                <html><body>";
 $email_content .='<img src="../../Assets/header.jpeg" alt="Girl in a jacket" width=100% height="50px">';
 $email_content.='<p width = 100%>
                     <strong>
@@ -46,27 +48,28 @@ $email_content.='<p width = 100%>
                         Medico:
                     </strong>
                         '.$doctor.'
-                </p><hr></br>
-                <h2>${estudio.nombre}</h2>';
+                </p><hr></br>';
+
 
 foreach ($resultado as $row => $estudio) {
-	$email_content .= '<h2>'.$estudio["nombre"].'</h2>'
-	$email_content .='<div style="display: flex;  width = 100% justify-content: space-around;">'
-	foreach ($estudio["resultados"] as $row => $resultado) {
-		$email_content .= '<p>'.$resultado["nombre"].': <span>'.$resultado["resultado"].'</span></p>'
+    print_r($estudio);
+	$email_content .= '<h2>'.$estudio["nombre"].'</h2>';
+	$email_content .='<div style="display: flex;  width = 100% justify-content: space-around;">';
+	foreach ($estudio["resultados"] as $row2 => $resultadoI) {
+		$email_content .= '<p>'.$resultadoI["nombre"].': <span>'.$resultadoI["resultado"].'</span></p>';
 		
 	}
-	$email_content .= '</div>'
+	$email_content .= '</div>';
 }
 
 
-$email_content .= "</body></html>"
+$email_content .= "</body></html>";
 
 // Build the email headers.
-$email_headers = "From: $name <$email>";
+//$email_headers = "From: $name <$email>";
 
 // Send the email.
-if (mail($recipient, $subject, $email_content, $email_headers)) {
+/*if (mail($recipient, $subject, $email_content, $email_headers)) {
     // Set a 200 (okay) response code.
     http_response_code(200);
     echo '   <!DOCTYPE html>
@@ -140,7 +143,7 @@ if (mail($recipient, $subject, $email_content, $email_headers)) {
 // Not a POST request, set a 403 (forbidden) response code.
 http_response_code(403);
 echo "Tuvimos un error favor de intentarlo de nuevo";
-}
+}*/
 
 
 
@@ -151,5 +154,5 @@ echo "Tuvimos un error favor de intentarlo de nuevo";
 //$respuesta = $Controller ->ctlsaveEstudio($_POST);  
 
 
-print_r($_POST);            
-
+print_r($email_content);            
+}
