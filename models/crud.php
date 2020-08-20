@@ -394,6 +394,13 @@ class Datos extends Conexion{
 
 	}
 
+	public static function mdlEstudio($estudio,$tabla){
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE idEstudio = :id");
+		$stmt -> bindParam(":idEstudio", $estudio, PDO::PARAM_INT);
+		return $stmt->fetch();
+		$stmt ->close();
+	}
+
 	public static function mdlBuscarEstudio($nombreAnalisis, $tabla) {
 
 		$statement = Conexion::conectar() -> prepare("SELECT * FROM $tabla WHERE nombre = :nombreAnalisis");
