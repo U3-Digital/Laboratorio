@@ -1,5 +1,9 @@
-<?php  
+<?php 
+	$estudio = $_REQUEST['idEditar'];
+ 	$respuesta = Datos::mdlEstudio($estudio,"estudios");
+
 ?>
+
 <div class="content-wrapper">
 	<div class="container-fluid">
 		<ol class="breadcrumb">
@@ -631,4 +635,3 @@
     }
     
 </script>
-
