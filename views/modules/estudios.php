@@ -34,3 +34,7 @@ include "estudios/perfilTiroideo2.php";
 include "estudios/pruebasFuncionamientoHepatico.php";
 include "estudios/prenupciales.php";
 include "estudios/progesterona.php";
+include "estudios/quimicaSanguinea.php";
+include "estudios/reaccionesFebriles.php";
+include "estudios/rotavirus.php";
+include "estudios/tamizHemoglobinopatiaNeonatal.php";
