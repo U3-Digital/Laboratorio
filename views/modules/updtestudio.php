@@ -1,8 +1,10 @@
 <?php 
 	$estudio = $_REQUEST['idEditar'];
- 	$respuesta = Datos::mdlEstudio($estudio,"estudios");
-
-?>
+    $respuesta = Datos::mdlEstudio($estudio,"estudios");
+    print_r("<script>let estudios = JSON.parse('" . $respuesta["resultados"] . "');
+        console.log(estudios);
+    </script>");
+?> 
 
 <div class="content-wrapper">
 	<div class="container-fluid">
@@ -10,11 +12,9 @@
 			<li class="breadcrumb-item">
                 <a href="inicio.php?action=home">Administrador</a>
             </li>
-            <li class="breadcrumb-item">Registro de estudios</li>
+            <li class="breadcrumb-item">Editar un estudio</li>
 		</ol>
-
 		<div class="row">
-
             <div class="col-md-8">
                 <div class="row">
                     <div class="col-md-12">
@@ -22,31 +22,11 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="row">
+                                        <div class="row">   
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label for="selectCliente">Cliente:</label>
-                                                    <select class="form-control"  name="selectCliente" onchange="cambioCliente()" id="selectCliente">
-                                                        <option value="">Seleccione</option>
-                                                        <?php
-                                                            $clientes = new Controller();
-                                                            $clientes -> ctlBuscaClientes();
-                                                        ?>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">   
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="cajaNombres">Nombres:</label>
-                                                    <input class="form-control" type="text" id="cajaNombres" name="cajaNombres">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="cajaApellidos">Apellidos:</label>
-                                                    <input class="form-control" type="text" id="cajaApellidos" name="cajaApellidos">
+                                                    <label for="cajaNombre">Paciente:</label>
+                                                    <input class="form-control" type="text" id="cajaNombre" name="cajaNombre" value="<?php echo "" . $respuesta["cliente"]; ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -54,7 +34,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="cajaEmail">Correo electrónico</label>
-                                                    <input class="form-control" type="text" id="cajaEmail" name="cajaEmail">
+                                                    <input class="form-control" type="text" id="cajaEmail" name="cajaEmail" value="<?php echo "" . $respuesta["email"]; ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -63,28 +43,8 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label for="selectDoctor">Doctor:</label>
-                                                    <select class="form-control"  name="selectDoctor" onchange="cambioDoctor()" id="selectDoctor">
-                                                        <option value="">Seleccione</option>
-                                                        <?php
-                                                            $clientes = new Controller();
-                                                            $clientes -> ctlBuscaMedicos();
-                                                        ?>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="cajaNombresDoctor">Nombres:</label>
-                                                    <input class="form-control" type="text" id="cajaNombresDoctor" name="cajaNombresDoctor">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="cajaApellidosDoctor">Apellidos:</label>
-                                                    <input class="form-control" type="text" id="cajaApellidosDoctor" name="cajaApellidosDoctor">
+                                                    <label for="cajaNombreDoctor">Doctor:</label>
+                                                    <input class="form-control" type="text" id="cajaNombreDoctor" name="cajaNombreDoctor" value="<?php echo "" . $respuesta["medico"]; ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -186,13 +146,7 @@
 </div>
 
 <?php
-    function buscarcliente($variable){
-        $clienteconsulta = new Controller();
-        $clienteconsulta -> ctlBuscaCliente(1);
-        print_r($clienteconsulta);
-        echo $clienteconsulta;
-        return $clienteconsulta;
-    }
+    
   ?>
 
 <script type="text/javascript">
@@ -203,18 +157,11 @@
     const selectEstudios = document.getElementById('selectEstudios');
     let lista = document.getElementById('lista');
 
-    let estudios = [];
+    // let estudios = [];
     let editando = false;
     let estudioEditar = {};
 
-    const cajaNombreCliente = document.getElementById('cajaNombres');
-    const cajaApellidosCliente = document.getElementById('cajaApellidos');
-    const cajaEmailCliente = document.getElementById('cajaEmail');
-    const selectCliente = document.getElementById('selectCliente');
-
-    const selectDoctor = document.getElementById('selectDoctor');
-    const cajanombreDoctor = document.getElementById('cajaNombresDoctor');
-    const cajaApellidosDoctor = document.getElementById('cajaApellidosDoctor');
+    const cajaNombreCliente = document.getElementById('cajaNombre');
 
     function cambioCliente(){
         if(selectCliente.value == ""){
@@ -267,10 +214,7 @@
 
         //console.log(estudios);
         const parsedEstudios = JSON.stringify(estudios);
-        const fechaHoy = new Date(Date.now());
-        const formated_Date = fechaHoy.getFullYear()+"-"+(fechaHoy.getMonth()+1)+"-"+fechaHoy.getDate();
-
-        if(cajaNombreCliente.value == ""  || cajaEmailCliente.value =="" || cajaNombresDoctor.value ==="" || cajaApellidosDoctor.value === "" || estudios.length == 0){
+        if(!cajaNombreCliente.value || !cajaEmail.value || !cajaNombreDoctor.value || estudios.length == 0){
             Swal.fire({
                 title: "¡Rellene por completo el formulario!",
                 type: "warning",
@@ -280,33 +224,29 @@
             });    
         }else{
             $.ajax({
-                url: './ajax/saveFile.php',
+                url: './ajax/editEstudio.php',
                 type: "POST",
                 data: function(){
                     let valores = new FormData();
-                    valores.append("cliente",cajaNombreCliente.value+" "+cajaApellidosCliente.value);
-                    valores.append("medico",cajaNombresDoctor.value+" "+cajaApellidosDoctor.value);
-                    valores.append("emailCliente",cajaEmailCliente);
-                    valores.append("fecha", formated_Date);
+                    valores.append("idEstudio", <?php echo $estudio?>);
+                    valores.append("cliente", cajaNombreCliente.value);
+                    valores.append("medico", cajaNombreDoctor.value);
+                    valores.append("emailCliente", cajaEmail.value);
                     valores.append("costo", total);
-                    valores.append("responsable",<?php echo("'".$_SESSION["nombre"]."'") ?>);
                     valores.append("resultado", parsedEstudios);
                     return valores;
                 }(),
                 success: function(data) {
-                    
                     $.ajax({
                         url: './ajax/mail.php',
                         type: "POST",
                         data: function(){
                             let valores = new FormData();
-                            valores.append("cliente",cajaNombreCliente.value+" "+cajaApellidosCliente.value);
-                            valores.append("medico",cajaNombresDoctor.value+" "+cajaApellidosDoctor.value);
-                            valores.append("fecha", formated_Date);
+                            valores.append("cliente",cajaNombreCliente.value);
+                            valores.append("medico",cajaNombreDoctor.value);
                             valores.append("costo", total);
-                            valores.append("responsable",<?php echo("'".$_SESSION["nombre"]."'") ?>);
                             valores.append("resultado", parsedEstudios);
-                            valores.append("emailCliente", cajaEmailCliente.value);
+                            valores.append("emailCliente", cajaEmail.value);
                             return valores;
                         }(),
                         success: function(data) {
@@ -473,13 +413,13 @@
                                     <strong>
                                         Nombre:
                                     </strong>
-                                        ${cajaNombreCliente.value} ${cajaApellidosCliente.value}
+                                        ${cajaNombreCliente.value}
                                 </p>
                                 <p>
                                     <strong>
                                         Medico:
                                     </strong>
-                                        ${cajaNombresDoctor.value} ${cajaApellidosDoctor.value}
+                                        ${cajaNombreDoctor.value}
                                 </p><hr></br>
                                 <h2 style='font-size: 30px;'>${estudio.nombre}</h2>
                                 ${estudio.resultados[0].limites.  length >0 ? (
@@ -633,5 +573,7 @@
         estudioEditar = estudios[index];
         abrirEstudio(estudioEditar.idmodal);
     }
+
+    visualizarEstudios();
     
 </script>

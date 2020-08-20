@@ -71,7 +71,7 @@ class Controller {
                     <td>'.$item["responsable"].'</td>
                     <td>'.$Estudios.'</td>
                     <td>'.$item["costo"].'</td>
-                    <td><a href="inicio.php?action=updtestudio&idEditar='.$item["idEstudio"].'"><button class="btn btn-warning">Editar</button></a></td>
+                    <td><a href="inicio.php?action=updtEstudio&idEditar='.$item["idEstudio"].'"><button class="btn btn-warning">Editar</button></a></td>
                     ';
             if ($_SESSION["rol"] == 0) {
               echo '<td><a href="inicio.php?action=verEstudios&idBorrar='.$item["idEstudio"].'" ><button class="btn btn-danger">Borrar</button></a></td>
@@ -108,6 +108,7 @@ class Controller {
 
         $datosController= array(
           "cliente" =>$valores["cliente"],
+          "email" => $valores["emailCliente"],
           "medico" =>$valores["medico"],
           "fecha" =>$valores["fecha"],
           "costo" =>$valores["costo"],
@@ -787,6 +788,17 @@ class Controller {
         return $respuesta;
     }
 
+    public static function ctlActualizarEstudio($idEstudio, $estudio) {
+        $datosController = array("idEstudio" => $idEstudio,
+                                 "cliente" => $estudio["cliente"],
+                                 "medico" => $estudio["medico"],
+                                 "emailCliente" => $estudio["emailCliente"],
+                                 "costo" => $estudio["costo"],
+                                 "resultado" => $estudio["resultado"]);
+                                 
+        $respuesta = Datos::mdlActualizarEstudio($datosController, "estudios");
+        return $respuesta;
+    }
 
     // public static function
 

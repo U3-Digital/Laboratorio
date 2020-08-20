@@ -9,7 +9,7 @@ class Datos extends Conexion{
 			$stmt = Conexion::conectar() -> prepare("SELECT SUM(costo) AS Total, MONTHNAME(fecha) as Mes FROM $tabla WHERE `fecha` > DATE_SUB(now(), INTERVAL 6 MONTH) GROUP BY MONTH(fecha) ORDER BY `fecha`;");
 			$stmt -> execute();
 			return $stmt -> fetchAll();
-			$stmt -> close();
+			
 		} 
 
 		public static function mdlListaEstudios($tabla){
@@ -19,12 +19,13 @@ class Datos extends Conexion{
 
 			return $statement -> fetchAll();
 
-			$statement -> close();
+			 
 		}
 
 		public static function mdlRegistraEstudio($estudios,$tabla){
-			$stmt = Conexion::conectar ()->prepare("INSERT INTO $tabla( `cliente`, `medico`, `fecha`, `costo`, `responsable`, `resultados`) VALUES (:cliente, :medico, :fecha, :costo, :responsable, :resultados)");
-			$stmt -> bindParam(":cliente", $estudios["cliente"], PDO::PARAM_STR);
+			$stmt = Conexion::conectar ()->prepare("INSERT INTO $tabla( `cliente`, `email`, `medico`, `fecha`, `costo`, `responsable`, `resultados`) VALUES (:cliente, :email, :medico, :fecha, :costo, :responsable, :resultados)");
+            $stmt -> bindParam(":cliente", $estudios["cliente"], PDO::PARAM_STR);
+            $stmt -> bindParam(":email", $estudios["email"], PDO::PARAM_STR);
 			$stmt -> bindParam(":medico", $estudios["medico"],PDO::PARAM_STR);
 			$stmt -> bindParam(":fecha", $estudios["fecha"], PDO::PARAM_STR);
 			$stmt -> bindParam(":costo", $estudios["costo"], PDO::PARAM_INT);
@@ -46,7 +47,7 @@ class Datos extends Conexion{
 			} else {
 				return "error";
 			}
-			$stmt -> close();	
+				
 		}
 
 		public static function mdlCliente($id,$tabla){
@@ -54,7 +55,7 @@ class Datos extends Conexion{
 			$stmt -> bindParam(":id", $id, PDO::PARAM_INT);
 			$stmt->execute();
 			return $stmt->fetchAll();
-			$stmt->close();
+			 
 		}
 
 		public static function mdlMedico($id,$tabla){
@@ -62,7 +63,7 @@ class Datos extends Conexion{
 			$stmt -> bindParam(":id", $id, PDO::PARAM_INT);
 			$stmt->execute();
 			return $stmt->fetch();
-			$stmt->close();
+			 
 		}
 
 		public static function mdlResumenDiario($dia,$tabla){
@@ -70,7 +71,7 @@ class Datos extends Conexion{
 			$stmt -> bindParam(":dia", $dia, PDO::PARAM_STR);
 			$stmt->execute();
 			return $stmt->fetch();
-			$stmt->close();
+			 
 		}
 
 		public static function mdlResumenMensual($datosmodel,$tabla){
@@ -80,7 +81,7 @@ class Datos extends Conexion{
 			$stmt ->bindParam(":mes", $datosmodel["mes"], PDO::PARAM_STR);	
 			$stmt->execute();	
 			return $stmt-> fetch();
-			$stmt->close();
+			 
 
 		}
 
@@ -89,7 +90,7 @@ class Datos extends Conexion{
 			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ");
 			$stmt->execute();
 			return $stmt->fetchAll();
-			$stmt->close();
+			 
 
 		}
 
@@ -103,7 +104,7 @@ class Datos extends Conexion{
 		$stmt -> execute();
 		return $stmt -> fetch();
 
-		$stmt->close();
+		 
 	}
 
 	public static function mdlborrarCliente($datosModel,$tabla){
@@ -114,7 +115,7 @@ class Datos extends Conexion{
 		} else {
 			return "error";
 		}
-		$stmt -> close();
+		
 	}
 	public static function mdlActualizaCliente($datosModel, $tabla){
 
@@ -132,7 +133,7 @@ class Datos extends Conexion{
 		else{
 			return "error";
 		}
-		$stmt->close();
+		 
 	}
 	public static function mdlActualizaMedico($datosModel, $tabla){
 
@@ -150,7 +151,7 @@ class Datos extends Conexion{
 		else{
 			return "error";
 		}
-		$stmt->close();
+		 
 	}
 
 	#VERIFICA SI EL USUARIO EXISTE PARA INGRESAR AL SISTEMA
@@ -165,7 +166,7 @@ class Datos extends Conexion{
 
 		return $stmt -> fetch();
 
-		$stmt -> close();
+		
 
 	}
 
@@ -188,7 +189,7 @@ class Datos extends Conexion{
 
 		// return $statement -> fetch();
 
-		$statement -> close();
+		 
 	}
 
 	public static function mdlListaUsuarios($tabla) {
@@ -198,7 +199,7 @@ class Datos extends Conexion{
 
 		return $statement -> fetchAll();
 
-		$statement -> close();
+		 
 	}
 
 	public static function mdlBuscaUsuario($tabla, $idUsuario) {
@@ -210,7 +211,7 @@ class Datos extends Conexion{
 
 		return $statement -> fetch();
 
-		$statement -> close();
+		 
 	}
 
 	public static function mdlActualizarUsuario($datosModel, $tabla) {
@@ -244,7 +245,7 @@ class Datos extends Conexion{
 			return "error";
 		}
 
-		$statement -> close();
+		 
 	}
 
 	public static function mdlBorrarUsuario($idUsuario, $tabla) {
@@ -278,14 +279,14 @@ class Datos extends Conexion{
 			return "error";
 		}
 
-		$stmt->close();
+		 
 	}
 
 	public static function mdlListaMedicos($tabla){
 		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
 		$stmt->execute();
 		return $stmt->fetchAll();
-		$stmt->close();
+		 
 	}
 
 	public static function mdlborrarMedico($datosModel,$tabla){
@@ -296,7 +297,7 @@ class Datos extends Conexion{
 		} else {
 			return "error";
 		}
-		$stmt -> close();
+		 
 	}
 
 
@@ -316,14 +317,14 @@ class Datos extends Conexion{
 			return "error";
 		}
 
-		$stmt->close();
+		 
 	}
 
 	public static function mdlListaClientes($tabla){
 		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
 		$stmt->execute();
 		return $stmt->fetchAll();
-		$stmt->close();
+		 
 	}
 
 	public static function mdlRegistrarAnalisis($datosModel, $tabla) {
@@ -357,7 +358,7 @@ class Datos extends Conexion{
 
 		return $statement -> fetch();
 
-		$statement -> close();
+		 
 	}
 
 	public static function mdlActualizarAnalisis($datosModel, $tabla) {
@@ -390,15 +391,16 @@ class Datos extends Conexion{
 		$stmt = Conexion::conectar()->prepare("SELECT nombre FROM $tabla ORDER BY nombre ASC");
 		$stmt->execute();
 		return $stmt->fetchAll();
-		$stmt->close();
+		 
 
 	}
 
-	public static function mdlEstudio($estudio,$tabla){
+	public static function mdlEstudio($estudio, $tabla){
 		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE idEstudio = :id");
-		$stmt -> bindParam(":idEstudio", $estudio, PDO::PARAM_INT);
+        $stmt -> bindParam(":id", $estudio, PDO::PARAM_INT);
+        $stmt -> execute();
 		return $stmt->fetch();
-		$stmt ->close();
+		 
 	}
 
 	public static function mdlBuscarEstudio($nombreAnalisis, $tabla) {
@@ -411,7 +413,7 @@ class Datos extends Conexion{
 
 		return $statement -> fetch();
 
-		$statement -> close();
+		 
 	}
 
 	public static function mldBuscarEstudios($tabla) {
@@ -421,7 +423,26 @@ class Datos extends Conexion{
 
 		return $statement -> fetchAll();
 
-		$statement -> close();
-	}
+		 
+    }
+    
+    public static function mdlActualizarEstudio($datosModel, $tabla) {
+
+        $statement = Conexion::conectar() -> prepare("UPDATE $tabla SET cliente = :cliente, email = :emailCliente, medico = :medico, costo = :costo, resultados = :resultado WHERE idEstudio = :idEstudio");
+        
+        $statement -> bindParam(":cliente", $datosModel["cliente"], PDO::PARAM_STR);
+        $statement -> bindParam(":emailCliente", $datosModel["emailCliente"], PDO::PARAM_STR);
+        $statement -> bindParam(":medico", $datosModel["medico"], PDO::PARAM_STR);
+        $statement -> bindParam(":costo", $datosModel["costo"], PDO::PARAM_INT);
+        $statement -> bindParam(":resultado", $datosModel["resultado"], PDO::PARAM_STR);
+        $statement -> bindParam(":idEstudio", $datosModel["idEstudio"], PDO::PARAM_INT);
+
+        if ($statement -> execute()) {
+            return "success";
+        } else {
+            return "error";
+        }
+
+    }
 
 } // conexion
