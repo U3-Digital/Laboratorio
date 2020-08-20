@@ -81,7 +81,7 @@
 	$('#amilasa').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionAmilasa(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

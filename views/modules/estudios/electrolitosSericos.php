@@ -126,7 +126,7 @@
 	$('#electrolitossericos').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionElectrolitosSericos(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

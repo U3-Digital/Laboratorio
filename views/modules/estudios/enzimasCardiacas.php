@@ -148,7 +148,7 @@
 	$('#enzimascardiacas').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionEnzimasCardiacas(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

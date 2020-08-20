@@ -174,7 +174,7 @@
 	$('#perfiltiroideo').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionPerfilTiroideo(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

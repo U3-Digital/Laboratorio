@@ -356,7 +356,7 @@
 	$('#espermabioscopia').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionEspermabioscopia(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

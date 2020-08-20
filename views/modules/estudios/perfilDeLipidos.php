@@ -176,7 +176,7 @@
 	$('#perfildelipidos').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionPerfilDeLipidos(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

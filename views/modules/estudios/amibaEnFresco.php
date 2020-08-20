@@ -81,7 +81,7 @@
 	$('#amibaenfresco').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionAmibaEnFresco(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

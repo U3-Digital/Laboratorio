@@ -259,7 +259,7 @@
 	$('#pruebasdefuncionamientohepatico').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionFuncionamientoHepatico(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

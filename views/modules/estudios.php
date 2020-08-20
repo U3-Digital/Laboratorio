@@ -32,3 +32,5 @@ include "estudios/perfilDeLipidos.php";
 include "estudios/perfilTiroideo.php";
 include "estudios/perfilTiroideo2.php";
 include "estudios/pruebasFuncionamientoHepatico.php";
+include "estudios/prenupciales.php";
+include "estudios/progesterona.php";

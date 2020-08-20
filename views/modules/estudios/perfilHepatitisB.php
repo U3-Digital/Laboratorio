@@ -103,7 +103,7 @@
 	$('#perfildehepatitisb').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionPerfilHepatitisB(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

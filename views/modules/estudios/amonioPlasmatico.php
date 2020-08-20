@@ -78,7 +78,7 @@ $controller = new Controller();
 	$('#amonioplasmatico').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionAmonioPlasmatico(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

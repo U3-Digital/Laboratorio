@@ -82,7 +82,7 @@
 	$('#antiestreptolisina').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionAntiestreptolisina(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

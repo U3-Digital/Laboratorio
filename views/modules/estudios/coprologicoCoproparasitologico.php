@@ -419,7 +419,7 @@
 	$('#coprologicocoproparasitologico').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionCoprologicoCoproparasitologico(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

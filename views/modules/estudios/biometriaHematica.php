@@ -291,7 +291,7 @@ $controller = new Controller();
 	$('#biometriahematica').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionBiometricaHematica(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

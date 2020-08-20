@@ -123,7 +123,7 @@
 	$('#antigenocarcinoembrionario').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionAntigenoCarcinoembrionario(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

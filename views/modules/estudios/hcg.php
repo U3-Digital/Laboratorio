@@ -74,7 +74,7 @@
 	$('#hcg').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionHCG(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

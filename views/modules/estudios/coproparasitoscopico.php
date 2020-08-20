@@ -87,7 +87,7 @@
 	$('#coproparasitoscopico').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionCoproparasitoscopico(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

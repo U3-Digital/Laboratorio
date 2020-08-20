@@ -75,7 +75,7 @@
 	$('#cristalografia').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionCristalografia(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

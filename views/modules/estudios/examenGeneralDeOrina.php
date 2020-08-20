@@ -394,7 +394,7 @@
 	$('#examengeneraldeorina').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionExamenGeneralDeOrina(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

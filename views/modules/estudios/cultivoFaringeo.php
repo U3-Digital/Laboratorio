@@ -378,7 +378,7 @@
     $('#cultivofaringeo').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionCultivoFaringeo(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

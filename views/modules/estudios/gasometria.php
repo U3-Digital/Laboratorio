@@ -303,7 +303,7 @@
 	$('#gasometria').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionGasometria(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

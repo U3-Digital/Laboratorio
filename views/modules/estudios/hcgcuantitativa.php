@@ -265,7 +265,7 @@
 	$('#hcgcuantitativa').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionHCGCuantitativa(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

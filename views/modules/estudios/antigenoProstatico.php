@@ -133,7 +133,7 @@
 	$('#antigenoprostatico').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionAntigenoProstatico(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 

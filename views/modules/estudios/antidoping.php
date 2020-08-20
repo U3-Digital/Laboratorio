@@ -155,7 +155,7 @@ $controller = new Controller();
 	$('#antidoping').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionAntidoping(estudioEditar);
-			console.log('hey crack', estudioEditar);
+			 
 		}
 	});
 
