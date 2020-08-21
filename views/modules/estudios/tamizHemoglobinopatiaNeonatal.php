@@ -35,7 +35,7 @@
 		        <div class="row">
 		        	<div class="col-md-12">
 						<div class="row justify-content-center">
-                            <div class="col-auto borde">
+                            <div class="col-auto">
                                 <button id="step-1" class="btn btn-step" onclick="cambiar(1)">1</button>
                                 <button id="step-2" class="btn btn-step" onclick="cambiar(2)">2</button>
                                 <button id="step-3" class="btn btn-step" onclick="cambiar(3)">3</button>
@@ -50,7 +50,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="row justify-content-end">
-                                                <div class="col-md-8 borde text-left">
+                                                <div class="col-md-8 text-left">
                                                     <div class="row">
                                                         <div class="col-md-3 text-center">Bajo (LR)</div>
                                                         <div class="col-md-3 text-center">Dentro (LR)</div>
@@ -1269,6 +1269,191 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <h6>Desórdenes en la oxidación de ácidos grasos</h6>
+                                                    Def de acil CoA deshidrogenasa de cadena media
+                                                    <small>Marcador primario: C8, C6, C10:1, C10</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 align-self-center">
+                                                    <input class="form-control" type="text" name="cajaResultadoDeshidrogenasaCadenaMedia" id="cajaResultadoDeshidrogenasaCadenaMedia" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center algin-self-center">
+                                                    <br>
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Def de acil CosA deshidrogenasa de cadena muy larga
+                                                    <small>Marcador primario: C14:2, C14:1, C14</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoDeshidrogenasaCadenaMuyLarga" id="cajaResultadoDeshidrogenasaCadenaMuyLarga" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Def de acil CosA deshidrogenasa de cadena larga
+                                                    <small>Marcador: C16:1-OH, C16-OH, C18:1-OH, C18-OH</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoDeshidrogenasaCadenaLarga" id="cajaResultadoDeshidrogenasaCadenaLarga" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Deficiencia de la proteína trifuncional
+                                                    <small>Marcador: C16:1-OH, C16-OH, C18:1-OH, C18-OH</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoProteinaTrifuncional" id="cajaResultadoProteinaTrifuncional" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Deficiencia del transportador de carnitina
+                                                    <small>Marcador: C0</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoTransportadorCarnitina" id="cajaResultadoTransportadorCarnitina" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Deficiencia de acil CoA deshidrogenasa de cadena corta
+                                                    <small>Marcador primario: C4</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoDeshidrogenasaCadenaCorta" id="cajaResultadoDeshidrogenasaCadenaCorta" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Acidemia glutárica tipo II
+                                                    <small>Marcador: C4 - C18 saturados e insaturados</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoDeshidrogenasaCadenaCorta" id="cajaResultadoDeshidrogenasaCadenaCorta" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Def L-3-hidroxiacilo deshidrogenasa de cadena corta
+                                                    <small>Marcador primario: C4-OH</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoHidroxiaciloDeshidrogenasaCorta" id="cajaResultadoHidroxiaciloDeshidrogenasaCorta" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Deficiencia de cetoacilCoA tiolasa de cadena media
+                                                    <small>Marcador primario: C8, C6, C10:1, C10</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoCetoacilCoaTiolasaMedia" id="cajaResultadoCetoacilCoaTiolasaMedia" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Deficiencia de carnitina palmitoiltransferasa I
+                                                    <small>Marcador: C16, C18:2, C18:1, C18</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoCarnitinaPalmitoiltransferasa1" id="cajaResultadoCarnitinaPalmitoiltransferasa1" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Deficiencia de carnitin-acilcarnitina translocasa
+                                                    <small>Marcador: C16, C18:2, C18:1, C18</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoCarnitinAciclcarnitinaTranslocasa" id="cajaResultadoCarnitinAciclcarnitinaTranslocasa" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Deficiencia de carnitina palmitoiltransferasa I
+                                                    <small>Marcador: C0 (Alto), C16 (Bajo), C18 (Bajo)</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoCarnitinaPalmitoilTransferasa2" id="cajaResultadoCarnitinaPalmitoilTransferasa2" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Deficiencia de 2,4 dienoil-CoA reductasa
+                                                    <small>Marcador primario: C10:2</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultado24DienoilCOAReductasa" id="cajaResultado24DienoilCOAReductasa" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1283,6 +1468,204 @@
                                                         <div class="col-md-3 text-center">Sobre (LR)</div>
                                                         <div class="col-md-3 text-center">Límites de referencia</div>
                                                     </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <h6>Desórdenes de ácidos orgánicos</h6>
+                                                    Acidemia isovalérica
+                                                    <small>Marcador primario: C5</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 align-self-center">
+                                                    <input class="form-control" type="text" name="cajaResultadoAcidemiaIsovalerica" id="cajaResultadoDeshidrogenasaCadenaMedia" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center align-self-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Acidemia glutárica tipo 1
+                                                    <small>Marcador primario: C5D C</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoAcidemiaGlutaricaTipo1" id="cajaResultadoAcidemiaGlutaricaTipo1" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center align-self-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Acidemia 3-hidroxi-3-metilglutárica
+                                                    <small>Marcador primario: C5-OH, C6DC</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultado3Hidroxi3Metilglutarica" id="cajaResultado3Hidroxi3Metilglutarica" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center align-self-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Deficiencia 3-metilcrotonil-ocaborxilasa
+                                                    <small>Marcador: C0</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoMetilcrotonilOcaborxilasa" id="cajaResultadoMetilcrotonilOcaborxilasa" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center align-self-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Deficiencia acil CoA deshidrogenasa de cadena corta
+                                                    <small>Marcador: C5-OH</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoAcilCOADeshidrogenasaCadenaCorta" id="cajaResultadoAcilCOADeshidrogenasaCadenaCorta" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center align-self-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Acidemia metilmalónica
+                                                    <small>Marcador primario: C3</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoAcidemiaMetilmalonica" id="cajaResultadoAcidemiaMetilmalonica" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center align-self-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Acidemia propiónica
+                                                    <small>Marcador primario: C3</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoAcidemiaPropionica" id="cajaResultadoAcidemiaPropionica" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center align-self-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Deficiencia beta-cetotiolasa
+                                                    <small>Marcador primario: C5:1, C5-OH</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoBetaCetotiolasa" id="cajaResultadoBetaCetotiolasa" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center align-self-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Acidemia metilmalónica con homocistinuria
+                                                    <small>Marcador primario: C3</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoMetilmalonicaHomocistinuria" id="cajaResultadoMetilmalonicaHomocistinuria" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center align-self-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Acidemia malónica
+                                                    <small>Marcador primario: C3</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoAcidemiaMalonica" id="cajaResultadoAcidemiaMalonica" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center align-self-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Isobutiril glicinuria
+                                                    <small>Marcador primario: C4</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoIsibutirilGlicinuria" id="cajaResultadoIsibutirilGlicinuria" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center align-self-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Acidemia 2-metil-3-hidroxibutirica
+                                                    <small>Marcador primario: C5-OH</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultadoMetilHidroxibutirica" id="cajaResultadoMetilHidroxibutirica" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center align-self-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    2-Metilbutirilglicinuria
+                                                    <small>Marcador primario: C5</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultado2Metilbutirilgrlicinuria" id="cajaResultado2Metilbutirilgrlicinuria" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center align-self-center">
+                                                    Ausente
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 align-self-center">
+                                                    Acidemia 3-metilglutacónica
+                                                    <small>Marcador primario: C5-OH</small>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2">
+                                                    <input class="form-control" type="text" name="cajaResultado3MetilGlutaconica" id="cajaResultado3MetilGlutaconica" value="Ausente">
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-2 text-center align-self-center">
+                                                    Ausente
                                                 </div>
                                             </div>
                                         </div>
@@ -1318,16 +1701,16 @@
     }
 
 	function validarTamiz() {
-		if (cajaResultadoProgesteronaP.value) {
+		if (1 == 1) {
 
 			let estudio = {
-				idmodal: 'progesterona',
-				nombre: 'Amiba en fresco',
+				idmodal: 'tamizhemoglobinopatianeonatal',
+				nombre: 'Tamiz hemoglobinopatía neonatal',
 				resultados:
 				[{
 					nombre: 'Progesterona',
 					resultado: cajaResultadoProgesteronaP.value,
-					limites: ['Fase folicular 0.25 - 0.54 ng/ml', 'Fase lútea 1.5 - 20.0 ng/ml', 'Ovulación 0.25 - 6.22 ng/ml', 'Menopausia < 0.41 ng/ml']
+					limites: []
 				}],
 				observaciones: '',
 				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?> 
