@@ -2,11 +2,16 @@
 	$controller = new Controller();
 	$respuesta = $controller -> ctlBuscarEstudio("Tamiz hemoglobinopatia neonatal");
 ?>
+
+<style>
+
+</style>
+
 <div class="modal fade" id="tamizhemoglobinopatianeonatal" tabindex="-1" role="dialog" aria-labelledby="tamizhemoglobinopatianeonatal" aria-hidden="true">
 	<div class="modal-dialog modal-xl custom-modal  modal-dialog-scrollable">
 	    <div class="modal-content custom-modal">
 		    <div class="modal-header custom-modal">
-		        <h5 class="modal-title" id="modal">Tamiz hemoglobinopatia neonatal</h5>
+		        <h5 class="modal-title" id="modal">Hemoglobinopatia neonatal</h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          	<span aria-hidden="true">&times;</span>
 		        </button>
@@ -14,7 +19,7 @@
 		    <div class="modal-body">
 		        <div class="row">
 		        	<div class="col-md-12">
-                        
+						
                     </div>
 		        </div>
 		    </div>
