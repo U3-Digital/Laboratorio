@@ -257,7 +257,7 @@
         const fechaHoy = new Date(Date.now());
         const formated_Date = fechaHoy.getFullYear()+"-"+(fechaHoy.getMonth()+1)+"-"+fechaHoy.getDate();
 
-        if(!cajaNombreCliente.value == ""  || !cajaEmailCliente.value =="" || !cajaNombresDoctor.value ==="" || !cajaApellidosDoctor.value === "" || estudios.length == 0){
+        if(cajaNombreCliente.value === ""  || cajaEmailCliente.value ==="" || cajaNombresDoctor.value ==="" || cajaApellidosDoctor.value === "" || estudios.length === 0){
             Swal.fire({
                 title: "¡Rellene por completo el formulario!",
                 type: "warning",
@@ -317,6 +317,7 @@
                                       
                                 });
                             }
+                            console.log(data);
 
                         },
                         error: function(data) {
