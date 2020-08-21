@@ -18,7 +18,7 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label for="cajaResultadoParitificoA">Paritífico A:</label>
-                                    <input class="form-control" type="text" name="cajaResultadoParitificoA" id="cajaResultadoParitificoA">
+                                    <input class="form-control" type="text" name="cajaResultadoParitificoA" id="cajaResultadoParitificoA" value="Negativo">
                                 </div>
                             </div>
                             <div class="col-md-4 align-self-center">
@@ -30,7 +30,7 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label for="cajaResultadoParitificoB">Paritífico B:</label>
-                                    <input class="form-control" type="text" name="cajaResultadoParitificoB" id="cajaResultadoParitificoB">
+                                    <input class="form-control" type="text" name="cajaResultadoParitificoB" id="cajaResultadoParitificoB" value="Negativo">
                                 </div>
                             </div>
                             <div class="col-md-4 align-self-center">
@@ -42,7 +42,7 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label for="cajaResultadoTificoH">Tífico H:</label>
-                                    <input class="form-control" type="text" name="cajaResultadoTificoH" id="cajaResultadoTificoH">
+                                    <input class="form-control" type="text" name="cajaResultadoTificoH" id="cajaResultadoTificoH" value="Negativo">
                                 </div>
                             </div>
                             <div class="col-md-4 align-self-center">
@@ -54,7 +54,7 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label for="cajaResultadoTificoO">Tífico O:</label>
-                                    <input class="form-control" type="text" name="cajaResultadoTificoO" id="cajaResultadoTificoO">
+                                    <input class="form-control" type="text" name="cajaResultadoTificoO" id="cajaResultadoTificoO" value="Negativo">
                                 </div>
                             </div>
                             <div class="col-md-4 align-self-center">
@@ -66,7 +66,7 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label for="cajaResultadoBrucellaAbortus">Brucella abortus:</label>
-                                    <input class="form-control" type="text" name="cajaResultadoBrucellaAbortus" id="cajaResultadoBrucellaAbortus">
+                                    <input class="form-control" type="text" name="cajaResultadoBrucellaAbortus" id="cajaResultadoBrucellaAbortus" value="Negativo">
                                 </div>
                             </div>
                             <div class="col-md-4 align-self-center">
@@ -78,7 +78,7 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label for="cajaResultadoProteusOX19">Proteus OX-19:</label>
-                                    <input class="form-control" type="text" name="cajaResultadoProteusOX19" id="cajaResultadoProteusOX19">
+                                    <input class="form-control" type="text" name="cajaResultadoProteusOX19" id="cajaResultadoProteusOX19" value="Negativo">
                                 </div>
                             </div>
                             <div class="col-md-4 align-self-center">
@@ -161,12 +161,12 @@
 	}
 
 	function limpiarReaccionesFebriles() {
-		cajaResultadoParitificoA.value = '';
-        cajaResultadoParitificoB.value = '';
-        cajaResultadoTificoH.value = '';
-        cajaResultadoTificoO.value = '';
-        cajaResultadoBrucellaAbortus.value = '';
-        cajaResultadoProteusOX19.value = '';
+		cajaResultadoParitificoA.value = 'Negativo';
+        cajaResultadoParitificoB.value = 'Negativo';
+        cajaResultadoTificoH.value = 'Negativo';
+        cajaResultadoTificoO.value = 'Negativo';
+        cajaResultadoBrucellaAbortus.value = 'Negativo';
+        cajaResultadoProteusOX19.value = 'Negativo';
 	}
 
 	$('#reaccionesfebriles').on('hidden.bs.modal', function (e) {
