@@ -66,7 +66,7 @@
                                                 </div>
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-2">
-                                                    <input class="form-control" type="text" name="cajaResultadoFenotipoHemoglobina" id="cajaResultadoFenotipoHemoglobina" value="HbFA">
+                                                    <input class="form-control" required type="text" name="cajaResultadoFenotipoHemoglobina" id="cajaResultadoFenotipoHemoglobina" value="HbFA">
                                                 </div>
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-2 text-center">
@@ -617,7 +617,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4 align-self-center">
-                                                    <p>Desórden en la biosíntesis de biopterina BIOPT (BS)</p>
+                                                    <p>Desorden en la biosíntesis de biopterina BIOPT (BS)</p>
                                                 </div>
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-2">
@@ -1479,7 +1479,7 @@
                                                 </div>
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-2 align-self-center">
-                                                    <input class="form-control" type="text" name="cajaResultadoAcidemiaIsovalerica" id="cajaResultadoDeshidrogenasaCadenaMedia" value="Ausente">
+                                                    <input class="form-control" type="text" name="cajaResultadoAcidemiaIsovalerica" id="cajaResultadoAcidemiaIsovalerica" value="Ausente">
                                                 </div>
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-2 text-center align-self-center">
@@ -1488,7 +1488,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4 align-self-center">
-                                                    Acidemia glutárica tipo 1
+                                                    Acidemia glutárica tipo I
                                                     <small>Marcador primario: C5D C</small>
                                                 </div>
                                                 <div class="col-md-2"></div>
@@ -1647,7 +1647,7 @@
                                                 </div>
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-2">
-                                                    <input class="form-control" type="text" name="cajaResultado2Metilbutirilgrlicinuria" id="cajaResultado2Metilbutirilgrlicinuria" value="Ausente">
+                                                    <input class="form-control" type="text" name="cajaResultado2Metilbutirilglicinuria" id="cajaResultado2Metilbutirilglicinuria" value="Ausente">
                                                 </div>
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-2 text-center align-self-center">
@@ -1701,16 +1701,575 @@
     }
 
 	function validarTamiz() {
-		if (1 == 1) {
 
 			let estudio = {
 				idmodal: 'tamizhemoglobinopatianeonatal',
 				nombre: 'Tamiz hemoglobinopatía neonatal',
 				resultados:
 				[{
-					nombre: 'Progesterona',
-					resultado: cajaResultadoProgesteronaP.value,
-					limites: []
+					nombre: 'Fenotipo de hemoglobina',
+					resultado: cajaResultadoFenotipoHemoglobina.value,
+					limites: ['HbFA']
+				},
+                {
+					nombre: 'Hipotiroidismo congénito',
+					resultado: cajaResultadoHipotiroidismoCongenito.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Hormona estimulante de tiroides neonatal',
+					resultado: cajaResultadoHormonaEstimulanteTN.value,
+					limites: ['< 9 µUl/ml']
+				},
+                {
+					nombre: 'T4 Neonatal',
+					resultado: cajaResultadoT4Neonatal.value,
+					limites: ['6.4 - 21.2 g/dl']
+				},
+                {
+					nombre: 'Hiperplasia adrenal congénita',
+					resultado: cajaResultadoHiperplaciaAdrenalCongenita.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: '17-OH Progesterona neonatal',
+					resultado: cajaResultado17OHPN.value,
+					limites: ['0.17 - 22 ng/ml']
+				},
+                {
+					nombre: 'Galactosemia clásica',
+					resultado: cajaResultadoGalactosemiaClasica.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Galactosa neonatal',
+					resultado: cajaResultadoGalactosaNeonatal.value,
+					limites: ['< 8 mg/dl']
+				},
+                {
+					nombre: 'Galactosa uridil transferesa neonatal',
+					resultado: cajaResultadoGalactosaUridilTN.value,
+					limites: ['3.5 - 99 U/g Hb']
+				},
+                {
+					nombre: 'Otros desórdenes',
+					resultado: cajaResultadoFibrosisQuistica.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Inmunotripsina reactiva neonatal',
+					resultado: cajaResultadoInmunotripsinaReactivaN.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Deficiencia de biotinidasa',
+					resultado: cajaResultadoDeficienciaBiotinidasa.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Biotinidasa',
+					resultado: cajaResultadoBiotinidasa.value,
+					limites: ['70 - 500 u']
+				},
+                {
+					nombre: 'Deficiencia de glucosa-6-fostfato deshidrogenasa',
+					resultado: cajaResultadoDeficienciaGlucosa6FD.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Glucosa-6-fosfato deshidrogenasa',
+					resultado: cajaResultadoGlucosa6FD.value,
+					limites: ['2.5 - 99 U/g Hb']
+				},
+                {
+					nombre: 'Glucosa-6-fosfato deshidrogenasa',
+					resultado: cajaResultadoGlucosa6FD.value,
+					limites: ['2.5 - 99 U/g Hb']
+				},
+                {
+					nombre: 'Fenilalanina',
+					resultado: cajaResultadoFenilalanina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Tirosina',
+					resultado: cajaResultadoTirosina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Triptofano',
+					resultado: cajaResultadoTriptofano.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Valina',
+					resultado: cajaResultadoValina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Leucina',
+					resultado: cajaResultadoLeucina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Isoleucina',
+					resultado: cajaResultadoIsoleucina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Metionina',
+					resultado: cajaResultadoMetionina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Succinilacetona',
+					resultado: cajaResultadoSuccinilacetona.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Glicina',
+					resultado: cajaResultadoGlicina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Arginina',
+					resultado: cajaResultadoArginina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Alanina',
+					resultado: cajaResultadoAlanina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Citrulina',
+					resultado: cajaResultadoCitrulina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Ornitina',
+					resultado: cajaResultadoOrnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Prolina',
+					resultado: cajaResultadoProlina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Ácido aspártico',
+					resultado: cajaResultadoAcidoAspartico.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Ácido glutámico',
+					resultado: cajaResultadoAcidoGlutamico.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Lisina',
+					resultado: cajaResultadoLisina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Lisina',
+					resultado: cajaResultadoLisina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Interpretación',
+					resultado: cajaInterpretacionTamiz2.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Fenilcetonuria clásica (PKU)',
+					resultado: cajaResultadoFenilcetonuriaClasica.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Hiperfenilalaninemia variante benigna (H-PHE)',
+					resultado: cajaResultadoHiperfenilalaninemiaVB.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Desorden en la biosíntesis de biopterina BIOPT (BS)',
+					resultado: cajaResultadoBiosintesisBiopterina.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Desórden de regeneración de biopterina BIOPT (REG)',
+					resultado: cajaResultadoRegeneracionBiopterina.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Enfermedad de jarabe de maple (MSUD)',
+					resultado: cajaResultadoJarabeDeMaple.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Homocistinuria (HCY)',
+					resultado: cajaResultadoHomocistinuria.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Hipermetioninemia (MET)',
+					resultado: cajaResultadoHipermetioninemia.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Tirosinemia tipo 1 (TRY I)',
+					resultado: cajaResultadoTirosinemia1.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Tirosinemia tipo 2 (TRY II)',
+					resultado: cajaResultadoTirosinemia2.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Tirosinemia tipo 3 (TRY III)',
+					resultado: cajaResultadoTirosinemia3.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Hiperglicinemia no cetósica (NKH)',
+					resultado: cajaResultadoHiperglicinemiaNoCetosica.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Argininemia (ARG)',
+					resultado: cajaResultadoArgininemia.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Citrulinemia tipo 1 (CIT)',
+					resultado: cajaResultadoCitrulinemia1.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Citrulinemia tipo 2 (CIT II)',
+					resultado: cajaResultadoCitrulinemia2.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Axidemia arginosuccinica (ASA)',
+					resultado: cajaResultadoAxidemiaArginosuccinica.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Prolinemia',
+					resultado: cajaResultadoProlinemia.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Hiperornitinemia',
+					resultado: cajaResultadoHiperornitinemia.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Deficiencia de carbamoil fosfatato sintetasa',
+					resultado: cajaResultadoCarbomoilFosfatatoSintetasa.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Deficiencia de ornitina carbamoil sintetasa',
+					resultado: cajaResultadoOrnitinaCarbamoilSintetasa.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'C0 Carnitina libre',
+					resultado: cajaResultadoCarnitinaLibre.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C2 Acetilcarnitina',
+					resultado: cajaResultadoAcetilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C3 Propiomilcarnitina',
+					resultado: cajaResultadoPropiomilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C3D C Malonilcarnitina',
+					resultado: cajaResultadoMalonilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C4 Butirilcarnitina + isobutirilcarnitina',
+					resultado: cajaResultadoButirilcarnitinaIsobutirilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C4 Butirilcarnitina + isobutirilcarnitina',
+					resultado: cajaResultadoButirilcarnitinaIsobutirilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C4O H 3-Hidroxibutirilcarnitina',
+					resultado: cajaResultadoHidroxibutirilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C4D C Metilmalonil',
+					resultado: cajaResultadoMetilmalonil.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C5 Isovalerilcarnitina + metilbutirilcarnitina',
+					resultado: cajaResultadoIsovalerilcarnitinaM.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C5:1 Tiglilcarnitina',
+					resultado: cajaResultadoTiglilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C5D C Glutarilcarnitina',
+					resultado: cajaResultadoGlutarilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C5O H 3-Hidroxiisovalerilcarnitina',
+					resultado: cajaResultadoHidroxiisovalerilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C6 Hexanoilcarnitina',
+					resultado: cajaResultadoHexanoilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C6D C Metilglutarilcarnitina',
+					resultado: cajaResultadoMetilglutarilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C8:1 Octenoilcarnitina',
+					resultado: cajaResultadoOctenoilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C10 Decanoilcarnitina',
+					resultado: cajaResultadoDecanoilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C10:1 Decenoilcarnitina',
+					resultado: cajaResultadoDecenoilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C10:2 Dodecanoilcarnitina',
+					resultado: cajaResultadoDodecanoilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C12 Dodecanoilcarnitina',
+					resultado: cajaResultadoDodecanoilcarnitina2.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C12:1 Dodecenoilcarnitina',
+					resultado: cajaResultadoDodecenoilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C14 Tetradecanoilcarnitina',
+					resultado: cajaResultadoTetradecanoilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C14:1 Tetradecadienoilcarnitina',
+					resultado: cajaResultadoTetradecadienoilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C14OH 3-Hidroxi-tetradecanoil',
+					resultado: cajaResultado3Hidroxitetradecanoil.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C16 Palmitoilcarnitina',
+					resultado: cajaResultadoPalmitoilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C16:1 Hexadecenoilcarnitina',
+					resultado: cajaResultadoHexadecenoilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C16OH 3-Hidroxipalmitoleilcarnitina',
+					resultado: cajaResultadoHidroxipalmitoleilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C18 Estearoilcarnitina',
+					resultado: cajaResultadoEstearoilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C18:1 Oleilcarnitina',
+					resultado: cajaResultadoOleilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C18:2 Linoleoilcarnitina',
+					resultado: cajaResultadoLinoleoilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C18OH 3-Hidroxiestearoilcarnitina',
+					resultado: cajaResultadoHidroxiestearoilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'C18:1-OH 3-Hidroxioleilcarnitina',
+					resultado: cajaResultadoHidroxioleilcarnitina.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Interpretación',
+					resultado: cajaInterpretacionTamiz4.value,
+					limites: ['Normal']
+				},
+                {
+					nombre: 'Def de acil CoA deshidrogenasa de cadena media',
+					resultado: cajaResultadoDeshidrogenasaCadenaMedia.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Def de acil CosA deshidrogenasa de cadena muy larga',
+					resultado: cajaResultadoDeshidrogenasaCadenaMuyLarga.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Def de acil CosA deshidrogenasa de cadena larga',
+					resultado: cajaResultadoDeshidrogenasaCadenaLarga.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Deficiencia de la proteína trifuncional',
+					resultado: cajaResultadoProteinaTrifuncional.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Deficiencia del transportador de carnitina',
+					resultado: cajaResultadoTransportadorCarnitina.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Deficiencia de acil CoA deshidrogenasa de cadena corta',
+					resultado: cajaResultadoDeshidrogenasaCadenaCorta.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Acidemia glutárica tipo II',
+					resultado: cajaResultadoDeshidrogenasaCadenaCorta.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Def L-3-hidroxiacilo deshidrogenasa de cadena corta',
+					resultado: cajaResultadoHidroxiaciloDeshidrogenasaCorta.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Deficiencia de cetoacilCoA tiolasa de cadena media',
+					resultado: cajaResultadoCetoacilCoaTiolasaMedia.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Deficiencia de carnitina palmitoiltransferasa I',
+					resultado: cajaResultadoCarnitinaPalmitoiltransferasa1.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Deficiencia de carnitin-acilcarnitina translocasa',
+					resultado: cajaResultadoCarnitinAciclcarnitinaTranslocasa.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Deficiencia de carnitina palmitoiltransferasa I',
+					resultado: cajaResultadoCarnitinaPalmitoilTransferasa2.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Deficiencia de 2,4 dienoil-CoA reductasa',
+					resultado: cajaResultado24DienoilCOAReductasa.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Acidemia isovalérica',
+					resultado: cajaResultadoAcidemiaIsovalerica.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Acidemia glutárica tipo I',
+					resultado: cajaResultadoAcidemiaGlutaricaTipo1.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Acidemia 3-hidroxi-3-metilglutárica',
+					resultado: cajaResultado3Hidroxi3Metilglutarica.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Deficiencia 3-metilcrotonil-ocaborxilasa',
+					resultado: cajaResultadoMetilcrotonilOcaborxilasa.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Deficiencia acil CoA deshidrogenasa de cadena corta',
+					resultado: cajaResultadoAcilCOADeshidrogenasaCadenaCorta.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Acidemia metilmalónica',
+					resultado: cajaResultadoAcidemiaMetilmalonica.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Acidemia propiónica',
+					resultado: cajaResultadoAcidemiaPropionica.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Deficiencia beta-cetotiolasa',
+					resultado: cajaResultadoBetaCetotiolasa.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Acidemia metilmalónica con homocistinuria',
+					resultado: cajaResultadoMetilmalonicaHomocistinuria.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Acidemia malónica',
+					resultado: cajaResultadoAcidemiaMalonica.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Isobutiril glicinuria',
+					resultado: cajaResultadoIsibutirilGlicinuria.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Acidemia 2-metil-3-hidroxibutirica',
+					resultado: cajaResultadoMetilHidroxibutirica.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: '2-Metilbutirilglicinuria',
+					resultado: cajaResultado2Metilbutirilglicinuria.value,
+					limites: ['Ausente']
+				},
+                {
+					nombre: 'Acidemia 3-metilglutacónica',
+					resultado: cajaResultado3MetilGlutaconica.value,
+					limites: ['Ausente']
 				}],
 				observaciones: '',
 				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?> 
@@ -1718,14 +2277,6 @@
 			agregarEstudio(estudio);
 			cerrarModalTamiz();
 			limpiarTamiz();
-
-		} else {
-			Swal.fire({
-                title: "¡Rellene los campos solicitados!",
-                type: "error",
-                showCancelButton: false
-            });
-		}
 	}
 
 	function cerrarModalTamiz() {
@@ -1733,7 +2284,95 @@
 	}
 
 	function limpiarTamiz() {
-		
+		cajaResultadoFenotipoHemoglobina.value = 'HbFA';
+        cajaResultadoHipotiroidismoCongenito.value = 'Ausente';
+        cajaResultadoHormonaEstimulanteTN.value = '';
+        cajaResultadoT4Neonatal.value = '';
+        cajaResultadoHiperplaciaAdrenalCongenita.value = 'Ausente';
+        cajaResultado17OHPN.value = '';
+        cajaResultadoGalactosemiaClasica.value = 'Ausente';
+        cajaResultadoGalactosaNeonatal.value = '';
+        cajaResultadoGalactosaUridilTN.value = '';
+        cajaResultadoFibrosisQuistica.value = 'Ausente';
+        cajaResultadoInmunotripsinaReactivaN.value = '';
+        cajaResultadoDeficienciaBiotinidasa.value = 'Ausente';
+        cajaResultadoBiotinidasa.value = '';
+        cajaResultadoDeficienciaGlucosa6FD.value = 'Ausente';
+        cajaResultadoGlucosa6FD.value = '';
+
+        cajaResultadoFenilalanina.value = 'Normal';
+        cajaResultadoTirosina.value = 'Normal';
+        cajaResultadoTriptofano.value = 'Normal';
+        cajaResultadoValina.value = 'Normal';
+        cajaResultadoLeucina.value = 'Normal';
+        cajaResultadoIsoleucina.value = 'Normal';
+        cajaResultadoMetionina.value = 'Normal';
+        cajaResultadoSuccinilacetona.value = 'Normal';
+        cajaResultadoGlicina.value = 'Normal';
+        cajaResultadoArginina.value = 'Normal';
+        cajaResultadoAlanina.value = 'Normal';
+        cajaResultadoCitrulina.value = 'Normal';
+        cajaResultadoOrnitina.value = 'Normal';
+        cajaResultadoProlina.value = 'Normal';
+        cajaResultadoAcidoAspartico.value = 'Normal';
+        cajaResultadoAcidoGlutamico.value = 'Normal';
+        cajaResultadoLisina.value = 'Normal';
+        cajaInterpretacionTamiz2.value = '';
+
+        cajaResultadoFenilcetonuriaClasica.value = 'Ausente';
+        cajaResultadoHiperfenilalaninemiaVB.value = 'Ausente';
+        cajaResultadoBiosintesisBiopterina.value = 'Ausente';
+        cajaResultadoRegeneracionBiopterina.value = 'Ausente';
+        cajaResultadoJarabeDeMaple.value = 'Ausente';
+        cajaResultadoHomocistinuria.value = 'Ausente';
+        cajaResultadoHipermetioninemia.value = 'Ausente';
+        cajaResultadoTirosinemia1.value = 'Ausente';
+        cajaResultadoTirosinemia2.value = 'Ausente';
+        cajaResultadoTirosinemia3.value = 'Ausente';
+        cajaResultadoHiperglicinemiaNoCetosica.value = 'Ausente';
+        cajaResultadoArgininemia.value = 'Ausente';
+        cajaResultadoCitrulinemia1.value = 'Ausente';
+        cajaResultadoCitrulinemia2.value = 'Ausente';
+        cajaResultadoAxidemiaArginosuccinica.value = 'Ausente';
+        cajaResultadoProlinemia.value = 'Ausente';
+        cajaResultadoHiperornitinemia.value = 'Ausente';
+        cajaResultadoCarbomoilFosfatatoSintetasa.value = 'Ausente';
+        cajaResultadoOrnitinaCarbamoilSintetasa.value = 'Ausente';
+
+        cajaResultadoCarnitinaLibre.value = 'Normal';
+        cajaResultadoAcetilcarnitina.value = 'Normal';
+        cajaResultadoPropiomilcarnitina.value = 'Normal';
+        cajaResultadoMalonilcarnitina.value = 'Normal';
+        cajaResultadoButirilcarnitinaIsobutirilcarnitina.value = 'Normal';
+        cajaResultadoHidroxibutirilcarnitina.value = 'Normal';
+        cajaResultadoMetilmalonil.value = 'Normal';
+        cajaResultadoIsovalerilcarnitinaM.value = 'Normal';
+        cajaResultadoTiglilcarnitina.value = 'Normal';
+        cajaResultadoGlutarilcarnitina.value = 'Normal';
+        cajaResultadoHidroxiisovalerilcarnitina.value = 'Normal';
+        cajaResultadoHexanoilcarnitina.value = 'Normal';
+        cajaResultadoMetilglutarilcarnitina.value = 'Normal';
+        cajaResultadoOctenoilcarnitina.value = 'Normal';
+        cajaResultadoDecanoilcarnitina.value = 'Normal';
+        cajaResultadoDecenoilcarnitina.value = 'Normal';
+        cajaResultadoDodecanoilcarnitina.value = 'Normal';
+        cajaResultadoDodecanoilcarnitina2.value = 'Normal';
+        cajaResultadoDodecenoilcarnitina.value = 'Normal';
+        cajaResultadoTetradecanoilcarnitina.value = 'Normal';
+        cajaResultadoTetradecadienoilcarnitina.value = 'Normal';
+        cajaResultado3Hidroxitetradecanoil.value = 'Normal';
+        cajaResultadoPalmitoilcarnitina.value = 'Normal';
+        cajaResultadoHexadecenoilcarnitina.value = 'Normal';
+        cajaResultadoHidroxipalmitoleilcarnitina.value = 'Normal';
+        cajaResultadoEstearoilcarnitina.value = 'Normal';
+        cajaResultadoOleilcarnitina.value = 'Normal';
+        cajaResultadoLinoleoilcarnitina.value = 'Normal';
+        cajaResultadoHidroxiestearoilcarnitina.value = 'Normal';
+        cajaResultadoHidroxioleilcarnitina.value = 'Normal';
+        cajaInterpretacionTamiz4.value = '';
+
+        
+
 	}
 
 	$('#tamizhemoglobinopatianeonatal').on('hidden.bs.modal', function (e) {
