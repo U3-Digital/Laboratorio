@@ -78,7 +78,7 @@
 				[{
 					nombre: 'HVA (Virus hepatitis A)',
 					resultado: cajaResultadoPerfilHepatitisA.value,
-					limites: []
+					limites: ['< 0.40 UDS Negativo', '0.41 - 0.50 UDS Dudoso', '>= 0.50 UDS Positivo']
 				}],
 				observaciones: '',
 				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?> 

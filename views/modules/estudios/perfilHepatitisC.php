@@ -78,7 +78,7 @@
 				[{
 					nombre: 'AC\'s anti-virus de hepatitis C',
 					resultado: cajaResultadoPerfilHepatitisC.value,
-					limites: []
+					limites: ['0.0 - 0.89 UDS Negativo', '0.90 - 0.99 UDS Dudoso', '> 0.99 UDS Positivo']
 				}],
 				observaciones: '',
 				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?> 

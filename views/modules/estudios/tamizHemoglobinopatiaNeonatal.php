@@ -75,7 +75,7 @@
                                             </div>
                                             <hr style="background-color: #BBBBBB">
                                             <div class="row">
-                                                <div class="col-md-4">
+                                                <div class="col-md-6">
                                                     <table class="table table-responsive">
                                                         <tr>
                                                             <th colspan="2" style="text-align: center; padding: 5px 10px;">Interpetración del fenotipo de hemoglobina</th>
@@ -1782,11 +1782,6 @@
 					limites: ['2.5 - 99 U/g Hb']
 				},
                 {
-					nombre: 'Glucosa-6-fosfato deshidrogenasa',
-					resultado: cajaResultadoGlucosa6FD.value,
-					limites: ['2.5 - 99 U/g Hb']
-				},
-                {
 					nombre: 'Fenilalanina',
 					resultado: cajaResultadoFenilalanina.value,
 					limites: ['Normal']
@@ -1864,11 +1859,6 @@
                 {
 					nombre: 'Ácido glutámico',
 					resultado: cajaResultadoAcidoGlutamico.value,
-					limites: ['Normal']
-				},
-                {
-					nombre: 'Lisina',
-					resultado: cajaResultadoLisina.value,
 					limites: ['Normal']
 				},
                 {
@@ -1994,11 +1984,6 @@
                 {
 					nombre: 'C3D C Malonilcarnitina',
 					resultado: cajaResultadoMalonilcarnitina.value,
-					limites: ['Normal']
-				},
-                {
-					nombre: 'C4 Butirilcarnitina + isobutirilcarnitina',
-					resultado: cajaResultadoButirilcarnitinaIsobutirilcarnitina.value,
 					limites: ['Normal']
 				},
                 {
@@ -2371,12 +2356,39 @@
         cajaResultadoHidroxioleilcarnitina.value = 'Normal';
         cajaInterpretacionTamiz4.value = '';
 
-        
+        cajaResultadoDeshidrogenasaCadenaMedia.value = 'Ausente';
+        cajaResultadoDeshidrogenasaCadenaMuyLarga.value = 'Ausente';
+        cajaResultadoDeshidrogenasaCadenaLarga.value = 'Ausente';
+        cajaResultadoProteinaTrifuncional.value = 'Ausente';
+        cajaResultadoTransportadorCarnitina.value = 'Ausente';
+        cajaResultadoDeshidrogenasaCadenaCorta.value = 'Ausente';
+        cajaResultadoDeshidrogenasaCadenaCorta.value = 'Ausente';
+        cajaResultadoHidroxiaciloDeshidrogenasaCorta.value = 'Ausente';
+        cajaResultadoCetoacilCoaTiolasaMedia.value = 'Ausente';
+        cajaResultadoCarnitinaPalmitoiltransferasa1.value = 'Ausente';
+        cajaResultadoCarnitinAciclcarnitinaTranslocasa.value = 'Ausente';
+        cajaResultadoCarnitinaPalmitoilTransferasa2.value = 'Ausente';
+        cajaResultado24DienoilCOAReductasa.value = 'Ausente';
+
+        cajaResultadoAcidemiaIsovalerica.value = 'Ausente';
+        cajaResultadoAcidemiaGlutaricaTipo1.value = 'Ausente';
+        cajaResultado3Hidroxi3Metilglutarica.value = 'Ausente';
+        cajaResultadoMetilcrotonilOcaborxilasa.value = 'Ausente';
+        cajaResultadoAcilCOADeshidrogenasaCadenaCorta.value = 'Ausente';
+        cajaResultadoAcidemiaMetilmalonica.value = 'Ausente';
+        cajaResultadoAcidemiaPropionica.value = 'Ausente';
+        cajaResultadoBetaCetotiolasa.value = 'Ausente';
+        cajaResultadoMetilmalonicaHomocistinuria.value = 'Ausente';
+        cajaResultadoAcidemiaMalonica.value = 'Ausente';
+        cajaResultadoIsibutirilGlicinuria.value = 'Ausente';
+        cajaResultadoMetilHidroxibutirica.value = 'Ausente';
+        cajaResultado2Metilbutirilglicinuria.value = 'Ausente';
+        cajaResultado3MetilGlutaconica.value = 'Ausente';
 
 	}
 
 	$('#tamizhemoglobinopatianeonatal').on('hidden.bs.modal', function (e) {
-  		limpiarAmibaEnFresco();
+        limpiarTamiz();
 	});
 
 	$('#tamizhemoglobinopatianeonatal').on('show.bs.modal', function (e) {
@@ -2387,6 +2399,123 @@
 	});
 
 	function edicionTamiz(estudio) {
+
+        cajaResultadoFenotipoHemoglobina.value = estudio.resultados[0].resultado;
+        cajaResultadoHipotiroidismoCongenito.value = estudio.resultados[1].resultado;
+        cajaResultadoHormonaEstimulanteTN.value = estudio.resultados[2].resultado;
+        cajaResultadoT4Neonatal.value = estudio.resultados[3].resultado;
+        cajaResultadoHiperplaciaAdrenalCongenita.value = estudio.resultados[4].resultado;
+        cajaResultado17OHPN.value = estudio.resultados[5].resultado;
+        cajaResultadoGalactosemiaClasica.value = estudio.resultados[6].resultado;
+        cajaResultadoGalactosaNeonatal.value = estudio.resultados[7].resultado;
+        cajaResultadoGalactosaUridilTN.value = estudio.resultados[8].resultado;
+        cajaResultadoFibrosisQuistica.value = estudio.resultados[9].resultado;
+        cajaResultadoInmunotripsinaReactivaN.value = estudio.resultados[10].resultado;
+        cajaResultadoDeficienciaBiotinidasa.value = estudio.resultados[11].resultado;
+        cajaResultadoBiotinidasa.value = estudio.resultados[12].resultado;
+        cajaResultadoDeficienciaGlucosa6FD.value = estudio.resultados[13].resultado;
+        cajaResultadoGlucosa6FD.value = estudio.resultados[14].resultado;
+
+        cajaResultadoFenilalanina.value = estudio.resultados[15].resultado;
+        cajaResultadoTirosina.value = estudio.resultados[16].resultado;
+        cajaResultadoTriptofano.value = estudio.resultados[17].resultado;
+        cajaResultadoValina.value = estudio.resultados[18].resultado;
+        cajaResultadoLeucina.value = estudio.resultados[19].resultado;
+        cajaResultadoIsoleucina.value = estudio.resultados[20].resultado;
+        cajaResultadoMetionina.value = estudio.resultados[21].resultado;
+        cajaResultadoSuccinilacetona.value = estudio.resultados[22].resultado;
+        cajaResultadoGlicina.value = estudio.resultados[23].resultado;
+        cajaResultadoArginina.value = estudio.resultados[24].resultado;
+        cajaResultadoAlanina.value = estudio.resultados[25].resultado;
+        cajaResultadoCitrulina.value = estudio.resultados[26].resultado;
+        cajaResultadoOrnitina.value = estudio.resultados[27].resultado;
+        cajaResultadoProlina.value = estudio.resultados[28].resultado;
+        cajaResultadoAcidoAspartico.value = estudio.resultados[29].resultado;
+        cajaResultadoAcidoGlutamico.value = estudio.resultados[30].resultado;
+        cajaResultadoLisina.value = estudio.resultados[31].resultado;
+        cajaInterpretacionTamiz2.value = estudio.resultados[32].resultado;
+
+        cajaResultadoFenilcetonuriaClasica.value = estudio.resultados[33].resultado;
+        cajaResultadoHiperfenilalaninemiaVB.value = estudio.resultados[34].resultado;
+        cajaResultadoBiosintesisBiopterina.value = estudio.resultados[35].resultado;
+        cajaResultadoRegeneracionBiopterina.value = estudio.resultados[36].resultado;
+        cajaResultadoJarabeDeMaple.value = estudio.resultados[37].resultado;
+        cajaResultadoHomocistinuria.value = estudio.resultados[38].resultado;
+        cajaResultadoHipermetioninemia.value = estudio.resultados[39].resultado;
+        cajaResultadoTirosinemia1.value = estudio.resultados[40].resultado;
+        cajaResultadoTirosinemia2.value = estudio.resultados[41].resultado;
+        cajaResultadoTirosinemia3.value = estudio.resultados[42].resultado;
+        cajaResultadoHiperglicinemiaNoCetosica.value = estudio.resultados[43].resultado;
+        cajaResultadoArgininemia.value = estudio.resultados[44].resultado;
+        cajaResultadoCitrulinemia1.value = estudio.resultados[45].resultado;
+        cajaResultadoCitrulinemia2.value = estudio.resultados[46].resultado;
+        cajaResultadoAxidemiaArginosuccinica.value = estudio.resultados[47].resultado;
+        cajaResultadoProlinemia.value = estudio.resultados[48].resultado;
+        cajaResultadoHiperornitinemia.value = estudio.resultados[49].resultado;
+        cajaResultadoCarbomoilFosfatatoSintetasa.value = estudio.resultados[50].resultado;
+        cajaResultadoOrnitinaCarbamoilSintetasa.value = estudio.resultados[51].resultado;
+
+        cajaResultadoCarnitinaLibre.value = estudio.resultados[52].resultado;
+        cajaResultadoAcetilcarnitina.value = estudio.resultados[53].resultado;
+        cajaResultadoPropiomilcarnitina.value = estudio.resultados[54].resultado;
+        cajaResultadoMalonilcarnitina.value = estudio.resultados[55].resultado;
+        cajaResultadoButirilcarnitinaIsobutirilcarnitina.value = estudio.resultados[56].resultado;
+        cajaResultadoHidroxibutirilcarnitina.value = estudio.resultados[57].resultado;
+        cajaResultadoMetilmalonil.value = estudio.resultados[58].resultado;
+        cajaResultadoIsovalerilcarnitinaM.value = estudio.resultados[59].resultado;
+        cajaResultadoTiglilcarnitina.value = estudio.resultados[60].resultado;
+        cajaResultadoGlutarilcarnitina.value = estudio.resultados[61].resultado;
+        cajaResultadoHidroxiisovalerilcarnitina.value = estudio.resultados[62].resultado;
+        cajaResultadoHexanoilcarnitina.value = estudio.resultados[63].resultado;
+        cajaResultadoMetilglutarilcarnitina.value = estudio.resultados[64].resultado;
+        cajaResultadoOctenoilcarnitina.value = estudio.resultados[65].resultado;
+        cajaResultadoDecanoilcarnitina.value = estudio.resultados[66].resultado;
+        cajaResultadoDecenoilcarnitina.value = estudio.resultados[67].resultado;
+        cajaResultadoDodecanoilcarnitina.value = estudio.resultados[68].resultado;
+        cajaResultadoDodecanoilcarnitina2.value = estudio.resultados[69].resultado;
+        cajaResultadoDodecenoilcarnitina.value = estudio.resultados[70].resultado;
+        cajaResultadoTetradecanoilcarnitina.value = estudio.resultados[71].resultado;
+        cajaResultadoTetradecadienoilcarnitina.value = estudio.resultados[72].resultado;
+        cajaResultado3Hidroxitetradecanoil.value = estudio.resultados[73].resultado;
+        cajaResultadoPalmitoilcarnitina.value = estudio.resultados[74].resultado;
+        cajaResultadoHexadecenoilcarnitina.value = estudio.resultados[75].resultado;
+        cajaResultadoHidroxipalmitoleilcarnitina.value = estudio.resultados[76].resultado;
+        cajaResultadoEstearoilcarnitina.value = estudio.resultados[77].resultado;
+        cajaResultadoOleilcarnitina.value = estudio.resultados[78].resultado;
+        cajaResultadoLinoleoilcarnitina.value = estudio.resultados[79].resultado;
+        cajaResultadoHidroxiestearoilcarnitina.value = estudio.resultados[80].resultado;
+        cajaResultadoHidroxioleilcarnitina.value = estudio.resultados[81].resultado;
+        cajaInterpretacionTamiz4.value = estudio.resultados[82].resultado;
+
+        cajaResultadoDeshidrogenasaCadenaMedia.value = estudio.resultados[83].resultado;
+        cajaResultadoDeshidrogenasaCadenaMuyLarga.value = estudio.resultados[84].resultado;
+        cajaResultadoDeshidrogenasaCadenaLarga.value = estudio.resultados[85].resultado;
+        cajaResultadoProteinaTrifuncional.value = estudio.resultados[86].resultado;
+        cajaResultadoTransportadorCarnitina.value = estudio.resultados[87].resultado;
+        cajaResultadoDeshidrogenasaCadenaCorta.value = estudio.resultados[88].resultado;
+        cajaResultadoDeshidrogenasaCadenaCorta.value = estudio.resultados[89].resultado;
+        cajaResultadoHidroxiaciloDeshidrogenasaCorta.value = estudio.resultados[90].resultado;
+        cajaResultadoCetoacilCoaTiolasaMedia.value = estudio.resultados[91].resultado;
+        cajaResultadoCarnitinaPalmitoiltransferasa1.value = estudio.resultados[92].resultado;
+        cajaResultadoCarnitinAciclcarnitinaTranslocasa.value = estudio.resultados[93].resultado;
+        cajaResultadoCarnitinaPalmitoilTransferasa2.value = estudio.resultados[94].resultado;
+        cajaResultado24DienoilCOAReductasa.value = estudio.resultados[95].resultado;
+
+        cajaResultadoAcidemiaIsovalerica.value = estudio.resultados[96].resultado;
+        cajaResultadoAcidemiaGlutaricaTipo1.value = estudio.resultados[97].resultado;
+        cajaResultado3Hidroxi3Metilglutarica.value = estudio.resultados[98].resultado;
+        cajaResultadoMetilcrotonilOcaborxilasa.value = estudio.resultados[99].resultado;
+        cajaResultadoAcilCOADeshidrogenasaCadenaCorta.value = estudio.resultados[100].resultado;
+        cajaResultadoAcidemiaMetilmalonica.value = estudio.resultados[101].resultado;
+        cajaResultadoAcidemiaPropionica.value = estudio.resultados[102].resultado;
+        cajaResultadoBetaCetotiolasa.value = estudio.resultados[103].resultado;
+        cajaResultadoMetilmalonicaHomocistinuria.value = estudio.resultados[104].resultado;
+        cajaResultadoAcidemiaMalonica.value = estudio.resultados[105].resultado;
+        cajaResultadoIsibutirilGlicinuria.value = estudio.resultados[106].resultado;
+        cajaResultadoMetilHidroxibutirica.value = estudio.resultados[107].resultado;
+        cajaResultado2Metilbutirilglicinuria.value = estudio.resultados[108].resultado;
+        cajaResultado3MetilGlutaconica.value = estudio.resultados[109].resultado;
+    
 	}
 
 </script>

@@ -38,3 +38,6 @@ include "estudios/quimicaSanguinea.php";
 include "estudios/reaccionesFebriles.php";
 include "estudios/rotavirus.php";
 include "estudios/tamizHemoglobinopatiaNeonatal.php";
+include "estudios/tiempoTromboplastinaTromboplatina.php";
+include "estudios/perfilTorch.php";
+include "estudios/urocultivo.php";

@@ -372,32 +372,32 @@
 				[{
 					nombre: 'Estradiol',
 					resultado: cajaResultadoEstradiol.value,
-					limites: []
+					limites: ['Fase Folicular - 18 - 147 pg/ml', 'Fase Preovulatoria - 93 - 575 pg/ml', 'Fase Lútea - 43 - 214 pg/ml', 'Durante la gestación:', '9 sem a 12 sem - 1,122 - 2,200 pg/ml', '13 sem a 14 sem 1,800 - 4,500 pg/ml', '17 sem a 20 sem 5,300 - 11,500 pg/ml', '21 sem a 24 sem 7,000 - 14,200 pg/ml', '25 sem a 28 sem 8,200 - 19,900 pg/ml', '29 sem a 32 sem 9,000 - 23,000 pg/ml', '33 sem a 36 sem 11,000 - 23,500 pg/ml', '37 sem a 38 sem 16,000 - 26,700 pg/ml', '39 sem a 40 sem 16,000 - 26,700 pg/ml', 'Post menopausia sin tratamiento 0 - 30 pg/ml,', 'Post menopausia con tratamiento 0 - 58 pg/ml', 'Con anticonceptivos orales 0 - 102 pg/ml']
 				},
                 {
 					nombre: 'Hormona Foliculo-estimulante',
 					resultado: cajaResultadoHormonaFoliculoestimulante.value,
-					limites: []
+					limites: ['Fase Folicular 3.9 - 12.0 Ul/ml', 'Mitad del ciclo 2.9 - 9.0 Ul/ml', 'Fase lútea 1.5 - 7.0 Ul/ml', 'Embarazo < 0.9 Ul/ml', 'Post embarazo > 34 Ul/ml']
 				},
                 {
 					nombre: 'Hormona luteinizante',
 					resultado: cajaResultadoHormonaLuteinizante.value,
-					limites: []
+					limites: ['Fase Folicular 1.5 - 8.0 Ul/ml', 'Mitad del ciclo 2.0 - 8.0 Ul/ml', 'Fase lútea 0.2 - 6.5 Ul/ml', 'Post-menopausia 16.0 - 33.0 Ul/ml']
 				},
                 {
 					nombre: 'Progresterona',
 					resultado: cajaResultadoProgesterona.value,
-					limites: []
+					limites: ['Fase Folicular 0.25 - 0.54 ng/ml', 'Fase lútea 1.5 - 20.0 ng/ml', 'Menopausia < 0.41 ng/ml']
 				},
                 {
 					nombre: 'Prolactina',
 					resultado: cajaResultadoProlactina.value,
-					limites: []
+					limites: ['Fase Folicular 0.25 - 0.54 ng/ml', 'Fase lútea 1.5 - 20.0 ng/ml', 'Ovulación 0.25 - 6.22 ng/ml', 'Menopausia < 0.41 ng/ml']
 				},
                 {
 					nombre: 'Testosterona total',
 					resultado: cajaResultadoTestosteronaTotal.value,
-					limites: []
+					limites: ['Mujeres 0.1 - 0.9 ng/ml', 'Hombres 3.0 - 10.0 ng/ml']
 				}],
 				observaciones: '',
 				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?> 

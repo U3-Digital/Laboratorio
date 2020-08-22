@@ -111,32 +111,32 @@
 				[{
 					nombre: 'T4 Total',
 					resultado: cajaResultadoT4Total.value,
-					limites: []
+					limites: ['N(6.0 - 12.0 µg/dl)']
                 },
                 {
 					nombre: 'T3 Captación',
 					resultado: cajaResultadoT3Captacion.value,
-					limites: []
+					limites: ['N(6.0 - 12.0 µg/dl)']
                 },
                 {
 					nombre: 'FTI',
 					resultado: cajaResultadoFTI.value,
-					limites: []
+					limites: ['N(5.93 - 13.3)']
                 },
                 {
 					nombre: 'T4 Libre',
 					resultado: cajaResultadoT4Libre.value,
-					limites: []
+					limites: ['N(0.7 - 1.8 ng/ml)']
                 },
                 {
 					nombre: 'T3 Total',
 					resultado: cajaResultadoT3Total.value,
-					limites: []
+					limites: ['N(0.92 - 2.33 nmol/l)']
                 },
                 {
 					nombre: 'TSH',
 					resultado: cajaResultadoTSH.value,
-					limites: []
+					limites: ['N(0.3 - 5.0 mUi/ml)']
                 }],
 				observaciones: '',
 				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?> 

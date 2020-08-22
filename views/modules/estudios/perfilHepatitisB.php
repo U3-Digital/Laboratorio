@@ -70,7 +70,7 @@
 				[{
 					nombre: 'AC\'S Virus superficie B (HBs)',
 					resultado: cajaResultadoPerfilHepatitisB.value,
-					limites: []
+					limites: ['2 - 19 UI/l Negativo']
 				}],
 				observaciones: '',
 				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?> 

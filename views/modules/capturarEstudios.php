@@ -504,7 +504,7 @@
         if(selectDoctor.value == ""){
             cajanombreDoctor.value = "";
             cajaApellidosDoctor.value = "";
-        } else{
+        } else {
            $.ajax({
             url: './ajax/getDoctor.php',
             type: "GET",
@@ -531,6 +531,8 @@
     }
 
     function abrirEstudio(estudio) {
+        console.log('hola');
+        console.log(document.getElementById(estudio));
         $(`#${estudio}`).modal('toggle');
     }
 
@@ -621,11 +623,13 @@
     }
 
     function editarEstudios(index) { 
+        console.log('hey');
         editando = true;
         indexEditar = index;
 
         estudioEditar = estudios[index];
         abrirEstudio(estudioEditar.idmodal);
+    
     }
     
 </script>

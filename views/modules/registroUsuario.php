@@ -57,7 +57,7 @@
                                     <div class="form-group">
                                         <label for="selectRol">Rol:</label>
                                         <select required class="form-control" id="selectRol" name="selectRol">
-                                            <option selected>Rol</option>
+                                            <option value="" selected>Rol</option>
                                             <option value="0">Administrador</option>
                                             <option value="1">Usuario</option>
                                         </select>
@@ -67,7 +67,7 @@
                                     <div class="form-group">
                                         <label for="selectActivo">Activo:</label>
                                         <select required class="form-control" id="selectActivo" name="selectActivo">
-                                            <option selected>Activo</option>
+                                            <option value="" selected>Activo</option>
                                             <option value="s">Sí</option>
                                             <option value="n">No</option>
                                         </select>

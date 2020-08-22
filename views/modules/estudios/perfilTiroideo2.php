@@ -112,17 +112,17 @@
                 {
 					nombre: 'T4 Libre (Tiroxina libre)',
 					resultado: cajaResultadoTiroxinaLibre.value,
-					limites: []
+					limites: ['0.76 - 2.24 ng/dl']
                 },
                 {
 					nombre: 'T3 Total (Triyodotironina total)',
 					resultado: cajaResultadoTriyodotironinaTotal.value,
-					limites: []
+					limites: ['0.84 - 2.02 ng/dl']
                 },
                 {
 					nombre: 'T3 Total (Triyodotironina libre)',
 					resultado: cajaResultadoTriyodotironinaLibre.value,
-					limites: []
+					limites: ['2.02 - 4.43 pg/ml']
                 }],
 				observaciones: '',
 				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?> 

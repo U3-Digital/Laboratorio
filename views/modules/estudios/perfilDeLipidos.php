@@ -119,22 +119,22 @@
 				[{
 					nombre: 'Colesterol',
 					resultado: cajaResultadoColesterol.value,
-					limites: []
+					limites: ['150 - 230 mg/dl']
                 },
                 {
 					nombre: 'Triglicéridos',
 					resultado: cajaResultadoTrigliceridos.value,
-					limites: []
+					limites: ['0 - 150 mg/dl']
                 },
                 {
 					nombre: 'HDL-Colesterol',
 					resultado: cajaResultadoHDLColesterol.value,
-					limites: []
+					limites: ['35 - 55 mg/dl']
                 },
                 {
 					nombre: 'LDL-Colesterol',
 					resultado: cajaResultadoLDLColesterol.value,
-					limites: []
+					limites: ['Hasta 150 mg/dl']
                 },
                 {
 					nombre: 'COL/HDL',

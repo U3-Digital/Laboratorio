@@ -61,7 +61,7 @@
                                     <div class="form-group">
                                         <label for="selectRol">Rol:</label>
                                         <select required class="form-control" id="selectRol" name="selectRol">
-                                            <option>Rol</option>
+                                            <option value="">Rol</option>
                                             <option value="0" <?php if ($respuesta["rol"] == 0) echo 'selected';  ?> >Administrador</option>
                                             <option value="1" <?php if ($respuesta["rol"] == 1) echo 'selected'; ?> >Usuario</option>
                                         </select>
@@ -71,7 +71,7 @@
                                     <div class="form-group">
                                         <label for="selectActivo">Activo:</label>
                                         <select required class="form-control" id="selectActivo" name="selectActivo">
-                                            <option>Activo</option>
+                                            <option value="">Activo</option>
                                             <option value="s" <?php if ($respuesta["activo"] == "s") echo 'selected'; ?> >Sí</option>
                                             <option value="n" <?php if ($respuesta["activo"] == "n") echo 'selected';  ?>>No</option>
                                         </select>
