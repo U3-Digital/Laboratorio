@@ -432,15 +432,15 @@
         estudio.resultados.forEach(resultado =>{
 
             resultados +=`
-                <div style="display: flex; justify-content: space-between;">
-                    <p>${resultado.nombre}: <span>${resultado.resultado}</span></p>
+                
+                    <span>${resultado.nombre}: ${resultado.resultado}</span>
                     ${ resultado.limites[0] ? (
-                            `<p>limites: ${resultado.limites[0]}</p>`
+                            `<span>Limites: ${resultado.limites[0]}</span>`
                         ) : (
                             "&nbsp;"
                         )}
-                    
-                </div>
+                    </br> 
+
             `
         })
         return resultados;
@@ -475,7 +475,13 @@
                                     ):(
                                         "<h3>Resultados:</h3>"
                                     )}
+                                
+                                <div style="display: flex; justify-content: space-between;">
+                                <p>
+
                                 ${escribirResultados(estudio)}
+                                </div>
+                                </p>
                                 ${estudio.observaciones && estudio.observaciones !== "" ?(
                                         `<h3>observaciones</h3><p>${estudio.observaciones}</p>`
                                     ):(
