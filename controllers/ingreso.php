@@ -20,7 +20,7 @@ class Ingreso {
             
             if($this->intentos < $maximoIntentos){
 
-                if($respuesta["email"] == $_POST["usuarioIngreso"] && password_verify($_POST["passwordIngreso"], $respuesta["password"]) && $respuesta["activo"] === "S"){
+                if($respuesta["email"] == $_POST["usuarioIngreso"] && password_verify($_POST["passwordIngreso"], $respuesta["password"]) && $respuesta["activo"] === "s"){
 
 
                     $this ->intentos = 0;
