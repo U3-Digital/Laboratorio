@@ -11,7 +11,7 @@ class Ingreso {
 
             $respuesta = Datos::ingresoModel($datosController, "usuarios");
 
-            // print_r($respuesta["email"]);
+            
 
 
 
@@ -20,7 +20,7 @@ class Ingreso {
             
             if($this->intentos < $maximoIntentos){
 
-                if($respuesta["email"] == $_POST["usuarioIngreso"] && password_verify($_POST["passwordIngreso"], $respuesta["password"]) && $respuesta["activo"] === "s"){
+                if($respuesta["email"] == $_POST["usuarioIngreso"] && password_verify($_POST["passwordIngreso"], $respuesta["password"]) && $respuesta["activo"] === "S"){
 
 
                     $this ->intentos = 0;

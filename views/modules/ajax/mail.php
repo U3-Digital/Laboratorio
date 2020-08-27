@@ -1,4 +1,9 @@
  <?php
+
+ use PHPMailer\PHPMailer\PHPMailer;
+
+require '../../../lib/phpmailer/src/PHPMailer.php';
+require '../../../lib/phpmailer/src/SMTP.php';
 require('../../../controllers/controller.php');
 require('../../../models/crud.php');
 
@@ -21,14 +26,20 @@ if (isset($_POST["cliente"])) {
 
         exit;
     }
+    $mail = new PHPMailer();
 
-
-    // Set the recipient email address.
-    // FIXME: Update this to your desired email address.
-    $recipient = $email;
+    $mail->SetFrom( 'noreply@bienesraicescc.com' , 'BRCC IT Support' );
+    $mail->AddReplyTo( 'bienesraicescc.com' , 'BRCC IT Support' );
 
     // Set the email subject.
     $subject = "Resultados de estudios  para $name";
+
+    $mail->AddAddress( $email, $name );
+
+    $mail->Subject = $subject;
+
+    $referrer = $_SERVER['HTTP_REFERER'] ? '<br><br><br>This Form was submitted from: ' . $_SERVER['HTTP_REFERER'] : '';
+
 
     // Build the email content.
     $email_content ="<style>* {
@@ -64,15 +75,14 @@ if (isset($_POST["cliente"])) {
 
     $email_content .= "</body></html>";
 
-    // Build the email headers.
-    $email_headers = "From: $name <$email>";
+    $mail->MsgHTML( $email_content );
+    $sendEmail = $mail->Send();
 
     // Send the email.
-    if (mail($recipient, $subject, $email_content, $email_headers)) {
-        print_r("success");
-    } else {
-        print_r("error");
+    if( $sendEmail == false ){
+        echo  "error al enviar";
     }
+        echo "success";
 
 } else {
 // Not a POST request, set a 403 (forbidden) response code.
