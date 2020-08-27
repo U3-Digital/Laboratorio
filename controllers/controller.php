@@ -60,7 +60,12 @@ class Controller {
             $resultados = json_decode($item["resultados"]);
             $Estudios = "";
             foreach ($resultados as $row2 => $item2) {
-              $Estudios = $Estudios.",".$item2->nombre."";
+              if($Estudios !=""){
+                $Estudios = $Estudios.",".$item2->nombre."";
+              }else{
+                $Estudios = $Estudios."".$item2->nombre."";
+              }
+              
             }
             $cont ++;
             echo '<tr>
@@ -679,15 +684,16 @@ class Controller {
                     <td>' . $item["idAnalisis"] .'</td>
                     <td>' . $item["nombre"] . '</td>
                     <td>' . $item["costo"] . '</td>
-                    <td>
+                    
+                    ';
+            if ($_SESSION["rol"] == 0) {
+              echo '<td>
                         <a href="inicio.php?action=updtAnalisis&idAnalisis='. $item["idAnalisis"] . '">
                             <button class="btn btn-warning">
                                 <i class="fas fa-pencil-alt" style="color: black;"></i>
                             </button>
                         </a>
-                    </td>
-                    ';
-            if ($_SESSION["rol"] == 0) {
+                    </td>';
               echo '<td>
                       <a href="inicio.php?action=verAnalisis&idBorrar='. $item["idAnalisis"] . '">
                           <button class="btn btn-danger">
