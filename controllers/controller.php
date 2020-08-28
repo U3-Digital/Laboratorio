@@ -76,7 +76,7 @@ class Controller {
                     <td>'.$item["responsable"].'</td>
                     <td>'.$Estudios.'</td>
                     <td>'.$item["costo"].'</td>
-                    <td><a href="inicio.php?action=updtEstudio&idEditar='.$item["idEstudio"].'"><button class="btn btn-warning">Editar</button></a></td>
+                    <td><a href="inicio.php?action=updtestudio&idEditar='.$item["idEstudio"].'"><button class="btn btn-warning">Editar</button></a></td>
                     ';
             if ($_SESSION["rol"] == 0) {
               echo '<td><a href="inicio.php?action=verEstudios&idBorrar='.$item["idEstudio"].'" ><button class="btn btn-danger">Borrar</button></a></td>

@@ -2,10 +2,11 @@
 	$estudio = $_REQUEST['idEditar'];
     $respuesta = Datos::mdlEstudio($estudio,"estudios");
     print_r("<script>let estudios = JSON.parse('" . $respuesta["resultados"] . "');
-        console.log(estudios);
+        console.log(".$respuesta["resultados"].");
     </script>");
-?> 
 
+?> 
+ 
 <div class="content-wrapper">
 	<div class="container-fluid">
 		<ol class="breadcrumb">
@@ -175,6 +176,7 @@
             data: `idCliente= ${selectCliente.value}`,
             success: function(data) {
                 const datos = JSON.parse(data);
+                console.log(data);
                 cajaNombreCliente.value = datos[0].nombre;
                 cajaApellidosCliente.value = datos[0].apellidos;
                 cajaEmailCliente.value = datos[0].email;
