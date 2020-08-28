@@ -28,8 +28,8 @@ if (isset($_POST["cliente"])) {
     }
     $mail = new PHPMailer();
 
-    $mail->SetFrom( 'noreply@bienesraicescc.com' , 'BRCC IT Support' );
-    $mail->AddReplyTo( 'bienesraicescc.com' , 'BRCC IT Support' );
+    $mail->SetFrom( 'ingo@OGALaboratorio.com' , 'OGA Laboratorio info' );
+    $mail->AddReplyTo( 'u3digital.com.mx/oga' , 'OGA Laboratorio' );
 
     // Set the email subject.
     $subject = "Resultados de estudios  para $name";
