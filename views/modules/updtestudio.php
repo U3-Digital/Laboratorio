@@ -329,14 +329,16 @@
 
                     body { margin: 1.6cm; }
 
-
-                    .header, .footer {
+                    .header{
+                        height = 17%;
+                    }
+                    .footer {
                       height: 7%;
                     }
 
 
                     .header-space, .footer-space{
-                        height: 50px;
+                        height: 130px;
                         width = 100%;
                     }
                     .divCompletar{
@@ -363,6 +365,18 @@
 
             <div class="header">
                 <img src="../../Assets/encabezado.jpg" alt="Girl in a jacket" width=100% height="50px">
+                <p width = 100%>
+                    <strong>
+                        Nombre:
+                    </strong>
+                        ${cajaNombreCliente.value}
+                </p>
+                <p>
+                    <strong>
+                        Medico:
+                    </strong>
+                        ${cajaNombreDoctor.value}
+                </p><hr></br>
             </div>
             <div class="footer">
                 <img src="../../Assets/piePagina.jpg" alt="Girl in a jacket" width=100% ">    
@@ -384,14 +398,14 @@
 
             resultados +=`
                 <div style="display: flex; justify-content: space-between;">
-                    <p>${resultado.nombre}: <span>${resultado.resultado}</span></p>
+                    <div>${resultado.nombre}: <span>${resultado.resultado}</span></div>
                     ${ resultado.limites[0] ? (
-                            `<p>limites: ${resultado.limites[0]}</p>`
+                            `<div>Limites: ${resultado.limites[0]}</div>`
                         ) : (
                             "&nbsp;"
                         )}
-                    
                 </div>
+
             `
         })
         return resultados;
@@ -408,25 +422,16 @@
                         </td></tr></thead>
                         <tbody><tr><td>
                             <div class="content" width=100%>
-                                <p width = 100%>
-                                    <strong>
-                                        Nombre:
-                                    </strong>
-                                        ${cajaNombreCliente.value}
-                                </p>
-                                <p>
-                                    <strong>
-                                        Medico:
-                                    </strong>
-                                        ${cajaNombreDoctor.value}
-                                </p><hr></br>
+                                
                                 <h2 style='font-size: 30px;'>${estudio.nombre}</h2>
                                 ${estudio.resultados[0].limites.  length >0 ? (
                                         "<div style='display: flex;justify-content: space-between;'><h3>Resultados:</h3> <h3>Limites</h3></div>"
                                     ):(
                                         "<h3>Resultados:</h3>"
                                     )}
+                                
                                 ${escribirResultados(estudio)}
+                                
                                 ${estudio.observaciones && estudio.observaciones !== "" ?(
                                         `<h3>observaciones</h3><p>${estudio.observaciones}</p>`
                                     ):(

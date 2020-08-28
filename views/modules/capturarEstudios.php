@@ -273,7 +273,7 @@
                     let valores = new FormData();
                     valores.append("cliente",cajaNombreCliente.value+" "+cajaApellidosCliente.value);
                     valores.append("medico",cajaNombresDoctor.value+" "+cajaApellidosDoctor.value);
-                    valores.append("emailCliente",cajaEmailCliente);
+                    valores.append("emailCliente",cajaEmailCliente.value);
                     valores.append("fecha", formated_Date);
                     valores.append("costo", total);
                     valores.append("responsable",<?php echo("'".$_SESSION["nombre"]."'") ?>);
@@ -281,7 +281,7 @@
                     return valores;
                 }(),
                 success: function(data) {
-                    
+                    console.log(data);
                     $.ajax({
                         url: './ajax/mail.php',
                         type: "POST",
@@ -297,6 +297,7 @@
                             return valores;
                         }(),
                         success: function(data) {
+                            console.log(data);
                             if(data === "success"){
                                 Swal.fire({
                                     title: "Datos Guardados!",
