@@ -1,9 +1,7 @@
 <?php 
 	$estudio = $_REQUEST['idEditar'];
     $respuesta = Datos::mdlEstudio($estudio,"estudios");
-    print_r("<script>let estudios = JSON.parse('" . $respuesta["resultados"] . "');
-        console.log(".$respuesta["resultados"].");
-    </script>");
+    print_r("<script>let estudios = JSON.parse('" . $respuesta["resultados"] . "');</script>");
 
 ?> 
  
