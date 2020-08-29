@@ -47,6 +47,14 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="cajaEmail">Enviar copia a:</label>
+                                                    <input class="form-control" type="text" id="cajaCopiaEmail" name="cajaCopiaEmail">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -128,12 +136,18 @@
                                     </div>
                                 </div>
                                 <div class="row mt-1">
-                                    <div class="col-md-12">
-                                        <button type="button" onclick="CapturarEstudios()" class="btn btn-secondary btn-block btn-lg">
-                                            <i class="fas fa-envelope" style="margin-right: 0.5em;"></i>
-                                            Enviar y terminar
+                                    <div class="col-md-4">
+                                        <button type="button" onclick="enviarEstudio()" class="btn btn-secondary btn-block btn-lg">
+                                            <i class="fas fa-envelope" ></i>
+                                            
                                         </button>
                                     </div>
+
+                                    <div class="col-md-8">
+                                        <button type="button" onclick="CapturarEstudios()" class="btn btn-secondary btn-block btn-lg">
+                                            Guardar
+                                        </button>
+                                    </div>    
                                 </div>
                             </div>
                         </div>
@@ -161,6 +175,7 @@
     let estudioEditar = {};
 
     const cajaNombreCliente = document.getElementById('cajaNombre');
+    const cajaEmailCopia = document.getElementById('cajaCopiaEmail');
 
     function cambioCliente(){
         if(selectCliente.value == ""){
@@ -209,6 +224,59 @@
         calcularCostos();
     }
 
+    function enviarEstudio(){
+
+        const parsedEstudios = JSON.stringify(estudios);
+        if(!cajaNombreCliente.value || !cajaEmail.value || !cajaNombreDoctor.value || estudios.length == 0){
+            Swal.fire({
+                title: "¡Rellene por completo el formulario!",
+                type: "warning",
+                showCancelButton: false
+            }).then((value) => {
+                
+            });    
+        }else{
+            $.ajax({
+                url: './ajax/mail.php',
+                type: "POST",
+                data: function(){
+                    let valores = new FormData();
+                    valores.append("cliente",cajaNombreCliente.value);
+                    valores.append("medico",cajaNombreDoctor.value);
+                    valores.append("costo", total);
+                    valores.append("resultado", parsedEstudios);
+                    valores.append("emailCliente", cajaEmail.value);
+                    valores.append("emailCopia",cajaEmailCopia.value);
+                    return valores;
+                }(),
+                success: function(data) {
+                        Swal.fire({
+                            title: "Datos Enviados!",
+                            type: "success",
+                            showCancelButton: false
+                        }).then((value) => {
+                            
+                        }); 
+                        
+                    
+                },
+                error: function(data) {
+                    console.log(data);
+                },
+                complete: function() {
+
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+        } 
+
+
+        
+    }
+
+
     function CapturarEstudios(){
 
 
@@ -237,51 +305,16 @@
                     return valores;
                 }(),
                 success: function(data) {
-                    $.ajax({
-                        url: './ajax/mail.php',
-                        type: "POST",
-                        data: function(){
-                            let valores = new FormData();
-                            valores.append("cliente",cajaNombreCliente.value);
-                            valores.append("medico",cajaNombreDoctor.value);
-                            valores.append("costo", total);
-                            valores.append("resultado", parsedEstudios);
-                            valores.append("emailCliente", cajaEmail.value);
-                            return valores;
-                        }(),
-                        success: function(data) {
-                            if(data === "success"){
-                                Swal.fire({
-                                    title: "Datos Guardados!",
-                                    type: "success",
-                                    showCancelButton: false
-                                }).then((value) => {
-                                    if (value) {
-                                        window.location.href = "inicio.php?action=verEstudios";
-                                    } 
-                                }); 
-
-                            }else{
-                                Swal.fire({
-                                    title: "¡Hubo un error!",
-                                    type: "warning",
-                                    showCancelButton: false
-                                }).then((value) => {
-                                      
-                                });
-                            }
-                        },
-                        error: function(data) {
-                            console.log(data);
-                        },
-                        complete: function() {
-
-                        },
-                        cache: false,
-                        contentType: false,
-                        processData: false
-                    });
- 
+                    
+                    Swal.fire({
+                            title: "Datos Guardados!",
+                            type: "success",
+                            showCancelButton: false
+                        }).then((value) => {
+                            if (value) {
+                                window.location.href = "inicio.php?action=verEstudios";
+                            } 
+                        });
                     
                 },
                 error: function(data) {

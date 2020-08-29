@@ -15,7 +15,7 @@ if (isset($_POST["cliente"])) {
     $date = trim($_POST["fecha"]);
     $resultado = json_decode($_POST["resultado"],true);
     $email = trim($_POST["emailCliente"]);
-
+    $emailCopia = trim($_POST["emailCopia"]);    
 
 
     // Check that data was sent to the mailer.
@@ -35,6 +35,10 @@ if (isset($_POST["cliente"])) {
     $subject = "Resultados de estudios  para $name";
 
     $mail->AddAddress( $email, $name );
+    if($emailCopia){
+        $mail->AddAddress($emailCopia,$name);
+    }
+    
 
     $mail->Subject = $subject;
 
