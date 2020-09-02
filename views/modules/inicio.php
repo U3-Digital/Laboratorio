@@ -61,7 +61,7 @@ require "../../models/crud.php";
 	// print_r("<script>console.log('" . $_SESSION["rol"] . "');</script>");
 ?>
 
-	
+	<script src="impresion/impresion.js"></script>
 	<script src="../../lib/vendor/bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript" src="../../lib/vendor/adminlte/dist/js/adminlte.js"></script>
 	<script type="text/javascript" src="../js/sb-admin.min.js"></script>

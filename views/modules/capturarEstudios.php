@@ -166,7 +166,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <button type="button" onclick="ImprimirEstudios()" class="btn btn-secondary btn-block btn-lg">
+                                        <button type="button" onclick="imprimirEstudio(false)" class="btn btn-secondary btn-block btn-lg">
                                             <i class="fas fa-print" style="margin-right: 0.5em;"></i>
                                             Imprimir estudio
                                         </button>
@@ -233,7 +233,6 @@
                 cajaNombreCliente.value = datos[0].nombre;
                 cajaApellidosCliente.value = datos[0].apellidos;
                 cajaEmailCliente.value = datos[0].email;
-                //console.log(datos[0]);
 
             },
             error: function(data) {
@@ -319,8 +318,6 @@
 
     function CapturarEstudios(){
 
-
-        //console.log(estudios);
         const parsedEstudios = JSON.stringify(estudios);
         const fechaHoy = new Date(Date.now());
         const formated_Date = fechaHoy.getFullYear()+"-"+(fechaHoy.getMonth()+1)+"-"+fechaHoy.getDate();
@@ -375,7 +372,7 @@
 
     }
 
-    async function ImprimirEstudios(){
+    async function ImprimirEstudios() {
         if (estudios.length === 0){
             Swal.fire({
                 title: "¡Rellene por completo el formulario!",
@@ -563,8 +560,6 @@
     }
 
     function abrirEstudio(estudio) {
-        console.log('hola');
-        console.log(document.getElementById(estudio));
         $(`#${estudio}`).modal('toggle');
     }
 
@@ -580,7 +575,6 @@
         } else {
             let modal = selectEstudios.value.toLowerCase();
             modal = modal.replace(/ /ig, '');
-            console.log(modal);
             abrirEstudio(modal);
         }
     }
@@ -629,8 +623,6 @@
 
 
     function agregarEstudio(estudio) {
-        console.log(estudio);
-        // console.log(estudios);
 
         if (editando === true) {
             borrarEstudio(indexEditar);
@@ -655,7 +647,6 @@
     }
 
     function editarEstudios(index) { 
-        console.log('hey');
         editando = true;
         indexEditar = index;
 

@@ -129,7 +129,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <button type="button" onclick="ImprimirEstudios()" class="btn btn-secondary btn-block btn-lg">
+                                        <button type="button" onclick="imprimirEstudio(true)" class="btn btn-secondary btn-block btn-lg">
                                             <i class="fas fa-print" style="margin-right: 0.5em;"></i>
                                             Imprimir estudio
                                         </button>
