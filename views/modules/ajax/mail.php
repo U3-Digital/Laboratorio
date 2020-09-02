@@ -12,8 +12,7 @@ if (isset($_POST["cliente"])) {
     $resultado = json_decode($_POST["resultado"],true);
     $email = trim($_POST["emailCliente"]);
     $emailCopia = trim($_POST["emailCopia"]);    
-
-
+    print_r($resultado);
     // Check that data was sent to the mailer.
     if ( empty($name) OR empty($doctor) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         // Set a 400 (bad request) response code and exit.
@@ -37,7 +36,7 @@ if (isset($_POST["cliente"])) {
                             font-size: 16px;
                         }</style>
                         <html><body>";
-        $email_content .='<img src="../../Assets/header.jpeg" alt="OGA" width=100% height="50px">';
+        $email_content .='<img src="http://u3digital.com.mx/oga/Assets/encabezado.jpg" alt="OGA" width=100% height="50px">';
         $email_content.='<p width = 100%>
                             <strong>
                                 Nombre:
@@ -52,11 +51,22 @@ if (isset($_POST["cliente"])) {
                         </p><hr></br>';
 
 
+
         foreach ($resultado as $row => $estudio) {
             $email_content .= '<h2>'.$estudio["nombre"].'</h2>';
-            $email_content .='<div style="display: flex;  width = 100% justify-content: space-around;">';
+                if(count($estudio["resultados"][0]["limites"]) == 1){
+                    $email_content .='<div style="display:flex; width:100%; justify-content: space-between;"><h3>Resultados:</h3> <h3>Limites</h3></div>';
+                }else{
+                   $email_content .="<h3>Resultados:</h3>" ;
+                }
+
+            $email_content .='<div style="display: flex; width:100%; justify-content: space-between;">';
             foreach ($estudio["resultados"] as $row2 => $resultadoI) {
                 $email_content .= '<p>'.$resultadoI["nombre"].': <span>'.$resultadoI["resultado"].'</span></p>';
+                if($resultadoI["limites"][0]){
+                    $email_content .= '<div>Limites:'.$resultadoI["limites"][0].'</div>';
+                }
+                $email_content .= '</br>';  
                 
             }
             $email_content .= '</div>';
@@ -66,8 +76,10 @@ if (isset($_POST["cliente"])) {
         $email_content .= "</body></html>";
 
         // Build the email headers.
-        $headers = "From:info@OGALaboratorio.com" . "\r\n" . "CC: $emailCopia";
-        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $headers .= "From:info@OGALaboratorio.com" . "\r\n" . "CC: $emailCopia";
+       
 
         // Send the email.
         if (mail($recipient, $subject, $email_content, $headers)) {
