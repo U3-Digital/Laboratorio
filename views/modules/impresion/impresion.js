@@ -81,7 +81,6 @@ function generarEstilo() {
 }
 
 function generarCuerpo(editando) {
-    fecha();
 
     if (editando === true) {
         return `
@@ -98,7 +97,7 @@ function generarCuerpo(editando) {
                                             <p>&nbsp;&nbsp; Paciente: ${cajaNombre.value}</p>
                                             <p>&nbsp;&nbsp; Médico: ${cajaNombreDoctor.value}</p>
                                         </div>
-                                        <p style="margin-right: 1em;">${fecha()}</p>
+                                        <p style="margin-right: 1em;">${fecha(editando)}</p>
                                     </div>
                                     <br>
                                 </div>
@@ -228,10 +227,21 @@ function imprimirLimites(limites) {
     return cadenaLimites;
 }
 
-function fecha() {
-    const date = new Date();
-    const year = new Intl.DateTimeFormat('es', { year: 'numeric' }).format(date);
-    const month = new Intl.DateTimeFormat('es', { month: 'long' }).format(date);
-    const day = new Intl.DateTimeFormat('es', { day: '2-digit' }).format(date);
-    return `${day} de ${month} del ${year}`;
+function fecha(editando) {
+
+    if (editando === true) {
+        const date = new Date();
+        const year = new Intl.DateTimeFormat('es', { year: 'numeric' }).format(fechaOriginal);
+        const month = new Intl.DateTimeFormat('es', { month: 'long' }).format(fechaOriginal);
+        const day = new Intl.DateTimeFormat('es', { day: '2-digit' }).format(fechaOriginal);
+        return `${day} de ${month} del ${year}`;
+    } else {
+        const date = new Date();
+        const year = new Intl.DateTimeFormat('es', { year: 'numeric' }).format(date);
+        const month = new Intl.DateTimeFormat('es', { month: 'long' }).format(date);
+        const day = new Intl.DateTimeFormat('es', { day: '2-digit' }).format(date);
+        return `${day} de ${month} del ${year}`;
+    }
+
+
 }
