@@ -1,9 +1,5 @@
  <?php
 
- use PHPMailer\PHPMailer\PHPMailer;
-
-require '../../../lib/phpmailer/src/PHPMailer.php';
-require '../../../lib/phpmailer/src/SMTP.php';
 require('../../../controllers/controller.php');
 require('../../../models/crud.php');
 
@@ -26,67 +22,64 @@ if (isset($_POST["cliente"])) {
 
         exit;
     }
-    $mail = new PHPMailer();
 
-    $mail->SetFrom( 'ingo@OGALaboratorio.com' , 'OGA Laboratorio info' );
-    $mail->AddReplyTo( 'u3digital.com.mx/oga' , 'OGA Laboratorio' );
+    // Set the recipient email address.
+        // FIXME: Update this to your desired email address.
+        $recipient = $email;
 
-    // Set the email subject.
-    $subject = "Resultados de estudios  para $name";
+        // Set the email subject.
+        $subject = "Resultados de estudios  para $name";
 
-    $mail->AddAddress( $email, $name );
-    if($emailCopia){
-        $mail->AddAddress($emailCopia,$name);
-    }
+        // Build the email content.
+        // Build the email content.
+        $email_content ="<style>* {
+                            font-family: 'Arial', sans-serif;
+                            font-size: 16px;
+                        }</style>
+                        <html><body>";
+        $email_content .='<img src="../../Assets/header.jpeg" alt="OGA" width=100% height="50px">';
+        $email_content.='<p width = 100%>
+                            <strong>
+                                Nombre:
+                            </strong>
+                                '.$name.'
+                        </p>
+                        <p>
+                            <strong>
+                                Medico:
+                            </strong>
+                                '.$doctor.'
+                        </p><hr></br>';
+
+
+        foreach ($resultado as $row => $estudio) {
+            $email_content .= '<h2>'.$estudio["nombre"].'</h2>';
+            $email_content .='<div style="display: flex;  width = 100% justify-content: space-around;">';
+            foreach ($estudio["resultados"] as $row2 => $resultadoI) {
+                $email_content .= '<p>'.$resultadoI["nombre"].': <span>'.$resultadoI["resultado"].'</span></p>';
+                
+            }
+            $email_content .= '</div>';
+        }
+
+
+        $email_content .= "</body></html>";
+
+        // Build the email headers.
+        $headers = "From:info@OGALaboratorio.com" . "\r\n" . "CC: $emailCopia";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+        // Send the email.
+        if (mail($recipient, $subject, $email_content, $headers)) {
+            echo "success";
+        } else {
+           echo "error";
+        }
+
+
     
 
-    $mail->Subject = $subject;
-
-    $referrer = $_SERVER['HTTP_REFERER'] ? '<br><br><br>This Form was submitted from: ' . $_SERVER['HTTP_REFERER'] : '';
-
-
-    // Build the email content.
-    $email_content ="<style>* {
-                        font-family: 'Arial', sans-serif;
-                        font-size: 16px;
-                    }</style>
-                    <html><body>";
-    $email_content .='<img src="../../Assets/header.jpeg" alt="Girl in a jacket" width=100% height="50px">';
-    $email_content.='<p width = 100%>
-                        <strong>
-                            Nombre:
-                        </strong>
-                            '.$name.'
-                    </p>
-                    <p>
-                        <strong>
-                            Medico:
-                        </strong>
-                            '.$doctor.'
-                    </p><hr></br>';
-
-
-    foreach ($resultado as $row => $estudio) {
-    	$email_content .= '<h2>'.$estudio["nombre"].'</h2>';
-    	$email_content .='<div style="display: flex;  width = 100% justify-content: space-around;">';
-    	foreach ($estudio["resultados"] as $row2 => $resultadoI) {
-    		$email_content .= '<p>'.$resultadoI["nombre"].': <span>'.$resultadoI["resultado"].'</span></p>';
-    		
-    	}
-    	$email_content .= '</div>';
-    }
-
-
-    $email_content .= "</body></html>";
-
-    $mail->MsgHTML( $email_content );
-    $sendEmail = $mail->Send();
-
-    // Send the email.
-    if( $sendEmail == false ){
-        echo  "error al enviar";
-    }
-        echo "success";
+   
 
 } else {
 // Not a POST request, set a 403 (forbidden) response code.

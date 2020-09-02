@@ -397,7 +397,7 @@
             
 
             <div class="header">
-                <img src="../../Assets/encabezado.jpg" alt="Girl in a jacket" width=100% height="50px">
+                <img src="../../Assets/encabezado.jpg" alt="OGA" width=100% height="50px">
                 <p width = 100%>
                     <strong>
                         Nombre:
@@ -412,7 +412,7 @@
                 </p><hr></br>
             </div>
             <div class="footer">
-                <img src="../../Assets/piePagina.jpg" alt="Girl in a jacket" width=100% ">    
+                <img src="../../Assets/piePagina.jpg" alt="OGA" width=100% ">    
             </div>
 
             `);

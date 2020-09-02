@@ -294,6 +294,7 @@
                     return valores;
                 }(),
                 success: function(data) {
+                        console.log(data);
                         Swal.fire({
                             title: "Datos Enviados!",
                             type: "success",
@@ -413,8 +414,13 @@
                     }
 
 
-                    .header-space, .footer-space{
+                    .header-space{
                         height: 130px;
+                        width = 100%;
+                    }
+
+                    .footer-space{
+                        height = 20px;
                         width = 100%;
                     }
                     .divCompletar{
@@ -440,7 +446,7 @@
             
 
             <div class="header">
-                <img src="../../Assets/encabezado.jpg" alt="Girl in a jacket" width=100% height="50px">
+                <img src="../../Assets/encabezado.jpg" alt="OGA" width=100% height="50px">
                 <p width = 100%>
                     <strong>
                         Nombre:
@@ -455,7 +461,7 @@
                 </p><hr></br>
             </div>
             <div class="footer">
-                <img src="../../Assets/piePagina.jpg" alt="Girl in a jacket" width=100% ">    
+                <img src="../../Assets/piePagina.jpg" alt="OGA" width=100% ">    
             </div>
 
             `);
