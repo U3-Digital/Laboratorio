@@ -265,8 +265,11 @@
 
     function enviarEstudio(){
         const parsedEstudios = JSON.stringify(estudios);
-        const fechaHoy = new Date(Date.now());
-        const formated_Date = fechaHoy.getFullYear()+"-"+(fechaHoy.getMonth()+1)+"-"+fechaHoy.getDate();
+        const date = new Date();
+        const year = new Intl.DateTimeFormat('es', { year: 'numeric' }).format(date);
+        const month = new Intl.DateTimeFormat('es', { month: 'long' }).format(date);
+        const day = new Intl.DateTimeFormat('es', { day: '2-digit' }).format(date);
+        const formated_Date =  `${day} de ${month} del ${year}`;
 
         if(cajaNombreCliente.value === ""  || cajaEmailCliente.value ==="" || cajaNombresDoctor.value ==="" || cajaApellidosDoctor.value === "" || estudios.length === 0){
             Swal.fire({

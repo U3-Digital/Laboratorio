@@ -228,6 +228,10 @@
     function enviarEstudio(){
 
         const parsedEstudios = JSON.stringify(estudios);
+        const year = new Intl.DateTimeFormat('es', { year: 'numeric' }).format(fechaOriginal);
+        const month = new Intl.DateTimeFormat('es', { month: 'long' }).format(fechaOriginal);
+        const day = new Intl.DateTimeFormat('es', { day: '2-digit' }).format(fechaOriginal);
+        const formated_Date =  `${day} de ${month} del ${year}`;
         if(!cajaNombreCliente.value || !cajaEmail.value || !cajaNombreDoctor.value || estudios.length == 0){
             Swal.fire({
                 title: "¡Rellene por completo el formulario!",
@@ -245,6 +249,7 @@
                     valores.append("cliente",cajaNombreCliente.value);
                     valores.append("medico",cajaNombreDoctor.value);
                     valores.append("costo", total);
+                    valores.append("fecha",formated_Date);
                     valores.append("resultado", parsedEstudios);
                     valores.append("emailCliente", cajaEmail.value);
                     valores.append("emailCopia",cajaEmailCopia.value);

@@ -12,7 +12,7 @@ if (isset($_POST["cliente"])) {
     $resultado = json_decode($_POST["resultado"],true);
     $email = trim($_POST["emailCliente"]);
     $emailCopia = trim($_POST["emailCopia"]);    
-    print_r($resultado);
+    
     // Check that data was sent to the mailer.
     if ( empty($name) OR empty($doctor) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         // Set a 400 (bad request) response code and exit.
@@ -34,9 +34,19 @@ if (isset($_POST["cliente"])) {
         $email_content ="<style>* {
                             font-family: 'Arial', sans-serif;
                             font-size: 16px;
+
+                            .espacio{
+                                display:flex;
+                                width:100%;
+                                justify-content: space-between;  
+                            }
+
+
+                            .element1 {margin-right : 20px; float:left;}
+                            .element2 {float:left;}
                         }</style>
                         <html><body>";
-        $email_content .='<img src="http://u3digital.com.mx/oga/Assets/encabezado.jpg" alt="OGA" width=100% height="50px">';
+        $email_content .='<img src="http://u3digital.com.mx/oga/Assets/encabezado.jpg" alt="OGA" width=100% height="auto">';
         $email_content.='<p width = 100%>
                             <strong>
                                 Nombre:
@@ -48,28 +58,39 @@ if (isset($_POST["cliente"])) {
                                 Medico:
                             </strong>
                                 '.$doctor.'
-                        </p><hr></br>';
+                        </p>
+                        <p>
+                            <strong>
+                                Fecha:
+                            </strong>
+                                '.$date.'
+                        </p>
+                        <hr></br>';
 
 
 
         foreach ($resultado as $row => $estudio) {
             $email_content .= '<h2>'.$estudio["nombre"].'</h2>';
                 if(count($estudio["resultados"][0]["limites"]) == 1){
-                    $email_content .='<div style="display:flex; width:100%; justify-content: space-between;"><h3>Resultados:</h3> <h3>Limites</h3></div>';
+                    $email_content .='<div style="display:flex; justify-content: center; width:100%; "><h3 style="margin-left: 1em; width: 60%;">Resultados:</h3> <h3 style="margin-rigth: 1em;">Limites</h3></div>';
                 }else{
                    $email_content .="<h3>Resultados:</h3>" ;
                 }
 
-            $email_content .='<div style="display: flex; width:100%; justify-content: space-between;">';
+            
             foreach ($estudio["resultados"] as $row2 => $resultadoI) {
-                $email_content .= '<p>'.$resultadoI["nombre"].': <span>'.$resultadoI["resultado"].'</span></p>';
+                $email_content .='<div style="display:flex; justify-content: center; width:100%; ">';
+                $email_content .= '<div style="margin-left: 1em; width: 60%;">'.$resultadoI["nombre"].': <span>'.$resultadoI["resultado"].'</span></div>';
                 if($resultadoI["limites"][0]){
-                    $email_content .= '<div>Limites:'.$resultadoI["limites"][0].'</div>';
+                    $email_content .= '<div style="margin-rigth: 1em;" >Limites:'.$resultadoI["limites"][0].'</div>';
                 }
-                $email_content .= '</br>';  
-                
+                $email_content .= '</br></div>';
             }
-            $email_content .= '</div>';
+            if($estudio["observaciones"]){
+                $email_content .="<h3>Observaciones:</h3>" ;
+                $email_content .= "<div>".$estudio["observaciones"]."</div>";
+            }
+            
         }
 
 
@@ -77,7 +98,7 @@ if (isset($_POST["cliente"])) {
 
         // Build the email headers.
         $headers  = 'MIME-Version: 1.0' . "\r\n";
-        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
         $headers .= "From:info@OGALaboratorio.com" . "\r\n" . "CC: $emailCopia";
        
 
