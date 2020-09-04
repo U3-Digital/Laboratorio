@@ -5,9 +5,12 @@ function imprimirEstudio(editando) {
             ventana.document.write(generarDocumento(editando));
             ventana.document.close();
             ventana.onload = function() {
+                console.log('c');
+                console.log(ventana.document.getElementById('tabla'), 'get');
                 ventana.document.getElementById('tabla').style.pageBreakAfter = "always";
+                ventana.print();
             };
-            ventana.print();
+            
 
             ventana.addEventListener("afterprint", () => {
                 ventana.close();
@@ -26,9 +29,12 @@ function imprimirEstudio(editando) {
             ventana.document.write(generarDocumento(editando));
             ventana.document.close();
             ventana.onload = function() {
+                console.log('c');
+                console.log(ventana.document.getElementById('tabla'), 'get');
                 ventana.document.getElementById('tabla').style.pageBreakAfter = "always";
+                ventana.print();
             };
-            ventana.print();
+            
             ventana.addEventListener("afterprint", () => {
                 ventana.close();
             });
@@ -69,8 +75,10 @@ function generarEstilo() {
         thead { display: table-header-group; }
         tfoot { display: table-footer-group; }
         .tabla {
-            page-break-after: always;
             width: 100%;
+            height: 100%;
+            page-break-after: always;
+
         }
 
         p {
