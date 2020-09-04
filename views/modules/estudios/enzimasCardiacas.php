@@ -91,30 +91,30 @@
 		if (cajaResultadoTGO.value && cajaResultadoCK.value && cajaResultadoCKMB.value && cajaResultadoDHL.value) {
 
 			let estudio = {
-				idmodal: 'enzimascardiacas',
-				nombre: 'Enzimas cardíacas',
+				idmodal: "enzimascardiacas",
+				nombre: "Enzimas cardíacas",
 				resultados:
 				[{
-					nombre: 'TGO',
+					nombre: "TGO",
 					resultado: cajaResultadoTGO.value,
-					limites: ['5 - 40 U/L']
+					limites: ["5 - 40 U/L"]
 				},
 				{
-					nombre: 'CK',
+					nombre: "CK",
 					resultado: cajaResultadoCK.value,
-					limites: ['38 - 397 U/L']
+					limites: ["38 - 397 U/L"]
 				},
 				{
-					nombre: 'CKMB',
+					nombre: "CKMB",
 					resultado: cajaResultadoCKMB.value,
-					limites: ['0 - 24 U/L']
+					limites: ["0 - 24 U/L"]
 				},
 				{
-					nombre: 'DHL',
+					nombre: "DHL",
 					resultado: cajaResultadoDHL.value,
-					limites: ['98 - 192 U/L']
+					limites: ["98 - 192 U/L"]
 				}],
-				observaciones: '',
+				observaciones: "",
 				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?> 
 			}
 			agregarEstudio(estudio);
@@ -131,7 +131,7 @@
 	}
 
 	function cerrarModalEnzimasCardiacas() {
-		$(`#enzimascardiacas`).modal('toggle');
+		$(`#enzimascardiacas`).modal("toggle");
 	}
 
 	function limpiarEnzimasCardiacas() {
@@ -141,11 +141,11 @@
 		cajaResultadoDHL.value = "";
 	}
 
-	$('#enzimascardiacas').on('hidden.bs.modal', function (e) {
+	$("#enzimascardiacas").on("hidden.bs.modal", function (e) {
   		limpiarEnzimasCardiacas();
 	});
 
-	$('#enzimascardiacas').on('show.bs.modal', function (e) {
+	$("#enzimascardiacas").on("show.bs.modal", function (e) {
 		if (editando === true) {
 			edicionEnzimasCardiacas(estudioEditar);
 			 

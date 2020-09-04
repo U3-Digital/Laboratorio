@@ -13,7 +13,6 @@ if (isset($_POST["cliente"])) {
     $email = trim($_POST["emailCliente"]);
     $emailCopia = trim($_POST["emailCopia"]);    
     
-    print_r($resultado);
 
     // Check that data was sent to the mailer.
     if ( empty($name) OR empty($doctor) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -81,17 +80,17 @@ if (isset($_POST["cliente"])) {
 
             
             foreach ($estudio["resultados"] as $row2 => $resultadoI) {
-                $email_content .='<div style="display:flex; justify-content: center; width:100%; ">';
+                $email_content .='<div style="display:flex; justify-content: center; width:100%;">';
                 $email_content .= '<div style="margin-left: 1em; width: 60%;">'.$resultadoI["nombre"].': <span>'.$resultadoI["resultado"].'</span></div>';
-                if($resultadoI["limites"][0]){
+                if ($resultadoI["limites"][0]) {
                     $email_content .= '<div>';
                     foreach ($resultadoI["limites"] as $row3 => $limite) {
-                        $email_content .= '<div style="margin-rigth: 1em;" >Limites:'.$limite.'</div>';
+                        $email_content .= '<div style="margin-rigth: 1em;" >Limites: '.$limite.'</div>';
                     }
                     $email_content .= '</div>';
                     
                 }
-                $email_content .= '</br></div>';
+                $email_content .= '<br></div>';
             }
             if($estudio["observaciones"]){
                 $email_content .='<h3>Observaciones:</h3>' ;
@@ -108,7 +107,7 @@ if (isset($_POST["cliente"])) {
         $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
         $headers .= "From:info@OGALaboratorio.com" . "\r\n" . "CC: $emailCopia";
        
-
+        print_r($email_content);
         // Send the email.
         if (mail($recipient, $subject, $email_content, $headers)) {
             echo "success";

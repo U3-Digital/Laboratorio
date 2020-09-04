@@ -187,69 +187,69 @@ $controller = new Controller();
 
 			let estudio = {
 				idmodal: 'biometriahematica',
-				nombre: 'Biometría hemática',
+				nombre: "Biometría hemática",
 				resultados: 
 					[{
-						nombre: 'Leucocitos',
+						nombre: "Leucocitos",
 						resultado: cajaResultadoLeucocitos.value,
-						limites: ['5,000 - 11,000']
+						limites: ["5,000 - 11,000"]
 					}
 					,{
-						nombre: 'Hemoglobina',
+						nombre: "Hemoglobina",
 						resultado: cajaResultadoHemoglobina.value,
-						limites: ['12 - 16']
+						limites: ["12 - 16"]
 					},
 					{
-						nombre: 'Hematocrito',
+						nombre: "Hematocrito",
 						resultado: cajaResultadoHematocrito.value,
-						limites: ['37 - 47']
+						limites: ["37 - 47"]
 					},
 					{
-						nombre: 'Concenctración media de hemoglobina',
+						nombre: "Concenctración media de hemoglobina",
 						resultado: cajaResultadoConcentracionMediaHemoglobina.value,
-						limites: ['33 - 37']
+						limites: ["33 - 37"]
 					},
 					{
-						nombre: 'Volumen globular medio',
+						nombre: "Volumen globular medio",
 						resultado: cajaResultadoVolumenGlobularMedio.value,
-						limites: ['81 - 99']
+						limites: ["81 - 99"]
 					},
 					{
-						nombre: 'Linfocitos',
+						nombre: "Linfocitos",
 						resultado: cajaResultadoLinfocitos.value,
-						limites: ['20 - 52']
+						limites: ["20 - 52"]
 					},
 					{
-						nombre: 'Monocitos',
+						nombre: "Monocitos",
 						resultado: cajaResultadoMonocitos.value,
-						limites: ['2 - 9']
+						limites: ["2 - 9"]
 					},
 					{
-						nombre: 'Eosinófilos',
+						nombre: "Eosinófilos",
 						resultado: cajaResultadoEosinofilos.value,
-						limites: ['0 - 3']
+						limites: ["0 - 3"]
 					},
 					{
-						nombre: 'Basófilos',
+						nombre: "Basófilos",
 						resultado: cajaResultadoBasofilos.value,
-						limites: ['0 - 3']
+						limites: ["0 - 3"]
 					},
 					{
-						nombre: 'Segmentados',
+						nombre: "Segmentados",
 						resultado: cajaResultadoSegmentados.value,
-						limites: ['42 - 75']
+						limites: ["42 - 75"]
 					},
 					{
-						nombre: 'Bandas',
+						nombre: "Bandas",
 						resultado: cajaResultadoBandas.value,
-						limites: ['0 - 2']
+						limites: ["0 - 2"]
 					},
 					{
-						nombre: 'Plaquetas',
+						nombre: "Plaquetas",
 						resultado: cajaResultadoPlaquetas.value,
-						limites: ['130 - 400']
+						limites: ["130 - 400"]
 					}],
-				observaciones: '', //TODO Estandarizar las observaciones
+				observaciones: "", //TODO Estandarizar las observaciones
 				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?>
 			}
 
