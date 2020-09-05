@@ -1363,7 +1363,7 @@
                                                 </div>
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-2">
-                                                    <input class="form-control" type="text" name="cajaResultadoDeshidrogenasaCadenaCorta" id="cajaResultadoDeshidrogenasaCadenaCorta" value="Ausente">
+                                                    <input class="form-control" type="text" name="cajaResultadoAcidemiaGlutaricaTipoII" id="cajaResultadoAcidemiaGlutaricaTipoII" value="Ausente">
                                                 </div>
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-2 text-center">
@@ -2153,7 +2153,7 @@
 				},
                 {
 					nombre: "Acidemia glutárica tipo II",
-					resultado: cajaResultadoDeshidrogenasaCadenaCorta.value,
+					resultado: cajaResultadoAcidemiaGlutaricaTipoII.value,
 					limites: ["Ausente"]
 				},
                 {
@@ -2362,7 +2362,7 @@
         cajaResultadoProteinaTrifuncional.value = 'Ausente';
         cajaResultadoTransportadorCarnitina.value = 'Ausente';
         cajaResultadoDeshidrogenasaCadenaCorta.value = 'Ausente';
-        cajaResultadoDeshidrogenasaCadenaCorta.value = 'Ausente';
+        cajaResultadoAcidemiaGlutaricaTipoII.value = 'Ausente';
         cajaResultadoHidroxiaciloDeshidrogenasaCorta.value = 'Ausente';
         cajaResultadoCetoacilCoaTiolasaMedia.value = 'Ausente';
         cajaResultadoCarnitinaPalmitoiltransferasa1.value = 'Ausente';
@@ -2493,7 +2493,7 @@
         cajaResultadoProteinaTrifuncional.value = estudio.resultados[86].resultado;
         cajaResultadoTransportadorCarnitina.value = estudio.resultados[87].resultado;
         cajaResultadoDeshidrogenasaCadenaCorta.value = estudio.resultados[88].resultado;
-        cajaResultadoDeshidrogenasaCadenaCorta.value = estudio.resultados[89].resultado;
+        cajaResultadoAcidemiaGlutaricaTipoII.value = estudio.resultados[89].resultado;
         cajaResultadoHidroxiaciloDeshidrogenasaCorta.value = estudio.resultados[90].resultado;
         cajaResultadoCetoacilCoaTiolasaMedia.value = estudio.resultados[91].resultado;
         cajaResultadoCarnitinaPalmitoiltransferasa1.value = estudio.resultados[92].resultado;
