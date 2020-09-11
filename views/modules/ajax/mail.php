@@ -9,7 +9,7 @@ if (isset($_POST["cliente"])) {
     $name = strip_tags(trim($_POST["cliente"]));
     $doctor = trim($_POST["medico"]);
     $date = trim($_POST["fecha"]);
-    $resultado = json_decode($_POST["resultado"],true);
+    $estudios = json_decode($_POST["resultado"],true);
     $email = trim($_POST["emailCliente"]);
     $emailCopia = trim($_POST["emailCopia"]);    
     
@@ -23,54 +23,76 @@ if (isset($_POST["cliente"])) {
         exit;
     }
 
-    // Set the recipient email address.
-        // FIXME: Update this to your desired email address.
-        $recipient = $email;
+// Set the recipient email address.
+    // FIXME: Update this to your desired email address.
+    $recipient = $email;
 
-        // Set the email subject.
-        $subject = "Resultados de estudios  para $name";
+    // Set the email subject.
+    $subject = "Resultados de estudios  para $name";
 
-        // Build the email content.
-        // Build the email content.
-        $email_content ='<style>* {
-                            font-family: "Arial", sans-serif;
-                            font-size: 16px;
+    // Build the email content.
+    // Build the email content.
+    $email_content ='
+    <html>
+        <style>
+            font-family: "Arial", sans-serif;
+            font-size: 16px;
 
-                            .espacio{
-                                display:flex;
-                                width:100%;
-                                justify-content: space-between;  
-                            }
+            .espacio {
+                display:flex;
+                width:100%;
+                justify-content: space-between;  
+            }
 
+            .element1 { margin-right : 20px; float:left; }
+            .element2 { float:left; }
+        </style>
+        <body>';
+    $email_content .='<img src="http://u3digital.com.mx/oga/Assets/encabezado.jpg" alt="OGA" width=100% height="auto">';
+    $email_content.='
+    <p width = 100%>
+        <strong>Nombre:</strong>'.$name.'
+    </p>
+    <p>
+        <strong>Medico:</strong>'.$doctor.'
+    </p>
+    <p>
+        <strong>Fecha:</strong>'.$date.'
+    </p>
+    <hr></br>';
 
-                            .element1 {margin-right : 20px; float:left;}
-                            .element2 {float:left;}
-                        }</style>
-                        <html><body>';
-        $email_content .='<img src="http://u3digital.com.mx/oga/Assets/encabezado.jpg" alt="OGA" width=100% height="auto">';
-        $email_content.='<p width = 100%>
-                            <strong>
-                                Nombre:
-                            </strong>
-                                '.$name.'
-                        </p>
-                        <p>
-                            <strong>
-                                Medico:
-                            </strong>
-                                '.$doctor.'
-                        </p>
-                        <p>
-                            <strong>
-                                Fecha:
-                            </strong>
-                                '.$date.'
-                        </p>
-                        <hr></br>';
+    foreach ($estudios as $estudio) {
+        $email_content .= '<h3>' . $estudio["nombre"] . '</h3>';
 
+        $limites = (count($estudio["resultados"][0]["limites"]) > 0) ? '<span style="margin-right: 1em;">Límites</span>' : '';
 
+        $email_content .= '
+        <div style="display: flex; justify-content: initial">
+            <span style="margin-left: 1em; width: 65%;">Resultados</span>
+            ' . $limites . '
+        </div>';
 
-        foreach ($resultado as $row => $estudio) {
+        foreach ($estudio["resultados"] as $resultado) {
+
+            $limites = (count($resultado["limites"]) > 0) ? (imprimirLimites($resultado["limites"])) : '';
+
+            $email_content .= '
+                <div style="display: flex; justify-content: initial">
+                    <span style="margin-left: 1em; width: 65%;">' . $resultado["nombre"] . '&nbsp;&nbsp;&nbsp;&nbsp;' . $resultado["resultado"] . '</span>
+                    ' . $limites. '
+                </div>
+            ';
+        }
+
+        if ($estudio["observaciones"]) {
+            $email_content .= '
+            <div style="display: flex; justify-content: space-between; ">
+                <span style="margin-left: 1em;">Observaciones:&nbsp;&nbsp;&nbsp;&nbsp;' . $estudio["observaciones"] . '</span>
+            </div>
+            ';
+        }
+    }
+/*         foreach ($resultado as $row => $estudio) {
             $email_content .= '<h2>'.$estudio["nombre"].'</h2>';
                 if(count($estudio["resultados"][0]["limites"]) == 1){
                     $email_content .='<div style="display:flex; justify-content: center; width:100%; "><h3 style="margin-left: 1em; width: 60%;">Resultados:</h3> <h3 style="margin-rigth: 1em;">Limites</h3></div>';
@@ -80,9 +102,9 @@ if (isset($_POST["cliente"])) {
 
             
             foreach ($estudio["resultados"] as $row2 => $resultadoI) {
-                $email_content .='<div style="display:flex; justify-content: center; width:100%;">';
+                $email_content .='<div style="display:flex; justify-content: center; width:100%; ">';
                 $email_content .= '<div style="margin-left: 1em; width: 60%;">'.$resultadoI["nombre"].': <span>'.$resultadoI["resultado"].'</span></div>';
-                if ($resultadoI["limites"][0]) {
+                if($resultadoI["limites"][0]){
                     $email_content .= '<div>';
                     foreach ($resultadoI["limites"] as $row3 => $limite) {
                         $email_content .= '<div style="margin-rigth: 1em;" >Limites: '.$limite.'</div>';
@@ -90,17 +112,17 @@ if (isset($_POST["cliente"])) {
                     $email_content .= '</div>';
                     
                 }
-                $email_content .= '<br></div>';
+                $email_content .= '</br></div>';
             }
             if($estudio["observaciones"]){
                 $email_content .='<h3>Observaciones:</h3>' ;
                 $email_content .= '<div>'.$estudio["observaciones"].'</div>';
             }
             
-        }
+        } */
 
 
-        $email_content .= "</body></html>";
+        // $email_content .= "</body></html>";
 
         // Build the email headers.
         $headers  = 'MIME-Version: 1.0' . "\r\n";
@@ -127,6 +149,15 @@ echo "Tuvimos un error favor de intentarlo de nuevo";
 }
 
 
+function imprimirLimites($limites) {
+    $cadenaLimites = '<div style="margin-right: 1em;">';
 
+    foreach ($limites as $limite) {
+        $cadenaLimites .= '
+            <span style="margin-right: 1em;">' . $limite . '</span><br>';
+    } 
 
+    $cadenaLimites .= '</div>';
 
+    return $cadenaLimites;
+}

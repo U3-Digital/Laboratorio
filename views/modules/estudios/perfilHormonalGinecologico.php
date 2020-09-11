@@ -421,7 +421,7 @@
 	}
 
 	function limpiarPerfilHormonalGinecologico() {
-        cajaResultadoEstradiol.value = '';
+        cajaResultadoEstradiol.valule = '';
         cajaResultadoHormonaFoliculoestimulante.value = '';
         cajaResultadoHormonaLuteinizante.value = '';
         cajaResultadoProgesterona.value = '';

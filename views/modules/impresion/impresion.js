@@ -1,16 +1,13 @@
 function imprimirEstudio(editando) {
     if (editando === true) {
         if (estudios.length > 0 && cajaNombre.value && cajaNombreDoctor.value) {
-            let ventana = window.open('', 'impresion', `width=${window.innerWidth - 50}, height=${window.innerHeight - 50}`);
+            let ventana = window.open('', 'impresion', `width=${window.innerWidth - 50}, height=${window.innerHeight - 10}`);
             ventana.document.write(generarDocumento(editando));
             ventana.document.close();
             ventana.onload = function() {
-                console.log('c');
-                console.log(ventana.document.getElementById('tabla'), 'get');
-                ventana.document.getElementById('tabla').style.pageBreakAfter = "always";
                 ventana.print();
             };
-            
+
 
             ventana.addEventListener("afterprint", () => {
                 ventana.close();
@@ -25,16 +22,13 @@ function imprimirEstudio(editando) {
     } else {
         if (estudios.length > 0 && cajaNombreCliente.value && cajaNombresDoctor.value && cajaApellidosDoctor.value) {
 
-            let ventana = window.open('', 'impresion', `width=${window.innerWidth - 50}, height=${window.innerHeight - 50}`);
+            let ventana = window.open('', 'impresion', `width=${window.innerWidth - 50}, height=${window.innerHeight - 10}`);
             ventana.document.write(generarDocumento(editando));
             ventana.document.close();
             ventana.onload = function() {
-                console.log('c');
-                console.log(ventana.document.getElementById('tabla'), 'get');
-                ventana.document.getElementById('tabla').style.pageBreakAfter = "always";
                 ventana.print();
             };
-            
+
             ventana.addEventListener("afterprint", () => {
                 ventana.close();
             });
@@ -71,15 +65,9 @@ function generarEstilo() {
             size: A4;
             margin: 0;
         }
-
-        thead { display: table-header-group; }
-        tfoot { display: table-footer-group; }
-        .tabla {
-            width: 100%;
-            height: 100%;
-            page-break-after: always;
-
-        }
+        
+    
+        table { width: 100%;}
 
         p {
             margin: 0;
@@ -93,8 +81,8 @@ function generarCuerpo(editando) {
     if (editando === true) {
         return `
         <body>
-            <div id="tabla">
-                <table class="tabla">
+            <div>
+                <table>
                     <thead>
                         <tr>
                             <td>
@@ -118,20 +106,24 @@ function generarCuerpo(editando) {
                     <tfoot>
                         <tr>
                             <td>
-                                <img src="../../Assets/piePagina.jpg" alt="Pie de página oga">
+                                <div style="height: 80px;">&nbsp;</div>
                             </td>
                         </tr>
+                        <!--<tr>
+                            <td>
+                                <img src="../../Assets/piePagina.jpg" alt="Pie de página oga">
+                            </td>
+                        </tr>-->
                     </tfoot>
                 </table>
-            </div>
-            
+            </div>    
         </body>
         `;
     } else {
         return `
         <body>
-            <div id="tabla">
-                <table class="tabla">
+            <div>
+                <table>
                     <thead>
                         <tr>
                             <td>
@@ -152,16 +144,20 @@ function generarCuerpo(editando) {
                     <tbody>
                         ${generarEstudios()}
                     </tbody>
-                    <tfoot>
+                    <!--<tfoot>
+                        <tr>
+                            <td>
+                                <div style="height: 80px;">&nbsp;</div>
+                            </td>
+                        </tr>
                         <tr>
                             <td>
                                 <img src="../../Assets/piePagina.jpg" alt="Pie de página oga">
                             </td>
                         </tr>
-                    </tfoot>
+                    </tfoot>-->
                 </table>
             </div>
-            
         </body>
         `;
     }
@@ -186,7 +182,7 @@ function generarEstudios() {
         <tr>
             <td>
                 <div style="display: flex; justify-content: initial; ">
-                    <span style="margin-left: 1em; width: 60%;">Resultados:</span>
+                    <span style="margin-left: 1em; width: 65%;">Resultados:</span>
                     ${estudio.resultados[0].limites.length > 0 ? ('<span style="margin-right: 1em;">Límites</span>') : ('')}
                 </div>
             </td>
@@ -197,7 +193,7 @@ function generarEstudios() {
             <tr>
                 <td>
                     <div style="display: flex; justify-content: initial; ">
-                    <span style="margin-left: 1em; width: 60%;">${r.nombre}: &nbsp;&nbsp;&nbsp;&nbsp; ${r.resultado}</span>
+                    <span style="margin-left: 1em; width: 65%;">${r.nombre}: &nbsp;&nbsp;&nbsp;&nbsp; ${r.resultado}</span>
                     ${r.limites.length > 0 ? (imprimirLimites(r.limites)) : ('')}
                     </div>
                 </td>
@@ -222,7 +218,7 @@ function generarEstudios() {
 }
 
 function imprimirLimites(limites) {
-    let cadenaLimites = '<div style="margin: right: 1em;">';
+    let cadenaLimites = '<div style="margin-right: 1em;">';
 
     limites.forEach(limite => {
         cadenaLimites += `

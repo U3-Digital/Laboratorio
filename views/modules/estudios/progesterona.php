@@ -70,7 +70,7 @@
 
 			let estudio = {
 				idmodal: 'progesterona',
-				nombre: 'Amiba en fresco',
+				nombre: 'Progesterona',
 				resultados:
 				[{
 					nombre: 'Progesterona',
@@ -102,7 +102,7 @@
 	}
 
 	$('#progesterona').on('hidden.bs.modal', function (e) {
-  		limpiarAmibaEnFresco();
+		limpiarProgesterona();
 	});
 
 	$('#progesterona').on('show.bs.modal', function (e) {
