@@ -1,9 +1,6 @@
-<?php 
-// session_start();
-
-	include_once "controllers/ingreso.php";
-    include_once "models/crud.php";
-    
+<?php
+	include_once "./controllers/ingreso.php";
+    include_once "./models/crud.php";
 ?>
 
 <!DOCTYPE html>
@@ -35,13 +32,13 @@
 	<div class="row h-100 borde" style="margin: auto;">
 		<div class="card mx-auto my-auto" style="width: 25em;">
 			<div class="card-body">
-				<h3>Ingreso al sistema</h3>
+				<h3>Ingreso al Sistema</h3>
 				<form method="POST">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
 								<label for="cajaUsuario">Correo electrónico:</label>
-								<input placeholder="Correo electrónico" required class="form-control" type="email" id="cajaUsuario" name="usuarioIngreso">
+								<input placeholder="Correo electrónico"  class="form-control" type="email" id="cajaUsuario" name="usuarioIngreso">
 							</div>
 						</div>
 					</div>
@@ -50,7 +47,7 @@
 						<div class="col-md-12">
 							<div class="form-group">
 								<label for="cajaPassword">Contraseña:</label>
-								<input placeholder="Contraseña" required class="form-control" type="password" id="cajaPassword" name="passwordIngreso">
+								<input placeholder="Contraseña"  class="form-control" type="password" id="cajaPassword" name="passwordIngreso">
 							</div>
 						</div>
 					</div>
@@ -64,63 +61,12 @@
 				        $ingreso = new Ingreso();
 				        $ingreso -> ingresoController();
 			        ?>
-	
+
 
 				</form>
 			</div>
 		</div>
 	</div>
-
-	<!-- Document Wrapper
-	============================================= -->
-	<!-- <div id="wrapper" class="clearfix"> -->
-
-		<!-- Content
-		============================================= -->
-		<!-- <section id="content"> -->
-
-			<!-- <div class="content-wrap nopadding"> -->
-
-				
-
-				<!-- <div class="row"> -->
-					<!-- <div class="card">
-							<div class="card-body" style="padding: 40px;">
-								<form id="login-form" name="login-form" class="nobottommargin" action="#" method="post">
-									<h3>Panel de Administraci&oacute;n</h3>
-
-									<div class="col_full">
-										<label for="login-form-username">Usuario:</label>
-										<input type="text" id="usuarioIngreso" name="usuarioIngreso" value="" class="form-control not-dark" />
-									</div>
-
-									<div class="col_full">
-										<label for="login-form-password">Password:</label>
-										<input type="password" id="login-form-password" name="passwordIngreso" value="" class="form-control not-dark" />
-									</div>
-
-									<div class="col_full nobottommargin">
-										<button class="button button-3d button-black nomargin" id="btnUsuarioIngreso" name="btnusuarioingreso" value="login">login</button>
-									</div>
-
-									<?php
-							          $ingreso = new Ingreso();
-							          $ingreso -> ingresoController();
-							        ?>
-								</form>
-
-								<div class="line line-sm"></div>
-
-							</div>
-						</div> -->
-
-				<!-- </div> -->
-
-			<!-- </div> -->
-
-		<!-- </section> -->
-
-	<!-- </div> -->
 
 	<!-- External JavaScripts
 	============================================= -->

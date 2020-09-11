@@ -4,17 +4,17 @@ class Conexion{
 
 	public static function conectar(){
 	    //remoto
-	    $servername = "mysql1007.mochahost.com";
-		$username = "rickurbi_oga";
-		$password = "Gbx=RK0%rI)]";
-		$dbname = "rickurbi_oga";
-		
+	 //    $servername = "mysql1007.mochahost.com";
+		// $username = "rickurbi_oga";
+		// $password = "Gbx=RK0%rI)]";
+		// $dbname = "rickurbi_oga";
+
 
 		// conexion local
-		//$servername = "127.0.0.1";
-		//$username = "root";
-		//$password = "";
-		//$dbname = "lab";
+		$servername = "127.0.0.1";
+		$username = "root";
+		$password = "";
+		$dbname = "lab";
 
 		try {
 		    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

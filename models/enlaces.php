@@ -23,9 +23,9 @@ class EnlacesModels{
 			$enlaces == "vermedicos"  ||
 			$enlaces == "registromedico" ||
 			$enlaces == "updtmedico" ||
-			$enlaces == "updtestudio" ||	
+			$enlaces == "updtestudio" ||
 			$enlaces == "verEstudios"){
-			
+
 			$module = $enlaces . ".php";
 		}
 

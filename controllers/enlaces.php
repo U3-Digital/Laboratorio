@@ -8,6 +8,9 @@ class Enlaces{
 			$enlaces = "index";
 		}
 		$respuesta = EnlacesModels::enlacesModel($enlaces);
+
 		include $respuesta;
+		//echo $respuesta;
+		//echo '<script>alert("'.$respuesta.'");</script>';
 	}
 }
