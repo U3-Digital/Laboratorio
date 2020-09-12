@@ -193,7 +193,8 @@ function generarEstudios() {
             <tr>
                 <td>
                     <div style="display: flex; justify-content: initial; ">
-                    <span style="margin-left: 1em; width: 65%;">${r.nombre}: &nbsp;&nbsp;&nbsp;&nbsp; ${r.resultado}</span>
+                    <span style="margin-left: 1em; width: 35%;">${r.nombre}:</span>
+                    <span style="margin-left: 1em; width: 30%;">${r.resultado}</span>
                     ${r.limites.length > 0 ? (imprimirLimites(r.limites)) : ('')}
                     </div>
                 </td>

@@ -78,7 +78,8 @@ if (isset($_POST["cliente"])) {
 
             $email_content .= '
                 <div style="display: flex; justify-content: initial">
-                    <span style="margin-left: 1em; width: 65%;">' . $resultado["nombre"] . '&nbsp;&nbsp;&nbsp;&nbsp;' . $resultado["resultado"] . '</span>
+                    <span style="margin-left: 1em; width: 35%;">' . $resultado["nombre"] . '</span>
+                    <span style="margin-left: 1em; width: 30$;">' . $resultado["resultado"] . '</span>
                     ' . $limites. '
                 </div>
             ';
