@@ -1,12 +1,12 @@
     <?php
 	$controller = new Controller();
-	$respuesta = $controller -> ctlBuscarEstudio("Tiempo de tromboplastina y tromboplatina");
+	$respuesta = $controller -> ctlBuscarEstudio("Tiempo de protrombina y tromboplastina");
 ?>
-<div class="modal fade" id="tiempodetromboplastinaytromboplatina" tabindex="-1" role="dialog" aria-labelledby="tiempodetromboplastinaytromboplatina" aria-hidden="true">
+<div class="modal fade" id="tiempodeprotrombinaytromboplastina" tabindex="-1" role="dialog" aria-labelledby="tiempodetromboplastinaytromboplatina" aria-hidden="true">
 	<div class="modal-dialog modal-xl custom-modal  modal-dialog-scrollable">
 	    <div class="modal-content custom-modal">
 		    <div class="modal-header custom-modal">
-		        <h5 class="modal-title" id="modal">Tiempo de tromboplastina y tromboplatina</h5>
+		        <h5 class="modal-title" id="modal">Tiempo de protrombina y tromboplatina</h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          	<span aria-hidden="true">&times;</span>
 		        </button>
