@@ -2,7 +2,7 @@
 	$controller = new Controller();
 	$respuesta = $controller -> ctlBuscarEstudio("Tiempo de protrombina y tromboplastina");
 ?>
-<div class="modal fade" id="tiempodeprotrombinaytromboplastina" tabindex="-1" role="dialog" aria-labelledby="tiempodetromboplastinaytromboplatina" aria-hidden="true">
+<div class="modal fade" id="tiempodeprotrombinaytromboplastina" tabindex="-1" role="dialog" aria-labelledby="tiempodeprotrombinaytromboplastina" aria-hidden="true">
 	<div class="modal-dialog modal-xl custom-modal  modal-dialog-scrollable">
 	    <div class="modal-content custom-modal">
 		    <div class="modal-header custom-modal">
@@ -93,7 +93,7 @@
             cajaResultadoINR.value && cajaResultadoTromboplastinaParcial.value) {
 
 			let estudio = {
-				idmodal: 'tiempodetromboplastinaytromboplatina',
+				idmodal: 'tiempodeprotrombinaytromboplastina',
 				nombre: 'Tiempo de tromboplastina y tromboplatina',
 				resultados:
 				[{
@@ -133,7 +133,7 @@
 	}
 
 	function cerrarModalTromboplastina() {
-		$(`#tiempodetromboplastinaytromboplatina`).modal('toggle');
+		$(`#tiempodeprotrombinaytromboplastina`).modal('toggle');
 	}
 
 	function limpiarTromboplastina() {
@@ -143,11 +143,11 @@
         cajaResultadoTromboplastinaParcial.value = '';
 	}
 
-	$('#tiempodetromboplastinaytromboplatina').on('hidden.bs.modal', function (e) {
+	$('#tiempodeprotrombinaytromboplastina').on('hidden.bs.modal', function (e) {
         limpiarTromboplastina();
 	});
 
-	$('#tiempodetromboplastinaytromboplatina').on('show.bs.modal', function (e) {
+	$('#tiempodeprotrombinaytromboplastina').on('show.bs.modal', function (e) {
 		if (editando === true) {
 			edicionTromboplastina(estudioEditar);
 			 
