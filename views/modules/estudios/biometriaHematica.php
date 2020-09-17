@@ -2,7 +2,7 @@
 $controller = new Controller();
 	$respuesta = $controller -> ctlBuscarEstudio("Biometria hematica");
 ?>
-<div class="modal fade" id="biometriahematica" tabindex="-1" role="dialog" aria-labelledby="antidoping" aria-hidden="true">
+<div class="modal fade" id="biometriahematica" tabindex="-1" role="dialog" aria-labelledby="biometriahematica" aria-hidden="true">
 	<div class="modal-dialog modal-xl custom-modal modal-dialog-scrollable">
 	    <div class="modal-content custom-modal">
 		    <div class="modal-header custom-modal">
