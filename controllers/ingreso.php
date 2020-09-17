@@ -5,14 +5,11 @@ class Ingreso {
 
 	public function ingresoController(){
 
-
         if(isset($_POST["usuarioIngreso"])){
 
             $datosController = array("usuario"=>$_POST["usuarioIngreso"],
                                     "password"=>$_POST["passwordIngreso"]);
-
             $respuesta = Datos::ingresoModel($datosController, "usuarios");
-
 
             $usuarioActual = $_POST["usuarioIngreso"];
 
@@ -25,7 +22,6 @@ class Ingreso {
                     $_SESSION["email"] = $respuesta["email"];
                     $_SESSION["nombre"] ="".$respuesta["nombres"]." ".$respuesta["apellidos"]."";
                     $_SESSION["rol"] = $respuesta["rol"];
-                    //$_SESSION["sistema"] = $respuesta["sistema"];
 
                     header("location:views/modules/inicio.php?action=home");
 
