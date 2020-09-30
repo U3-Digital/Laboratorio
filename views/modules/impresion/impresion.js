@@ -169,48 +169,80 @@ function generarEstudios() {
     let resultado = ``;
     estudios.forEach(estudio => {
 
+
         resultado += `
-        <tr>
-            <td>
-                <div class="borde">
-                    <p style="font-weight: 600;">&nbsp;&nbsp;${estudio.nombre}</p>
-                    <hr style="margin: 0 5px;">
-                </div>
-            </td>
-        </tr>`;
-        resultado += `
-        <tr>
-            <td>
-                <div style="display: flex; justify-content: initial; ">
-                    <span style="margin-left: 1em; width: 65%;">Resultados:</span>
-                    ${estudio.resultados[0].limites.length > 0 ? ('<span style="margin-right: 1em;">Límites</span>') : ('')}
-                </div>
-            </td>
-        </tr>`;
-        // ${r.resultado}
-        estudio.resultados.forEach(r => {
+            <tr>
+                <td>
+                    <div class="borde">
+                        <p style="font-weight: 600;">&nbsp;&nbsp;${estudio.nombre}</p>
+                        <hr style="margin: 0 5px;">
+                    </div>
+                </td>
+            </tr>`;
             resultado += `
             <tr>
                 <td>
                     <div style="display: flex; justify-content: initial; ">
-                    <span style="margin-left: 1em; width: 35%;">${r.nombre}:</span>
-                    <span style="margin-left: 1em; width: 30%;">${r.resultado}</span>
-                    ${r.limites.length > 0 ? (imprimirLimites(r.limites)) : ('')}
+                        <span style="margin-left: 1em; width: 65%;">Resultados:</span>
+                        ${estudio.resultados[0].limites.length > 0 ? ('<span style="margin-right: 1em;">Límites</span>') : ('')}
                     </div>
                 </td>
             </tr>`;
-        });
 
-        if (estudio.observaciones) {
-            resultado += `
-            <tr>
-                <td>
-                    <div style="display: flex; justify-content: space-between; ">
-                        <span style="margin-left: 1em;">Observaciones:&nbsp;&nbsp;&nbsp;&nbsp; ${estudio.observaciones}</span>
-                    </div>
-                </td>
-            </tr>`;
+        if (estudio.idmodal === 'pruebasdefuncionamientohepatico') {
+            estudio.resultados.forEach(r => {
+                if (r.resultado) {
+                    resultado += `
+                    <tr>
+                        <td>
+                            <div style="display: flex; justify-content: initial; ">
+                            <span style="margin-left: 1em; width: 35%;">${r.nombre}:</span>
+                            <span style="margin-left: 1em; width: 30%;">${r.resultado}</span>
+                            ${r.limites.length > 0 ? (imprimirLimites(r.limites)) : ('')}
+                            </div>
+                        </td>
+                    </tr>`;
+                }
+            });
+            if (estudio.observaciones) {
+                resultado += `
+                <tr>
+                    <td>
+                        <div style="display: flex; justify-content: space-between; ">
+                            <span style="margin-left: 1em;">Observaciones:&nbsp;&nbsp;&nbsp;&nbsp; ${estudio.observaciones}</span>
+                        </div>
+                    </td>
+                </tr>`;
+            }
+        } else {
+            
+            // ${r.resultado}
+            estudio.resultados.forEach(r => {
+                resultado += `
+                <tr>
+                    <td>
+                        <div style="display: flex; justify-content: initial; ">
+                        <span style="margin-left: 1em; width: 35%;">${r.nombre}:</span>
+                        <span style="margin-left: 1em; width: 30%;">${r.resultado}</span>
+                        ${r.limites.length > 0 ? (imprimirLimites(r.limites)) : ('')}
+                        </div>
+                    </td>
+                </tr>`;
+            });
+    
+            if (estudio.observaciones) {
+                resultado += `
+                <tr>
+                    <td>
+                        <div style="display: flex; justify-content: space-between; ">
+                            <span style="margin-left: 1em;">Observaciones:&nbsp;&nbsp;&nbsp;&nbsp; ${estudio.observaciones}</span>
+                        </div>
+                    </td>
+                </tr>`;
+            }
         }
+
+        
     });
 
 

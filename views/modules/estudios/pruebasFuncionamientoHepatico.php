@@ -40,9 +40,30 @@
                         </div>
                         <div class="row">
                             <div class="col-md-8">
+                                <form id="formaProteinaC">
+                                    <div class="form-group">
+                                        <label for="cajaResultadoProteinaCreactiva">Proteína "C" reactiva</label>
+                                        <div class="col-12">
+                                            <div class="col-6 align-self-center">
+                                                <div class="form-check">
+                                                    <input class="form-check-input position-static" type="radio" id="radioProteinaCPositivo" name="proteinaC" value="Positivo">&nbsp;Positivo
+                                                </div>
+                                            </div>
+                                            <div class="col-6 align-self-center">
+                                                <div class="form-check">
+                                                    <input class="form-check-input position-static" type="radio" id="radioProteinaCNegativo" name="proteinaC" value="Negativo">&nbsp;Negativo
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="col-md-8">
                                 <div class="form-group">
                                     <label for="cajaResultadoProteinasTotalesFuncionamientoH">Proteínas totales:</label>
-                                    <input class="form-control" type="text" id="cajaResultadoProteinasTotalesFuncionamientoH" name="cajaResultadoProteinasTotalesFuncionamientoH">
+                                    <input class="form-control" type="text" id="cajaResultadoProteinasTotalesFuncionamientoH" name="cajaResultadoProteinasTotalesFuncionamientoH" onkeyup="calcularGlobulina(event.target.value, albumina)">
                                 </div>
                             </div>
                             <div class="col-md-4 align-self-center">
@@ -54,7 +75,7 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label for="cajaResultadoAlbumina">Albumina:</label>
-                                    <input class="form-control" type="text" id="cajaResultadoAlbumina" name="cajaResultadoAlbumina">
+                                    <input class="form-control" type="text" id="cajaResultadoAlbumina" name="cajaResultadoAlbumina" onkeyup="calcularGlobulina(proteinasTotales, event.target.value); calcularRelacionAg(event.target.value, globulina);">
                                 </div>
                             </div>
                             <div class="col-md-4 align-self-center">
@@ -66,7 +87,7 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label for="cajaResultadoGlobulinaFuncionamientoH">Globulina:</label>
-                                    <input class="form-control" type="text" id="cajaResultadoGlobulinaFuncionamientoH" name="cajaResultadoGlobulinaFuncionamientoH">
+                                    <input class="form-control" type="text" id="cajaResultadoGlobulinaFuncionamientoH" name="cajaResultadoGlobulinaFuncionamientoH" onkeyup="calcularRelacionAg(albumina, event.target.value)">
                                 </div>
                             </div>
                         </div>
@@ -150,14 +171,40 @@
 </div>
 
 <script>
-	
+    let proteinasTotales = 0;
+    let albumina = 0;
+    let globulina = 0;
+    calcularGlobulina('0', '0');
+
+
+    function calcularGlobulina(pT, al) {
+        if (pT != '' && al != '') {
+            if (!isNaN(pT) && !isNaN(al)) {
+                globulina = pT - al;
+                cajaResultadoGlobulinaFuncionamientoH.value = globulina;
+                proteinasTotales = pT;
+                albumina = al;
+                calcularRelacionAg(al, globulina);
+            }
+        }
+
+    }
+
+    function calcularRelacionAg(al, gl) {
+        if (al != '' && gl != '') {
+            if (!isNaN(al) && !isNaN(gl)) {
+                albumina = al;
+                if (gl > 0) {
+                    cajaResultadoGlobulinaRelacionAG.value = Number.parseFloat(al / gl).toFixed(3);
+                    gl = globulina;
+                }
+            }
+        }
+    }
+
+    const forma = document.getElementById('formaProteinaC');
+
 	function validarFuncionamientoHepatico() {
-        if (cajaResultadoTGOFuncionamientoH.value && cajaResultadoTGPFuncionamientoH.value && 
-            cajaResultadoProteinasTotalesFuncionamientoH.value && cajaResultadoAlbumina.value && 
-            cajaResultadoGlobulinaFuncionamientoH.value && cajaResultadoGlobulinaRelacionAG.value &&
-            cajaResultadoBilirrubinaTotal.value && cajaResultadoBilirrubinaDirecta.value &&
-            cajaResultadoBilirrubinaIndirecta.value && cajaResultadoFosfatasaAlcalina.value &&
-            cajaResultadoLDH.value) {
 
 			let estudio = {
 				idmodal: 'pruebasdefuncionamientohepatico',
@@ -172,6 +219,11 @@
 					nombre: 'TGP',
 					resultado: cajaResultadoTGPFuncionamientoH.value,
 					limites: ['Hasta 40 u/l']
+                },
+                {
+                    nombre: 'Proteina "C" reactiva',
+                    resultado: forma.elements["proteinaC"].value,
+                    limites: []
                 },
                 {
 					nombre: 'Proteínas totales',
@@ -224,14 +276,6 @@
 			agregarEstudio(estudio);
 			cerrarModalFuncionamientoHepatico();
 			limpiarFuncionamientoHepatico();
-
-		} else {
-			Swal.fire({
-                title: "¡Rellene los campos solicitados!",
-                type: "error",
-                showCancelButton: false
-            });
-		}
 	}
 
 	function cerrarModalFuncionamientoHepatico() {

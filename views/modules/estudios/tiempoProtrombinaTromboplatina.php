@@ -16,9 +16,19 @@
 		        	<div class="col-md-12">
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="cajaResultadoTiempoProtombina">Tiempo de protombina (TP):</label>
-                                    <input class="form-control" type="text" name="cajaResultadoTiempoProtombina" id="cajaResultadoTiempoProtombina">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="cajaResultadoTiempoProtombina">Tiempo de protombina (TP):</label>
+                                            <input class="form-control" type="text" name="cajaResultadoTiempoProtombina" id="cajaResultadoTiempoProtombina" onkeyup="calcular(event.target.value, tiempoProtrombinaControl)">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="cajaTiempoProtrombinaControl">Tiempo de protrombina (Control):</label>
+                                            <input class="form-control" type="text" name="cajaTiempoProtrombinaControl" id="cajaTiempoProtrombinaControl" value="11.8">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-3 align-self-center">
@@ -87,6 +97,26 @@
 </div>
 
 <script>
+
+    let tiempoProtrombina = '0';
+    let tiempoProtrombinaControl = cajaTiempoProtrombinaControl.value;
+
+    function calcular(tp, tpc) {
+        if (tp && tpc) {
+            if(!isNaN(tp) && !isNaN(tpc)) {
+                if (tp > 0) {
+                    cajaResultadoActividad.value = Number.parseFloat(tpc / tp).toFixed(3);
+                    tiempoProtrombina = tp;
+                    tiempoProtrombinaControl = tpc;
+                }
+                if (tpc > 0) {
+                    cajaResultadoINR.value = Number.parseFloat(tp / tpc).toFixed(3);
+                    tiempoProtrombina = tp;
+                    tiempoProtrombinaControl = tpc;
+                }
+            }
+        }
+    }
 	
 	function validarTromboplastina() {
 		if (cajaResultadoTiempoProtombina.value && cajaResultadoActividad.value &&

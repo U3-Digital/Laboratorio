@@ -107,7 +107,7 @@
                                         <div class="form-group">
                                             <label for="selectEstudios">Estudios:</label>
                                             <select class="form-control" name="selectEstudios" id="selectEstudios">
-                                                <option>Seleccione</option>
+                                                <option value="">Seleccione</option>
                                                 <?php 
                                                     $estudios = new Controller();
                                                     $estudios -> ctlBuscaEstudios();
@@ -121,7 +121,7 @@
                                         <button class="btn btn-secondary" onclick="limpiarFormulario()" id="botonLimiparFormulario" >
                                             <i class="fas fa-redo-alt"></i>
                                             Limpiar Formulario</button>
-                                        <button class="btn btn-primary" onclick="botonPresionado()" id="botonAgregarEstudio" data-toggle="modal" data-target="#exampleModal">Agregar estudio</button>
+                                        <button class="btn btn-primary" onclick="botonPresionado()" id="botonAgregarEstudio">Agregar estudio</button>
                                     </div>
                                 </div>
                             </div>
@@ -567,7 +567,7 @@
     }
 
     function botonPresionado () {
-        if (selectEstudios.value === "Seleccione") {
+        if (selectEstudios.value === "") {
             Swal.fire({
                 title: "¡Seleccione un estudio!",
                 type: "warning",
@@ -576,9 +576,11 @@
                 
             });
         } else {
+
             let modal = selectEstudios.value.toLowerCase();
             modal = modal.replace(/ /ig, '');
             abrirEstudio(modal);
+            selectEstudios.value = ''
         }
     }
 
