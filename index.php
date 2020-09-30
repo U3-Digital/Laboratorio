@@ -27,7 +27,7 @@
 
 <body class="stretched">
 
-<div class="section nopadding nomargin" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: #305c7b center center no-repeat; background-size: cover;"></div>
+<div class="section nopadding nomargin" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; background-image: url('Assets/fondo.jpg'); background-size: cover;"></div>
 
 	<div class="row h-100 borde" style="margin: auto;">
 		<div class="card mx-auto my-auto" style="width: 25em;">
