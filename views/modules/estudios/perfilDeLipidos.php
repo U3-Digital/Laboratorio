@@ -18,7 +18,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="cajaResultadoColesterol">Colesterol:</label>
-                                    <input class="form-control" type="text" id="cajaResultadoColesterol" name="cajaResultadoColesterol">
+                                    <input class="form-control" type="text" id="cajaResultadoColesterol" name="cajaResultadoColesterol" onkeyup="calcularColHdl(event.target.value, hdlColesterol)">
                                 </div>
                             </div>
                             <div class="col-md-3 align-self-center">
@@ -34,7 +34,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="cajaResultadoTrigliceridos">Triglicéridos:</label>
-                                    <input class="form-control" type="text" id="cajaResultadoTrigliceridos" name="cajaResultadoTrigliceridos">
+                                    <input class="form-control" type="text" id="cajaResultadoTrigliceridos" name="cajaResultadoTrigliceridos" onkeyup="calcularLDL(event.target.value, hdlColesterol, colesterol)">
                                 </div>
                             </div>
                             <div class="col-md-3 align-self-center">
@@ -50,7 +50,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="cajaResultadoHDLColesterol">HDL-Colesterol:</label>
-                                    <input class="form-control" type="text" id="cajaResultadoHDLColesterol" name="cajaResultadoHDLColesterol">
+                                    <input class="form-control" type="text" id="cajaResultadoHDLColesterol" name="cajaResultadoHDLColesterol" onkeyup="calcularColHdl(colesterol, event.target.value)">
                                 </div>
                             </div>
                             <div class="col-md-3 align-self-center">
@@ -106,6 +106,38 @@
 </div>
 
 <script>
+
+    let colesterol = '0';
+    let hdlColesterol = '0';
+    let trigliceridos = 0;
+
+    calcularColHdl(colesterol, hdlColesterol);
+
+    function calcularColHdl (col, hdl) {
+        if (col && hdl) {
+            if (!isNaN(col) && !isNaN(hdl)) {
+                colesterol = col;
+                calcularLDL(trigliceridos, hdl, colesterol);
+                if (hdl > 0) {
+                    cajaResultadoCOLHDL.value = Number.parseFloat(col / hdl).toFixed(3);
+                    hdlColesterol = hdl;
+                }
+            }
+        }
+    }
+
+
+    function calcularLDL(tri, hdl, col) {
+        if (tri && hdl && col) {
+            if (!isNaN(tri) && !isNaN(hdl) && !isNaN(col)) {
+                let ldl = Number.parseFloat(tri / 5) + Number.parseFloat(hdl) - Number.parseFloat(col);
+                cajaResultadoLDLColesterol.value = ldl.toFixed(3);
+                trigliceridos = tri;
+                hdlColesterol = hdl;
+                colesterol = col;
+            }
+        }
+    }
 	
 	function validarPerfilDeLipidos() {
         if (cajaResultadoColesterol.value && cajaResultadoTrigliceridos.value && 

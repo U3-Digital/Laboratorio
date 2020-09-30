@@ -42,7 +42,7 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label for="cajaResultadoUreaQS">Urea:</label>
-                                    <input class="form-control" type="text" name="cajaResultadoUreaQS" id="cajaResultadoUreaQS">
+                                    <input class="form-control" type="text" name="cajaResultadoUreaQS" id="cajaResultadoUreaQS" onkeyup="calcularNitrogenoUreico(event.target.value)">
                                 </div>
                             </div>
                             <div class="col-md-4 align-self-center">
@@ -86,7 +86,15 @@
 </div>
 
 <script>
-	
+
+    calcularNitrogenoUreico(0)
+
+    function calcularNitrogenoUreico(urea) {
+        if (!isNaN(urea)) {
+            cajaResultadoNitrogenoUreicoQS.value = urea / 2.1428;
+        }
+    }
+
 	function validarQuimicaSanguinea() {
 		if (cajaResultadoGlucosaQS.value && cajaResultadoAcidoUricoQS.value && 
             cajaResultadoUreaQS.value && cajaResultadoCreatininaQS.value && cajaResultadoNitrogenoUreicoQS.value) {
