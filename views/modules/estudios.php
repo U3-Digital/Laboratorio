@@ -41,3 +41,4 @@ include "estudios/tamizHemoglobinopatiaNeonatal.php";
 include "estudios/tiempoProtrombinaTromboplatina.php";
 include "estudios/perfilTorch.php";
 include "estudios/urocultivo.php";
+include "estudios/proteinaCReactiva.php";

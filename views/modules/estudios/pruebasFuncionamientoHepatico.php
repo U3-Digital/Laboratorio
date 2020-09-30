@@ -40,27 +40,6 @@
                         </div>
                         <div class="row">
                             <div class="col-md-8">
-                                <form id="formaProteinaC">
-                                    <div class="form-group">
-                                        <label for="cajaResultadoProteinaCreactiva">Proteína "C" reactiva</label>
-                                        <div class="col-12">
-                                            <div class="col-6 align-self-center">
-                                                <div class="form-check">
-                                                    <input class="form-check-input position-static" type="radio" id="radioProteinaCPositivo" name="proteinaC" value="Positivo">&nbsp;Positivo
-                                                </div>
-                                            </div>
-                                            <div class="col-6 align-self-center">
-                                                <div class="form-check">
-                                                    <input class="form-check-input position-static" type="radio" id="radioProteinaCNegativo" name="proteinaC" value="Negativo">&nbsp;Negativo
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div> 
-                        <div class="row">
-                            <div class="col-md-8">
                                 <div class="form-group">
                                     <label for="cajaResultadoProteinasTotalesFuncionamientoH">Proteínas totales:</label>
                                     <input class="form-control" type="text" id="cajaResultadoProteinasTotalesFuncionamientoH" name="cajaResultadoProteinasTotalesFuncionamientoH" onkeyup="calcularGlobulina(event.target.value, albumina)">
@@ -202,8 +181,6 @@
         }
     }
 
-    const forma = document.getElementById('formaProteinaC');
-
 	function validarFuncionamientoHepatico() {
 
 			let estudio = {
@@ -219,11 +196,6 @@
 					nombre: 'TGP',
 					resultado: cajaResultadoTGPFuncionamientoH.value,
 					limites: ['Hasta 40 u/l']
-                },
-                {
-                    nombre: 'Proteina "C" reactiva',
-                    resultado: forma.elements["proteinaC"].value,
-                    limites: []
                 },
                 {
 					nombre: 'Proteínas totales',
