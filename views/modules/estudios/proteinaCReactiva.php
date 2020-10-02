@@ -31,6 +31,11 @@
                         </form>
                     </div>
                 </div>
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <input class="form-control" id="cajaComentarioProteinaC" name="cajaComentarioProteinaC" type="text">
+                    </div>
+                </div>
             </div>
             <div class="modal-footer custom-modal">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -55,7 +60,7 @@
 					resultado: formaProteinaC.elements["proteinaC"].value,
 					limites: []
 				}],
-				observaciones: '',
+				observaciones: cajaComentarioProteinaC.value,
 				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?> 
 			}
 			agregarEstudio(estudio);
@@ -76,6 +81,8 @@
 	}
 
 	function limpiarProteinaCReactiva() {
+        cajaComentarioProteinaC.value = '';
+
         document.getElementsByName('proteinaC')[0].checked = false;
         document.getElementsByName('proteinaC')[1].checked = false;
 	}
@@ -96,6 +103,8 @@
         } else {
             document.getElementsByName('proteinaC')[1].checked = true;
         }
+
+        cajaComentarioProteinaC.value = estudio.observaciones;
 	}
 
 </script>
