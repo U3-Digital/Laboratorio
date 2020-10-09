@@ -45,7 +45,7 @@
 	// const cajaObservacionesAmibaEnFresco = document.getElementById('cajaObservacionesAmibaEnFresco');
 	
 	function validarCoproparasitoscopico() {
-		if (cajaResultadoCoproparasitoscopicoCopro.value) {
+		// if (cajaResultadoCoproparasitoscopicoCopro.value) {
 
 			let estudio = {
 				idmodal: 'coproparasitoscopico',
@@ -63,13 +63,13 @@
 			cerrarModalCoproparasitoscopico();
 			limpiarCoproparasitoscopico();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalCoproparasitoscopico() {

@@ -98,10 +98,10 @@
 <script>
 	
 	function validarPrenupciales() {
-        if (cajaPacientePrenupcial1.value && cajaGrupoRHPrenupcial1.value &&
+        /* if (cajaPacientePrenupcial1.value && cajaGrupoRHPrenupcial1.value &&
             cajaAnticuerposVIHPrenupcial1.value && cajaVDRLPrenupcial1.value &&
             cajaPacientePrenupcial2.value && cajaGrupoRHPrenupcial2.value &&
-            cajaAnticuerposVIHPrenupcial2.value && cajaVDRLPrenupcial2.value) {
+            cajaAnticuerposVIHPrenupcial2.value && cajaVDRLPrenupcial2.value) { */
 
 			let estudio = {
 				idmodal: 'prenupciales',
@@ -154,13 +154,13 @@
 			cerrarModalPrenupciales();
 			limpiarModalPrenupciales();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalPrenupciales() {

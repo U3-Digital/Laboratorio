@@ -90,7 +90,7 @@
 	// const cajaResultadoAmilasa = document.getElementById('cajaResultadoAmilasa');
 	
 	function validarAntigenoProstatico() {
-		if (cajaResultadoAntigenoProstatico.value) {
+		// if (cajaResultadoAntigenoProstatico.value) {
 
 			let estudio = {
 				idmodal: 'antigenoprostatico',
@@ -109,13 +109,13 @@
 			cerrarModalAntigenoProstatico();
 			limpiarAntigenoProstatico();
 			
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalAntigenoProstatico() {

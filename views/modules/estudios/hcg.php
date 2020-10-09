@@ -32,7 +32,7 @@
 <script>
 	
 	function validarHGC() {
-		if (cajaResultadoHCGBeta.value) {
+		// if (cajaResultadoHCGBeta.value) {
 
 			let estudio = {
 				idmodal: 'hcg',
@@ -50,13 +50,13 @@
 			cerrarModalHCG();
 			limpiarHCG();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalHCG() {

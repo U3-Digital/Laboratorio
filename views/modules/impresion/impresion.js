@@ -7,8 +7,6 @@ function imprimirEstudio(editando) {
             ventana.onload = function() {
                 ventana.print();
             };
-
-
             ventana.addEventListener("afterprint", () => {
                 ventana.close();
             });
@@ -22,13 +20,12 @@ function imprimirEstudio(editando) {
     } else {
         if (estudios.length > 0 && cajaNombreCliente.value && cajaNombresDoctor.value && cajaApellidosDoctor.value) {
 
-            let ventana = window.open('', 'impresion', `width=${window.innerWidth - 50}, height=${window.innerHeight - 10}`);
+            const ventana = window.open("", 'impresion', `width=${window.innerWidth - 50}, height=${window.innerHeight - 10}`);
             ventana.document.write(generarDocumento(editando));
             ventana.document.close();
-            ventana.onload = function() {
+            ventana.onload = () => {
                 ventana.print();
-            };
-
+            }
             ventana.addEventListener("afterprint", () => {
                 ventana.close();
             });
@@ -88,6 +85,7 @@ function generarCuerpo(editando) {
                             <td>
                                 <div>
                                     <img src="../../Assets/encabezado.jpg" alt="Encabezado oga" style="height: 50%; display: block;">
+                                    <br>
                                     <div style="display: flex; justify-content: space-between;">
                                         <div>
                                             <p>&nbsp;&nbsp; Paciente: ${cajaNombre.value}</p>
@@ -129,6 +127,7 @@ function generarCuerpo(editando) {
                             <td>
                                 <div>
                                     <img src="../../Assets/encabezado.jpg" alt="Encabezado oga" style="height: 50%; display: block;">
+                                    <br>
                                     <div style="display: flex; justify-content: space-between;">
                                         <div>
                                             <p>&nbsp;&nbsp; Paciente: ${cajaNombreCliente.value} ${cajaApellidosCliente.value}</p>
@@ -183,41 +182,17 @@ function generarEstudios() {
             <tr>
                 <td>
                     <div style="display: flex; justify-content: initial; ">
-                        <span style="margin-left: 1em; width: 65%;">Resultados:</span>
-                        ${estudio.resultados[0].limites.length > 0 ? ('<span style="margin-right: 1em;">Límites</span>') : ('')}
-                    </div>
+                        <span style="margin-left: 1em; width: 65%;">Resultados:</span>`
+                        if (estudio.resultados.length > 0) {
+                            resultado += (estudio.resultados[0].limites.length) > 0 ? ('<span style="margin-right: 1em;">Límites</span>') : ('');
+                        }
+            resultado += ` </div>
                 </td>
             </tr>`;
-
-        if (estudio.idmodal === 'pruebasdefuncionamientohepatico') {
-            estudio.resultados.forEach(r => {
-                if (r.resultado) {
-                    resultado += `
-                    <tr>
-                        <td>
-                            <div style="display: flex; justify-content: initial; ">
-                            <span style="margin-left: 1em; width: 35%;">${r.nombre}:</span>
-                            <span style="margin-left: 1em; width: 30%;">${r.resultado}</span>
-                            ${r.limites.length > 0 ? (imprimirLimites(r.limites)) : ('')}
-                            </div>
-                        </td>
-                    </tr>`;
-                }
-            });
-            if (estudio.observaciones) {
-                resultado += `
-                <tr>
-                    <td>
-                        <div style="display: flex; justify-content: space-between; ">
-                            <span style="margin-left: 1em;">Observaciones:&nbsp;&nbsp;&nbsp;&nbsp; ${estudio.observaciones}</span>
-                        </div>
-                    </td>
-                </tr>`;
-            }
-        } else {
-            
+        
             // ${r.resultado}
-            estudio.resultados.forEach(r => {
+        estudio.resultados.forEach(r => {
+            if (r.resultado) {
                 resultado += `
                 <tr>
                     <td>
@@ -228,24 +203,20 @@ function generarEstudios() {
                         </div>
                     </td>
                 </tr>`;
-            });
-    
-            if (estudio.observaciones) {
-                resultado += `
-                <tr>
-                    <td>
-                        <div style="display: flex; justify-content: space-between; ">
-                            <span style="margin-left: 1em;">Observaciones:&nbsp;&nbsp;&nbsp;&nbsp; ${estudio.observaciones}</span>
-                        </div>
-                    </td>
-                </tr>`;
             }
+        });
+
+        if (estudio.observaciones) {
+            resultado += `
+            <tr>
+                <td>
+                    <div style="display: flex; justify-content: space-between; ">
+                        <span style="margin-left: 1em;">Observaciones:&nbsp;&nbsp;&nbsp;&nbsp; ${estudio.observaciones}</span>
+                    </div>
+                </td>
+            </tr>`;
         }
-
-        
     });
-
-
 
     return resultado;
 }

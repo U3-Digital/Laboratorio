@@ -96,8 +96,8 @@
     }
 
 	function validarQuimicaSanguinea() {
-		if (cajaResultadoGlucosaQS.value && cajaResultadoAcidoUricoQS.value && 
-            cajaResultadoUreaQS.value && cajaResultadoCreatininaQS.value && cajaResultadoNitrogenoUreicoQS.value) {
+		/* if (cajaResultadoGlucosaQS.value && cajaResultadoAcidoUricoQS.value && 
+            cajaResultadoUreaQS.value && cajaResultadoCreatininaQS.value && cajaResultadoNitrogenoUreicoQS.value) { */
 
 			let estudio = {
 				idmodal: 'quimicasanguinea',
@@ -135,13 +135,13 @@
 			cerrarModalQuimicaSanguinea();
 			limpiarQuimicaSanguinea();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalQuimicaSanguinea() {

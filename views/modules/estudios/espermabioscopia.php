@@ -245,7 +245,7 @@
 <script>
 	
 	function validarEspermabioscopia() {
-		if (cajaResultadoTomaDeMuestra.value && cajaResultadoRecepcionDeMuestra.value && cajaResultadoLicuefaccion.value && cajaResultadoVolumen.value && cajaResultadoPHEsperma.value && cajaResultadoZoospermia.value && cajaResultadoVivosEsperma.value && cajaResultadoMuertosEsperma.value && cajaResultadoMovilesProgresivos.value && cajaResultadoMovilesNoProgresivos.value && cajaResultadoNormalEsperma.value && cajaResultadoAnormalEsperma.value) {
+		// if (cajaResultadoTomaDeMuestra.value && cajaResultadoRecepcionDeMuestra.value && cajaResultadoLicuefaccion.value && cajaResultadoVolumen.value && cajaResultadoPHEsperma.value && cajaResultadoZoospermia.value && cajaResultadoVivosEsperma.value && cajaResultadoMuertosEsperma.value && cajaResultadoMovilesProgresivos.value && cajaResultadoMovilesNoProgresivos.value && cajaResultadoNormalEsperma.value && cajaResultadoAnormalEsperma.value) {
 
 			let estudio = {
 				idmodal: 'espermabioscopia',
@@ -319,13 +319,13 @@
 			cerrarModalvalidarEspermabioscopia();
 			limpiarElectrolitosSericos();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalvalidarEspermabioscopia() {

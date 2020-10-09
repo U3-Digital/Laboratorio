@@ -32,7 +32,7 @@
 <script>
 	
 	function validarCitomegalovirus() {
-		if (cajaResultadoCitomegalovirus.value) {
+		// if (cajaResultadoCitomegalovirus.value) {
 
 			let estudio = {
 				idmodal: 'citomegalovirus',
@@ -50,13 +50,13 @@
 			cerrarModalCitomegalovirus();
 			limpiarCitomegalovirus();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalCitomegalovirus() {

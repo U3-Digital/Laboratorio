@@ -38,7 +38,7 @@
 <script>
 	
 	function validarAmibaEnFresco() {
-		if (cajaResultadoAmibaEnFresco.value) {
+		/* if (cajaResultadoAmibaEnFresco.value) { */
 
 			let estudio = {
 				idmodal: 'amibaenfresco',
@@ -56,13 +56,13 @@
 			cerrarModalAmibaEnFresco();
 			limpiarAmibaEnFresco();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalAmibaEnFresco() {

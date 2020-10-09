@@ -49,7 +49,7 @@
     function validarProteinaCReactiva() {
         const formaProteinaC = document.getElementById('formaProteinaC');
 
-		if (formaProteinaC.elements["proteinaC"].value) {
+		// if (formaProteinaC.elements["proteinaC"].value) {
 
 			let estudio = {
 				idmodal: 'proteinacreactiva',
@@ -67,13 +67,13 @@
 			cerrarModalProteinaCReactiva();
 			limpiarProteinaCReactiva();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
     function cerrarModalProteinaCReactiva() {

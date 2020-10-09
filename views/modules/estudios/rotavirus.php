@@ -42,7 +42,7 @@
 <script>
 	
 	function validarRotavirus() {
-		if (cajaResultadoRotavirus.value) {
+		// if (cajaResultadoRotavirus.value) {
 
 			let estudio = {
 				idmodal: 'rotavirus',
@@ -60,13 +60,13 @@
 			cerrarModalRotavirus();
 			limpiarRotavirus();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalRotavirus() {

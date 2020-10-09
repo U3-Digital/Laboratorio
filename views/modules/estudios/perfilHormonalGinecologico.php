@@ -361,9 +361,9 @@
 <script>
 	
 	function validarPerfilHormonalGinecologico() {
-		if (cajaResultadoEstradiol.value && cajaResultadoHormonaFoliculoestimulante.value && 
+		/* if (cajaResultadoEstradiol.value && cajaResultadoHormonaFoliculoestimulante.value && 
             cajaResultadoHormonaLuteinizante.value && cajaResultadoProgesterona.value && 
-            cajaResultadoProlactina.value && cajaResultadoTestosteronaTotal.value) {
+            cajaResultadoProlactina.value && cajaResultadoTestosteronaTotal.value) { */
 
 			let estudio = {
 				idmodal: 'perfilhormonalginecologico',
@@ -407,13 +407,13 @@
 			cerrarModalPerfilHormonalGinecologico();
 			limpiarPerfilHormonalGinecologico();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalPerfilHormonalGinecologico() {

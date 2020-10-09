@@ -69,7 +69,7 @@
 <script>
 	
 	function validarPerfilDeHepatitisC() {
-		if (cajaResultadoPerfilHepatitisC.value) {
+		// if (cajaResultadoPerfilHepatitisC.value) {
 
 			let estudio = {
 				idmodal: 'perfildehepatitisc',
@@ -87,13 +87,13 @@
 			cerrarModalPerfilDeHepatitisC();
 			limpiarPerfilDeHepatitisC();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalPerfilDeHepatitisC() {

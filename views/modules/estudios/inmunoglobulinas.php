@@ -308,7 +308,7 @@
 <script>
 	
 	function validarInmunoglobulinas() {
-		if (cajaResultadoLGE.value || cajaResultadoLGA.value || cajaResultadoLGG.value || cajaResultadoLGM.value) {
+		// if (cajaResultadoLGE.value || cajaResultadoLGA.value || cajaResultadoLGG.value || cajaResultadoLGM.value) {
 
 			let estudio = {
 				idmodal: 'inmunoglobulinas',
@@ -354,13 +354,13 @@
 			cerrarModalInmunoglobulinas();
 			limpiarInmunoglobulinas();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalInmunoglobulinas() {

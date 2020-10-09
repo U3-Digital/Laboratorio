@@ -72,7 +72,7 @@
 <script>
 	
 	function validarElectrolitosSericos() {
-		if (cajaResultadoSodioElectrolitos.value && cajaResultadoPotasioElectrolitos.value && cajaResultadoClorurosElectrolitos.value) {
+		// if (cajaResultadoSodioElectrolitos.value && cajaResultadoPotasioElectrolitos.value && cajaResultadoClorurosElectrolitos.value) {
 
 			let estudio = {
 				idmodal: 'electrolitossericos',
@@ -100,13 +100,13 @@
 			cerrarModalElectrolitosSericos();
 			limpiarElectrolitosSericos();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalElectrolitosSericos() {

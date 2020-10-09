@@ -100,9 +100,9 @@
 <script>
 	
 	function validarPerfilTiroideo() {
-        if (cajaResultadoT4Total.value && cajaResultadoT3Captacion.value && 
+        /* if (cajaResultadoT4Total.value && cajaResultadoT3Captacion.value && 
             cajaResultadoFTI.value && cajaResultadoT4Libre.value && 
-            cajaResultadoT3Total.value && cajaResultadoTSH.value) {
+            cajaResultadoT3Total.value && cajaResultadoTSH.value) { */
 
 			let estudio = {
 				idmodal: 'perfiltiroideo',
@@ -145,13 +145,13 @@
 			cerrarModalPerfilTiroideo();
 			limpiarPerfilTiroideo();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalPerfilTiroideo() {

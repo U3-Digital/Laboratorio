@@ -244,7 +244,7 @@
 <script>
 	
 	function validarExamenGeneralDeOrina() {
-		if (cajaResultadoColorOrina.value && cajaResultadoAspectoOrina.value && cajaResultadoDensidadOrina.value && cajaResultadoPHOrina.value && cajaResultadoUrobinilogenoOrina.value && cajaResultadoBilirrubinaOrina.value && cajaResultadoHemoglobinaOrina.value && cajaResultadoCuerposCetonicosOrina.value && cajaResultadoGlucosaOrina.value && cajaResultadoProteinasOrina.value && cajaResultadoNitritoOrina.value && cajaResultadoBacteriasOrina.value && cajaResultadoCelulasOrina.value && cajaResultadoLeucocitosOrina.value && cajaResultadoEritrocitosOrina.value && cajaResultadoCilindrosOrina.value && cajaResultadoCristalesOrina.value && cajaResultadoMucinaOrina.value && cajaResultadoLevadurasOrina.value && cajaResultadoLevadurasOrina.value) {
+		// if (cajaResultadoColorOrina.value && cajaResultadoAspectoOrina.value && cajaResultadoDensidadOrina.value && cajaResultadoPHOrina.value && cajaResultadoUrobinilogenoOrina.value && cajaResultadoBilirrubinaOrina.value && cajaResultadoHemoglobinaOrina.value && cajaResultadoCuerposCetonicosOrina.value && cajaResultadoGlucosaOrina.value && cajaResultadoProteinasOrina.value && cajaResultadoNitritoOrina.value && cajaResultadoBacteriasOrina.value && cajaResultadoCelulasOrina.value && cajaResultadoLeucocitosOrina.value && cajaResultadoEritrocitosOrina.value && cajaResultadoCilindrosOrina.value && cajaResultadoCristalesOrina.value && cajaResultadoMucinaOrina.value && cajaResultadoLevadurasOrina.value && cajaResultadoLevadurasOrina.value) {
 
 			let estudio = {
 				idmodal: 'examengeneraldeorina',
@@ -270,11 +270,11 @@
 					resultado: cajaResultadoUrobinilogenoOrina.value,
 					limites: []
 				},
-                {
-                    nombre: 'PH',
-                    resultado: cajaResultadoPHOrina.value,
-                    limites: []
-                },
+				{
+						nombre: 'PH',
+						resultado: cajaResultadoPHOrina.value,
+						limites: []
+				},
 				{
 					nombre: 'Bilirrubina',
 					resultado: cajaResultadoBilirrubinaOrina.value,
@@ -352,13 +352,13 @@
 			cerrarModalExamenGeneralDeOrina();
 			limpiarExamenGeneralDeOrina();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalExamenGeneralDeOrina() {

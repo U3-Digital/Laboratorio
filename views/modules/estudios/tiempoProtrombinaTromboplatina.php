@@ -119,8 +119,8 @@
     }
 	
 	function validarTromboplastina() {
-		if (cajaResultadoTiempoProtombina.value && cajaResultadoActividad.value &&
-            cajaResultadoINR.value && cajaResultadoTromboplastinaParcial.value) {
+		/* if (cajaResultadoTiempoProtombina.value && cajaResultadoActividad.value &&
+            cajaResultadoINR.value && cajaResultadoTromboplastinaParcial.value) { */
 
 			let estudio = {
 				idmodal: 'tiempodeprotrombinaytromboplastina',
@@ -153,13 +153,13 @@
 			cerrarModalTromboplastina();
 			limpiarTromboplastina();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalTromboplastina() {

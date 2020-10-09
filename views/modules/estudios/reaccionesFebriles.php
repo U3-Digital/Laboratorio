@@ -102,9 +102,9 @@
 <script>
 	
 	function validarReaccionesFebriles() {
-		if (cajaResultadoParitificoA.value && cajaResultadoParitificoB.value && 
+		/* if (cajaResultadoParitificoA.value && cajaResultadoParitificoB.value && 
             cajaResultadoTificoH.value && cajaResultadoTificoO.value && 
-            cajaResultadoBrucellaAbortus.value && cajaResultadoProteusOX19.value) {
+            cajaResultadoBrucellaAbortus.value && cajaResultadoProteusOX19.value) { */
 
 			let estudio = {
 				idmodal: 'reaccionesfebriles',
@@ -147,13 +147,13 @@
 			cerrarModalReaccionesFebriles();
 			limpiarReaccionesFebriles();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalReaccionesFebriles() {

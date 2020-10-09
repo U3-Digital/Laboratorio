@@ -198,10 +198,10 @@
 <script>
 	
 	function validarGasometria() {
-        if (cajaResultadoPHGasometria.value && cajaResultadoPCO2Gasometria.value && cajaResultadoPO2Gasometria.value
+        /* if (cajaResultadoPHGasometria.value && cajaResultadoPCO2Gasometria.value && cajaResultadoPO2Gasometria.value
          && cajaResultadoHtcGasometria.value && cajaResultadoHCO3Gasometria.value && cajaResultadoHCO3stdGasometria.value && cajaResultadoTCO2Gasometria.value
           && cajaResultadoBEecfGasometria && cajaResultadoBEBGasometria.value && cajaResultadoSO2cGasometria.value 
-          && cajaResultadoTHbcGasometria.value ) {
+          && cajaResultadoTHbcGasometria.value ) { */
 
 			let estudio = {
 				idmodal: 'gasometria',
@@ -269,13 +269,13 @@
 			cerrarModalGasometria();
 			limpiarGasometria();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalGasometria() {

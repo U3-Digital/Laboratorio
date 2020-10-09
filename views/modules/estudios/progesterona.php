@@ -66,7 +66,7 @@
 <script>
 	
 	function validarProgesterona() {
-		if (cajaResultadoProgesteronaP.value) {
+		// if (cajaResultadoProgesteronaP.value) {
 
 			let estudio = {
 				idmodal: 'progesterona',
@@ -84,13 +84,13 @@
 			cerrarModalProgesterona();
 			limpiarProgesterona();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalProgesterona() {

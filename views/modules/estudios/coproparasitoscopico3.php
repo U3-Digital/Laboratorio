@@ -60,7 +60,7 @@
 
 	
 	function validarCoproparasitoscopico3() {
-		if (cajaResultadoCoproparasitoscopico1.value && cajaResultadoCoproparasitoscopico2.value && cajaResultadoCoproparasitoscopico3.value) {
+		// if (cajaResultadoCoproparasitoscopico1.value && cajaResultadoCoproparasitoscopico2.value && cajaResultadoCoproparasitoscopico3.value) {
 
 			let estudio = {
 				idmodal: 'coproparasitoscopico3',
@@ -88,13 +88,13 @@
 			cerrarModalCoproparasitoscopico3();
 			limpiarCoproparasitoscopico3();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalCoproparasitoscopico3() {

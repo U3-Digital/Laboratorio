@@ -79,7 +79,7 @@
 	// const cajaResultadoAmilasa = document.getElementById('cajaResultadoAmilasa');
 	
 	function validarAntigenoCarcinoembrionario() {
-		if (cajaResultadoAntigenoCarcinoEmbrionario.value) {
+		// if (cajaResultadoAntigenoCarcinoEmbrionario.value) {
 
 			let estudio = {
 				idmodal: 'antigenocarcinoembrionario',
@@ -98,13 +98,13 @@
 			cerrarModalAntigenoCarcinoembrionario();
 			limpiarAntigenoCarcinoembrionario();
 			
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalAntigenoCarcinoembrionario() {

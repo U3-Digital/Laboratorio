@@ -69,7 +69,7 @@
 <script>
 	
 	function validarPerfilDeHepatitisA() {
-		if (cajaResultadoPerfilHepatitisA.value) {
+		// if (cajaResultadoPerfilHepatitisA.value) {
 
 			let estudio = {
 				idmodal: 'perfildehepatitisa',
@@ -87,13 +87,13 @@
 			cerrarModalPerfilDeHepatitisA();
 			limpiarPerfilDeHepatitisA();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalPerfilDeHepatitisA() {

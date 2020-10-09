@@ -40,7 +40,7 @@
 	const cajaResultadoAntiestreptolisina = document.getElementById('cajaResultadoAntiestreptolisina');
 	
 	function validarAntiestreptolisina() {
-		if (cajaResultadoAntiestreptolisina.value) {
+		// if (cajaResultadoAntiestreptolisina.value) {
 
 			let estudio = {
 				idmodal: 'antiestreptolisina',
@@ -58,13 +58,13 @@
 			cerrarModalAntiestreptolisina();
 			limpiarAntiestreptolisina();
 			
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalAntiestreptolisina() {

@@ -38,7 +38,7 @@
 <script>
 	
 	function validarGrupoYRH() {
-		if (cajaResultadoGrupo.value && cajaResultadoRH.value) {
+		// if (cajaResultadoGrupo.value && cajaResultadoRH.value) {
 
 			let estudio = {
 				idmodal: 'grupoyrh',
@@ -61,13 +61,13 @@
 			cerrarModalGrupoYRH();
 			limpiarGrupoYRH();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalGrupoYRH() {

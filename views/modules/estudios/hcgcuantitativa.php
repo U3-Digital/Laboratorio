@@ -223,7 +223,7 @@
 <script>
 	
 	function validarHGCCuantitativa() {
-		if (cajaResultadoCuantificacionHCG.value) {
+		// if (cajaResultadoCuantificacionHCG.value) {
 
 			let estudio = {
 				idmodal: 'hcg',
@@ -241,13 +241,13 @@
 			cerrarModalHCGCuantitativa();
 			limpiarHCGCuantitativa();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalHCGCuantitativa() {

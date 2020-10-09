@@ -140,9 +140,9 @@
     }
 	
 	function validarPerfilDeLipidos() {
-        if (cajaResultadoColesterol.value && cajaResultadoTrigliceridos.value && 
+        /* if (cajaResultadoColesterol.value && cajaResultadoTrigliceridos.value && 
             cajaResultadoHDLColesterol.value && cajaResultadoLDLColesterol.value && 
-            cajaResultadoCOLHDL.value) {
+            cajaResultadoCOLHDL.value) { */
 
 			let estudio = {
 				idmodal: 'perfildelipidos',
@@ -180,13 +180,13 @@
 			cerrarModalPerfilDeLipidos();
 			limpiarPerfilDeLipidos();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalPerfilDeLipidos() {

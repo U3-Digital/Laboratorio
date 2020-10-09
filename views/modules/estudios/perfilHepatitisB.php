@@ -61,7 +61,7 @@
 <script>
 	
 	function validarPerfilDeHepatitisB() {
-		if (cajaResultadoPerfilHepatitisB.value) {
+		// if (cajaResultadoPerfilHepatitisB.value) {
 
 			let estudio = {
 				idmodal: 'perfildehepatitisb',
@@ -79,13 +79,13 @@
 			cerrarModalPerfilDeHepatitisB();
 			limpiarPerfilDeHepatitisB();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalPerfilDeHepatitisB() {

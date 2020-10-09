@@ -183,7 +183,7 @@ $controller = new Controller();
 	
 	
 	function validarBiometriaHematica() {
-		if (cajaResultadoLeucocitos.value && cajaResultadoHemoglobina.value && cajaResultadoHematocrito.value && cajaResultadoConcentracionMediaHemoglobina.value && cajaResultadoVolumenGlobularMedio.value && cajaResultadoLinfocitos.value && cajaResultadoMonocitos.value && cajaResultadoEosinofilos.value && cajaResultadoBasofilos.value && cajaResultadoSegmentados.value && cajaResultadoBandas.value && cajaResultadoPlaquetas.value) {
+		// if (cajaResultadoLeucocitos.value && cajaResultadoHemoglobina.value && cajaResultadoHematocrito.value && cajaResultadoConcentracionMediaHemoglobina.value && cajaResultadoVolumenGlobularMedio.value && cajaResultadoLinfocitos.value && cajaResultadoMonocitos.value && cajaResultadoEosinofilos.value && cajaResultadoBasofilos.value && cajaResultadoSegmentados.value && cajaResultadoBandas.value && cajaResultadoPlaquetas.value) {
 
 			let estudio = {
 				idmodal: 'biometriahematica',
@@ -256,13 +256,13 @@ $controller = new Controller();
 			agregarEstudio(estudio);
 			cerrarModalBiometriaHematica();
 			limpiarBiometriaHematica();
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalBiometriaHematica() {

@@ -88,7 +88,7 @@
 <script>
 	
 	function validarEnzimasCardiacas() {
-		if (cajaResultadoTGO.value && cajaResultadoCK.value && cajaResultadoCKMB.value && cajaResultadoDHL.value) {
+		// if (cajaResultadoTGO.value && cajaResultadoCK.value && cajaResultadoCKMB.value && cajaResultadoDHL.value) {
 
 			let estudio = {
 				idmodal: "enzimascardiacas",
@@ -121,13 +121,13 @@
 			cerrarModalEnzimasCardiacas();
 			limpiarEnzimasCardiacas();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalEnzimasCardiacas() {

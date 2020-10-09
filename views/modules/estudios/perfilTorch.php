@@ -107,7 +107,7 @@
 <script>
 	
 	function validarPerfilTorch() {
-		if (cajaResultadoACIgG.value && cajaResultadoACIgM.value) {
+		// if (cajaResultadoACIgG.value && cajaResultadoACIgM.value) {
 
 			let estudio = {
 				idmodal: 'perfiltorchiggeigm',
@@ -130,13 +130,13 @@
 			cerrarModalPerfilTorch();
 			limpiarPerfilTorch();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalPerfilTorch() {

@@ -90,7 +90,7 @@ $controller = new Controller();
 	const cajaResultadoMarihuana = document.getElementById('cajaResultadoMarihuana');
 	
 	function validarAntidoping() {
-		if ((cajaResultadoAnfetaminas.value) && (cajaResultadoBenzodiacepinas.value) && cajaResultadoCocaina.value && cajaResultadoMorfina.value && cajaResultadoMarihuana.value) {
+		// if ((cajaResultadoAnfetaminas.value) && (cajaResultadoBenzodiacepinas.value) && cajaResultadoCocaina.value && cajaResultadoMorfina.value && cajaResultadoMarihuana.value) {
 
 			let estudio = {
 				idmodal: 'antidoping',
@@ -127,13 +127,13 @@ $controller = new Controller();
 			agregarEstudio(estudio);
 			cerrarModalAntidoping();
 			limpiarAntidoping();
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalAntidoping() {

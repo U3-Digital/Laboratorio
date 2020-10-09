@@ -93,7 +93,7 @@
 <script>
 	
 	function validarPerfilTiroideo2() {
-        if (cajaResultadoTSH2.value && cajaResultadoTiroxinaTotal.value && cajaResultadoTiroxinaLibre.value && cajaResultadoTriyodotironinaTotal.value && cajaResultadoTriyodotironinaLibre.value) {
+        // if (cajaResultadoTSH2.value && cajaResultadoTiroxinaTotal.value && cajaResultadoTiroxinaLibre.value && cajaResultadoTriyodotironinaTotal.value && cajaResultadoTriyodotironinaLibre.value) {
 
 			let estudio = {
 				idmodal: 'perfiltiroideo2',
@@ -131,13 +131,13 @@
 			cerrarModalPerfilTiroideo2();
 			limpiarPerfilTiroideo2();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalPerfilTiroideo2() {

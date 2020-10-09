@@ -37,7 +37,7 @@ $controller = new Controller();
 
 	
 	function validarAmonioPlasmatico() {
-		if (cajaResultadoAmonioPlasmatico.value) {
+		// if (cajaResultadoAmonioPlasmatico.value) {
 
 			let estudio = {
 				idmodal: 'amonioplasmatico',
@@ -54,13 +54,13 @@ $controller = new Controller();
 			agregarEstudio(estudio);
 			cerrarModalAmonioPlasmatico();
 			limpiarAmonioPlasmatico();			
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalAmonioPlasmatico() {

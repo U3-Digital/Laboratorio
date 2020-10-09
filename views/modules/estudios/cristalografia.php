@@ -32,7 +32,7 @@
 <script>
 	
 	function validarCristalografia() {
-		if (cajaResultadoCristalografia.value) {
+		// if (cajaResultadoCristalografia.value) {
 
 			let estudio = {
 				idmodal: 'cristalografia',
@@ -50,13 +50,13 @@
 			cerrarModalCristalografia();
 			limpiarAmibaEnFresco();
 
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalCristalografia() {

@@ -1,38 +1,77 @@
  <?php
+require_once '..\..\..\vendor\autoload.php';
+use Spipu\Html2Pdf\Html2Pdf;
 
 require('../../../controllers/controller.php');
 require('../../../models/crud.php');
 
 // Only process POST reqeusts.
-if (isset($_POST["cliente"])) {
+if (isset($_POST["emailCliente"])) {
+    $html2pdf = new Html2Pdf('P', 'A4', 'en');
+    $html2pdf -> writeHTML($_POST["cuerpoCorreo"]);
+    $html2pdf -> output(__DIR__ . "correo.pdf", "F");
+    
+    $fileAtt = __DIR__ . "correo.pdf";
+    $fileAttType = "application/pdf";
+    $fileAttName = "Resultados.pdf";
+
+    $file = fopen($fileAtt, 'rb');
+    $data = fread($file, filesize($fileAtt));
+    fclose($file);
+
+
+    $recipient = $_POST["emailCliente"];
+    $emailCopia = $_POST["emailCopia"];
+    
+
+    $semi_rand = md5(time());
+    $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
+
+    $headers  = "MIME-Version: 1.0\n";
+    $headers .= "Content-Type: multipart/mixed;\n" . "boundary=\"{$mime_boundary}\"\n";
+    $headers .= "From:info@OGALaboratorio.com" . "\n" . "CC: $emailCopia";
+
+    $email_content = "--{$mime_boundary}\n" . "Content-Type: text/plain; charset=\"iso-8859-1\n" . "Content-Transfer-Encoding: 7bit\n";
+
+    $data = chunk_split(base64_encode($data));
+    $email_content .= "--{$mime_boundary}\n" . "Content-Type: {$fileAttType};\n" . " name=\"{$fileAttName}\"\n" . "Content-Disposition: attachment;\n" . " filename=\"{$fileAttName}\"\n" . "Content-Transfer-Encoding: base64\n" . $data . "\n" . "--{$mime_boundary}--\n";
+
+    $subject = "Resultados de estudio para" . $_POST["nombreCliente"];
+
+    if (mail($recipient, $subject, $email_content, $headers)) {
+        echo "success";
+    } else {
+       echo "error";
+    } 
+
     // Get the form fields and remove whitespace.
-    $name = strip_tags(trim($_POST["cliente"]));
+    /* $name = strip_tags(trim($_POST["cliente"]));
     $doctor = trim($_POST["medico"]);
     $date = trim($_POST["fecha"]);
     $estudios = json_decode($_POST["resultado"],true);
     $email = trim($_POST["emailCliente"]);
-    $emailCopia = trim($_POST["emailCopia"]);    
+    $emailCopia = trim($_POST["emailCopia"]);     */
     
 
     // Check that data was sent to the mailer.
-    if ( empty($name) OR empty($doctor) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    /* if ( empty($name) OR empty($doctor) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         // Set a 400 (bad request) response code and exit.
         http_response_code(200);
         echo "Por favor terminar de llenar el formulario";
 
         exit;
-    }
+    } */
 
 // Set the recipient email address.
     // FIXME: Update this to your desired email address.
-    $recipient = $email;
+    // $recipient = $email;
 
     // Set the email subject.
-    $subject = "Resultados de estudios  para $name";
+    // $subject = "Resultados de estudios  para $name";
 
     // Build the email content.
     // Build the email content.
-    $email_content ='
+    /* $email_content ='
     <html>
         <style>
             font-family: "Arial", sans-serif;
@@ -92,7 +131,7 @@ if (isset($_POST["cliente"])) {
             </div>
             ';
         }
-    }
+    } */
 /*         foreach ($resultado as $row => $estudio) {
             $email_content .= '<h2>'.$estudio["nombre"].'</h2>';
                 if(count($estudio["resultados"][0]["limites"]) == 1){
@@ -126,30 +165,16 @@ if (isset($_POST["cliente"])) {
         // $email_content .= "</body></html>";
 
         // Build the email headers.
-        $headers  = 'MIME-Version: 1.0' . "\r\n";
+/*         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
         $headers .= "From:info@OGALaboratorio.com" . "\r\n" . "CC: $emailCopia";
        
         print_r($email_content);
         // Send the email.
-        if (mail($recipient, $subject, $email_content, $headers)) {
-            echo "success";
-        } else {
-           echo "error";
-        }
+        */
 
-
-    
-
-   
-
-} else {
-// Not a POST request, set a 403 (forbidden) response code.
-http_response_code(403);
-echo "Tuvimos un error favor de intentarlo de nuevo";
 }
-
-
+/* 
 function imprimirLimites($limites) {
     $cadenaLimites = '<div style="margin-right: 1em;">';
 
@@ -161,4 +186,4 @@ function imprimirLimites($limites) {
     $cadenaLimites .= '</div>';
 
     return $cadenaLimites;
-}
+} */

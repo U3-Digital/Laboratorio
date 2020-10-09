@@ -112,6 +112,7 @@
                                                     $estudios = new Controller();
                                                     $estudios -> ctlBuscaEstudios();
                                                 ?>
+                                                <option value="estudioenblanco">Estudio en blanco</option>
                                             </select>
                                         </div>
                                     </div>
@@ -263,15 +264,17 @@
         calcularCostos();
     }
 
-    function enviarEstudio(){
-        const parsedEstudios = JSON.stringify(estudios);
+    function enviarEstudio() {
+        
+        
+       /*  const parsedEstudios = JSON.stringify(estudios);
         const date = new Date();
         const year = new Intl.DateTimeFormat('es', { year: 'numeric' }).format(date);
         const month = new Intl.DateTimeFormat('es', { month: 'long' }).format(date);
         const day = new Intl.DateTimeFormat('es', { day: '2-digit' }).format(date);
-        const formated_Date =  `${day} de ${month} del ${year}`;
+        const formated_Date =  `${day} de ${month} del ${year}`;*/
 
-        if(cajaNombreCliente.value === ""  || cajaEmailCliente.value ==="" || cajaNombresDoctor.value ==="" || cajaApellidosDoctor.value === "" || estudios.length === 0){
+        if (cajaNombreCliente.value.trim() === ""  || cajaEmailCliente.value.trim() ==="" || cajaNombresDoctor.value.trim() === "" || cajaApellidosDoctor.value.trim() === "" || estudios.length === 0) {
             Swal.fire({
                 title: "¡Rellene por completo el formulario!",
                 type: "warning",
@@ -279,31 +282,34 @@
             }).then((value) => {
                 
             });    
-        }else{
+        } else {
+            const cuerpoCorreo = generarCorreo(false);
+            const datos = new FormData();
+            
+           /*  datos.append("cliente",cajaNombreCliente.value+" "+cajaApellidosCliente.value);
+            datos.append("medico",cajaNombresDoctor.value+" "+cajaApellidosDoctor.value);
+            datos.append("fecha", formated_Date);
+            datos.append("costo", total);
+            datos.append("responsable", echo("'".$_SESSION["nombre"]."'") );
+            datos.append("resultado", parsedEstudios);*/
+            
+            datos.append("nombreCliente", cajaNombreCliente.value);
+            datos.append("emailCliente", cajaEmailCliente.value);
+            datos.append("emailCopia", cajaEmailCopia.value); 
+            datos.append("cuerpoCorreo", cuerpoCorreo);
+
             $.ajax({
                 url: './ajax/mail.php',
                 type: "POST",
-                data: function(){
-                    let valores = new FormData();
-                    valores.append("cliente",cajaNombreCliente.value+" "+cajaApellidosCliente.value);
-                    valores.append("medico",cajaNombresDoctor.value+" "+cajaApellidosDoctor.value);
-                    valores.append("fecha", formated_Date);
-                    valores.append("costo", total);
-                    valores.append("responsable",<?php echo("'".$_SESSION["nombre"]."'") ?>);
-                    valores.append("resultado", parsedEstudios);
-                    valores.append("emailCliente", cajaEmailCliente.value);
-                    valores.append("emailCopia",cajaEmailCopia.value);
-                    return valores;
-                }(),
+                data: datos,
                 success: function(data) {
-                        console.log(data);
+                    if (data === "success") {
                         Swal.fire({
-                            title: "Datos Enviados!",
+                            title: "¡Correo enviado exitosamente!",
                             type: "success",
                             showCancelButton: false
-                        }).then((value) => {    
-                        }); 
-
+                        });
+                    }
                 },
                 error: function(data) {
                     console.log(data);
@@ -315,7 +321,7 @@
                 contentType: false,
                 processData: false
             });
-        }           
+        }    
     }
 
 

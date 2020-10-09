@@ -38,7 +38,7 @@
 	const cajaResultadoAmilasa = document.getElementById('cajaResultadoAmilasa');
 	
 	function validarAmilasa() {
-		if (cajaResultadoAmilasa.value) {
+		// if (cajaResultadoAmilasa.value) {
 
 			let estudio = {
 				idmodal: 'amilasa',
@@ -57,13 +57,13 @@
 			cerrarModalAmilasa();
 			limpiarAmilasa();
 			
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarModalAmilasa() {

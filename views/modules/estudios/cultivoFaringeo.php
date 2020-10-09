@@ -36,12 +36,12 @@
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioAmpicilinaSensible" name="ampicilina" value="sensible" checked>
+                                            <input class="form-check-input position-static" type="radio" id="radioAmpicilinaSensible" name="ampicilina" value="Sensible" checked>
                                             </div>
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioAmpicilinaResistente" name="ampicilina" value="resistente">
+                                            <input class="form-check-input position-static" type="radio" id="radioAmpicilinaResistente" name="ampicilina" value="Resistente">
                                             </div>
                                         </div>
                                     </div>
@@ -53,12 +53,12 @@
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioCefalotinaSensible" name="cefalotina" value="sensible" checked>
+                                            <input class="form-check-input position-static" type="radio" id="radioCefalotinaSensible" name="cefalotina" value="Sensible" checked>
                                             </div>
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioCefalotinaResistente" name="cefalotina" value="resistente">
+                                            <input class="form-check-input position-static" type="radio" id="radioCefalotinaResistente" name="cefalotina" value="Resistente">
                                             </div>
                                         </div>
                                     </div>
@@ -70,12 +70,12 @@
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioCefotaximaSensible" name="cefotaxima" value="sensible" checked>
+                                            <input class="form-check-input position-static" type="radio" id="radioCefotaximaSensible" name="cefotaxima" value="Sensible" checked>
                                             </div>
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioCefotaximaResistente" name="cefotaxima" value="resistente">
+                                            <input class="form-check-input position-static" type="radio" id="radioCefotaximaResistente" name="cefotaxima" value="Resistente">
                                             </div>
                                         </div>
                                     </div>
@@ -87,12 +87,12 @@
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioCeftazidimaSensible" name="ceftazidima" value="sensible" checked>
+                                            <input class="form-check-input position-static" type="radio" id="radioCeftazidimaSensible" name="ceftazidima" value="Sensible" checked>
                                             </div>
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioCeftazidimaResistente" name="ceftazidima" value="resistente">
+                                            <input class="form-check-input position-static" type="radio" id="radioCeftazidimaResistente" name="ceftazidima" value="Resistente">
                                             </div>
                                         </div>
                                     </div>
@@ -104,12 +104,12 @@
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioCefuroximaSensible" name="cefuroxima" value="sensible" checked>
+                                            <input class="form-check-input position-static" type="radio" id="radioCefuroximaSensible" name="cefuroxima" value="Sensible" checked>
                                             </div>
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioCefuroximaResistente" name="cefuroxima" value="resistente">
+                                            <input class="form-check-input position-static" type="radio" id="radioCefuroximaResistente" name="cefuroxima" value="Resistente">
                                             </div>
                                         </div>
                                     </div>
@@ -121,12 +121,12 @@
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioDicloxacilinaSensible" name="dicloxacilina" value="sensible" checked>
+                                            <input class="form-check-input position-static" type="radio" id="radioDicloxacilinaSensible" name="dicloxacilina" value="Sensible" checked>
                                             </div>
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioDicloxacilinaResistente" name="dicloxacilina" value="resistente">
+                                            <input class="form-check-input position-static" type="radio" id="radioDicloxacilinaResistente" name="dicloxacilina" value="Resistente">
                                             </div>
                                         </div>
                                     </div>
@@ -138,12 +138,12 @@
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioEritromicinaSensible" name="eritromicina" value="sensible" checked>
+                                            <input class="form-check-input position-static" type="radio" id="radioEritromicinaSensible" name="eritromicina" value="Sensible" checked>
                                             </div>
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioEritromicinaResistente" name="eritromicina" value="resistente">
+                                            <input class="form-check-input position-static" type="radio" id="radioEritromicinaResistente" name="eritromicina" value="Resistente">
                                             </div>
                                         </div>
                                     </div>
@@ -155,12 +155,12 @@
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioGentamicinaSensible" name="gentamicina" value="sensible" checked>
+                                            <input class="form-check-input position-static" type="radio" id="radioGentamicinaSensible" name="gentamicina" value="Sensible" checked>
                                             </div>
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioGentamicinaResistente" name="gentamicina" value="resistente">
+                                            <input class="form-check-input position-static" type="radio" id="radioGentamicinaResistente" name="gentamicina" value="Resistente">
                                             </div>
                                         </div>
                                     </div>
@@ -172,12 +172,12 @@
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioPefloxacinaSensible" name="pefloxacina" value="sensible" checked>
+                                            <input class="form-check-input position-static" type="radio" id="radioPefloxacinaSensible" name="pefloxacina" value="Sensible" checked>
                                             </div>
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioPefloxacinaResistente" name="pefloxacina" value="resistente">
+                                            <input class="form-check-input position-static" type="radio" id="radioPefloxacinaResistente" name="pefloxacina" value="Resistente">
                                             </div>
                                         </div>
                                     </div>
@@ -189,12 +189,12 @@
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioPenicilinaSensible" name="penicilina" value="sensible" checked>
+                                            <input class="form-check-input position-static" type="radio" id="radioPenicilinaSensible" name="penicilina" value="Sensible" checked>
                                             </div>
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioPenicilinaResistente" name="penicilina" value="resistente">
+                                            <input class="form-check-input position-static" type="radio" id="radioPenicilinaResistente" name="penicilina" value="Resistente">
                                             </div>
                                         </div>
                                     </div>
@@ -206,12 +206,12 @@
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioTetraciclinaSensible" name="tetraciclina" value="sensible" checked>
+                                            <input class="form-check-input position-static" type="radio" id="radioTetraciclinaSensible" name="tetraciclina" value="Sensible" checked>
                                             </div>
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioTetraciclinaResistente" name="tetraciclina" value="resistente">
+                                            <input class="form-check-input position-static" type="radio" id="radioTetraciclinaResistente" name="tetraciclina" value="Resistente">
                                             </div>
                                         </div>
                                     </div>
@@ -223,12 +223,12 @@
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioTrimetroprimaSulfametoxazolSensible" name="trimetroprimasulfametoxazol" value="sensible" checked>
+                                            <input class="form-check-input position-static" type="radio" id="radioTrimetroprimaSulfametoxazolSensible" name="trimetroprimasulfametoxazol" value="Sensible" checked>
                                             </div>
                                         </div>
                                         <div class="col-3 align-self-center">
                                             <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioTrimetroprimaSulfametoxazolResistente" name="trimetroprimasulfametoxazol" value="resistente">
+                                            <input class="form-check-input position-static" type="radio" id="radioTrimetroprimaSulfametoxazolResistente" name="trimetroprimasulfametoxazol" value="Resistente">
                                             </div>
                                         </div>
                                     </div>
@@ -252,12 +252,12 @@
      
 	function validarCultivoFaringeo() {
        
-		if (formaRadios.elements["ampicilina"].value && formaRadios.elements["cefalotina"].value && 
+		/* if (formaRadios.elements["ampicilina"].value && formaRadios.elements["cefalotina"].value && 
         formaRadios.elements["cefotaxima"].value && formaRadios.elements["ceftazidima"].value && 
         formaRadios.elements["cefuroxima"].value && formaRadios.elements["dicloxacilina"].value && 
         formaRadios.elements["eritromicina"].value && formaRadios.elements["gentamicina"].value && 
         formaRadios.elements["pefloxacina"].value && formaRadios.elements["penicilina"].value && 
-        formaRadios.elements["tetraciclina"].value && formaRadios.elements["trimetroprimasulfametoxazol"].value) {
+        formaRadios.elements["tetraciclina"].value && formaRadios.elements["trimetroprimasulfametoxazol"].value) { */
 
 			let estudio = {
 				idmodal: 'cultivofaringeo',
@@ -331,13 +331,13 @@
 			cerrarCultivoFaringeo();
 			limpiarCultivoFaringeo();
 			
-		} else {
+		/* } else {
 			Swal.fire({
                 title: "¡Rellene los campos solicitados!",
                 type: "error",
                 showCancelButton: false
             });
-		}
+		} */
 	}
 
 	function cerrarCultivoFaringeo() {
@@ -383,73 +383,73 @@
 	});
 
 	function edicionCultivoFaringeo(estudio) {
-		if (estudio.resultados[0].resultado === "sensible") {
+		if (estudio.resultados[0].resultado === "Sensible") {
             document.getElementsByName('ampicilina')[0].checked = true;
         } else {
             document.getElementsByName('ampicilina')[1].checked = true;
         }
 
-        if (estudio.resultados[1].resultado === "sensible") {
+        if (estudio.resultados[1].resultado === "Sensible") {
             document.getElementsByName('cefalotina')[0].checked = true;
         } else {
             document.getElementsByName('cefalotina')[1].checked = true;
         }
 
-        if (estudio.resultados[2].resultado === "sensible") {
+        if (estudio.resultados[2].resultado === "Sensible") {
             document.getElementsByName('cefotaxima')[0].checked = true;
         } else {
             document.getElementsByName('cefotaxima')[1].checked = true;
         }
 
-        if (estudio.resultados[3].resultado === "sensible") {
+        if (estudio.resultados[3].resultado === "Sensible") {
             document.getElementsByName('ceftazidima')[0].checked = true;
         } else {
             document.getElementsByName('ceftazidima')[1].checked = true;
         }
 
-        if (estudio.resultados[4].resultado === "sensible") {
+        if (estudio.resultados[4].resultado === "Sensible") {
             document.getElementsByName('cefuroxima')[0].checked = true;
         } else {
             document.getElementsByName('cefuroxima')[1].checked = true;
         }
 
-        if (estudio.resultados[5].resultado === "sensible") {
+        if (estudio.resultados[5].resultado === "Sensible") {
             document.getElementsByName('dicloxacilina')[0].checked = true;
         } else {
             document.getElementsByName('dicloxacilina')[1].checked = true;
         }
 
-        if (estudio.resultados[6].resultado === "sensible") {
+        if (estudio.resultados[6].resultado === "Sensible") {
             document.getElementsByName('eritromicina')[0].checked = true;
         } else {
             document.getElementsByName('eritromicina')[1].checked = true;
         }
 
-        if (estudio.resultados[7].resultado === "sensible") {
+        if (estudio.resultados[7].resultado === "Sensible") {
             document.getElementsByName('gentamicina')[0].checked = true;
         } else {
             document.getElementsByName('gentamicina')[1].checked = true;
         }
 
-        if (estudio.resultados[8].resultado === "sensible") {
+        if (estudio.resultados[8].resultado === "Sensible") {
             document.getElementsByName('pefloxacina')[0].checked = true;
         } else {
             document.getElementsByName('pefloxacina')[1].checked = true;
         }
 
-        if (estudio.resultados[9].resultado === "sensible") {
+        if (estudio.resultados[9].resultado === "Sensible") {
             document.getElementsByName('penicilina')[0].checked = true;
         } else {
             document.getElementsByName('penicilina')[1].checked = true;
         }
 
-        if (estudio.resultados[10].resultado === "sensible") {
+        if (estudio.resultados[10].resultado === "Sensible") {
             document.getElementsByName('tetraciclina')[0].checked = true;
         } else {
             document.getElementsByName('tetraciclina')[1].checked = true;
         }
 
-        if (estudio.resultados[11].resultado === "sensible") {
+        if (estudio.resultados[11].resultado === "Sensible") {
             document.getElementsByName('trimetroprimasulfametoxazol')[0].checked = true;
         } else {
             document.getElementsByName('trimetroprimasulfametoxazol')[1].checked = true;
