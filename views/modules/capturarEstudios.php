@@ -303,6 +303,7 @@
                 type: "POST",
                 data: datos,
                 success: function(data) {
+                    console.log(data);
                     if (data === "success") {
                         Swal.fire({
                             title: "¡Correo enviado exitosamente!",

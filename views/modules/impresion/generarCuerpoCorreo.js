@@ -1,3 +1,4 @@
+const rutaImagen = 'http://localhost/php/laboratorio/Assets/encabezado.jpg';
 function generarCorreo(editando) {
     let cuerpo = '';
     if (editando === true) {
@@ -54,7 +55,7 @@ function generarEstudiosCorreo() {
             <tr>
                 <td>
                     <div>
-                        <p style="font-weight: 600;">&nbsp;&nbsp;${estudio.nombre}</p>
+                        <p style="font-weight: 600;">${estudio.nombre}</p>
                         <hr style="margin: 0 5px;">
                     </div>
                 </td>
@@ -63,7 +64,7 @@ function generarEstudiosCorreo() {
             <tr>
                 <td>
                     <div>
-                        <span style="width: 130mm;">Resultados:</span>`
+                        <span style="width: 130mm;">Resultados:</span>`;
                         if (estudio.resultados.length > 0) {
                             resultado += (estudio.resultados[0].limites.length) > 0 ? ('<span style="margin-left: 110mm; right: 0mm;">Límites</span>') : ('');
                         }
@@ -113,10 +114,11 @@ function generarCuerpoCorreo(editando) {
                         <tr>
                             <td>
                                 <div>
-                                    <img src="http://localhost/laboratorio/Assets/encabezado.jpg" alt="Encabezado oga" style="height: 20mm; width: 200mm; display: block;">
+                                    <img src="${rutaImagen}" alt="Encabezado oga" style="height: 20mm; width: 200mm; display: block;">
                                     <br>
-                                    <div>
-                                        <p>Paciente: ${cajaNombre.value} &nbsp;&nbsp;&nbsp;&nbsp;${fecha()}</p>
+                                    <div style="margin-top: 4mm; margin-bottom: 6mm;">
+                                        <p>${fecha()}</p>
+                                        <p>Paciente: ${cajaNombre.value} &nbsp;&nbsp;&nbsp;&nbsp;</p>
                                         <p>Médico: ${cajaNombreDoctor.value}</p>
                                     </div>
                                 </div>
@@ -151,10 +153,11 @@ function generarCuerpoCorreo(editando) {
                         <tr>
                             <td>
                                 <div>
-                                    <img src="http://localhost/laboratorio/Assets/encabezado.jpg" alt="Encabezado oga" style="height: 20mm; width: 200mm; display: block;">
+                                    <img src="${rutaImagen}" alt="Encabezado oga" style="height: 20mm; width: 200mm; display: block;">
                                     <br>
-                                    <div>
-                                        <p>Paciente: ${cajaNombreCliente.value} ${cajaApellidosCliente.value} &nbsp;&nbsp;&nbsp;&nbsp;${fecha()}</p>
+                                    <div style="margin-top: 4mm; margin-bottom: 6mm;">
+                                        <p>${fecha()}</p>
+                                        <p>Paciente: ${cajaNombreCliente.value} ${cajaApellidosCliente.value} &nbsp;&nbsp;&nbsp;&nbsp;</p>
                                         <p>Médico: ${cajaNombresDoctor.value} ${cajaApellidosDoctor.value}</p>
                                     </div>
                                 </div>

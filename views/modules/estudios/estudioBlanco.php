@@ -18,25 +18,52 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="cajaParametros">Parámetros:</label>
+                            <textarea class="form-control" name="cajaParametros" id="cajaParametros" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="cajaResultados">Resultados:</label>
+                            <textarea class="form-control" name="cajaResultados" id="cajaResultados" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="cajaLimites">Límites:</label>
+                            <textarea class="form-control" name="cajaLimites" id="cajaLimites" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-4">
                         <div class="form-group">
                             <label for="cajaParametro">Parámetro:</label>
                             <input class="form-control" type="text" name="cajaParametro" id="cajaParametro">
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label for="cajaResultado">Resultado:</label>
                             <input class="form-control" type="text" name="cajaResultado" id="cajaResultado">
                         </div>
                     </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="cajaLimites">Límites:</label>
+                            <input class="form-control" type="text" name="cajaLimites" id="cajaLimites">
+                        </div>
+                    </div>
+                    <div class="col-md-2 align-self-center">
+                        <i class="fas fa-plus borde" style="margin-top: 1em; width: 100%;"></i>
+                    </div> -->
                 </div>
                 <div class="row">
                     <div class="col-12">
                         <ul class="list-group" style="height: 10em; overflow: auto;">
+                            <!-- <li class="list-group-item">ejemplo</li>
                             <li class="list-group-item">ejemplo</li>
-                            <li class="list-group-item">ejemplo</li>
-                            <li class="list-group-item">ejemplo</li>
+                            <li class="list-group-item">ejemplo</li> -->
                         </ul>
                     </div>
                 </div>
@@ -51,56 +78,99 @@
 
 <script>
     function validarEstudioEnBlanco() {
-        /* if (cajaResultadoAmibaEnFresco.value) { */
+        
+        if (cajaNombreEstudio.value && cajaParametros.value && cajaResultados.value) {
 
-        let estudio = {
-            idmodal: 'estudioenblanco',
-            nombre: '',
-            resultados: [{
-                nombre: 'Amiba en fresco',
-                resultado: cajaResultadoAmibaEnFresco.value,
-                limites: []
-            }],
-            observaciones: cajaObservacionesAmibaEnFresco.value,
-            costo: <?php if ($respuesta) {
-                        echo $respuesta["costo"];
-                    } else {
-                        echo "0";
-                    } ?>
-        }
-        agregarEstudio(estudio);
-        cerrarEstudioEnBlanco();
-        limpiarEstudioEnBlanco();
+            const parametros = cajaParametros.value.split('\n');
+            const resultados = cajaResultados.value.split('\n');
+            const limitesa = cajaLimites.value.split('\n');
 
-        /* } else {
+            console.log(limitesa);
+
+            if (parametros.length === resultados.length) {
+
+                if (parametros.length === limitesa.length) {
+                    const objetosResultado = [];
+                    console.log('asdas');
+                    let i = 0;
+                    parametros.forEach((parametro) => {
+                        objetosResultado.push({
+                            nombre: parametro,
+                            resultado: resultados[i],
+                            limites: limitesa[i].split(',')
+                        });
+                        i++;
+                    });
+
+                    console.log(objetosResultado);
+
+                    let estudio = {
+                    idmodal: 'estudioenblanco',
+                    nombre: cajaNombreEstudio.value,
+                    resultados: objetosResultado,
+                    observaciones: '',
+                    costo: 0
+                    }
+                    agregarEstudio(estudio);
+                    cerrarEstudioEnBlanco();
+                    limpiarEstudioEnBlanco();
+                } else {
+                    Swal.fire({
+                        title: "El número de parámetros y límites no coincide",
+                        text: "Intente dar enter para igualar el número de parámetros con el de límites",
+                        type: "error",
+                        showCancelButton: false
+                    });
+                }
+            } else {
+                Swal.fire({
+                    title: "El número de parámetros y resultados no coincide",
+                    type: "error",
+                    showCancelButton: false
+                });
+            }
+        } else {
 			Swal.fire({
-                title: "¡Rellene los campos solicitados!",
+                title: "Rellene todos los campos solicitados",
                 type: "error",
                 showCancelButton: false
             });
-		} */
+		}
     }
 
     function cerrarEstudioEnBlanco() {
         $(`#estudioenblanco`).modal('toggle');
+        limpiarEstudioEnBlanco();
     }
 
     function limpiarEstudioEnBlanco() {
-        
+        cajaNombreEstudio.value = '';
+        cajaParametros.value = '';
+        cajaResultados.value = '';
+        cajaLimites.value = '';
     }
 
     $('#estudioenblanco').on('hidden.bs.modal', function(e) {
         limpiarEstudioEnBlanco();
+        console.log('je');
     });
 
     $('#estudioenblanco').on('show.bs.modal', function(e) {
         if (editando === true) {
             edicionEstudioEnBlanco(estudioEditar);
-
         }
     });
 
     function edicionEstudioEnBlanco(estudio) {
-        
+        cajaNombreEstudio.value = estudio.nombre;
+        estudio.resultados.forEach((resultado) => {
+            cajaParametros.value += `${resultado.nombre}\n`;
+            cajaResultados.value += `${resultado.resultado}\n`;
+            
+            resultado.limites.forEach((limite) => {
+                cajaLimites.value += `${limite}, `;
+            });
+            cajaLimites.value += '\n';
+        });
     }
 </script>

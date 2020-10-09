@@ -76,6 +76,7 @@
                                                     $estudios = new Controller();
                                                     $estudios -> ctlBuscaEstudios();
                                                 ?>
+                                                <option value="estudioenblanco">Estudio en blanco</option>
                                             </select>
                                         </div>
                                     </div>

@@ -25,7 +25,7 @@ function imprimirEstudio(editando) {
             ventana.document.close();
             ventana.onload = () => {
                 ventana.print();
-            }
+            };
             ventana.addEventListener("afterprint", () => {
                 ventana.close();
             });
@@ -182,7 +182,7 @@ function generarEstudios() {
             <tr>
                 <td>
                     <div style="display: flex; justify-content: initial; ">
-                        <span style="margin-left: 1em; width: 65%;">Resultados:</span>`
+                        <span style="margin-left: 1em; width: 65%;">Resultados:</span>`;
                         if (estudio.resultados.length > 0) {
                             resultado += (estudio.resultados[0].limites.length) > 0 ? ('<span style="margin-right: 1em;">Límites</span>') : ('');
                         }
