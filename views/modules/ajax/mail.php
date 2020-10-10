@@ -38,14 +38,11 @@ if (isset($_POST["emailCliente"])) {
 
     $subject = "Resultados de estudio para" . $_POST["nombreCliente"];
 
-    /* if (mail($recipient, $subject, $email_content, $headers)) {
+    if (mail($recipient, $subject, $email_content, $headers)) {
         echo "success";
     } else {
        echo "error";
-    }  */
-
-    print_r("hey");
-
+    } 
     // Get the form fields and remove whitespace.
     /* $name = strip_tags(trim($_POST["cliente"]));
     $doctor = trim($_POST["medico"]);
