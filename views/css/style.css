@@ -1,0 +1,118 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.card {
+    border-radius: 0px !important;
+}
+
+.list-group-item {
+    border-radius: 0px !important;
+    cursor: pointer;
+}
+
+.borde {
+    border: 1px solid red;
+}
+
+input {
+    border-radius: 0px !important;
+    border-color: rgba(2, 2, 2, 0.0) !important;
+    background-color: #EEEEEE !important;
+}
+
+textarea {
+    border-radius: 0px !important;
+    border-color: rgba(2, 2, 2, 0.0) !important;
+    background-color: #EEEEEE !important;
+}
+
+button {
+    border-radius: 0px !important;
+}
+
+select {
+    border-width: 0px !important;
+    border-radius: 0px !important;
+    background-color: #EEEEEE !important;
+}
+
+.img-profile {
+    width: 100%;
+}
+
+.full {
+    width: 90% !important;
+}
+
+.custom-modal {
+    border-color: rgba(255, 2, 2, 0.0) !important;
+    border-radius: 0px !important;
+}
+
+.hover {
+    border-radius: 0.5em !important;
+}
+
+.hover:hover {
+    background-color: #CCCCCC !important;
+}
+
+.lista {
+    overflow: auto;
+    max-height: 16em !important;
+}
+
+.bre {
+    display: block;
+    margin: 2.5em;
+    content: " ";
+}
+
+.order-card {
+    color: #fff;
+}
+
+.bg-c-blue {
+    background: linear-gradient(45deg, #4099ff, #73b4ff);
+}
+
+.bg-c-green {
+    background: linear-gradient(45deg, #2ed8b6, #59e0c5);
+}
+
+.bg-c-yellow {
+    background: linear-gradient(45deg, #FFB64D, #ffcb80);
+}
+
+.bg-c-pink {
+    background: linear-gradient(45deg, #FF5370, #ff869a);
+}
+
+.tarjeta {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+    box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+    border: none;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.tarjeta .card-block {
+    padding: 25px;
+}
+
+.order-card i {
+    font-size: 26px;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
