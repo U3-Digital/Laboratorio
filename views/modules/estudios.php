@@ -44,3 +44,5 @@ include "estudios/urocultivo.php";
 include "estudios/proteinaCReactiva.php";
 include "estudios/estudioBlanco.php";
 include "estudios/hemoglobinaGlicosilada.php";
+include "estudios/hiv.php";
+include "estudios/vdrl.php";
