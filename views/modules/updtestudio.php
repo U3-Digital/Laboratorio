@@ -4,7 +4,7 @@
 
     $jsona = preg_replace('/\n/', "\\n", $respuesta["resultados"]);
     
-    print_r("<script>//" . $jsona . "</script>\n");
+    // print_r("<script>//" . $jsona . "</script>\n");
     // print_r("<script>console.log('" . $respuesta["fecha"] . "');</script>");
     print_r("<script>let estudios = JSON.parse('" . $jsona . "'); const fechaOriginal = new Date('" . $respuesta["fecha"] . "');</script>");
 

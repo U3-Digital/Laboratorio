@@ -91,6 +91,8 @@
         observaciones: '',
         costo: Number.parseFloat(cajaPrecio.value)
       }
+
+      console.log(cajaLimites.value);
       agregarEstudio(estudio);
       cerrarEstudioEnBlanco();
       limpiarEstudioEnBlanco();

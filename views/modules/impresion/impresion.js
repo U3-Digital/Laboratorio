@@ -1,58 +1,65 @@
 function imprimirEstudio(editando) {
-    if (editando === true) {
-        if (estudios.length > 0 && cajaNombre.value && cajaNombreDoctor.value) {
-            const ventana = window.open('', 'impresion', `width=${window.innerWidth - 50}, height=${window.innerHeight - 10}`);
-            ventana.document.write(generarDocumento(editando));
-            ventana.document.close();
-            ventana.onload = function() {
-                ventana.print();
-            };
-            ventana.addEventListener("afterprint", () => {
-                ventana.close();
-                CapturarEstudios();
-            });
-        } else {
-            Swal.fire({
-                title: "¡Rellene por completo el formulario!",
-                type: "warning",
-                showCancelButton: false
-            });
-        }
+  if (editando === true) {
+    if (estudios.length > 0 && cajaNombre.value && cajaNombreDoctor.value) {
+      const ventana = window.open('', 'impresion', `width=${window.innerWidth - 50}, height=${window.innerHeight - 10}`);
+      ventana.document.write(generarDocumento(editando));
+      ventana.document.close();
+      ventana.onreadystatechange = () => {
+        console.log('hola');
+      }
+      ventana.onload = function () {
+        setTimeout(() => {
+          ventana.print();
+        }, 300);
+      };
+      ventana.addEventListener("afterprint", () => {
+        ventana.close();
+        CapturarEstudios();
+      });
     } else {
-        if (estudios.length > 0 && cajaNombreCliente.value && cajaNombresDoctor.value && cajaApellidosDoctor.value) {
-
-            const ventana = window.open("", 'impresion', `width=${window.innerWidth - 50}, height=${window.innerHeight - 10}`);
-            ventana.document.write(generarDocumento(editando));
-            ventana.document.close();
-            ventana.onload = () => {
-                ventana.print();
-            };
-            ventana.addEventListener("afterprint", () => {
-                ventana.close();
-                CapturarEstudios();
-            });
-        } else {
-            Swal.fire({
-                title: "¡Rellene por completo el formulario!",
-                type: "warning",
-                showCancelButton: false
-            });
-        }
+      Swal.fire({
+        title: "¡Rellene por completo el formulario!",
+        type: "warning",
+        showCancelButton: false
+      });
     }
+  } else {
+    if (estudios.length > 0 && cajaNombreCliente.value && cajaNombresDoctor.value && cajaApellidosDoctor.value) {
+
+      const ventana = window.open("", 'impresion', `width=${window.innerWidth - 50}, height=${window.innerHeight - 10}`);
+      ventana.document.write(generarDocumento(editando));
+      ventana.document.close();
+      ventana.onload = () => {
+        setTimeout(() => {
+          ventana.print();
+        }, 300);
+      };
+      ventana.addEventListener("afterprint", () => {
+        ventana.close();
+        CapturarEstudios();
+      });
+    } else {
+      Swal.fire({
+        title: "¡Rellene por completo el formulario!",
+        type: "warning",
+        showCancelButton: false
+      });
+    }
+  }
 }
 
 function generarDocumento(editando) {
 
-    let documento = '';
+  let documento = '';
 
-    documento = documento + generarEstilo();
-    documento += generarCuerpo(editando);
+  documento = documento + generarEstilo();
+  documento += generarCuerpo(editando);
 
-    return documento;
+  return documento;
 }
 
 function generarEstilo() {
-    return `
+  return `
     <style>
         * {
             font-family: 'Arial', sans-serif;
@@ -76,8 +83,8 @@ function generarEstilo() {
 
 function generarCuerpo(editando) {
 
-    if (editando === true) {
-        return `
+  if (editando === true) {
+    return `
         <body>
             <div>
                 <table>
@@ -118,8 +125,8 @@ function generarCuerpo(editando) {
             </div>    
         </body>
         `;
-    } else {
-        return `
+  } else {
+    return `
         <body>
             <div>
                 <table>
@@ -160,17 +167,17 @@ function generarCuerpo(editando) {
             </div>
         </body>
         `;
-    }
+  }
 
 
 }
 
 function generarEstudios() {
-    let resultado = ``;
-    estudios.forEach(estudio => {
+  let resultado = ``;
+  estudios.forEach(estudio => {
 
-        if (estudio.idmodal === 'estudioenblanco') {
-            resultado +=`
+    if (estudio.idmodal === 'estudioenblanco') {
+      resultado += `
             <tr>
                 <td>
                     <div class="borde">
@@ -179,7 +186,7 @@ function generarEstudios() {
                     </div>
                 </td>
             </tr>`;
-            resultado += `
+      resultado += `
             <tr>
                 <td>
                     <div style="display: flex; justify-content: initial;">
@@ -189,8 +196,7 @@ function generarEstudios() {
                 </td>
             </tr>
             `;
-
-            resultado += `
+      resultado += `
             <tr>
                 <td>
                     <div style="display: flex; justify-content: initial;">
@@ -202,8 +208,8 @@ function generarEstudios() {
             </tr>
             `;
 
-        } else {
-            resultado += `
+    } else {
+      resultado += `
             <tr>
                 <td>
                     <div class="borde">
@@ -212,22 +218,22 @@ function generarEstudios() {
                     </div>
                 </td>
             </tr>`;
-            resultado += `
+      resultado += `
             <tr>
                 <td>
                     <div style="display: flex; justify-content: initial;">
                         <span style="margin-left: 1em; width: 65%;">Resultados:</span>`;
-                        if (estudio.resultados.length > 0) {
-                            resultado += (estudio.resultados[0].limites.length) > 0 ? ('<span style="margin-right: 1em;">Límites</span>') : ('');
-                        }
-            resultado += ` </div>
+      if (estudio.resultados.length > 0) {
+        resultado += (estudio.resultados[0].limites.length) > 0 ? ('<span style="margin-right: 1em;">Límites</span>') : ('');
+      }
+      resultado += ` </div>
                 </td>
             </tr>`;
-        
-                // ${r.resultado}
-            estudio.resultados.forEach(r => {
-                if (r.resultado) {
-                    resultado += `
+
+      // ${r.resultado}
+      estudio.resultados.forEach(r => {
+        if (r.resultado) {
+          resultado += `
                     <tr>
                         <td>
                             <div style="display: flex; justify-content: initial; ">
@@ -237,11 +243,11 @@ function generarEstudios() {
                             </div>
                         </td>
                     </tr>`;
-                }
-            });
+        }
+      });
 
-            if (estudio.observaciones) {
-                resultado += `
+      if (estudio.observaciones) {
+        resultado += `
                 <tr>
                     <td>
                         <div style="display: flex; justify-content: space-between; ">
@@ -249,44 +255,44 @@ function generarEstudios() {
                         </div>
                     </td>
                 </tr>`;
-            }
-        }
+      }
+    }
 
-        
-    });
 
-    return resultado;
+  });
+
+  return resultado;
 }
 
 function imprimirLimites(limites) {
-    let cadenaLimites = '<div style="margin-right: 1em;">';
+  let cadenaLimites = '<div style="margin-right: 1em;">';
 
-    limites.forEach(limite => {
-        cadenaLimites += `
+  limites.forEach(limite => {
+    cadenaLimites += `
         <span style="margin-right: 1em;">${limite}</span><br>
         `;
-    });
+  });
 
-    cadenaLimites += '</div>';
+  cadenaLimites += '</div>';
 
-    return cadenaLimites;
+  return cadenaLimites;
 }
 
 function fecha(editando) {
 
-    if (editando === true) {
-        const date = new Date();
-        const year = new Intl.DateTimeFormat('es', { year: 'numeric' }).format(fechaOriginal);
-        const month = new Intl.DateTimeFormat('es', { month: 'long' }).format(fechaOriginal);
-        const day = new Intl.DateTimeFormat('es', { day: '2-digit' }).format(fechaOriginal);
-        return `${day} de ${month} del ${year}`;
-    } else {
-        const date = new Date();
-        const year = new Intl.DateTimeFormat('es', { year: 'numeric' }).format(date);
-        const month = new Intl.DateTimeFormat('es', { month: 'long' }).format(date);
-        const day = new Intl.DateTimeFormat('es', { day: '2-digit' }).format(date);
-        return `${day} de ${month} del ${year}`;
-    }
+  if (editando === true) {
+    const date = new Date();
+    const year = new Intl.DateTimeFormat('es', { year: 'numeric' }).format(fechaOriginal);
+    const month = new Intl.DateTimeFormat('es', { month: 'long' }).format(fechaOriginal);
+    const day = new Intl.DateTimeFormat('es', { day: '2-digit' }).format(fechaOriginal);
+    return `${day} de ${month} del ${year}`;
+  } else {
+    const date = new Date();
+    const year = new Intl.DateTimeFormat('es', { year: 'numeric' }).format(date);
+    const month = new Intl.DateTimeFormat('es', { month: 'long' }).format(date);
+    const day = new Intl.DateTimeFormat('es', { day: '2-digit' }).format(date);
+    return `${day} de ${month} del ${year}`;
+  }
 
 
 }
