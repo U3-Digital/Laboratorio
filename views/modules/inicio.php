@@ -20,6 +20,7 @@ require "../../models/crud.php";
 	
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="CMStudio" />
+  <meta charset="UTF-8"/>
 	<!-- <link rel="shortcut icon" href="favicon.ico" /> -->
 
 	<!-- Stylesheets

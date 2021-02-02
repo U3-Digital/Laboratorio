@@ -2,7 +2,7 @@
 	$estudio = $_REQUEST['idEditar'];
     $respuesta = Datos::mdlEstudio($estudio,"estudios");
 
-    $jsona = preg_replace('/\n/', "\\n", $respuesta["resultados"]);
+    $jsona = str_replace("\\n", '\\\n', $respuesta["resultados"]);
     
     // print_r("<script>//" . $jsona . "</script>\n");
     // print_r("<script>console.log('" . $respuesta["fecha"] . "');</script>");
@@ -291,7 +291,8 @@
 
 
         //console.log(estudios);
-        const parsedEstudios = JSON.stringify(estudios);
+        let parsedEstudios = JSON.stringify(estudios);
+
         if(!cajaNombreCliente.value || !cajaEmail.value || !cajaNombreDoctor.value || estudios.length == 0){
             Swal.fire({
                 title: "¡Rellene por completo el formulario!",

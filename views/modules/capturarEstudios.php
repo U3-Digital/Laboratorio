@@ -331,7 +331,7 @@
 
     function CapturarEstudios(){
 
-        const parsedEstudios = JSON.stringify(estudios);
+        const parsedEstudios = JSON.stringify(estudios).replace(/\n/g, '\\n');
         const fechaHoy = new Date(Date.now());
         const formated_Date = fechaHoy.getFullYear()+"-"+(fechaHoy.getMonth()+1)+"-"+fechaHoy.getDate();
 

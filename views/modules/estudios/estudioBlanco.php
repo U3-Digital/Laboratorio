@@ -84,15 +84,15 @@
         idmodal: 'estudioenblanco',
         nombre: cajaNombreEstudio.value,
         resultados: {
-          parametros: cajaParametros.value.replace(/\n/g, "\\n"),
-          resultados: cajaResultados.value.replace(/\n/g, "\\n"),
-          limites: cajaLimites.value.replace(/\n/g, "\\n")
+          parametros: cajaParametros.value,
+          resultados: cajaResultados.value,
+          limites: cajaLimites.value
         },
         observaciones: '',
         costo: Number.parseFloat(cajaPrecio.value)
       }
 
-      console.log(cajaLimites.value);
+      console.log(cajaParametros.value, cajaResultados.value, cajaLimites.value);
       agregarEstudio(estudio);
       cerrarEstudioEnBlanco();
       limpiarEstudioEnBlanco();
