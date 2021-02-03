@@ -294,12 +294,10 @@
             datos.append("responsable", echo("'".$_SESSION["nombre"]."'") );
             datos.append("resultado", parsedEstudios);*/
             
-            datos.append("nombreCliente", cajaNombreCliente.value);
-            datos.append("apellidosCliente", cajaApellidos.value);
+            datos.append("nombreCliente", cajaNombreCliente.value + ' ' + cajaApellidos.value);
             datos.append("emailCliente", cajaEmailCliente.value);
             datos.append("emailCopia", cajaEmailCopia.value); 
             datos.append("cuerpoCorreo", cuerpoCorreo);
-
             $.ajax({
                 url: './ajax/mail.php',
                 type: "POST",

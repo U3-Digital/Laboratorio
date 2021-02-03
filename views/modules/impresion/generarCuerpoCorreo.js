@@ -71,20 +71,31 @@ function generarEstudiosCorreo() {
             </tr>
             `;
 
-            resultado += `
-            <tr>
-                <td>
-                    <div style="width: 70mm; display: inline;">
-                        <pre>${estudio.resultados.parametros}:</pre>
-                    </div>
-                    <div style="width: 60mm; display: inline;">
-                        <pre>${estudio.resultados.resultados}</pre>
-                    </div>
-                    <div style="width: 60mm; display: inline;">
-                        <pre style="margin-right: 5mm;">${estudio.resultados.limites}</pre>
-                    </div>
-                </td>
-            </tr>`
+            const parametrosEstudios = estudio.resultados.parametros.replace(/\n/g, '/n').split('/n');
+            const resultadosEstudios = estudio.resultados.resultados.replace(/\n/g, '/n').split('/n');
+            const limitesEstudios = estudio.resultados.limites.replace(/\n/g, '/n').split('/n');
+            
+
+            const mayorLongitud = Math.max(parametrosEstudios.length, resultadosEstudios.length, limitesEstudios.length);
+
+            let cosa = '';
+
+            for (let i = 0; i < mayorLongitud; i++) {
+
+              cosa += 
+              `
+                <tr>
+                  <td>
+                    <div style="width: 60mm; display: inline;">${parametrosEstudios[i] ? parametrosEstudios[i] : '&nbsp;'}</div>
+                    <div style="width: 60mm; display: inline;">${resultadosEstudios[i] ? resultadosEstudios[i] : '&nbsp;'}</div>
+                    <div style="width: 70mm; display: inline;">${limitesEstudios[i] ? limitesEstudios[i] : '&nbsp;'}</div>
+                  </td>
+                </tr>
+              `;
+            }
+
+            resultado += cosa;
+
         } else {
             resultado += `
             <tr>

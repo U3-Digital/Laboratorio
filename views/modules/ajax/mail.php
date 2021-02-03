@@ -17,7 +17,6 @@ require('../../../models/crud.php');
 
 // Only process POST reqeusts.
 if (isset($_POST["emailCliente"])) {
-
     $cuerpoCorreo = $_POST["cuerpoCorreo"];
 
     $html2pdf = new Html2Pdf('P', 'A4', 'en');
@@ -36,7 +35,7 @@ if (isset($_POST["emailCliente"])) {
     $recipient = $_POST["emailCliente"];
     $emailCopia = $_POST["emailCopia"];
 
-    $subject = "Resultados de estudio para " . $_POST["nombreCliente"] . " " . $_POST["apellidosCliente"];
+    $subject = "Resultados de estudio para " . $_POST["nombreCliente"];
 
     $mail = new PHPMailer();
     $mail -> setFrom('info@OGALaboratorio.com', 'OGA Laboratorio');
@@ -50,10 +49,10 @@ if (isset($_POST["emailCliente"])) {
     $mail -> addAttachment(__DIR__ . "correo.pdf", 'resultados.pdf');
 
     
-    $mail -> Body = 'Le hacemos llegar los resultados de los estudios clínicos para ' . $_POST["nombreCliente"] . " " . $_POST["apellidosCliente"] . ", quedamos a sus órdenes para las dudas o aclaraciones necesarias. <br> Atte.
+    $mail -> Body = 'Le hacemos llegar los resultados de los estudios clínicos para ' . $_POST["nombreCliente"] . ", quedamos a sus órdenes para las dudas o aclaraciones necesarias. <br> Atte.
     Laboratorio OGA. Tel. 625-589-1680. <br> <small>Este es un mensaje automático. Favor de no responder a este correo.</small>";
 
-    $mail -> AltBody = 'Le hacemos llegar los resultados de los estudios clínicos para ' . $_POST["nombreCliente"] . " " . $_POST["apellidosCliente"] . ", quedamos a sus órdenes para las dudas o aclaraciones necesarias. Atte.
+    $mail -> AltBody = 'Le hacemos llegar los resultados de los estudios clínicos para ' . $_POST["nombreCliente"] . ", quedamos a sus órdenes para las dudas o aclaraciones necesarias. Atte.
     Laboratorio OGA. Tel. 625-589-1680. Este es un mensaje automático. Favor de no responder a este correo.";
 
 

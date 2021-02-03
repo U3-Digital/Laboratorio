@@ -245,22 +245,23 @@
             }).then((value) => {
                 
             });    
-        }else{
+        } else {
+
+            const cuerpoCorreo = generarCorreo(true);
+            const datos = new FormData();
+
+            datos.append("nombreCliente",cajaNombreCliente.value);
+            datos.append("cuerpoCorreo", cuerpoCorreo);
+            datos.append("emailCliente", cajaEmail.value);
+            datos.append("emailCopia", cajaEmailCopia.value);
+
+
             $.ajax({
                 url: './ajax/mail.php',
                 type: "POST",
-                data: function(){
-                    let valores = new FormData();
-                    valores.append("cliente",cajaNombreCliente.value);
-                    valores.append("medico",cajaNombreDoctor.value);
-                    valores.append("costo", total);
-                    valores.append("fecha",formated_Date);
-                    valores.append("resultado", parsedEstudios);
-                    valores.append("emailCliente", cajaEmail.value);
-                    valores.append("emailCopia",cajaEmailCopia.value);
-                    return valores;
-                }(),
+                data: datos,
                 success: function(data) {
+                  console.log(data);
                         Swal.fire({
                             title: "Datos Enviados!",
                             type: "success",
