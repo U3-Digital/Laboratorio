@@ -118,11 +118,19 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-12 text-center">
-                                        <button class="btn btn-secondary" onclick="limpiarFormulario()" id="botonLimiparFormulario" >
+                                    <div class="col-4">
+                                        <button class="btn btn-secondary btn-block" onclick="limpiarFormulario()" id="botonLimiparFormulario">
                                             <i class="fas fa-redo-alt"></i>
-                                            Limpiar Formulario</button>
-                                        <button class="btn btn-primary" onclick="botonPresionado()" id="botonAgregarEstudio">Agregar estudio</button>
+                                            Limpiar formulario
+                                        </button>
+                                    </div>
+                                    <div class="col-4">
+                                      <button class="btn btn-primary btn-block" onclick="botonPresionado()" id="botonAgregarEstudio">
+                                          Agregar estudio
+                                      </button>
+                                    </div>
+                                    <div class="col-4">
+                                      <input type="date" name="cajaFecha" id="cajaFecha" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -167,21 +175,20 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <button type="button" onclick="imprimirEstudio(false)" class="btn btn-secondary btn-block btn-lg">
+                                        <button type="button" onclick="imprimirEstudio(false, cajaFecha.value)" class="btn btn-secondary btn-block btn-lg">
                                             <i class="fas fa-print" style="margin-right: 0.5em;"></i>
                                             Imprimir estudio
                                         </button>
                                     </div>
                                 </div>
                                 <div class="row mt-1">
-                                <div class="col-md-4">
+                                    <div class="col-md-4 mt-1">
                                         <button type="button" onclick="enviarEstudio()" class="btn btn-secondary btn-block btn-lg">
-                                            <i class="fas fa-envelope" ></i>
-                                            
+                                            <i class="fas fa-envelope" ></i>  
                                         </button>
                                     </div>
 
-                                    <div class="col-md-8">
+                                    <div class="col-md-8 mt-1">
                                         <button type="button" onclick="CapturarEstudios()" class="btn btn-secondary btn-block btn-lg">
                                             Guardar
                                         </button>
@@ -330,8 +337,19 @@
     function CapturarEstudios(){
 
         const parsedEstudios = JSON.stringify(estudios).replace(/\n/g, '\\n');
-        const fechaHoy = new Date(Date.now());
-        const formated_Date = fechaHoy.getFullYear()+"-"+(fechaHoy.getMonth()+1)+"-"+fechaHoy.getDate();
+
+        let fechaHoy;
+        let formattedDate;
+
+        if (cajaFecha.value) {
+          formattedDate = cajaFecha.value;
+        } else {
+          fechaHoy = new Date(Date.now());
+          formattedDate = `${fechaHoy.getFullYear()}-${fechaHoy.getMonth() + 1}-${fechaHoy.getDate()}`;
+        }
+
+        // const fechaHoy = new Date(Date.now());
+        // const formated_Date = fechaHoy.getFullYear()+"-"+(fechaHoy.getMonth()+1)+"-"+fechaHoy.getDate();
 
         if(cajaNombreCliente.value === ""  || cajaEmailCliente.value ==="" || cajaNombresDoctor.value ==="" || cajaApellidosDoctor.value === "" || estudios.length === 0){
             Swal.fire({
@@ -350,7 +368,7 @@
                     valores.append("cliente",cajaNombreCliente.value+" "+cajaApellidosCliente.value);
                     valores.append("medico",cajaNombresDoctor.value+" "+cajaApellidosDoctor.value);
                     valores.append("emailCliente",cajaEmailCliente.value);
-                    valores.append("fecha", formated_Date);
+                    valores.append("fecha", formattedDate);
                     valores.append("costo", total);
                     valores.append("responsable",<?php echo("'".$_SESSION["nombre"]."'") ?>);
                     valores.append("resultado", parsedEstudios);

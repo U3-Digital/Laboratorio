@@ -20,13 +20,13 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="cajaResultadoTiempoProtombina">Tiempo de protombina (TP):</label>
-                                            <input class="form-control" type="text" name="cajaResultadoTiempoProtombina" id="cajaResultadoTiempoProtombina" onkeyup="calcular(event.target.value, tiempoProtrombinaControl)">
+                                            <input class="form-control" type="text" name="cajaResultadoTiempoProtombina" id="cajaResultadoTiempoProtombina" onkeyup="calcular()">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="cajaTiempoProtrombinaControl">Tiempo de protrombina (Control):</label>
-                                            <input class="form-control" type="text" name="cajaTiempoProtrombinaControl" id="cajaTiempoProtrombinaControl" value="11.8">
+                                            <input class="form-control" type="text" name="cajaTiempoProtrombinaControl" id="cajaTiempoProtrombinaControl" onkeyup="calcular()">
                                         </div>
                                     </div>
                                 </div>
@@ -99,20 +99,18 @@
 <script>
 
     let tiempoProtrombina = '0';
-    let tiempoProtrombinaControl = cajaTiempoProtrombinaControl.value;
+    let tiempoProtrombinaControl = '0';
 
-    function calcular(tp, tpc) {
-        if (tp && tpc) {
-            if(!isNaN(tp) && !isNaN(tpc)) {
-                if (tp > 0) {
-                    cajaResultadoActividad.value = Number.parseFloat(tpc / tp).toFixed(3);
-                    tiempoProtrombina = tp;
-                    tiempoProtrombinaControl = tpc;
+    function calcular() {
+      tiempoProtrombina = cajaResultadoTiempoProtombina.value;
+      tiempoProtrombinaControl = cajaTiempoProtrombinaControl.value;
+      if (tiempoProtrombina && tiempoProtrombinaControl) {
+            if(!isNaN(tiempoProtrombina) && !isNaN(tiempoProtrombinaControl)) {
+                if (tiempoProtrombina > 0) {
+                    cajaResultadoActividad.value = (Number.parseFloat(tiempoProtrombinaControl / tiempoProtrombina).toFixed(3) * 100);
                 }
-                if (tpc > 0) {
-                    cajaResultadoINR.value = Number.parseFloat(tp / tpc).toFixed(3);
-                    tiempoProtrombina = tp;
-                    tiempoProtrombinaControl = tpc;
+                if (tiempoProtrombinaControl > 0) {
+                    cajaResultadoINR.value = Number.parseFloat(tiempoProtrombina / tiempoProtrombinaControl).toFixed(3);
                 }
             }
         }

@@ -1,4 +1,6 @@
-function imprimirEstudio(editando) {
+let fechaDistinta;
+function imprimirEstudio(editando, fecha) {
+  fechaDistinta = fecha;
   if (editando === true) {
     if (estudios.length > 0 && cajaNombre.value && cajaNombreDoctor.value) {
       const ventana = window.open('', 'impresion', `width=${window.innerWidth - 50}, height=${window.innerHeight - 10}`);
@@ -236,7 +238,7 @@ function generarEstudios() {
           resultado += `
                     <tr>
                         <td>
-                            <div style="display: flex; justify-content: initial; ">
+                            <div style="display: flex; justify-content: initial; margin-bottom: 1em;">
                                 <span style="margin-left: 1em; width: 35%;">${r.nombre}:</span>
                                 <span style="margin-left: 1em; width: 30%;">${r.resultado}</span>
                                 ${r.limites.length > 0 ? (imprimirLimites(r.limites)) : ('')}
@@ -279,20 +281,23 @@ function imprimirLimites(limites) {
 }
 
 function fecha(editando) {
-
-  if (editando === true) {
-    const date = new Date();
-    const year = new Intl.DateTimeFormat('es', { year: 'numeric' }).format(fechaOriginal);
-    const month = new Intl.DateTimeFormat('es', { month: 'long' }).format(fechaOriginal);
-    const day = new Intl.DateTimeFormat('es', { day: '2-digit' }).format(fechaOriginal);
-    return `${day} de ${month} del ${year}`;
+  if (fechaDistinta) {
+    const date = new Date(fechaDistinta);
+    date.setTime(date.getTime() + date.getTimezoneOffset() * 60 * 1000);
+    
+    return `${date.getDate < 10 ? '0' : ''}${date.getDate()} de ${date.toLocaleDateString('default', { month: 'long' })} del ${date.getFullYear()}`;
   } else {
-    const date = new Date();
-    const year = new Intl.DateTimeFormat('es', { year: 'numeric' }).format(date);
-    const month = new Intl.DateTimeFormat('es', { month: 'long' }).format(date);
-    const day = new Intl.DateTimeFormat('es', { day: '2-digit' }).format(date);
-    return `${day} de ${month} del ${year}`;
+    if (editando === true) {
+      const year = new Intl.DateTimeFormat('es', { year: 'numeric' }).format(fechaOriginal);
+      const month = new Intl.DateTimeFormat('es', { month: 'long' }).format(fechaOriginal);
+      const day = new Intl.DateTimeFormat('es', { day: '2-digit' }).format(fechaOriginal);
+      return `${day} de ${month} del ${year}`;
+    } else {
+      const date = new Date();
+      const year = new Intl.DateTimeFormat('es', { year: 'numeric' }).format(date);
+      const month = new Intl.DateTimeFormat('es', { month: 'long' }).format(date);
+      const day = new Intl.DateTimeFormat('es', { day: '2-digit' }).format(date);
+      return `${day} de ${month} del ${year}`;
+    }
   }
-
-
 }

@@ -235,7 +235,7 @@
                 {
 					nombre: 'Fosfatasa alcalina',
 					resultado: cajaResultadoFosfatasaAlcalina.value,
-					limites: ['Hasta 1.5 mg/dl']
+					limites: ['Hasta 180']
                 },
                 {
 					nombre: 'LDH',
