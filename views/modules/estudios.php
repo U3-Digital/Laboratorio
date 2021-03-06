@@ -46,3 +46,5 @@ include "estudios/estudioBlanco.php";
 include "estudios/hemoglobinaGlicosilada.php";
 include "estudios/hiv.php";
 include "estudios/vdrl.php";
+include "estudios/covid19.php";
+include "estudios/factorReumatoide.php";

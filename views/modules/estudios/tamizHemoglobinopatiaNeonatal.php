@@ -65,8 +65,8 @@
                                                     Fenotipo de hemoglobina
                                                 </div>
                                                 <div class="col-md-2"></div>
-                                                <div class="col-md-2">
-                                                    <input class="form-control" required type="text" name="cajaResultadoFenotipoHemoglobina" id="cajaResultadoFenotipoHemoglobina" value="HbFA">
+                                                <div class="col-md-2 text-center">
+                                                  HbFA
                                                 </div>
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-2 text-center">
@@ -125,6 +125,9 @@
                                                             <td style="text-align: center; padding: 5px 10px;">Hemoglobinopatia SC</td>
                                                         </tr>
                                                     </table>
+                                                </div>
+                                                <div class="col-md-2">
+                                                  <input class="form-control" required type="text" name="cajaResultadoFenotipoHemoglobina" id="cajaResultadoFenotipoHemoglobina" value="HbFA">
                                                 </div>
                                             </div>
                                             <hr style="background-color: #BBBBBB">

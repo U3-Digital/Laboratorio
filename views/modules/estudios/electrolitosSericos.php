@@ -60,6 +60,54 @@ $respuesta = $controller->ctlBuscarEstudio("Electrolitos sericos");
             <p>98 - 107 mmol/L</p>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="cajaResultadoCalcioElectrolitos">Calcio:</label>
+              <input type="text" name="cajaResultadoCalcioElectrolitos" id="cajaResultadoCalcioElectrolitos" class="form-control">
+            </div>
+          </div>
+          <div class="col-md-3 align-self-center">
+            <br>
+            <p>mg/dl</p>
+          </div>
+          <div class="col-md-3 align-self-center">
+            <br>
+            <p>8.4 - 10.2 mg/dL</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="cajaResultadoFosforoElectrolitos">Fosforo:</label>
+              <input type="text" name="cajaResultadoFosforoElectrolitos" id="cajaResultadoFosforoElectrolitos" class="form-control">
+            </div>
+          </div>
+          <div class="col-md-3 align-self-center">
+            <br>
+            <p>meq/L</p>
+          </div>
+          <div class="col-md-3 align-self-center">
+            <br>
+            <p>2.5 - 4.8 meq/L</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="cajaResultadoMagnesioElectrolitos">Magnesio:</label>
+              <input type="text" name="cajaResultadoMagnesioElectrolitos" id="cajaResultadoMagnesioElectrolitos" class="form-control">
+            </div>
+          </div>
+          <div class="col-md-3 align-self-center">
+            <br>
+            <p>meq/L</p>
+          </div>
+          <div class="col-md-3 align-self-center">
+            <br>
+            <p>1.6 - 2.6 meq/L</p>
+          </div>
+        </div>
       </div>
       <div class="modal-footer custom-modal">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -90,6 +138,21 @@ $respuesta = $controller->ctlBuscarEstudio("Electrolitos sericos");
           nombre: 'Cloruros',
           resultado: cajaResultadoClorurosElectrolitos.value,
           limites: ['98 - 107 mmol/L']
+        },
+        {
+          nombre: 'Calcio',
+          resultado: cajaResultadoCalcioElectrolitos.value,
+          limites: ['8.4 - 10.2 mg/dL']
+        },
+        {
+          nombre: 'Fosforo',
+          resultado: cajaResultadoFosforoElectrolitos.value,
+          limites: ['2.5 - 4.8 meq/L']
+        },
+        {
+          nombre: 'Magnesio',
+          resultado: cajaResultadoMagnesioElectrolitos.value,
+          limites: ['1.6 - 2.6 meq/L']
         }
       ],
       observaciones: '',
@@ -117,9 +180,12 @@ $respuesta = $controller->ctlBuscarEstudio("Electrolitos sericos");
   }
 
   function limpiarElectrolitosSericos() {
-    cajaResultadoSodioElectrolitos.value = "";
-    cajaResultadoPotasioElectrolitos.value = "";
-    cajaResultadoClorurosElectrolitos.value = "";
+    cajaResultadoSodioElectrolitos.value = '';
+    cajaResultadoPotasioElectrolitos.value = '';
+    cajaResultadoClorurosElectrolitos.value = '';
+    cajaResultadoCalcioElectrolitos.value = '';
+    cajaResultadoFosforoElectrolitos.value = '';
+    cajaResultadoMagnesioElectrolitos.value = '';
   }
 
   $('#electrolitossericos').on('hidden.bs.modal', function(e) {
@@ -137,6 +203,8 @@ $respuesta = $controller->ctlBuscarEstudio("Electrolitos sericos");
     cajaResultadoSodioElectrolitos.value = estudio.resultados[0].resultado;
     cajaResultadoPotasioElectrolitos.value = estudio.resultados[1].resultado;
     cajaResultadoClorurosElectrolitos.value = estudio.resultados[2].resultado;
-
+    cajaResultadoCalcioElectrolitos.value = estudio.resultados[3].resultado;
+    cajaResultadoFosforoElectrolitos.value = estudio.resultados[4].resultado;
+    cajaResultadoMagnesioElectrolitos.value = estudio.resultados[5].resultado;
   }
 </script>

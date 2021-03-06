@@ -1,460 +1,510 @@
 <?php
-	$controller = new Controller();
-	$respuesta = $controller -> ctlBuscarEstudio("Cultivo faringeo");
+$controller = new Controller();
+$respuesta = $controller->ctlBuscarEstudio("Cultivo faringeo");
 ?>
 <div class="modal fade" id="cultivofaringeo" tabindex="-1" role="dialog" aria-labelledby="cultivofaringeo" aria-hidden="true">
-	<div class="modal-dialog modal-xl custom-modal  modal-dialog-scrollable">
-	    <div class="modal-content custom-modal">
-		    <div class="modal-header custom-modal">
-		        <h5 class="modal-title" id="modal">Cultivo faríngeo</h5>
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          	<span aria-hidden="true">&times;</span>
-		        </button>
-		    </div>
-		    <div class="modal-body">
-		        <div class="row text-center">
-                    <div class="col-md-8 mx-auto">
-                        <form id="radios">
-                            <div class="list-group">
-                                <div class="list-group-item list-group-item-action disabled">
-                                    <div class="row">
-                                        <div class="col-6 align-self-center">
-                                            Antibiótico
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            Sensible
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            Resistente
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-group-item list-group-item-action">
-                                    <div class="row">
-                                        <div class="col-6 align-self-center">
-                                            (AM) Ampicilina
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioAmpicilinaSensible" name="ampicilina" value="Sensible" checked>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioAmpicilinaResistente" name="ampicilina" value="Resistente">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-group-item list-group-item-action">
-                                    <div class="row">
-                                        <div class="col-6 align-self-center">
-                                            (CF) Cefalotina
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioCefalotinaSensible" name="cefalotina" value="Sensible" checked>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioCefalotinaResistente" name="cefalotina" value="Resistente">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-group-item list-group-item-action">
-                                    <div class="row">
-                                        <div class="col-6 align-self-center">
-                                            (CTX) Cefotaxima
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioCefotaximaSensible" name="cefotaxima" value="Sensible" checked>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioCefotaximaResistente" name="cefotaxima" value="Resistente">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-group-item list-group-item-action">
-                                    <div class="row">
-                                        <div class="col-6 align-self-center">
-                                            (CAZ) Ceftazidima
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioCeftazidimaSensible" name="ceftazidima" value="Sensible" checked>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioCeftazidimaResistente" name="ceftazidima" value="Resistente">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-group-item list-group-item-action">
-                                    <div class="row">
-                                        <div class="col-6 align-self-center">
-                                            (CXM) Cefuroxima
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioCefuroximaSensible" name="cefuroxima" value="Sensible" checked>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioCefuroximaResistente" name="cefuroxima" value="Resistente">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-group-item list-group-item-action">
-                                    <div class="row">
-                                        <div class="col-6 align-self-center">
-                                            (DC) Dicloxacilina
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioDicloxacilinaSensible" name="dicloxacilina" value="Sensible" checked>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioDicloxacilinaResistente" name="dicloxacilina" value="Resistente">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-group-item list-group-item-action">
-                                    <div class="row">
-                                        <div class="col-6 align-self-center">
-                                            (E) Eritromicina
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioEritromicinaSensible" name="eritromicina" value="Sensible" checked>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioEritromicinaResistente" name="eritromicina" value="Resistente">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-group-item list-group-item-action">
-                                    <div class="row">
-                                        <div class="col-6 align-self-center">
-                                            (GE) Gentamicina
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioGentamicinaSensible" name="gentamicina" value="Sensible" checked>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioGentamicinaResistente" name="gentamicina" value="Resistente">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-group-item list-group-item-action">
-                                    <div class="row">
-                                        <div class="col-6 align-self-center">
-                                            (PEF) Pefloxacina
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioPefloxacinaSensible" name="pefloxacina" value="Sensible" checked>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioPefloxacinaResistente" name="pefloxacina" value="Resistente">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-group-item list-group-item-action">
-                                    <div class="row">
-                                        <div class="col-6 align-self-center">
-                                            (PE) Penicilina
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioPenicilinaSensible" name="penicilina" value="Sensible" checked>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioPenicilinaResistente" name="penicilina" value="Resistente">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-group-item list-group-item-action">
-                                    <div class="row">
-                                        <div class="col-6 align-self-center">
-                                            (TE) Tetraciclina
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioTetraciclinaSensible" name="tetraciclina" value="Sensible" checked>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioTetraciclinaResistente" name="tetraciclina" value="Resistente">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>         
-                                <div class="list-group-item list-group-item-action">
-                                    <div class="row">
-                                        <div class="col-6 align-self-center">
-                                            (SXT) Trimetroprima sulfametoxazol
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioTrimetroprimaSulfametoxazolSensible" name="trimetroprimasulfametoxazol" value="Sensible" checked>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 align-self-center">
-                                            <div class="form-check">
-                                            <input class="form-check-input position-static" type="radio" id="radioTrimetroprimaSulfametoxazolResistente" name="trimetroprimasulfametoxazol" value="Resistente">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+  <div class="modal-dialog modal-xl custom-modal  modal-dialog-scrollable">
+    <div class="modal-content custom-modal">
+      <div class="modal-header custom-modal">
+        <div class="row">
+          <div class="col-md-4 align-self-center">
+            <h5>Cultivo</h5>
+          </div>
+          <div class="col-md-8">
+            <input type="text" name="cajaNombreCultivo" id="cajaNombreCultivo" class="form-control" value="faríngeo">
+          </div>
+        </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-8">
+            <form id="radios">
+              <div class="list-group">
+                <div class="list-group-item list-group-item-action disabled">
+                  <div class="row">
+                    <div class="col-6 align-self-center">
+                      Antibiótico
                     </div>
-		        </div>
-		    </div>
-	      	<div class="modal-footer custom-modal">
-	        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-	        	<button type="button" class="btn btn-primary" onclick="validarCultivoFaringeo()">Agregar</button>
-	      	</div>
-	    </div>
-	</div>
+                    <div class="col-3 align-self-center">
+                      Sensible
+                    </div>
+                    <div class="col-3 align-self-center">
+                      Resistente
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <div class="row">
+                    <div class="col-6 align-self-center">
+                      <input type="text" name="cajaResultadoFaringeo1" id="cajaResultadoFaringeo1" class="form-control" value="(AM) Ampicilina">
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioAmpicilinaSensible" name="cf1" value="Sensible" checked>
+                      </div>
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioAmpicilinaResistente" name="cf1" value="Resistente">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <div class="row">
+                    <div class="col-6 align-self-center">
+                      <input type="text" name="cajaResultadoFaringeo2" id="cajaResultadoFaringeo2" class="form-control" value="(CF) Cefalotina">
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioCefalotinaSensible" name="cf2" value="Sensible" checked>
+                      </div>
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioCefalotinaResistente" name="cf2" value="Resistente">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <div class="row">
+                    <div class="col-6 align-self-center">
+                      <input type="text" name="cajaResultadoFaringeo3" id="cajaResultadoFaringeo3" class="form-control" value="(CTX) Cefotaxima">
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioCefotaximaSensible" name="cf3" value="Sensible" checked>
+                      </div>
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioCefotaximaResistente" name="cf3" value="Resistente">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <div class="row">
+                    <div class="col-6 align-self-center">
+                      <input type="text" name="cajaResultadoFaringeo4" id="cajaResultadoFaringeo4" class="form-control" value="(CAZ) Ceftazidima">
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioCeftazidimaSensible" name="cf4" value="Sensible" checked>
+                      </div>
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioCeftazidimaResistente" name="cf4" value="Resistente">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <div class="row">
+                    <div class="col-6 align-self-center">
+                      <input type="text" name="cajaResultadoFaringeo5" id="cajaResultadoFaringeo5" class="form-control" value="(CXM) Cefuroxima">
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioCefuroximaSensible" name="cf5" value="Sensible" checked>
+                      </div>
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioCefuroximaResistente" name="cf5" value="Resistente">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <div class="row">
+                    <div class="col-6 align-self-center">
+                      <input type="text" name="cajaResultadoFaringeo6" id="cajaResultadoFaringeo6" class="form-control" value="(DC) Dicloxacilina">
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioDicloxacilinaSensible" name="cf6" value="Sensible" checked>
+                      </div>
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioDicloxacilinaResistente" name="cf6" value="Resistente">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <div class="row">
+                    <div class="col-6 align-self-center">
+                      <input type="text" name="cajaResultadoFaringeo7" id="cajaResultadoFaringeo7" class="form-control" value="(E) Eritromicina">
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioEritromicinaSensible" name="cf7" value="Sensible" checked>
+                      </div>
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioEritromicinaResistente" name="cf7" value="Resistente">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <div class="row">
+                    <div class="col-6 align-self-center">
+                      <input type="text" name="cajaResultadoFaringeo8" id="cajaResultadoFaringeo8" class="form-control" value="(GE) Gentamicina">
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioGentamicinaSensible" name="cf8" value="Sensible" checked>
+                      </div>
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioGentamicinaResistente" name="cf8" value="Resistente">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <div class="row">
+                    <div class="col-6 align-self-center">
+                      <input type="text" name="cajaResultadoFaringeo9" id="cajaResultadoFaringeo9" class="form-control" value="(PEF) Pefloxacina">
+                      
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioPefloxacinaSensible" name="cf9" value="Sensible" checked>
+                      </div>
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioPefloxacinaResistente" name="cf9" value="Resistente">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <div class="row">
+                    <div class="col-6 align-self-center">
+                      <input type="text" name="cajaResultadoFaringeo10" id="cajaResultadoFaringeo10" class="form-control" value="(PE) Penicilina">
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioPenicilinaSensible" name="cf10" value="Sensible" checked>
+                      </div>
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioPenicilinaResistente" name="cf10" value="Resistente">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <div class="row">
+                    <div class="col-6 align-self-center">
+                      <input type="text" name="cajaResultadoFaringeo11" id="cajaResultadoFaringeo11" class="form-control" value="(TE) Tetraciclina">
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioTetraciclinaSensible" name="cf11" value="Sensible" checked>
+                      </div>
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioTetraciclinaResistente" name="cf11" value="Resistente">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <div class="row">
+                    <div class="col-6 align-self-center">
+                      <input type="text" name="cajaResultadoFaringeo11" id="cajaResultadoFaringeo12" class="form-control" value="(SXT) Trimetroprima sulfametoxazol">
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioTrimetroprimaSulfametoxazolSensible" name="cf12" value="Sensible" checked>
+                      </div>
+                    </div>
+                    <div class="col-3 align-self-center">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" id="radioTrimetroprimaSulfametoxazolResistente" name="cf12" value="Resistente">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="cajaObservacionesCultivoFaringeo">Observaciones:</label>
+              <textarea style="min-height: 10em;" name="cajaObservacionesCultivoFaringeo" id="cajaObservacionesCultivoFaringeo" class="form-control"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer custom-modal">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="validarCultivoFaringeo()">Agregar</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
+  let formaRadios = document.getElementById('radios');
 
-     let formaRadios = document.getElementById('radios');
-     
-	function validarCultivoFaringeo() {
-       
-		/* if (formaRadios.elements["ampicilina"].value && formaRadios.elements["cefalotina"].value && 
-        formaRadios.elements["cefotaxima"].value && formaRadios.elements["ceftazidima"].value && 
-        formaRadios.elements["cefuroxima"].value && formaRadios.elements["dicloxacilina"].value && 
-        formaRadios.elements["eritromicina"].value && formaRadios.elements["gentamicina"].value && 
-        formaRadios.elements["pefloxacina"].value && formaRadios.elements["penicilina"].value && 
-        formaRadios.elements["tetraciclina"].value && formaRadios.elements["trimetroprimasulfametoxazol"].value) { */
+  function validarCultivoFaringeo() {
 
-			let estudio = {
-				idmodal: 'cultivofaringeo',
-				nombre: 'Cultivo faríngeo',
-				resultados: 
-				[{
-					nombre: 'Ampicilina',
-					resultado: formaRadios.elements["ampicilina"].value,
-					limites: []
-				},
-                {
-					nombre: 'Cefalotina',
-					resultado: formaRadios.elements["cefalotina"].value,
-					limites: []
-				},
-                {
-					nombre: 'Cefotaxima',
-					resultado: formaRadios.elements["cefotaxima"].value,
-					limites: []
-				},
-                {
-					nombre: 'Ceftazidima',
-					resultado: formaRadios.elements["ceftazidima"].value,
-					limites: []
-				},
-                {
-					nombre: 'Cefuroxima',
-					resultado: formaRadios.elements["cefuroxima"].value,
-					limites: []
-				},
-                {
-					nombre: 'Dicloxacilina',
-					resultado: formaRadios.elements["dicloxacilina"].value,
-					limites: []
-				},
-                {
-					nombre: 'Eritromicina',
-					resultado: formaRadios.elements["eritromicina"].value,
-					limites: []
-				},
-                {
-					nombre: 'Gentamicina',
-					resultado: formaRadios.elements["gentamicina"].value,
-					limites: []
-				},
-                {
-					nombre: 'Pefloxacina',
-					resultado: formaRadios.elements["pefloxacina"].value,
-					limites: []
-				},
-                {
-					nombre: 'Penicilina',
-					resultado: formaRadios.elements["penicilina"].value,
-					limites: []
-				},
-                {
-					nombre: 'Tetraciclina',
-					resultado: formaRadios.elements["tetraciclina"].value,
-					limites: []
-				},
-                {
-					nombre: 'Trimetroprimasulfametoxazol',
-					resultado: formaRadios.elements["trimetroprimasulfametoxazol"].value,
-					limites: []
-				}],
-				observaciones: '',
-				costo: <?php if ($respuesta) { echo $respuesta["costo"]; } else { echo "0"; } ?>
-			}
-
-			agregarEstudio(estudio);
-			cerrarCultivoFaringeo();
-			limpiarCultivoFaringeo();
-			
-		/* } else {
-			Swal.fire({
-                title: "¡Rellene los campos solicitados!",
-                type: "error",
-                showCancelButton: false
-            });
-		} */
-	}
-
-	function cerrarCultivoFaringeo() {
-		$(`#cultivofaringeo`).modal('toggle');
-	}
-
-	function limpiarCultivoFaringeo() {
-        document.getElementsByName('ampicilina')[0].checked = true;
-        document.getElementsByName('ampicilina')[1].checked = false;
-        document.getElementsByName('cefalotina')[0].checked = true;
-        document.getElementsByName('cefalotina')[1].checked = false;
-        document.getElementsByName('cefotaxima')[0].checked = true;
-        document.getElementsByName('cefotaxima')[1].checked = false;
-        document.getElementsByName('ceftazidima')[0].checked = true;
-        document.getElementsByName('ceftazidima')[1].checked = false;
-        document.getElementsByName('cefuroxima')[0].checked = true;
-        document.getElementsByName('cefuroxima')[1].checked = false;
-        document.getElementsByName('dicloxacilina')[0].checked = true;
-        document.getElementsByName('dicloxacilina')[1].checked = false;
-        document.getElementsByName('eritromicina')[0].checked = true;
-        document.getElementsByName('eritromicina')[1].checked = false;
-        document.getElementsByName('gentamicina')[0].checked = true;
-        document.getElementsByName('gentamicina')[1].checked = false;
-        document.getElementsByName('pefloxacina')[0].checked = true;
-        document.getElementsByName('pefloxacina')[1].checked = false;
-        document.getElementsByName('penicilina')[0].checked = true;
-        document.getElementsByName('penicilina')[1].checked = false;
-        document.getElementsByName('tetraciclina')[0].checked = true;
-        document.getElementsByName('tetraciclina')[1].checked = false;
-        document.getElementsByName('trimetroprimasulfametoxazol')[0].checked = true;
-        document.getElementsByName('trimetroprimasulfametoxazol')[1].checked = false;
-	}
-
-	$('#cultivofaringeo').on('hidden.bs.modal', function (e) {
-  		limpiarCultivoFaringeo();
-    });
-    
-    $('#cultivofaringeo').on('show.bs.modal', function (e) {
-		if (editando === true) {
-			edicionCultivoFaringeo(estudioEditar);
-			 
-		}
-	});
-
-	function edicionCultivoFaringeo(estudio) {
-		if (estudio.resultados[0].resultado === "Sensible") {
-            document.getElementsByName('ampicilina')[0].checked = true;
-        } else {
-            document.getElementsByName('ampicilina')[1].checked = true;
+    let estudio = {
+      idmodal: 'cultivofaringeo',
+      nombre: `Cultivo ${cajaNombreCultivo.value}`,
+      resultados: [{
+          nombre: `${cajaResultadoFaringeo1.value}`,
+          resultado: formaRadios.elements["cf1"].value,
+          limites: []
+        },
+        {
+          nombre: `${cajaResultadoFaringeo2.value}`,
+          resultado: formaRadios.elements["cf2"].value,
+          limites: []
+        },
+        {
+          nombre: `${cajaResultadoFaringeo3.value}`,
+          resultado: formaRadios.elements["cf3"].value,
+          limites: []
+        },
+        {
+          nombre: `${cajaResultadoFaringeo4.value}`,
+          resultado: formaRadios.elements["cf4"].value,
+          limites: []
+        },
+        {
+          nombre: `${cajaResultadoFaringeo5.value}`,
+          resultado: formaRadios.elements["cf5"].value,
+          limites: []
+        },
+        {
+          nombre: `${cajaResultadoFaringeo6.value}`,
+          resultado: formaRadios.elements["cf6"].value,
+          limites: []
+        },
+        {
+          nombre: `${cajaResultadoFaringeo7.value}`,
+          resultado: formaRadios.elements["cf7"].value,
+          limites: []
+        },
+        {
+          nombre: `${cajaResultadoFaringeo8.value}`,
+          resultado: formaRadios.elements["cf8"].value,
+          limites: []
+        },
+        {
+          nombre: `${cajaResultadoFaringeo9.value}`,
+          resultado: formaRadios.elements["cf9"].value,
+          limites: []
+        },
+        {
+          nombre: `${cajaResultadoFaringeo10.value}`,
+          resultado: formaRadios.elements["cf10"].value,
+          limites: []
+        },
+        {
+          nombre: `${cajaResultadoFaringeo11.value}`,
+          resultado: formaRadios.elements["cf11"].value,
+          limites: []
+        },
+        {
+          nombre: `${cajaResultadoFaringeo12.value}`,
+          resultado: formaRadios.elements["cf12"].value,
+          limites: []
         }
+      ],
+      observaciones: cajaObservacionesCultivoFaringeo.value,
+      costo: <?php if ($respuesta) {
+                echo $respuesta["costo"];
+              } else {
+                echo "0";
+              } ?>
+    }
 
-        if (estudio.resultados[1].resultado === "Sensible") {
-            document.getElementsByName('cefalotina')[0].checked = true;
-        } else {
-            document.getElementsByName('cefalotina')[1].checked = true;
-        }
+    agregarEstudio(estudio);
+    cerrarCultivoFaringeo();
+    limpiarCultivoFaringeo();
 
-        if (estudio.resultados[2].resultado === "Sensible") {
-            document.getElementsByName('cefotaxima')[0].checked = true;
-        } else {
-            document.getElementsByName('cefotaxima')[1].checked = true;
-        }
+  }
 
-        if (estudio.resultados[3].resultado === "Sensible") {
-            document.getElementsByName('ceftazidima')[0].checked = true;
-        } else {
-            document.getElementsByName('ceftazidima')[1].checked = true;
-        }
+  function cerrarCultivoFaringeo() {
+    $(`#cultivofaringeo`).modal('toggle');
+  }
 
-        if (estudio.resultados[4].resultado === "Sensible") {
-            document.getElementsByName('cefuroxima')[0].checked = true;
-        } else {
-            document.getElementsByName('cefuroxima')[1].checked = true;
-        }
+  function limpiarCultivoFaringeo() {
 
-        if (estudio.resultados[5].resultado === "Sensible") {
-            document.getElementsByName('dicloxacilina')[0].checked = true;
-        } else {
-            document.getElementsByName('dicloxacilina')[1].checked = true;
-        }
+    cajaNombreCultivo.value = 'faríngeo';
 
-        if (estudio.resultados[6].resultado === "Sensible") {
-            document.getElementsByName('eritromicina')[0].checked = true;
-        } else {
-            document.getElementsByName('eritromicina')[1].checked = true;
-        }
+    document.getElementsByName('cf1')[0].checked = true;
+    document.getElementsByName('cf1')[1].checked = false;
 
-        if (estudio.resultados[7].resultado === "Sensible") {
-            document.getElementsByName('gentamicina')[0].checked = true;
-        } else {
-            document.getElementsByName('gentamicina')[1].checked = true;
-        }
+    document.getElementsByName('cf2')[0].checked = true;
+    document.getElementsByName('cf2')[1].checked = false;
 
-        if (estudio.resultados[8].resultado === "Sensible") {
-            document.getElementsByName('pefloxacina')[0].checked = true;
-        } else {
-            document.getElementsByName('pefloxacina')[1].checked = true;
-        }
+    document.getElementsByName('cf3')[0].checked = true;
+    document.getElementsByName('cf3')[1].checked = false;
 
-        if (estudio.resultados[9].resultado === "Sensible") {
-            document.getElementsByName('penicilina')[0].checked = true;
-        } else {
-            document.getElementsByName('penicilina')[1].checked = true;
-        }
+    document.getElementsByName('cf4')[0].checked = true;
+    document.getElementsByName('cf4')[1].checked = false;
 
-        if (estudio.resultados[10].resultado === "Sensible") {
-            document.getElementsByName('tetraciclina')[0].checked = true;
-        } else {
-            document.getElementsByName('tetraciclina')[1].checked = true;
-        }
+    document.getElementsByName('cf5')[0].checked = true;
+    document.getElementsByName('cf5')[1].checked = false;
 
-        if (estudio.resultados[11].resultado === "Sensible") {
-            document.getElementsByName('trimetroprimasulfametoxazol')[0].checked = true;
-        } else {
-            document.getElementsByName('trimetroprimasulfametoxazol')[1].checked = true;
-        }
-	}
+    document.getElementsByName('cf6')[0].checked = true;
+    document.getElementsByName('cf6')[1].checked = false;
+
+    document.getElementsByName('cf7')[0].checked = true;
+    document.getElementsByName('cf7')[1].checked = false;
+
+    document.getElementsByName('cf8')[0].checked = true;
+    document.getElementsByName('cf8')[1].checked = false;
+
+    document.getElementsByName('cf9')[0].checked = true;
+    document.getElementsByName('cf9')[1].checked = false;
+
+    document.getElementsByName('cf10')[0].checked = true;
+    document.getElementsByName('cf10')[1].checked = false;
+
+    document.getElementsByName('cf11')[0].checked = true;
+    document.getElementsByName('cf11')[1].checked = false;
+
+    document.getElementsByName('cf12')[0].checked = true;
+    document.getElementsByName('cf12')[1].checked = false;
+  }
+
+  $('#cultivofaringeo').on('hidden.bs.modal', function(e) {
+    limpiarCultivoFaringeo();
+  });
+
+  $('#cultivofaringeo').on('show.bs.modal', function(e) {
+    if (editando === true) {
+      edicionCultivoFaringeo(estudioEditar);
+
+    }
+  });
+
+  function edicionCultivoFaringeo(estudio) {
+
+    let nombreEstudio = estudio.nombre.split(' ');
+    nombreEstudio.splice(0, 1);
+    nombreEstudio = nombreEstudio.join(' ');
+
+    cajaObservacionesCultivoFaringeo.value = estudio.observaciones;
+
+    cajaNombreCultivo.value = nombreEstudio;
+
+    cajaResultadoFaringeo1.value = estudio.resultados[0].nombre;
+
+    if (estudio.resultados[0].resultado === "Sensible") {
+      document.getElementsByName('cf1')[0].checked = true;
+    } else {
+      document.getElementsByName('cf1')[1].checked = true;
+    }
+
+    cajaResultadoFaringeo2.value = estudio.resultados[1].nombre;
+
+    if (estudio.resultados[1].resultado === "Sensible") {
+      document.getElementsByName('cf2')[0].checked = true;
+    } else {
+      document.getElementsByName('cf2')[1].checked = true;
+    }
+
+    cajaResultadoFaringeo3.value = estudio.resultados[2].nombre;
+
+    if (estudio.resultados[2].resultado === "Sensible") {
+      document.getElementsByName('cf3')[0].checked = true;
+    } else {
+      document.getElementsByName('cf3')[1].checked = true;
+    }
+
+    cajaResultadoFaringeo4.value = estudio.resultados[3].nombre;
+
+    if (estudio.resultados[3].resultado === "Sensible") {
+      document.getElementsByName('cf4')[0].checked = true;
+    } else {
+      document.getElementsByName('cf4')[1].checked = true;
+    }
+
+    cajaResultadoFaringeo5.value = estudio.resultados[4].nombre;
 
 
+    if (estudio.resultados[4].resultado === "Sensible") {
+      document.getElementsByName('cf5')[0].checked = true;
+    } else {
+      document.getElementsByName('cf5')[1].checked = true;
+    }
+
+    cajaResultadoFaringeo6.value = estudio.resultados[5].nombre;
+
+
+    if (estudio.resultados[5].resultado === "Sensible") {
+      document.getElementsByName('cf6')[0].checked = true;
+    } else {
+      document.getElementsByName('cf6')[1].checked = true;
+    }
+
+    cajaResultadoFaringeo7.value = estudio.resultados[6].nombre;
+
+    if (estudio.resultados[6].resultado === "Sensible") {
+      document.getElementsByName('cf7')[0].checked = true;
+    } else {
+      document.getElementsByName('cf7')[1].checked = true;
+    }
+
+    cajaResultadoFaringeo8.value = estudio.resultados[7].nombre;
+
+    if (estudio.resultados[7].resultado === "Sensible") {
+      document.getElementsByName('cf8')[0].checked = true;
+    } else {
+      document.getElementsByName('cf8')[1].checked = true;
+    }
+
+    cajaResultadoFaringeo9.value = estudio.resultados[8].nombre;
+
+    if (estudio.resultados[8].resultado === "Sensible") {
+      document.getElementsByName('cf9')[0].checked = true;
+    } else {
+      document.getElementsByName('cf9')[1].checked = true;
+    }
+
+    cajaResultadoFaringeo10.value = estudio.resultados[9].nombre;
+
+    if (estudio.resultados[9].resultado === "Sensible") {
+      document.getElementsByName('cf10')[0].checked = true;
+    } else {
+      document.getElementsByName('cf10')[1].checked = true;
+    }
+
+    cajaResultadoFaringeo11.value = estudio.resultados[10].nombre;
+
+    if (estudio.resultados[10].resultado === "Sensible") {
+      document.getElementsByName('cf11')[0].checked = true;
+    } else {
+      document.getElementsByName('cf11')[1].checked = true;
+    }
+
+    cajaResultadoFaringeo12.value = estudio.resultados[11].nombre;
+
+    if (estudio.resultados[11].resultado === "Sensible") {
+      document.getElementsByName('cf12')[0].checked = true;
+    } else {
+      document.getElementsByName('cf12')[1].checked = true;
+    }
+  }
 </script>

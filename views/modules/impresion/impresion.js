@@ -234,7 +234,7 @@ function generarEstudios() {
 
       // ${r.resultado}
       estudio.resultados.forEach(r => {
-        if (r.resultado) {
+        if (r.resultado && r.nombre) {
           resultado += `
                     <tr>
                         <td>

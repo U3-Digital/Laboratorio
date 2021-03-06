@@ -635,12 +635,12 @@ class Controller {
 
     }
 
-    public static function ctlRegistrarAnalisis() {
-        if (isset($_POST["submit"])) {
+    public static function ctlRegistrarAnalisis($nombre, $costo) {
+      
 
             $datosController = array(
-                "nombre" => $_POST["cajaNombre"],
-                "costo" => $_POST["cajaCosto"]
+                "nombre" => $nombre,
+                "costo" => $costo
             );
 
             $respuesta = Datos::mdlRegistrarAnalisis($datosController, "catanalisis");
@@ -669,7 +669,7 @@ class Controller {
                             });</script> ';
             }
 
-        }
+        
     }
 
     public static function ctlListaAnalisis() {
